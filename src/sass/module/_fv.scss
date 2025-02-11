@@ -1,0 +1,105 @@
+@use "global" as *;
+
+
+.fv {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+	@include mq(md) {
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.fv__video-container {
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* 横幅を全体に広げる */
+  height: 100%; /* 高さも全体に広げる */
+}
+
+.fv__video-container video {
+  width: 100%; /* 動画の横幅を100%に設定 */
+  height: 100%; /* 動画の高さも100%に設定 */
+  object-fit: cover; /* 動画を要素全体にフィットさせる */
+  object-position: center; /* 中央揃えで表示 */
+}
+
+
+.fv__copy{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 2;
+	width: 100%;
+	text-align: center;
+	@include mq(md) {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	}
+}
+.fv__main-title {
+	color: #fff;
+	font-size: rem(40);
+			font-family: $base-font-family;
+			font-weight: $regular;
+			line-height: 1;
+			letter-spacing: 0.54em;
+			text-indent: 0.54em;
+			text-transform: uppercase;
+			@include mq(md) {
+					font-size: rem(80);
+					line-height: 1.25;
+			}
+}
+.fv__sub-title {
+	color: #fff;
+	font-size: rem(20);
+			font-family: $base-font-family;
+			font-weight: $regular;
+			line-height: 1;
+			letter-spacing: 0;
+			margin-top: rem(10);
+			@include mq(md) {
+				margin-top: 0;
+				line-height: 1.65;
+			}
+}
+
+/* GranLily の説明文 */
+.fv__description {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap:rem(12);
+    margin-top: rem(30);
+    text-align: center;
+
+		@include mq(md) {
+				 margin-top: rem(60);
+		}
+}
+
+/* 説明文の各行 */
+.text-line {
+    font-size: rem(14);
+    font-family: $base-font-family;
+    font-weight: $regular;
+    color: #ffffff; /* 白色 */
+    background: rgba(0, 0, 0, 0.15); /* 半透明の黒背景 */
+    padding: rem(10) rem(20);
+    border-radius: rem(5);
+    display: inline-block;
+		line-height: 1.6; /* 行間を調整 */
+    opacity: 0; /* 初期状態は非表示 */
+		@include mq(md) {
+				font-size: rem(16);
+		}
+}

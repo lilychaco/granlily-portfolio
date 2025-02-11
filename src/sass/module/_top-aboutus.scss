@@ -1,0 +1,152 @@
+@use "global" as *;
+
+.top-aboutus {
+	margin-inline:auto;
+	width:100%;
+}
+.top-aboutus__container {
+  width: 100%;
+  margin-inline: auto;
+  @include mq(md) {
+    max-width: rem(1080);
+    margin-top: rem(120);
+    position: relative;
+}
+}
+.top-aboutus__sp-image {
+  margin-top: rem(28);
+  display: block;
+  width: 100%;
+}
+.top-aboutus__sp-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 345/212;
+}
+
+.top-aboutus__pc-image {
+  display: none;
+  @include mq(md) {
+    display: inline-block;
+    padding-right: rem(200);
+    position: relative;
+  }
+}
+.top-aboutus__pc-image-item--primary{
+  display: none;
+  @include mq(md) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 880/581;
+  }
+}
+
+.with-filter {
+  position: relative; // 疑似要素を画像の上に重ねるため
+  display: block; // 画像が通常通り表示されるように設定
+
+  @include mq(md) {
+    // メディアクエリ内でのスタイル適用
+    position: relative;
+  }
+}
+
+.with-filter img {
+	display: block;
+	width: 100%;
+	height:auto;
+}
+
+.with-filter::after {
+  content: ''; // 疑似要素の内容は空
+  position: absolute; // 親要素（.with-filter）を基準に配置
+  top: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 128, 0.3); // 青色の半透明フィルター
+  pointer-events: none; // フィルターがクリックを妨げないようにする
+}
+
+
+.top-aboutus__pc-image-item--secondary {
+  display: none;
+  @include mq(md) {
+    display: inline-block;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 400/606;
+    max-width: rem(400);
+    position: absolute;
+    top: rem(-80);
+    right: 0;
+  }
+}
+
+.top-aboutus__main-wrapper {
+  @include mq(md) {
+    position: absolute;
+    top: rem(122);
+    left: rem(60);
+    z-index: 10;
+		max-width:rem(560);
+  }
+}
+.top-aboutus__main {
+  margin-top: rem(40);
+  @include mq(md) {
+    width: 100%;
+    // max-width: rem(840);
+    margin-top: 0;
+  }
+}
+
+.top-aboutus__title {
+  font-size: rem(40);
+  font-family: $base-font-family;
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0;
+  color: $greenaccent;
+
+  @include mq(md) {
+    font-size: rem(80);
+    line-height: 1.25;
+    color: $white;
+  }
+}
+.top-aboutus__title span {
+  text-transform: uppercase;
+}
+.top-aboutus__body {
+  margin-top: rem(16);
+  @include mq(md) {
+  }
+}
+
+.top-aboutus__text {
+  font-size: rem(16);
+  font-family: $base-font-family;
+  font-weight: $regular;
+  line-height: 1.5;
+  letter-spacing: 0;
+  @include mq(md) {
+    color: $white;
+    max-height: rem(350);
+    overflow: auto;
+  }
+}
+
+.top-aboutus__button {
+  margin-top: rem(50);
+  text-align: center;
+  padding-bottom: rem(4);
+
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}

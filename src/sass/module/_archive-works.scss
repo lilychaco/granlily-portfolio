@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.archive-works {
+  margin-inline: auto;
+  width: 100%;
+  position: relative;
+}
+
+.archive-works__category-list {
+  margin-inline: auto;
+  width: 100%;
+}
+
+.archive-works__content {
+  margin-top: rem(40);
+  padding-left: rem(33);
+  padding-right: rem(32);
+  @include mq(md) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.archive-works__nav {
+	margin-top: rem(82);
+	@include mq(md) {
+		margin-top: rem(76);
+	}
+}

@@ -1,0 +1,51 @@
+@use "global"as *;
+
+.top-works {
+  overflow: hidden;
+}
+
+.top-works__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.top-works__heading {}
+
+.top-works__cards-wrapper {
+  width: 100%;
+  height: 100%;
+  margin-top: rem(28);
+  padding-bottom: rem(4);
+
+  @include mq(md) {
+    margin-top: rem(40);
+    padding-bottom: rem(10);
+  }
+}
+
+.top-works__cards-wrapper.swiper {
+  padding-bottom: rem(10);
+}
+
+
+
+
+
+//swiper-wrapperの範囲を指定
+.top-works__cards {
+  width: 100%;
+  height: 100%;
+	padding-top: rem(30);
+}
+
+.top-works__button {
+  margin-top: rem(40);
+  margin-inline: auto;
+  text-align: center;
+  padding-bottom: rem(4);
+
+  @include mq(md) {
+    margin-top: rem(72);
+  }
+}

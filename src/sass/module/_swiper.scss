@@ -1,0 +1,19 @@
+@use "global"as *;
+
+/* 各スライドのデフォルト状態 */
+.p-swiper__slide {
+  opacity: 0.6;
+  transition: 0.7s;
+}
+
+/* アクティブなスライドに対するスタイル */
+.swiper-slide-active .p-swiper__img {
+  transform: scale(1.1); /* アクティブなスライドの画像を拡大 */
+  transition: 0.5s;
+}
+
+.swiper-slide-active {
+  opacity: 1; /* アクティブなスライドを強調表示 */
+  z-index: 1;
+  transition: 0.5s;
+}

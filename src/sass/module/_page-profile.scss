@@ -1,0 +1,174 @@
+@use "global"as *;
+
+.page-profile {
+  margin-inline: auto;
+  width: 100%;
+}
+
+.page-profile__container {
+  width: 100%;
+  position: relative;
+
+  @include mq(md) {}
+}
+
+.page-profile__sp-image {
+  margin-top: rem(28);
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.page-profile__sp-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 345/228;
+}
+
+.page-profile__title {
+  font-size: rem(40);
+  font-family: $base-font-family;
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0;
+  color: $greenaccent;
+
+  @include mq(md) {
+    font-size: rem(80);
+    line-height: 1.25;
+    color: $white;
+  }
+}
+
+.page-profile__title span {
+  text-transform: uppercase;
+}
+
+.page-profile__title--sp {
+  position: absolute;
+	bottom:rem(10);
+  left: rem(24);
+  color: $white;
+
+
+}
+
+.page-profile__pc-image {
+  display: none;
+
+  @include mq(md) {
+    width: 100%;
+    height: rem(661);
+    display: block;
+    position: relative;
+  }
+}
+
+.page-profile__pc-image img:first-of-type {
+  @include mq(md) {
+    display: block;
+    max-width: rem(400);
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 400/606;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.page-profile__pc-image img:nth-of-type(2) {
+  @include mq(md) {
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 880/581;
+    max-width: rem(880);
+    position: absolute;
+    top: rem(80);
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.page-profile__main-wrapper {
+  @include mq(md) {
+    position: absolute;
+    top: rem(200);
+    right: rem(60);
+    z-index: 10;
+    max-width: rem(560);
+  }
+}
+
+.page-profile__main {
+  margin-top: rem(20);
+
+  @include mq(md) {
+    width: 100%;
+    max-width: rem(841);
+    margin-top: 0;
+
+  }
+}
+
+.page-profile__body {
+  margin-top: rem(16);
+
+  @include mq(md) {
+    margin-top: rem(26);
+  }
+}
+
+.page-profile__text {
+  font-size: rem(16);
+  font-family: $base-font-family;
+  font-weight: $regular;
+  line-height: 1.5;
+  letter-spacing: 0;
+
+  @include mq(md) {
+    color: $white;
+    max-height: rem(350);
+    overflow: auto;
+  }
+}
+
+.page-profile__profile {
+	margin-inline:auto;
+	width:100%;
+  background-color: $greenpale;
+  z-index: -100;
+	margin-top: rem(100);
+  padding-top: rem(80);
+  padding-bottom: rem(82);
+
+  @include mq(md) {
+    padding-top: rem(100);
+    padding-bottom: rem(102);
+  }
+}
+.page-profile__local {
+	margin-inline:auto;
+	width:100%;
+  padding-top: rem(80);
+	position: relative;
+
+  @include mq(md) {
+    padding-top: rem(100);
+  }
+}
+
+.page-profile__local::before {
+		@include mq(md) {
+		content:"";
+		position: absolute; /* 絶対位置指定 */
+    top: 0; /* 上端から0pxの位置に配置 */
+		background-image: url('../images/hondo-sea-view-pc.jpg'); /* 画像のパスを指定 */
+    width: 100vw;   /* 横幅をブラウザのビューポート幅に設定 */
+    height: rem(400);  /* 高さを500ピクセルに設定 */
+    background-size: cover; /* 背景画像を要素のサイズに合わせる */
+    background-position: center; /* 画像を中央に配置 */
+		z-index: -1; /* z-indexで重ねる順序を指定 */
+	}
+}

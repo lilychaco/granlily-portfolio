@@ -1,0 +1,97 @@
+@use "global" as *;
+
+/* セクションのスタイル */
+.local-media {
+	width: 100%;
+  margin: 0 auto;
+	position: relative; /* 相対位置指定 */
+	z-index:2;
+}
+
+.local-media__inner {
+
+}
+.local-media__container {
+	margin-top: rem(60);
+	display: flex;
+  flex-direction: column; /* スマホでは縦並び */
+  align-items: center;
+  gap: rem(30);
+
+		@include mq(md) {
+		flex-direction: row;
+    align-items: stretch;
+	}
+
+}
+/* YouTube動画をレスポンシブ対応させる */
+.local-media__video {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 比率を固定してレスポンシブ対応 */
+	background-color: $greenpale;
+	padding:2px;
+	display: flex;
+	flex-direction: column;
+	@include mq(md) {
+		flex: 2; /* 動画を広めに */
+		// display: flex; /* 子要素を動画フレームに合わせる */
+  	// align-items: stretch; /* 高さを引き伸ばす */
+	}
+}
+
+.local-media__video iframe {
+  width: 100%;
+  height: 100%;
+}
+.local-media__video-text {
+	font-size: rem(10);
+}
+
+
+/* 関連リンクのスタイル */
+.local-media__links {
+  width: 100%;
+	background-color: $greenpale;
+	margin-top: rem(12);
+	padding:rem(10);
+	@include mq(md) {
+		flex: 1; /* 関連リンクを小さめに */
+		margin-top: 0;
+	}
+}
+
+.local-media__links-title {
+  font-size: 1.2rem;
+	text-align: center;
+	color:$greenaccent;
+	padding-bottom: 6px;
+	border-bottom: 1px solid $greenaccent;
+}
+
+.local-media__links-list {
+  list-style: none;
+	margin-top: rem(16);
+  padding-left: rem(6);
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+}
+
+.local-media__links-list--link {
+	padding-bottom: rem(16);
+}
+.local-media__links-item {
+  display: inline-block;
+}
+
+.local-media__link {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.local-media__link:hover {
+  color: #99ff00;
+	cursor: pointer;
+}
+
+/* PC画面ではYouTube動画とリンクを横並びにする */

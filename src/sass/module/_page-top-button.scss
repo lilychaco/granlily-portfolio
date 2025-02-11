@@ -1,0 +1,76 @@
+@use "global" as *;
+
+.page-top-button {
+	position: absolute;
+	top:rem(-64);
+	right:rem(14);
+	cursor: pointer;
+
+	@include mq(md) {
+		top:rem(-100);
+		right:rem(20);
+	}
+
+}
+.page-top-button__img {
+	width: rem(50);
+
+	@include mq(md) {
+			width: rem(80);
+	}
+}
+.page-top-button__img img {
+	aspect-ratio: 48/48;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.page-top-button {
+    position: absolute;
+    top: rem(-64);
+    right: rem(14);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mq(md) {
+        top: rem(-100);
+        right: rem(20);
+    }
+}
+
+.page-top-button__circle {
+    width: rem(50);
+    height: rem(50);
+    background: #000074; /* メインカラー（濃い青） */
+    border-radius: 50%; /* 円形 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+    @include mq(md) {
+        width: rem(80);
+        height: rem(80);
+    }
+
+    &:hover {
+        background: #3b3bb3; /* ホバー時は少し明るい青 */
+        transform: scale(1.1); /* 少し大きく */
+    }
+}
+
+.page-top-button__text {
+    font-size: rem(14); /* テキストサイズ */
+    font-weight: bold; /* 太字 */
+    color: #D6E6F5; /* サブカラー（薄い青） */
+    text-transform: uppercase; /* 大文字表示 */
+    text-align: center;
+
+    @include mq(md) {
+        font-size: rem(18); /* 大きい画面では少し大きく */
+    }
+}

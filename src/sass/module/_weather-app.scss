@@ -1,0 +1,17 @@
+@use "global" as *;
+
+#weather-app-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+#weather-app-container img {
+	display: inline-block;
+	max-width:rem(50);
+	text-align: center;
+}
+
+
+.weather-wrapper{
+	background: url("../images/weather-background-image.jpg") center center no-repeat;
+}

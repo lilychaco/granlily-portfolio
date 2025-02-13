@@ -21,8 +21,8 @@
 			<!-- ブロック1 -->
 			<div class="nav-menu__box nav-menu__box--01 nav-menu__box--footer">
 				<div class="nav-menu__item">
-					<a href="<?php echo esc_url(home_url('/works')); ?>">
-						<p class="starfish-icon">制作物</p>
+					<a href="<?php echo esc_url(home_url('/tour_plan')); ?>">
+						<p class="starfish-icon">ツアープラン</p>
 					</a>
 				</div>
 				<div class="nav-menu__item nav-menu__item--01">

@@ -21,7 +21,6 @@
 	<meta property="og:description" content="GranLilyのポートフォリオサイトです！" />
 	<meta property="og:locale" content="ja_JP" />
 	<!-- アイコン -->
-	<link rel="icon" href="<?php echo get_theme_file_uri(); ?>/assets/images/rose-peace512.jpg">
 
 	<?php wp_head(); ?>
 </head>

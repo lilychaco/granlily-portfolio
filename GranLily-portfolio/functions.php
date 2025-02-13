@@ -34,20 +34,6 @@
 
 
 
-			//weather-appのCSSとJSを読み込む
-function enqueue_weather_app_assets() {
-    $uploads_dir = wp_upload_dir(); // アップロードディレクトリのURLを取得
-    $base_url = $uploads_dir['baseurl'] . '/weather-app'; // ReactアプリのベースURL
-
-    // CSSファイルを読み込む
-    wp_enqueue_style('weather-app-styles', $base_url . '/static/css/main.1c660692.css', array(), null);
-
-    // JSファイルを読み込む
-    wp_enqueue_script('weather-app-scripts', $base_url . '/static/js/main.067c1b69.js', array(), null, true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_weather_app_assets');
-
-
 
 /**
 * WordPress標準機能

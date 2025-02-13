@@ -3,18 +3,6 @@
 //================================
 //FVのスライダー用
 // ==================================
-// document.addEventListener("DOMContentLoaded", function () {
-//   let fvSlider = new Swiper(".js-fv-swiper", {
-//     slidesPerView: 1, // スライドを1枚表示
-//     spaceBetween: 0, // スライド間のスペース
-//     effect: "fade", // フェードエフェクト
-//     autoplay: {
-//       delay: 4000, // 4秒ごとに自動で次のスライドへ
-//       disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
-//     },
-//     speed: 2000, // スライドの切り替わり速度
-//   });
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
   var swiper = new Swiper(".js-fv-swiper", {
@@ -64,14 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==================================
 document.addEventListener("DOMContentLoaded", function () {
   var worksSlider = new Swiper(".js-works-swiper", {
-    loop: true,
+    loop: false,
     centeredSlides: true,
     slidesPerView: 1,
     spaceBetween: 30,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false
-    },
     speed: 2000,
     // 前後の矢印
     navigation: {

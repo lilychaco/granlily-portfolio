@@ -93,12 +93,12 @@
 	<?php
 				// カスタム投稿「works」を取得するためのWP_Query
 				$args = [
-		    'post_type' => 'works', // カスタム投稿タイプ「works」を指定
+		    'post_type' => 'tour_plan', // カスタム投稿タイプ「works」を指定
   		  'posts_per_page' => -1, // 全ての投稿を取得（必要に応じて数を変更）
 				];
 
-				$works_query = new WP_Query($args);
-				if ($works_query->have_posts()) :
+				$tour_plan_query = new WP_Query($args);
+				if ($tour_plan_query->have_posts()) :
 				?>
 
 	<div class="top-works__inner inner">
@@ -113,14 +113,15 @@
 
 		<div class="top-works__cards-wrapper swiper js-works-swiper">
 			<ul class="top-works__cards works-cards swiper-wrapper">
-				<?php while ($works_query->have_posts()) : $works_query->the_post(); ?>
+				<?php while ($tour_plan_query->have_posts()) : $tour_plan_query->the_post(); ?>
 				<?php
         // 必要なカスタムフィールドの値をまとめて取得
         $link_url = get_post_meta(get_the_ID(), 'link-url', true);
         $user_name = get_post_meta(get_the_ID(), 'user-name', true);
         $password = get_post_meta(get_the_ID(), 'password', true);
         $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : get_theme_file_uri('assets/images/works1.jpg');
-        $terms = get_the_terms(get_the_ID(), 'works-category');
+        $terms = get_the_terms(get_the_ID(), 'tour_plan_category');
+
         ?>
 				<li class="works-cards__item works-card swiper-slide p-swiper__slide">
 					<?php if ($link_url) : ?>

@@ -46,10 +46,10 @@
 	</div>
 </section>
 
-<section class="top-campaign top-campaign-layout" id="campaign">
-	<div class="top-campaign__inner inner">
-		<div class="top-campaign__heading section-heading">
-			<h3 class="section-heading__title">campaign</h3>
+<section class="top-plan top-plan-layout" id="plan">
+	<div class="top-plan__inner inner">
+		<div class="top-plan__heading section-heading">
+			<h3 class="section-heading__title">plan</h3>
 			<h2 class="section-heading__subtitle">キャンペーン</h2>
 		</div>
 
@@ -57,35 +57,35 @@
 		<div class="swiper-button custom-swiper-button-prev"></div>
 		<div class="swiper-button custom-swiper-button-next"></div>
 
-		<div class="top-campaign__cards-wrapper swiper js-campaign-swiper">
+		<div class="top-plan__cards-wrapper swiper js-plan-swiper">
 			<?php
-				// カスタム投稿「campaign」を取得するためのWP_Query
+				// カスタム投稿「plan」を取得するためのWP_Query
 				$args = [
-		    'post_type' => 'campaign', // カスタム投稿タイプ「campaign」を指定
+		    'post_type' => 'plan', // カスタム投稿タイプ「plan」を指定
   		  'posts_per_page' => -1, // 全ての投稿を取得（必要に応じて数を変更）
 				];
 
-				$campaign_query = new WP_Query($args);
-				if ($campaign_query->have_posts()) :
+				$plan_query = new WP_Query($args);
+				if ($plan_query->have_posts()) :
 				?>
 
-			<ul class="top-campaign__cards campaign-cards swiper-wrapper">
-				<?php while ($campaign_query->have_posts()) : $campaign_query->the_post(); ?>
-				<li class="campaign-cards__item campaign-card swiper-slide">
-					<figure class="campaign-card__img">
+			<ul class="top-plan__cards plan-cards swiper-wrapper">
+				<?php while ($plan_query->have_posts()) : $plan_query->the_post(); ?>
+				<li class="plan-cards__item plan-card swiper-slide">
+					<figure class="plan-card__img">
 						<?php if (has_post_thumbnail()) : ?>
 						<!-- 投稿にサムネイルが設定されている場合 -->
 						<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" />
 						<?php else : ?>
 						<!-- 画像がない場合はデフォルト画像を表示 -->
-						<img src="<?php echo esc_url(get_theme_file_uri('assets/images/campaign1.jpg')); ?>" alt="デフォルト画像" />
+						<img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan1.jpg')); ?>" alt="デフォルト画像" />
 						<?php endif; ?>
 					</figure>
-					<div class="campaign-card__body">
-						<div class="campaign-card__top">
-							<div class="campaign-card__category">
+					<div class="plan-card__body">
+						<div class="plan-card__top">
+							<div class="plan-card__category">
 								<?php
-                                $categories = get_the_terms(get_the_ID(), 'campaign-category');
+                                $categories = get_the_terms(get_the_ID(), 'plan-category');
                                 if ($categories && !is_wp_error($categories)) {
                                     $category_names = wp_list_pluck($categories, 'name');
                                     echo esc_html(implode(', ', $category_names));
@@ -93,18 +93,18 @@
                                     echo 'カテゴリ未設定';
                                 }
                                 ?></div>
-							<div class="campaign-card__title"><?php the_title(); ?></div>
+							<div class="plan-card__title"><?php the_title(); ?></div>
 						</div>
-						<div class="campaign-card__text">
-							<p class="campaign-card__price-info">
+						<div class="plan-card__text">
+							<p class="plan-card__price-info">
 								全部コミコミ(お一人様)
 							</p>
-							<p class="campaign-card__price-text">
+							<p class="plan-card__price-text">
 								<?php
 									// 古い価格を取得
-									$old_price = get_field('campaign-price_old');
+									$old_price = get_field('plan-price_old');
 									// 新しい価格を取得
-									$new_price = get_field('campaign-price_new');
+									$new_price = get_field('plan-price_new');
 
 									// 古い価格と新しい価格をそのまま表示
 									if ($old_price && $new_price) {
@@ -130,8 +130,8 @@
 				?>
 		</div>
 
-		<div class="top-campaign__button">
-			<a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button">View&nbsp;more</a>
+		<div class="top-plan__button">
+			<a href="<?php echo esc_url(home_url('/plan')); ?>" class="button">View&nbsp;more</a>
 		</div>
 	</div>
 </section>

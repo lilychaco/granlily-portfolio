@@ -1,30 +1,31 @@
 @use "global"as *;
 
-.top-works {
+.top-plan {
   overflow: hidden;
 }
 
-.top-works__inner {
+.top-plan__inner {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.top-works__heading {}
+.top-plan__heading {}
 
-.top-works__cards-wrapper {
-  width: 100%;
+.top-plan__cards-wrapper {
+  width: 100vw;
   height: 100%;
   margin-top: rem(28);
   padding-bottom: rem(4);
 
   @include mq(md) {
     margin-top: rem(40);
+    margin-right: calc(50% - 50vw);
     padding-bottom: rem(10);
   }
 }
 
-.top-works__cards-wrapper.swiper {
+.top-plan__cards-wrapper.swiper {
   padding-bottom: rem(10);
 }
 
@@ -33,13 +34,12 @@
 
 
 //swiper-wrapperの範囲を指定
-.top-works__cards {
-  width: 100%;
+.top-plan__cards {
+  width: 100vw;
   height: 100%;
-	padding-top: rem(30);
 }
 
-.top-works__button {
+.top-plan__button {
   margin-top: rem(40);
   margin-inline: auto;
   text-align: center;

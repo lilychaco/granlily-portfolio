@@ -1,18 +1,18 @@
 @use "global"as *;
 
-.works-card {
+.plan-card {
   width: 100%;
-  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.works-card__img {
+.plan-card__img {
   width: 100%;
 }
 
-.works-card__img img {
+.plan-card__img img {
   width: 100%;
   height: auto;
   aspect-ratio: 280 /188;
@@ -23,33 +23,29 @@
   }
 }
 
-.works-card__img--side img {
+.plan-card__img--side img {
   aspect-ratio: 294 /188;
 }
 
-.works-card__body {
+.plan-card__body {
   width: 100%;
-  padding-top: rem(10);
-  padding-bottom: rem(20);
+  padding-top: rem(16);
+  padding-bottom: rem(24);
   padding-left: rem(16);
   padding-right: rem(16);
   display: flex;
-	flex-direction: column;
+  flex-direction: column;
   flex-grow: 1;
 
   @include mq(md) {
-    padding-top: rem(20);
-    padding-bottom: rem(30);
+    padding-top: rem(24);
+    padding-bottom: rem(44);
   }
 }
 
 
-.works-card__top {
+.plan-card__top {
   padding-bottom: rem(8);
-	display: flex;
-  flex-direction: column;
-  justify-content: flex-start; // 上寄せ
-  min-height: rem(80); // タイトル部分の高さを統一（調整が必要）
 
   @include mq(md) {
     padding-bottom: rem(6);
@@ -57,7 +53,7 @@
 }
 
 
-.works-card__category {
+.plan-card__category {
   font-size: rem(12);
   font-family: $base-font-family;
   font-weight: $regular;
@@ -65,11 +61,12 @@
   letter-spacing: 0;
   color: $greenaccent;
   border: 1px solid $greenaccent;
+
+  display: inline-block;
   padding-left: rem(12);
   padding-right: rem(12);
   padding-top: rem(4);
   padding-bottom: rem(4);
-	display: inline-block;
 
   @include mq(md) {
     padding-left: rem(16);
@@ -79,21 +76,22 @@
   }
 }
 
-.works-card__title {
-  margin-top: rem(8);
+.plan-card__title {
+  margin-top: rem(4);
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $medium;
-  line-height: 1.5;
+  line-height: 1.7;
   letter-spacing: 0;
-	min-height: rem(40); // タイトルの高さを統一（適宜調整）
-  display: flex;
-  align-items: center; // 短いタイトルでも中央揃え
+	@include mq(md) {
+		font-size: rem(20);
+
+	}
 }
 
-.works-card__text {
+.plan-card__text {
   margin-top: auto;
-  text-align: center;
+  text-align: left;
   border-top: 1px solid $greenaccent;
   padding-top: rem(8);
 
@@ -104,13 +102,14 @@
 
 
 
-.works-card__price-info {
+.plan-card__price-info {
   font-size: rem(14);
   font-family: $base-font-family;
   font-weight: $regular;
   line-height: 1.71;
   letter-spacing: 0;
   text-align: center;
+	margin-top:rem(24);
 
   @include mq(md) {
     font-size: rem(16);
@@ -119,7 +118,7 @@
   }
 }
 
-.works-card__price-info--side {
+.plan-card__price-info--side {
 
   @include mq(md) {
     font-size: rem(14);
@@ -127,7 +126,7 @@
   }
 }
 
-.works-card__price-text {
+.plan-card__price-text {
   margin-top: rem(4);
   display: flex;
   flex-direction: row;
@@ -146,7 +145,7 @@
 }
 
 
-.works-card__price-old {
+.plan-card__price-old {
   display: inline-block;
   margin-top: rem(16);
   font-size: rem(20);
@@ -165,7 +164,7 @@
   }
 }
 
-.works-card__price-new {
+.plan-card__price-new {
   margin-top: rem(4);
   font-size: rem(32);
   font-family: $base-font-family;
@@ -181,7 +180,7 @@
 
 
 
-.works-card__subbody {
+.plan-card__subbody {
   display: none;
 
   @include mq(md) {
@@ -195,7 +194,7 @@
   }
 }
 
-.works-card__subtext {
+.plan-card__subtext {
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $regular;
@@ -206,11 +205,11 @@
   flex-grow: 1;
 }
 
-.works-card__meta {
+.plan-card__meta {
   margin-top: auto;
 }
 
-.works-card__date {
+.plan-card__date {
   margin-top: rem(32);
   font-size: rem(16);
   font-family: $base-font-family;
@@ -219,7 +218,7 @@
   letter-spacing: 0;
 }
 
-.works-card__microcopy {
+.plan-card__microcopy {
   margin-top: rem(7);
   font-size: rem(14);
   font-family: $base-font-family;
@@ -228,7 +227,7 @@
   letter-spacing: 0;
 }
 
-.works-card__button {
+.plan-card__button {
   margin-top: rem(16);
   text-align: center;
 }

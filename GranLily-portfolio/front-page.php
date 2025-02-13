@@ -88,12 +88,11 @@
 		<p class="fv__sub-title">大人のための、心躍る冒険へ</p>
 	</div>
 </section>
-
-<section class="top-works top-works-layout" id="works">
+<section class="top-plan top-plan-layout" id="plan">
 	<?php
-				// カスタム投稿「works」を取得するためのWP_Query
+				// カスタム投稿「plan」を取得するためのWP_Query
 				$args = [
-		    'post_type' => 'tour_plan', // カスタム投稿タイプ「works」を指定
+		    'post_type' => 'tour_plan', // カスタム投稿タイプ「plan」を指定
   		  'posts_per_page' => -1, // 全ての投稿を取得（必要に応じて数を変更）
 				];
 
@@ -101,79 +100,82 @@
 				if ($tour_plan_query->have_posts()) :
 				?>
 
-	<div class="top-works__inner inner">
-		<div class="top-works__heading section-heading">
-			<h2 class="section-heading__title">ツアープラン</h2>
-			<h3 class="section-heading__subtitle">Plan</h3>
+	<div class="top-plan__inner inner">
+		<div class="top-plan__heading section-heading">
+			<h2 class="section-heading__title">Plan</h2>
+			<h3 class="section-heading__subtitle">ツアープラン</h3>
 		</div>
 
 		<!-- 前後の矢印 -->
 		<div class="swiper-button custom-swiper-button-prev"></div>
 		<div class="swiper-button custom-swiper-button-next"></div>
 
-		<div class="top-works__cards-wrapper swiper js-works-swiper">
-			<ul class="top-works__cards works-cards swiper-wrapper">
-				<?php while ($tour_plan_query->have_posts()) : $tour_plan_query->the_post(); ?>
-				<?php
-        // 必要なカスタムフィールドの値をまとめて取得
-        $link_url = get_post_meta(get_the_ID(), 'link-url', true);
-        $user_name = get_post_meta(get_the_ID(), 'user-name', true);
-        $password = get_post_meta(get_the_ID(), 'password', true);
-        $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : get_theme_file_uri('assets/images/works1.jpg');
-        $terms = get_the_terms(get_the_ID(), 'tour_plan_category');
-
-        ?>
-				<li class="works-cards__item works-card swiper-slide p-swiper__slide">
-					<?php if ($link_url) : ?>
-					<a href="<?php echo esc_url($link_url); ?>" class="works-card__link" target="_blank"
-						rel="noopener noreferrer">
+		<div class="top-plan__cards-wrapper swiper js-plan-swiper">
+			<ul class="top-plan__cards plan-cards swiper-wrapper">
+				<?php while ($tour_plan_query->have_posts()) : $tour_plan_query->the_post();
+				?>
+				<li class="plan-cards__item plan-card swiper-slide">
+					<figure class="plan-card__img">
+						<?php if (has_post_thumbnail()) : ?>
+						<!-- サムネイル画像が設定されている場合 -->
+						<img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
+							alt="<?php echo esc_attr(get_the_title()); ?>" />
+						<?php else : ?>
+						<!-- サムネイルがない場合はデフォルト画像を表示 -->
+						<img src="<?php echo esc_url(get_theme_file_uri('assets/images/wilson-heart.jpg')); ?>" alt="デフォルト画像" />
 						<?php endif; ?>
-						<figure class="works-card__img p-swiper__img">
-							<img src="<?php echo esc_url($thumbnail_url); ?>"
-								alt="<?php echo has_post_thumbnail() ? esc_attr(get_the_title()) : 'デフォルト画像'; ?>" />
-						</figure>
-						<div class="works-card__body p-swiper__body">
-							<div class="works-card__top">
-								<?php if (!empty($terms) && !is_wp_error($terms)) : ?>
-								<div class="works-card__category">
-									<?php foreach ($terms as $term) : ?>
-									<span><?php echo esc_html($term->name); ?></span>
-									<?php endforeach; ?>
-								</div>
-								<?php endif; ?>
-								<div class="works-card__title"><?php the_title(); ?></div>
+					</figure>
+
+
+					<div class="plan-card__body">
+						<div class="plan-card__top">
+							<?php
+												$terms = get_the_terms(get_the_ID(), 'tour_plan_category');
+												if (!empty($terms) && !is_wp_error($terms)) :
+												?>
+							<div class="plan-card__category">
+								<?php foreach ($terms as $term) : ?>
+								<span><?php echo esc_html($term->name); ?></span>
+								<?php endforeach; ?>
 							</div>
-							<div class="works-card__text">
-								<?php if ($link_url) : ?>
-								<p class="works-card__price-info">クリックしたらサイトへ飛びます</p>
-								<?php endif; ?>
-								<?php if (!empty($user_name) || !empty($password)) : ?>
-								<p class="works-card__price-info">
-									<?php if (!empty($user_name)) : ?>
-									ユーザー名: <?php echo esc_html($user_name); ?><br>
-									<?php endif; ?>
-									<?php if (!empty($password)) : ?>
-									パスワード: <?php echo esc_html($password); ?>
-									<?php endif; ?>
-								</p>
-								<?php endif; ?>
-							</div>
+							<?php endif; ?>
+							<div class="plan-card__title"><?php the_title(); ?></div>
 						</div>
-						<?php if ($link_url) : ?>
-					</a>
-					<?php endif; ?>
+						<div class="plan-card__text">
+							<?php echo wp_trim_words(get_the_excerpt(), 40, '...'); ?>
+							<p class="plan-card__price-info">
+								全部コミコミ(お一人様)
+							</p>
+							<?php
+							// カスタムフィールド「plan-price」の値を取得
+							$price_new = get_field('plan-price');
+
+							// 価格の値がある場合のみ表示
+							if(!empty($price_new)):
+							?>
+							<div class="plan-card__price-text">
+								<p class="archive-plan-card__price-new">
+									&yen;<?php echo esc_html(number_format($price_new)); ?>
+								</p>
+							</div>
+							<?php endif; ?>
+
+						</div>
+					</div>
 				</li>
 				<?php endwhile; ?>
 			</ul>
 		</div>
-		<div class="top-works__button">
-			<a href="<?php echo esc_url(home_url('/works')); ?>" class="button">View&nbsp;more</a>
+		<div class="top-plan__button">
+			<a href="<?php echo esc_url(home_url('/plan')); ?>" class="button">View&nbsp;more</a>
 		</div>
 	</div>
 
 	<?php endif  ?>
 	<?php wp_reset_postdata(); // クエリのリセット  ?>
 </section>
+
+
 
 <section class="top-aboutus inner top-aboutus-layout" id="aboutus">
 	<div class="top-aboutus__heading section-heading">

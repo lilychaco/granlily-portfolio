@@ -2918,6 +2918,179 @@ span.wpcf7-spinner {
 	text-transform: uppercase; /* 大文字表示 */
 }
 
+.plan-card {
+	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.plan-card__img {
+	width: 100%;
+}
+
+.plan-card__img img {
+	-o-object-fit: cover;
+	aspect-ratio: 280/188;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}
+
+.plan-card__img--side img {
+	aspect-ratio: 294/188;
+}
+
+.plan-card__body {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding-bottom: 1.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 1rem;
+	width: 100%;
+}
+
+.plan-card__top {
+	padding-bottom: 0.5rem;
+}
+
+.plan-card__category {
+	border: 1px solid #000074;
+	color: #000074;
+	display: inline-block;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.75rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.83;
+	padding-bottom: 0.25rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-top: 0.25rem;
+}
+
+.plan-card__title {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.7;
+	margin-top: 0.25rem;
+}
+
+.plan-card__text {
+	border-top: 1px solid #000074;
+	margin-top: auto;
+	padding-top: 0.5rem;
+	text-align: left;
+}
+
+.plan-card__price-info {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.71;
+	margin-top: 1.5rem;
+	text-align: center;
+}
+
+.plan-card__price-text {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 0.25rem;
+	padding-left: 1.25rem;
+	padding-right: 1.125rem;
+}
+
+.plan-card__price-old {
+	-webkit-text-decoration: line-through;
+	color: #000074;
+	display: inline-block;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 1;
+	margin-top: 1rem;
+	text-decoration: line-through;
+	text-decoration-color: #c94800;
+}
+
+.plan-card__price-new {
+	color: #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 1;
+	margin-top: 0.25rem;
+}
+
+.plan-card__subbody {
+	display: none;
+}
+
+.plan-card__subtext {
+	color: #000074;
+	flex-grow: 1;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.5;
+	text-align: left;
+}
+
+.plan-card__meta {
+	margin-top: auto;
+}
+
+.plan-card__date {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 1;
+	margin-top: 2rem;
+}
+
+.plan-card__microcopy {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1;
+	margin-top: 0.4375rem;
+}
+
+.plan-card__button {
+	margin-top: 1rem;
+	text-align: center;
+}
+
+.plan-cards {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.plan-cards__item {
+	height: auto;
+	margin-right: 1.5rem;
+	width: 17.5rem;
+}
+
+.plan-cards__item.swiper-slide {
+	height: auto;
+	margin-right: 1.5rem;
+	width: 17.5rem;
+}
+
 .popular-card {
 	background-color: #fff;
 	box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -3559,26 +3732,6 @@ span.wpcf7-spinner {
 	right: 1.5rem;
 }
 
-/* 各スライドのデフォルト状態 */
-
-.p-swiper__slide {
-	opacity: 0.6;
-	transition: 0.7s;
-}
-
-/* アクティブなスライドに対するスタイル */
-
-.swiper-slide-active .p-swiper__img {
-	transform: scale(1.1); /* アクティブなスライドの画像を拡大 */
-	transition: 0.5s;
-}
-
-.swiper-slide-active {
-	opacity: 1; /* アクティブなスライドを強調表示 */
-	transition: 0.5s;
-	z-index: 1;
-}
-
 .tab {
 	margin-left: auto;
 	margin-right: auto;
@@ -3831,6 +3984,40 @@ span.wpcf7-spinner {
 	z-index: 100;
 }
 
+.top-plan {
+	overflow: hidden;
+}
+
+.top-plan__inner {
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.top-plan__cards-wrapper {
+	height: 100%;
+	margin-top: 1.75rem;
+	padding-bottom: 0.25rem;
+	width: 100vw;
+}
+
+.top-plan__cards-wrapper.swiper {
+	padding-bottom: 0.625rem;
+}
+
+.top-plan__cards {
+	height: 100%;
+	width: 100vw;
+}
+
+.top-plan__button {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2.5rem;
+	padding-bottom: 0.25rem;
+	text-align: center;
+}
+
 .top-price {
 	background-color: #D6E6F5;
 	padding-bottom: 5.125rem;
@@ -3914,41 +4101,6 @@ span.wpcf7-spinner {
 	aspect-ratio: 71/162;
 	height: auto;
 	width: 100%;
-}
-
-.top-works {
-	overflow: hidden;
-}
-
-.top-works__inner {
-	height: 100%;
-	position: relative;
-	width: 100%;
-}
-
-.top-works__cards-wrapper {
-	height: 100%;
-	margin-top: 1.75rem;
-	padding-bottom: 0.25rem;
-	width: 100%;
-}
-
-.top-works__cards-wrapper.swiper {
-	padding-bottom: 0.625rem;
-}
-
-.top-works__cards {
-	height: 100%;
-	padding-top: 1.875rem;
-	width: 100%;
-}
-
-.top-works__button {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 2.5rem;
-	padding-bottom: 0.25rem;
-	text-align: center;
 }
 
 .voice-card {
@@ -4091,11 +4243,15 @@ span.wpcf7-spinner {
 	padding-bottom: 1.25rem;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	padding-top: 1.25rem;
+	padding-top: 0.625rem;
 	width: 100%;
 }
 
 .works-card__top {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	min-height: 5rem;
 	padding-bottom: 0.5rem;
 }
 
@@ -4115,12 +4271,15 @@ span.wpcf7-spinner {
 }
 
 .works-card__title {
+	align-items: center;
+	display: flex;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 500;
 	letter-spacing: 0;
 	line-height: 1.5;
 	margin-top: 0.5rem;
+	min-height: 2.5rem;
 }
 
 .works-card__text {
@@ -4221,12 +4380,8 @@ span.wpcf7-spinner {
 }
 
 .works-cards__item {
-	height: auto;
-	margin-right: 1.5rem;
-	width: 17.5rem;
-}
-
-.works-cards__item.swiper-slide {
+	align-items: stretch;
+	display: flex;
 	height: auto;
 	margin-right: 1.5rem;
 	width: 17.5rem;
@@ -4376,12 +4531,12 @@ span.wpcf7-spinner {
 	margin-top: 5rem;
 }
 
-.top-works-layout {
-	margin-top: 2.5rem;
-}
-
 .top-information-layout {
 	margin-top: 4.375rem;
+}
+
+.top-plan-layout {
+	margin-top: 2.5rem;
 }
 
 .top-price-layout {
@@ -4511,7 +4666,6 @@ html {
 	column-gap: 3.7037037037%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
 	justify-content: space-between;
 	row-gap: 4.875rem;
 }
@@ -5223,6 +5377,83 @@ html {
 	font-size: 1.125rem; /* 大きい画面では少し大きく */
 }
 
+.plan-card__img img {
+	aspect-ratio: 333/223;
+}
+
+.plan-card__body {
+	padding-bottom: 2.75rem;
+	padding-top: 1.5rem;
+}
+
+.plan-card__top {
+	padding-bottom: 0.375rem;
+}
+
+.plan-card__category {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.375rem;
+}
+
+.plan-card__title {
+	font-size: 1.25rem;
+}
+
+.plan-card__text {
+	padding-top: 1rem;
+}
+
+.plan-card__price-info {
+	font-size: 1rem;
+	line-height: 1.5;
+	padding-right: 0.75rem;
+}
+
+.plan-card__price-info--side {
+	font-size: 0.875rem;
+	line-height: 1.71;
+}
+
+.plan-card__price-text {
+	font-size: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+}
+
+.plan-card__price-old {
+	font-size: 1.5rem;
+	margin-top: 1rem;
+	padding-right: 1.625rem;
+}
+
+.plan-card__price-new {
+	font-size: 2.5rem;
+}
+
+.plan-card__subbody {
+	color: #000074;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: space-between;
+	margin-top: 1.5rem;
+	text-align: center;
+}
+
+.plan-cards__item {
+	margin-right: 2.5rem;
+	width: 20.875rem;
+}
+
+.plan-cards__item.swiper-slide {
+	margin-right: 2.5rem;
+	width: 20.875rem;
+}
+
 .profile-history__inner {
 	max-width: 67.3125rem;
 }
@@ -5370,11 +5601,11 @@ html {
 	background-repeat: no-repeat;
 	background-size: contain;
 	display: block;
-	height: 5rem;
+	height: 3.125rem;
 	position: absolute;
 	top: 0;
 	transition: transform 0.6s ease;
-	width: 5rem;
+	width: 3.125rem;
 	z-index: 2;
 }
 
@@ -5588,6 +5819,16 @@ html {
 	margin-top: 2.5rem;
 }
 
+.top-plan__cards-wrapper {
+	margin-right: calc(50% - 50vw);
+	margin-top: 2.5rem;
+	padding-bottom: 0.625rem;
+}
+
+.top-plan__button {
+	margin-top: 4.5rem;
+}
+
 .top-price {
 	padding-bottom: 6.375rem;
 	padding-top: 6.25rem;
@@ -5643,15 +5884,6 @@ html {
 	right: 1.5625rem;
 }
 
-.top-works__cards-wrapper {
-	margin-top: 2.5rem;
-	padding-bottom: 0.625rem;
-}
-
-.top-works__button {
-	margin-top: 4.5rem;
-}
-
 .voice-card__link {
 	padding-bottom: 1.5rem;
 	padding-left: 1.5rem;
@@ -5699,7 +5931,7 @@ html {
 
 .works-card__body {
 	padding-bottom: 1.875rem;
-	padding-top: 1.875rem;
+	padding-top: 1.25rem;
 }
 
 .works-card__top {
@@ -5757,11 +5989,6 @@ html {
 }
 
 .works-cards__item {
-	margin-right: 2.5rem;
-	width: 20.875rem;
-}
-
-.works-cards__item.swiper-slide {
 	margin-right: 2.5rem;
 	width: 20.875rem;
 }
@@ -5890,12 +6117,12 @@ html {
 	margin-top: 8.75rem;
 }
 
-.top-works-layout {
-	margin-top: 7.5rem;
-}
-
 .top-information-layout {
 	margin-top: 10rem;
+}
+
+.top-plan-layout {
+	margin-top: 7.5rem;
 }
 
 .top-price-layout {

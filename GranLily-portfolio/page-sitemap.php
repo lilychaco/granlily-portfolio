@@ -20,7 +20,7 @@
 			<!--ブロック1 -->
 			<div class="nav-menu__box nav-menu__box--01">
 				<div class="nav-menu__item">
-					<a href="<?php echo esc_url(home_url('/campaign')); ?>">
+					<a href="<?php echo esc_url(home_url('/plan')); ?>">
 						<p class="starfish-icon02">成果物</p>
 					</a>
 

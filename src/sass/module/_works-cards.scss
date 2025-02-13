@@ -10,17 +10,8 @@
 	width: rem(280);
   height: auto;
   margin-right: rem(24);
-
-  @include mq(md) {
-    width: rem(334);
-    margin-right: rem(40);
-  }
-}
-
-.works-cards__item.swiper-slide {
-  width: rem(280);
-  height: auto;
-  margin-right: rem(24);
+	display: flex;
+	align-items: stretch;
 
   @include mq(md) {
     width: rem(334);

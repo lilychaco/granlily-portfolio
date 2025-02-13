@@ -1,25 +1,93 @@
 <?php get_header(); ?>
 
-<section class="fv fv-layout js-fv">
-	<div class="fv__video-container">
-		<video autoplay muted loop playsinline preload="auto">
-			<source src="<?php echo get_template_directory_uri(); ?>/assets/images/manta-mordiv_h264.mp4" type="video/mp4">
-			お使いのブラウザは動画に対応していません。
-		</video>
-	</div>
-	<div class="fv__copy">
-		<h2 class="fv__main-title">GranLily</h2>
-		<p class="fv__sub-title">into&nbsp;the&nbsp;WEB&nbsp;World</p>
+<section class="fv">
+	<div class="fv__slider-wrap">
+		<div class="fv__slider swiper js-fv-swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<?php
+					// 設定ページのIDを指定
+					$page_id = 32;
+					// グループフィールドを取得
+					$fvImage01 = get_field('fv_image_1', $page_id);
 
-		<!-- 追加する説明テキスト -->
-		<div class="fv__description">
-			<p class="text-line first">Webコーダー中村弓美のポートフォリオです</p>
-			<p class="text-line second">丁寧なコーディングで、<br class="u-mobile">デザインを忠実に再現します</p>
-			<p class="text-line third">安心してお仕事をおまかせください&nbsp;&nbsp;<br class="u-mobile">あなたのお役にたちます</p>
+					// 各デバイス向けの画像フィールドを取得
+					$fvImage01PC = $fvImage01['fv_image_1_pc'] ?? ''; // PC用画像
+					$fvImage01SP = $fvImage01['fv_image_1_sp'] ?? ''; // SP用画像
+					?>
+					<figure class="fv__slider-img">
+						<picture>
+							<!-- PC用画像を設定 -->
+							<?php if ($fvImage01PC): ?>
+							<source srcset="<?php echo esc_url($fvImage01PC); ?>" media="(min-width: 768px)" />
+							<?php endif; ?>
+							<!-- SP用画像を設定 -->
+							<img src="<?php echo esc_url($fvImage01SP ?: $fvImage01PC); ?>" alt="ファーストビュー画像1" />
+						</picture>
+					</figure>
+					<div class="fv__description">
+						<p class="fv__text text-line first">新しい景色、新しい体験が、あなたを待っています</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<?php
+					// 設定ページのIDを指定
+					$page_id = 32;
+					// グループフィールドを取得
+					$fvImage02 = get_field('fv_image_2', $page_id);
+
+						// 各デバイス向けの画像フィールドを取得
+						$fvImage02PC = $fvImage02['fv_image_2_pc'] ?? ''; // PC用画像
+						$fvImage02SP = $fvImage02['fv_image_2_sp'] ?? ''; // SP用画像
+						?>
+					<figure class="fv__slider-img">
+						<picture>
+							<!-- PC用画像を設定 -->
+							<?php if ($fvImage02PC): ?>
+							<source srcset="<?php echo esc_url($fvImage02PC); ?>" media="(min-width: 768px)" />
+							<?php endif; ?>
+							<!-- SP用画像を設定 -->
+							<img src="<?php echo esc_url($fvImage02SP ?: $fvImage02PC); ?>" alt="ファーストビュー画像1" />
+						</picture>
+					</figure>
+					<div class="fv__description">
+						<p class="fv__text text-line first">安全で快適なプランと、心に残るアクティビティ</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<?php
+						// 設定ページのIDを指定
+							$page_id = 32;
+							// グループフィールドを取得
+							$fvImage03 = get_field('fv_image_3', $page_id);
+
+						// 各デバイス向けの画像フィールドを取得
+						$fvImage03PC = $fvImage03['fv_image_3_pc'] ?? ''; // PC用画像
+						$fvImage03SP = $fvImage03['fv_image_3_sp'] ?? ''; // SP用画像
+							?>
+					<figure class="fv__slider-img">
+						<picture>
+							<!-- PC用画像を設定 -->
+							<?php if ($fvImage03PC): ?>
+							<source srcset="<?php echo esc_url($fvImage03PC); ?>" media="(min-width: 768px)" />
+							<?php endif; ?>
+							<!-- SP用画像を設定 -->
+							<img src="<?php echo esc_url($fvImage03SP ?: $fvImage03PC); ?>" alt="ファーストビュー画像1" />
+						</picture>
+					</figure>
+					<div class="fv__description">
+						<p class="fv__text text-line first">大人だからこそ楽しめる、特別な旅を</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</section>
 
+	<div class="fv__copy">
+		<p class="fv__main-title">GranLily</p>
+		<p class="fv__sub-title">大人のための、心躍る冒険へ</p>
+	</div>
+</section>
 
 <section class="top-works top-works-layout" id="works">
 	<?php
@@ -35,8 +103,8 @@
 
 	<div class="top-works__inner inner">
 		<div class="top-works__heading section-heading">
-			<h3 class="section-heading__title">Works</h3>
-			<h2 class="section-heading__subtitle">制作物</h2>
+			<h2 class="section-heading__title">ツアープラン</h2>
+			<h3 class="section-heading__subtitle">Plan</h3>
 		</div>
 
 		<!-- 前後の矢印 -->

@@ -215,7 +215,7 @@ jQuery(function ($) {
   //================================
   // GSAP アニメーションの適用
   // GSAPのタイムラインを作成（最初のアニメーション開始時刻を0.5秒遅らせる）
-  const tl = gsap.timeline({ delay: 0.5 });
+  const tl = gsap.timeline({ delay: 1 });
 
   // 1つ目の要素（.first）のアニメーション
   tl.to(".first", {

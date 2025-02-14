@@ -1,6 +1,6 @@
 @use "global"as *;
 
-.archive-works-card {
+.archive-plan-card {
   width: 100%;
 	height: 100%;
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
@@ -9,11 +9,11 @@
   justify-content: space-between;
 }
 
-.archive-works-card__img {
+.archive-plan-card__img {
   width: 100%;
 }
 
-.archive-works-card__img img {
+.archive-plan-card__img img {
   width: 100%;
   height: auto;
   aspect-ratio: 280 /188;
@@ -24,7 +24,7 @@
   }
 }
 
-.archive-works-card__body {
+.archive-plan-card__body {
   width: 100%;
   padding-top: rem(16);
   padding-bottom: rem(24);
@@ -42,7 +42,7 @@
   }
 }
 
-.archive-works-card__top {
+.archive-plan-card__top {
   padding-bottom: rem(8);
 
   @include mq(md) {
@@ -51,7 +51,7 @@
 }
 
 
-.archive-works-card__category {
+.archive-plan-card__category {
   display: inline-block;
   padding-left: rem(10);
   padding-right: rem(12);
@@ -72,7 +72,7 @@
   }
 }
 
-.archive-works-card__title {
+.archive-plan-card__title {
   margin-top: rem(8);
   font-size: rem(16);
   font-family: $base-font-family;
@@ -85,7 +85,7 @@
   }
 }
 
-.archive-works-card__text {
+.archive-plan-card__text {
   margin-top: auto;
   text-align: center;
   border-top: 1px solid $greenaccent;
@@ -97,7 +97,7 @@
 }
 
 
-.archive-works-card__price-info {
+.archive-plan-card__price-info {
   font-size: rem(14);
   font-family: $base-font-family;
   font-weight: $regular;
@@ -113,7 +113,7 @@
 }
 
 
-.archive-works-card__price-text {
+.archive-plan-card__price-text {
   margin-top: rem(4);
 
   display: flex;
@@ -133,7 +133,7 @@
   }
 }
 
-.archive-works-card__price-old {
+.archive-plan-card__price-old {
   display: inline-block;
   margin-top: rem(16);
   font-size: rem(20);
@@ -152,7 +152,7 @@
   }
 }
 
-.archive-works-card__price-new {
+.archive-plan-card__price-new {
   margin-top: rem(4);
   font-size: rem(32);
   font-family: $base-font-family;
@@ -166,7 +166,7 @@
   }
 }
 
-.archive-works-card__subbody {
+.archive-plan-card__subbody {
   display: none;
 
   @include mq(md) {
@@ -180,7 +180,7 @@
   }
 }
 
-.archive-works-card__subtext {
+.archive-plan-card__subtext {
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $regular;
@@ -191,11 +191,11 @@
   flex-grow: 1;
 }
 
-.archive-works-card__meta {
+.archive-plan-card__meta {
   margin-top: auto;
 }
 
-.archive-works-card__date {
+.archive-plan-card__date {
   margin-top: rem(32);
   font-size: rem(16);
   font-family: $base-font-family;
@@ -205,7 +205,7 @@
   padding-right: rem(16);
 }
 
-.archive-works-card__microcopy {
+.archive-plan-card__microcopy {
   margin-top: rem(20);
   font-size: rem(14);
   font-family: $base-font-family;
@@ -214,7 +214,7 @@
   letter-spacing: 0;
 }
 
-.archive-works-card__button {
+.archive-plan-card__button {
   margin-top: rem(10);
   text-align: center;
 

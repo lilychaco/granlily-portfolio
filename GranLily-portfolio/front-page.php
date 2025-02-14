@@ -167,7 +167,7 @@
 			</ul>
 		</div>
 		<div class="top-plan__button">
-			<a href="<?php echo esc_url(home_url('/plan')); ?>" class="button">View&nbsp;more</a>
+			<a href="<?php echo esc_url(home_url('/tour_plan')); ?>" class="button">View&nbsp;more</a>
 		</div>
 	</div>
 

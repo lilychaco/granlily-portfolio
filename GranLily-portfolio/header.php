@@ -70,29 +70,29 @@
 			<nav class="header__nav header-menu">
 				<ul class="header-menu__items">
 					<li class="header-menu__item">
-						<a href="<?php echo esc_url(home_url('/works')); ?>">
-							<p class="header-menu__text-english">works</p>
-							<p class="header-menu__text-japanese">制作物</p>
+						<a href="<?php echo esc_url(home_url('/tour_plan')); ?>">
+							<span class="header-menu__text-japanese">ツアープラン</span>
+							<span class="header-menu__text-english">Plan</span>
 						</a>
 					</li>
 					<li class="header-menu__item">
 						<a href="<?php echo esc_url(home_url('/aboutus')); ?>">
-							<p class="header-menu__text-english">profile</p>
-							<p class="header-menu__text-japanese">プロフィール</p>
+							<span class="header-menu__text-japanese">私達について</span>
+							<span class="header-menu__text-english">About us</span> </span>
 						</a>
 					</li>
 
 
 					<li class="header-menu__item">
 						<a href="<?php echo esc_url(home_url('/faq')); ?>">
-							<p class="header-menu__text-english">FAQ</p>
-							<p class="header-menu__text-japanese">よくある質問</p>
+							<span class="header-menu__text-japanese">よくある質問</span>
+							<span class="header-menu__text-english">FAQ</span>
 						</a>
 					</li>
 					<li class="header-menu__item">
 						<a href="<?php echo esc_url(home_url('/contact')); ?>">
-							<p class="header-menu__text-english">contact</p>
-							<p class="header-menu__text-japanese">お問合せ</p>
+							<span class="header-menu__text-japanese">お問い合わせ</span>
+							<span class="header-menu__text-english">Contact</span>
 						</a>
 					</li>
 					<li class="header-menu__item header-menu__item--line">
@@ -110,8 +110,8 @@
 	<div class="drawer drawer-layout" id="js-global-menu" aria-hidden="true">
 		<ul class="drawer-menu drawer-menu__inner inner">
 			<li class="drawer-menu__item">
-				<a href="<?php echo esc_url(home_url('/works')); ?>">
-					<p class="starfish-icon">制作物</p>
+				<a href="<?php echo esc_url(home_url('/tour_plan')); ?>">
+					<p class="starfish-icon">ツアープラン</p>
 				</a>
 			</li>
 			<li class="drawer-menu__item">

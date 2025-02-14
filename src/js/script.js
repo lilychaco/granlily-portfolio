@@ -247,9 +247,43 @@ jQuery(function ($) {
       ease: "power2.out",
     },
     "+3"
-	); // 直前のアニメーションが終わってから1.5秒後に開始
+  ); // 直前のアニメーションが終わってから1.5秒後に開始
+
+  //================================
+  // アコーディオン
+  //================================
+  const faqHeaders = document.querySelectorAll(".faqAccordion__header");
+  const faqContents = document.querySelectorAll(".faqAccordion__content");
+  gsap.set(faqContents, { height: 0 });
+  gsap.set(faqContents[0], { height: "auto" }); // 初期状態
+  faqHeaders[0].classList.add("is-active");
+
+  faqHeaders.forEach((faqHeader) => {
+    faqHeader.addEventListener("click", function () {
+      let faqContent = faqHeader.nextElementSibling;
+      if (faqHeader.classList.contains("is-active")) {
+        gsap.to(faqContent, { height: 0 });
+        faqHeader.classList.remove("is-active");
+      } else {
+        const activeHeader = document.querySelector(
+          ".faqAccordion__header.is-active"
+        );
+        let delay = 0;
+        if (activeHeader) {
+          gsap.to(activeHeader.nextElementSibling, { height: 0 });
+          activeHeader.classList.remove("is-active");
+          delay = 0.5;
+        }
+        gsap
+          .timeline()
+          .to(faqContent, { height: "auto", delay: delay })
+          .add(() => {
+            faqHeader.classList.add("is-active");
+          }, "-=.5");
+      }
+    });
+	});
 
 
-
-
+	
 }); // ← jQuery(function ($) { の閉じタグ

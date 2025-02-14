@@ -35,7 +35,7 @@ html {
 body {
   min-height: 100vh;
   text-rendering: optimizeLegibility;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -69,10 +69,7 @@ select {
   font: inherit;
 }
 
-/* Blur images when they have no alt attribute */
-img:not([alt]) {
-  filter: blur(10px);
-}
+
 
 
 /* フォームリセット */

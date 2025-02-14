@@ -11,32 +11,26 @@
 </section>
 <?php get_template_part('common/breadcrumb') ?>
 
+
 <div class="page-faq page-faq-layout">
 	<div class="page-faq__inner inner">
-		<div class="accordion">
+		<div class="page-faq__accordion faqAccordion">
 			<?php
-    // Smart Custom Fields (SCF) を使って、'faq' グループを取得します。
-    $faq = SCF::get('faq');
+					// Smart Custom Fields (SCF) を使って、'faq' グループを取得します。
+					$faq = SCF::get('faq');
 
-    // 各アイテムを表示する関数を定義します。
-    function display_accordion_item($question, $answer) {
-			// 質問と回答のどちらかが欠けていたら何も出力しない
-    if (empty($question) || empty($answer)) {
-        return; // 処理をここで終了
-    }
-		?>
-			<div class="accordion__item accordion-card">
-				<div class="accordion-card__top js-accordion-top is-open">
-					<h3 class="accordion-card__title">
-						<?php echo nl2br(esc_html($question)); ?></h3>
-					<div class="accordion-card__icon">
-						<div class="accordion-card__bar1"></div>
-						<div class="accordion-card__bar2"></div>
-					</div>
-				</div>
-				<div class="accordion-card__body">
+					// 各アイテムを表示する関数を定義します。
+					function display_accordion_item($question, $answer) {
+						// 質問と回答のどちらかが欠けていたら何も出力しない
+					if (empty($question) || empty($answer)) {
+							return; // 処理をここで終了
+					}
+					?>
+			<div class="faqAccordion__item">
+				<div class="faqAccordion__header"><?php echo nl2br(esc_html($question)); ?></div>
+				<div class="faqAccordion__content">
 					<?php if (!empty($answer)) : ?>
-					<p class="accordion-card__content"><?php echo nl2br(esc_html($answer)); ?></p>
+					<div class="faqAccordion__contentInner"><?php echo nl2br(esc_html($answer)); ?></div>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -49,10 +43,12 @@
 						}
 				}
 			?>
-
 		</div>
 	</div>
 </div>
+
+
+
 
 
 <?php get_footer(); ?>

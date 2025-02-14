@@ -1,6 +1,6 @@
 @use "global"as *;
 
-.archive-works-cards {
+.archive-plan-cards {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -18,7 +18,7 @@
   }
 }
 
-.archive-works-cards__item {
+.archive-plan-cards__item {
   width: 100%;
   max-width: rem(280);
   display: flex;

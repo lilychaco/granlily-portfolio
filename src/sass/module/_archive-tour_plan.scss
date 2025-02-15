@@ -1,0 +1,130 @@
+@use "global" as *;
+
+.archive-tour_plan {
+  margin-inline: auto;
+  width: 100%;
+  position: relative;
+}
+.archive-tour_plan-layout {
+		margin-top: rem(40);
+
+}
+.archive-tour_plan__category-list {
+  margin-inline: auto;
+  width: 100%;
+}
+
+.archive-tour_plan__content {
+  margin-top: rem(40);
+
+}
+
+.archive-tour_plan__cards {
+	width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  place-items: center;
+  gap: rem(40);
+
+  @include mq(md) {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(calc(40/1080)*100%);
+    row-gap: rem(78);
+		grid-template-rows: auto; /* カードの高さを自動調整 */
+  }
+
+}
+
+.archive-tour_plan__card {
+	width: 100%;
+	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+	flex-direction: column;
+  align-items: stretch;
+  height: 100%; /* 高さを均等にする */
+  @include mq(md) {
+    max-width: rem(520);
+  }
+}
+
+.archive-tour_plan__img {
+width: 100%;
+}
+.archive-tour_plan__img img {
+	width: 100%;
+  height: auto;
+  aspect-ratio: 280 /188;
+  object-fit: cover;
+
+  @include mq(md) {
+    aspect-ratio: 333 /223;
+  }
+}
+.archive-tour_plan__body {
+	width: 100%;
+	padding-top: rem(16);
+  padding-bottom: rem(16);
+  padding-left: rem(16);
+  padding-right: rem(16);
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	@include mq(md) {
+    padding-bottom: rem(24);
+	}
+}
+
+
+.archive-tour_plan__category{
+	font-size: rem(14);
+  font-family: $base-font-family;
+  font-weight: $regular;
+  line-height: 1.7;
+  letter-spacing: 0;
+  color: $greenaccent;
+  border: 1px solid $greenaccent;
+
+  display: inline-block;
+  padding-left: rem(12);
+  padding-right: rem(12);
+  padding-top: rem(4);
+  padding-bottom: rem(4);
+
+}
+
+.archive-tour_plan__title {
+	margin-top: rem(8);
+	font-size: rem(24);
+}
+.archive-tour_plan__subbody {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.archive-tour_plan__text {
+	font-size: rem(20);
+}
+.archive-tour_plan__meta {
+  margin-top: auto; /* 一番下に配置 */
+	padding-top: rem(20);
+	text-align: center;
+}
+.archive-tour_plan__price-info {
+	font-size: rem(14);
+	line-height: 1.2;
+}
+.archive-tour_plan__price-text {
+	font-size: rem(32);
+	line-height: 1.5;
+}
+.archive-tour_plan__nav {
+	margin-top: rem(82);
+	@include mq(md) {
+		margin-top: rem(76);
+	}
+}

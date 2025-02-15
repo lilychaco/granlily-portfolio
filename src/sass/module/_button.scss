@@ -20,6 +20,7 @@
   /* ボックスサイジングを追加 */
   border: 1px solid transparent;
   /* ホバー前のボーダーを透明に設定 */
+
 }
 
 .button::before {
@@ -30,8 +31,10 @@
   top: 4px;
   left: 4px;
   border: 1px solid $greenaccent;
-  z-index: -1;
+  z-index:-1;
+	transition: ease 0.2s;
 }
+
 
 .button span {
   text-transform: uppercase;
@@ -54,6 +57,10 @@
   background-color: $white;
   border: 1px solid $greenaccent;
   color: $greenaccent;
+}
+
+.button:hover::before {
+
 }
 
 .button:hover::after {

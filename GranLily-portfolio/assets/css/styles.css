@@ -256,20 +256,15 @@ time {
 	line-height: 1.43;
 }
 
-.archive-plan-card {
-	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	justify-content: space-between;
+.archive-tour_plan-layout {
+	margin-top: 2.5rem;
+}
+
+.archive-tour_plan-card__img {
 	width: 100%;
 }
 
-.archive-plan-card__img {
-	width: 100%;
-}
-
-.archive-plan-card__img img {
+.archive-tour_plan-card__img img {
 	-o-object-fit: cover;
 	aspect-ratio: 280/188;
 	height: auto;
@@ -408,26 +403,119 @@ time {
 	text-align: center;
 }
 
-.archive-plan {
+.archive-tour_plan {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 	width: 100%;
 }
 
-.archive-plan__category-list {
+.archive-tour_plan-layout {
+	margin-top: 2.5rem;
+}
+
+.archive-tour_plan__category-list {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 }
 
-.archive-plan__content {
+.archive-tour_plan__content {
 	margin-top: 2.5rem;
-	padding-left: 2.0625rem;
-	padding-right: 2rem;
 }
 
-.archive-plan__nav {
+.archive-tour_plan__cards {
+	grid-gap: 2.5rem;
+	align-items: center;
+	display: grid;
+	gap: 2.5rem;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	justify-items: center;
+	place-items: center;
+	width: 100%;
+}
+
+.archive-tour_plan__card {
+	align-items: stretch;
+	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	height: 100%; /* 高さを均等にする */
+	width: 100%;
+}
+
+.archive-tour_plan__img {
+	width: 100%;
+}
+
+.archive-tour_plan__img img {
+	-o-object-fit: cover;
+	aspect-ratio: 280/188;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}
+
+.archive-tour_plan__body {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding-bottom: 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 1rem;
+	width: 100%;
+}
+
+.archive-tour_plan__category {
+	border: 1px solid #000074;
+	color: #000074;
+	display: inline-block;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.7;
+	padding-bottom: 0.25rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-top: 0.25rem;
+}
+
+.archive-tour_plan__title {
+	font-size: 1.5rem;
+	margin-top: 0.5rem;
+}
+
+.archive-tour_plan__subbody {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	width: 100%;
+}
+
+.archive-tour_plan__text {
+	font-size: 1.25rem;
+}
+
+.archive-tour_plan__meta {
+	margin-top: auto; /* 一番下に配置 */
+	padding-top: 1.25rem;
+	text-align: center;
+}
+
+.archive-tour_plan__price-info {
+	font-size: 0.875rem;
+	line-height: 1.2;
+}
+
+.archive-tour_plan__price-text {
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
+.archive-tour_plan__nav {
 	margin-top: 5.125rem;
 }
 
@@ -756,6 +844,7 @@ time {
 	left: 4px;
 	position: absolute;
 	top: 4px;
+	transition: ease 0.2s;
 	width: 100%;
 	z-index: -1;
 }
@@ -1240,7 +1329,7 @@ span.wpcf7-spinner {
 	font-size: 1.25rem;
 	font-weight: bold;
 	padding: 1.25rem;
-	padding-right: 3.125rem;
+	padding-right: 50px;
 	position: relative;
 }
 
@@ -2287,6 +2376,24 @@ span.wpcf7-spinner {
 	text-transform: uppercase;
 }
 
+.mv__video-container {
+	height: 100vh; /* 画面いっぱいに表示 */
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.mv__video-container video {
+	-o-object-fit: cover;
+	-o-object-position: center;
+	height: 100%; /* 動画の高さも100%に設定 */
+	object-fit: cover; /* 動画を要素全体にフィットさせる */
+	object-position: center; /* 中央揃えで表示 */
+	width: 100%; /* 動画の横幅を100%に設定 */
+}
+
 .nav-menu {
 	grid-column-gap: 2.1671826625%;
 	-moz-column-gap: 2.1671826625%;
@@ -3125,7 +3232,6 @@ span.wpcf7-spinner {
 
 .plan-cards {
 	display: flex;
-	flex-direction: row;
 	width: 100%;
 }
 
@@ -3284,22 +3390,21 @@ span.wpcf7-spinner {
 
 .section-heading__title {
 	color: #000074;
+	display: block;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 2rem;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1.25;
 	text-align: center;
 }
 
 .section-heading__subtitle {
 	color: #000074;
+	display: block;
 	font-family: "Noto Sans JP", sans-serif;
-	font-size: 0.75rem;
+	font-size: 0.875rem;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1.5;
-	margin-top: 0.25rem;
 }
 
 .section-heading__title.section-heading__title--contact {
@@ -3325,6 +3430,66 @@ span.wpcf7-spinner {
 	letter-spacing: 0;
 	line-height: 1.285;
 	margin-top: 0.375rem;
+}
+
+.service {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.service__container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.service__items {
+	display: flex;
+	flex-direction: column;
+	gap: 3.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.service__item {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.service__image {
+	width: 100%;
+}
+
+.service__image img {
+	-o-object-fit: cover;
+	aspect-ratio: 297/189;
+	object-fit: cover;
+}
+
+.service__body {
+	flex: 1;
+	padding: 1.25rem;
+}
+
+.service__title {
+	border-bottom: 1px solid #000074;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.service__text {
+	font-size: 1.25rem;
+	margin-top: 0.5rem;
+}
+
+.service__button {
+	margin-top: 2rem;
+	position: relative;
+	text-align: center;
+	z-index: 100;
 }
 
 .side-archive {
@@ -3758,13 +3923,13 @@ span.wpcf7-spinner {
 
 .swiper-button {
 	cursor: pointer;
-	height: 5rem;
+	height: 3.75rem;
 	overflow: hidden;
-	width: 5rem;
+	width: 3.75rem;
 }
 
 .swiper-button:hover {
-	transform: scale(0.8);
+	transform: scale(1.1);
 }
 
 .custom-swiper-button-prev,
@@ -3972,68 +4137,6 @@ span.wpcf7-spinner {
 	text-align: center;
 }
 
-.top-information {
-	background-color: #D6E6F5;
-	padding-bottom: 4.875rem;
-	padding-top: 5rem;
-	z-index: -100;
-}
-
-.top-information__main {
-	display: grid;
-	grid-template-columns: 1fr;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1.625rem;
-	width: 100%;
-}
-
-.top-information__image {
-	width: 100%;
-}
-
-.top-information__image img {
-	-o-object-fit: cover;
-	aspect-ratio: 345/227;
-	height: auto;
-	object-fit: cover;
-	width: 100%;
-}
-
-.top-information__body {
-	display: flex;
-	flex-direction: column;
-	margin-top: 1.5rem;
-	width: 100%;
-}
-
-.top-information__title {
-	border-bottom: 1px solid #000074;
-	color: #000074;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1.25rem;
-	font-weight: 700;
-	letter-spacing: 0;
-	line-height: 1.2;
-	padding-bottom: 0.375rem;
-}
-
-.top-information__text {
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1rem;
-	font-weight: 400;
-	letter-spacing: 0;
-	line-height: 1.5;
-	margin-top: 0.5rem;
-}
-
-.top-information__button {
-	margin-top: 2.3125rem;
-	padding-bottom: 0.25rem;
-	text-align: center;
-	z-index: 100;
-}
-
 .top-plan {
 	overflow: hidden;
 }
@@ -4127,6 +4230,25 @@ span.wpcf7-spinner {
 	padding-bottom: 0.25rem;
 	text-align: center;
 	z-index: 1000;
+}
+
+.top-service {
+	background-color: #D6E6F5;
+	padding-bottom: 3rem;
+	padding-top: 3rem;
+	z-index: -100;
+}
+
+.top-service__inner {
+	max-width: 900px;
+	z-index: -10;
+}
+
+.top-service__main {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2.5rem;
+	width: 100%;
 }
 
 .top-voice__inner {
@@ -4581,16 +4703,16 @@ span.wpcf7-spinner {
 	margin-top: 5rem;
 }
 
-.top-information-layout {
-	margin-top: 4.375rem;
-}
-
 .top-plan-layout {
 	margin-top: 2.5rem;
 }
 
 .top-price-layout {
 	margin-top: 5rem;
+}
+
+.top-service-layout {
+	margin-top: 2.5rem;
 }
 
 .top-voice-layout {
@@ -4633,7 +4755,7 @@ html {
 	padding: 2.5rem;
 }
 
-.archive-plan-card__img img {
+.archive-tour_plan-card__img img {
 	aspect-ratio: 333/223;
 }
 
@@ -4701,12 +4823,31 @@ html {
 	margin-top: 0.625rem;
 }
 
-.archive-plan__content {
-	padding-left: 0;
-	padding-right: 0;
+.archive-tour_plan__cards {
+	grid-column-gap: 3.7037037037%;
+	-moz-column-gap: 3.7037037037%;
+	grid-row-gap: 4.875rem;
+	column-gap: 3.7037037037%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto; /* カードの高さを自動調整 */
+	justify-content: space-between;
+	row-gap: 4.875rem;
 }
 
-.archive-plan__nav {
+.archive-tour_plan__card {
+	max-width: 32.5rem;
+}
+
+.archive-tour_plan__img img {
+	aspect-ratio: 333/223;
+}
+
+.archive-tour_plan__body {
+	padding-bottom: 1.5rem;
+}
+
+.archive-tour_plan__nav {
 	margin-top: 4.75rem;
 }
 
@@ -5548,11 +5689,6 @@ html {
 
 .section-heading__title {
 	font-size: 2.5rem;
-	line-height: 1;
-}
-
-.section-heading__subtitle {
-	margin-top: 0.5rem;
 }
 
 .section-heading__title--top-blog {
@@ -5575,6 +5711,25 @@ html {
 
 .section-heading__text {
 	margin-top: 0.875rem;
+}
+
+.service__item {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	gap: 2.5rem;
+}
+
+.service__item:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.service__image {
+	width: 50%;
+}
+
+.service__image img {
+	aspect-ratio: 492/313;
 }
 
 .side-works__body {
@@ -5649,7 +5804,7 @@ html {
 	display: block;
 	height: 3.125rem;
 	position: absolute;
-	top: 0;
+	top: 3rem;
 	transition: transform 0.6s ease;
 	width: 3.125rem;
 	z-index: 2;
@@ -5837,34 +5992,6 @@ html {
 	margin-top: 4.875rem;
 }
 
-.top-information {
-	padding-top: 6.25rem;
-}
-
-.top-information__main {
-	align-items: center;
-	gap: 3rem;
-	grid-template-columns: 50% 45.55%;
-	margin-top: 2.5rem;
-}
-
-.top-information__image img {
-	aspect-ratio: 540/356;
-}
-
-.top-information__body {
-	margin-top: -0.125rem;
-}
-
-.top-information__title {
-	font-size: 1.5rem;
-	padding-bottom: 0.1875rem;
-}
-
-.top-information__button {
-	margin-top: 2.5rem;
-}
-
 .top-plan__cards-wrapper {
 	margin-right: calc(50% - 50vw);
 	margin-top: 2.5rem;
@@ -5904,6 +6031,14 @@ html {
 
 .top-price__button {
 	margin-top: 5rem;
+}
+
+.top-service {
+	padding-top: 6.25rem;
+}
+
+.top-service__main {
+	margin-top: 3.75rem;
 }
 
 .top-voice__fish-image {
@@ -6163,16 +6298,16 @@ html {
 	margin-top: 8.75rem;
 }
 
-.top-information-layout {
-	margin-top: 10rem;
-}
-
 .top-plan-layout {
 	margin-top: 7.5rem;
 }
 
 .top-price-layout {
 	margin-top: 8.625rem;
+}
+
+.top-service-layout {
+	margin-top: 7.5rem;
 }
 
 .top-voice-layout {

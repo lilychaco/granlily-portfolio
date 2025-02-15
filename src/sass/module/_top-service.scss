@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.top-service {
+	background-color: $greenpale;
+	padding-top: rem(48);
+	padding-bottom: rem(48);
+	z-index:-100;
+
+	@include mq(md) {
+			padding-top: rem(100);
+	}
+}
+.top-service__inner{
+	max-width: 900px;
+	z-index:-10;
+}
+.top-service__heading {
+
+}
+.top-service__main {
+	margin-inline:auto;
+	width:100%;
+	margin-top: rem(40);
+	@include mq(md) {
+		margin-top: rem(60);
+	}
+}

@@ -2,13 +2,13 @@
 
 
 .swiper-button {
-	width: rem(80);
-	height:rem(80);
+	width: rem(60);
+	height:rem(60);
 	cursor: pointer;
 	overflow: hidden;
 }
 .swiper-button:hover {
-	transform: scale(0.8);
+	transform: scale(1.1);
 }
 
 .custom-swiper-button-prev,
@@ -22,7 +22,7 @@
     width: rem(50);
     position: absolute;
     z-index: 2;
-		top:0;
+		top:rem(48);
 		transition: transform .6s ease;
 	}
 }

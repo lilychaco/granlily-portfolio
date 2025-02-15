@@ -6,30 +6,29 @@
 }
 
 .section-heading__title {
+	display: block;
   text-align: center;
   color: $greenaccent;
   font-size: rem(32);
   font-family: $base-font-family;
   font-weight: $regular;
-  line-height: 1.25;
   letter-spacing: 0;
 
   @include mq(md) {
     font-size: rem(40);
-    line-height: 1;
+
   }
 }
 
 .section-heading__subtitle {
-  margin-top: rem(4);
-  font-size: rem(12);
+	display: block;
+  font-size: rem(14);
   font-weight: $regular;
   font-family: $base-font-family;
-  line-height: 1.5;
   letter-spacing: 0;
   color: $greenaccent;
   @include mq(md) {
-    margin-top: rem(8);
+
   }
 }
 

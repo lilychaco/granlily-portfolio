@@ -8,6 +8,7 @@
 
 .tab__list {
   display: flex;
+	flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-inline: auto;
@@ -144,6 +145,13 @@
   @include mq(md) {
     margin-top: rem(24);
   }
+}
+.tab__contents--faq {
+	margin-top: rem(30);
+	@include mq(md) {
+    margin-top: rem(64);
+  }
+
 }
 .tab__content {
   display: none;

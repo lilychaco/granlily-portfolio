@@ -76,9 +76,9 @@
 						</a>
 					</li>
 					<li class="header-menu__item">
-						<a href="<?php echo esc_url(home_url('/service')); ?>">
-							<span class="header-menu__text-japanese">サービス</span>
-							<span class="header-menu__text-english">Service</span> </span>
+						<a href="<?php echo esc_url(home_url('/information')); ?>">
+							<span class="header-menu__text-japanese">情報</span>
+							<span class="header-menu__text-english">Information</span> </span>
 						</a>
 					</li>
 

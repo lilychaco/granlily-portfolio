@@ -1764,6 +1764,7 @@ span.wpcf7-spinner {
 	height: 100vh;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 5rem;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
@@ -1803,8 +1804,8 @@ span.wpcf7-spinner {
 	flex-direction: column; /* 縦並びにする */
 	left: 50%;
 	position: absolute;
-	top: 40%;
-	transform: translate(-50%, -40%);
+	top: 45%;
+	transform: translate(-50%, -45%);
 	width: 100%;
 	z-index: 2;
 }
@@ -1858,7 +1859,7 @@ span.wpcf7-spinner {
 	color: #ffffff; /* 白色 */
 	display: inline-block;
 	font-family: "Noto Sans JP", sans-serif;
-	font-size: 0.875rem;
+	font-size: 1.25rem;
 	font-weight: 400;
 	line-height: 2; /* 行間を調整 */
 	opacity: 0; /* 初期状態は非表示 */
@@ -2343,6 +2344,7 @@ span.wpcf7-spinner {
 .mv {
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 5rem;
 	position: relative;
 	width: 100%;
 }
@@ -2363,7 +2365,7 @@ span.wpcf7-spinner {
 .mv__title {
 	color: #fff;
 	font-family: "Noto Sans JP", sans-serif;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-weight: 400;
 	left: 50%;
 	letter-spacing: 0;
@@ -5189,8 +5191,8 @@ html {
 .fv__copy {
 	left: 50%;
 	position: absolute;
-	top: 35%;
-	transform: translate(-50%, -35%);
+	top: 45%;
+	transform: translate(-50%, -45%);
 }
 
 .fv__main-title {
@@ -5199,12 +5201,13 @@ html {
 }
 
 .fv__sub-title {
+	font-size: 1.5rem;
 	line-height: 2;
 	margin-top: 0;
 }
 
 .text-line {
-	font-size: 1rem;
+	font-size: 1.5rem;
 }
 
 .gallery__content {
@@ -5303,12 +5306,11 @@ html {
 }
 
 .mv__title {
-	font-size: 5rem;
+	font-size: 2.5rem;
 	left: 50%;
-	line-height: 1.25;
 	position: absolute;
-	top: 61%;
-	transform: translate(-50%, -61%);
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .nav-menu {

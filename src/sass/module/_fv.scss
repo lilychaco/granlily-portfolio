@@ -3,6 +3,7 @@
 .fv {
   position: relative;
   margin-inline: auto;
+	margin-top:rem(80);
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -41,9 +42,9 @@
 
 .fv__copy{
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -45%);
 	display: flex; /* フレックスボックスを適用 */
   flex-direction: column; /* 縦並びにする */
   align-items: center; /* 子要素を中央揃え */
@@ -53,9 +54,9 @@
 
 	@include mq(md) {
 	position: absolute;
-  top: 35%;
+  top: 45%;
   left: 50%;
-  transform: translate(-50%, -35%);
+  transform: translate(-50%, -45%);
 	}
 }
 .fv__main-title {
@@ -87,6 +88,7 @@
 			@include mq(md) {
 				margin-top: 0;
 				line-height: 2;
+				font-size: rem(24);
 			}
 }
 
@@ -108,7 +110,7 @@
 
 /* 説明文の各行 */
 .text-line {
-    font-size: rem(14);
+    font-size: rem(20);
     font-family: $base-font-family;
     font-weight: $regular;
     color: #ffffff; /* 白色 */
@@ -119,6 +121,6 @@
 		line-height: 2; /* 行間を調整 */
     opacity: 0; /* 初期状態は非表示 */
 		@include mq(md) {
-				font-size: rem(16);
+				font-size: rem(24);
 		}
 }

@@ -76,17 +76,17 @@
 
 .tab__text.tab__text--01::before {
 	@include mq(md) {
-		background-image: url(../images/icon02.png);
+		background-image: url(../images/airplane-blue.png);
 	}
 }
 .tab__text.tab__text--02::before {
 	@include mq(md) {
-		background-image: url(../images/icon03.png);
+		background-image: url(../images/train-blue.png);
 	}
 }
 .tab__text.tab__text--03::before {
 	@include mq(md) {
-		background-image: url(../images/icon04.png);
+		background-image: url(../images/manta-blue.png);
 	}
 }
 
@@ -96,7 +96,7 @@
   display: block;
   width: rem(64);
   height: rem(64);
-  background-image: url(../images/icon01.png);
+  // background-image: url(../images/airplane-transparent.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -104,37 +104,38 @@
   left: 0;
   bottom: 0;
   margin: auto;
+	z-index:99;
 	}
 }
 
 .current .tab__text.tab__text--01::before {
 	@include mq(md) {
-		background-image: url(../images/icon01.png);
+		background-image: url(../images/airplane-transparent.png);
 	}
 }
 .current .tab__text.tab__text--02::before {
 	@include mq(md) {
-		background-image: url(../images/icon03R.png);
+		background-image: url(../images/train-transparent.png);
 	}
 }
 .current .tab__text.tab__text--03::before {
 	@include mq(md) {
-		background-image: url(../images/icon04R.png);
+		background-image: url(../images/manta-transparent.png);
 	}
 }
 .tab__menu:hover .tab__text.tab__text--01::before {
 	@include mq(md) {
-		background-image: url(../images/icon01.png);
+		background-image: url(../images/airplane-transparent.png);
 	}
 }
 .tab__menu:hover .tab__text.tab__text--02::before {
 	@include mq(md) {
-		background-image: url(../images/icon03R.png);
+		background-image: url(../images/train-transparent.png);
 	}
 }
 .tab__menu:hover .tab__text.tab__text--03::before{
 	@include mq(md) {
-		background-image: url(../images/icon04R.png);
+		background-image: url(../images/manta-transparent.png);
 	}
 }
 .tab__contents {

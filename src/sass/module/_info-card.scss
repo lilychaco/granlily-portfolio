@@ -28,10 +28,11 @@
   font-size: rem(24);
   font-family: $base-font-family;
   font-weight: $bold;
-  line-height: 1;
+  line-height: 2;
   letter-spacing: 0;
   padding-bottom: rem(8);
   border-bottom: 1px solid $greenaccent;
+
 }
 
 .info-card__text {
@@ -39,10 +40,9 @@
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $regular;
-  line-height: 1.5;
   letter-spacing: 0;
 	@include mq(md) {
-
+		font-size: rem(20);
 	}
 }
 

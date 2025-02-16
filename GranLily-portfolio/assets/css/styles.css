@@ -1764,7 +1764,6 @@ span.wpcf7-spinner {
 	height: 100vh;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5rem;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
@@ -2228,7 +2227,7 @@ span.wpcf7-spinner {
 	font-size: 1.5rem;
 	font-weight: 700;
 	letter-spacing: 0;
-	line-height: 1;
+	line-height: 2;
 	padding-bottom: 0.5rem;
 	width: 100%;
 }
@@ -2238,7 +2237,6 @@ span.wpcf7-spinner {
 	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1.5;
 	margin-top: 0.5rem;
 }
 
@@ -2344,7 +2342,6 @@ span.wpcf7-spinner {
 .mv {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5rem;
 	position: relative;
 	width: 100%;
 }
@@ -5276,6 +5273,10 @@ html {
 	justify-content: center;
 }
 
+.info-card__text {
+	font-size: 1.25rem;
+}
+
 .info-card__img img {
 	aspect-ratio: 492/313;
 }
@@ -5844,19 +5845,18 @@ html {
 }
 
 .tab__text.tab__text--01::before {
-	background-image: url(../images/icon02.png);
+	background-image: url(../images/airplane-blue.png);
 }
 
 .tab__text.tab__text--02::before {
-	background-image: url(../images/icon03.png);
+	background-image: url(../images/train-blue.png);
 }
 
 .tab__text.tab__text--03::before {
-	background-image: url(../images/icon04.png);
+	background-image: url(../images/manta-blue.png);
 }
 
 .current .tab__text::before {
-	background-image: url(../images/icon01.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	bottom: 0;
@@ -5868,30 +5868,31 @@ html {
 	position: absolute;
 	top: 0;
 	width: 4rem;
+	z-index: 99;
 }
 
 .current .tab__text.tab__text--01::before {
-	background-image: url(../images/icon01.png);
+	background-image: url(../images/airplane-transparent.png);
 }
 
 .current .tab__text.tab__text--02::before {
-	background-image: url(../images/icon03R.png);
+	background-image: url(../images/train-transparent.png);
 }
 
 .current .tab__text.tab__text--03::before {
-	background-image: url(../images/icon04R.png);
+	background-image: url(../images/manta-transparent.png);
 }
 
 .tab__menu:hover .tab__text.tab__text--01::before {
-	background-image: url(../images/icon01.png);
+	background-image: url(../images/airplane-transparent.png);
 }
 
 .tab__menu:hover .tab__text.tab__text--02::before {
-	background-image: url(../images/icon03R.png);
+	background-image: url(../images/train-transparent.png);
 }
 
 .tab__menu:hover .tab__text.tab__text--03::before {
-	background-image: url(../images/icon04R.png);
+	background-image: url(../images/manta-transparent.png);
 }
 
 .tab__contents {

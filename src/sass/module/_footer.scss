@@ -1,13 +1,12 @@
 @use "global" as *;
 
 .footer {
-	padding-top: rem(48);
-	padding-bottom: rem(56);
+	padding-top: rem(24);
+	padding-bottom: rem(24);
 	background-color: $greenpale;
 	position: relative;
 	@include mq(md) {
-			padding-top: rem(80);
-			padding-bottom: rem(80);
+
 	}
 }
 
@@ -20,8 +19,8 @@
 	@include mq(md) {
 			display: flex;
 			flex-direction: row;
+			align-items: center;
 			gap:rem(40);
-			background-color: lightgreen;
 	}
 }
 .footer__logo {
@@ -29,7 +28,6 @@
 	width: rem(160);
 	@include mq(md) {
 		width: rem(200);
-		background-color: orange;
 	}
 }
 
@@ -40,14 +38,14 @@
 }
 
 .footer__sns {
-	margin-top: rem(16);
+	margin-top: rem(20);
 	display: flex;
+	align-items: center;
 	gap:rem(16);
-	padding-left: rem(22);
+	padding-left: rem(20);
 	@include mq(md) {
-		align-items: flex-end;
+		margin-top: 8px;
 		padding-left:0;
-
 	}
 }
 .footer__sns img {
@@ -58,22 +56,20 @@
 	}
 }
 .footer__nav {
-	margin-top: rem(36);
+	margin-top: rem(20);
 }
 .footer__copyright {
-	margin-top: rem(22);
+	margin-top: rem(20);
 	margin-inline:auto;
 	text-align: center;
 	color:$greenaccent;
 	font-size: rem(12);
 			font-family: $base-font-family;
 			font-weight: $regular;
-			line-height: 1.5;
 			letter-spacing: 0;
 			@include mq(md) {
 				font-size: rem(14);
-				line-height: 1.285;
-				margin-top: rem(60);
+				margin-top: rem(30);
 			}
 }
 

@@ -8,9 +8,6 @@
 			</div>
 		</div>
 		<div class="page-404__content">
-			<figure class="page-404__whale-image">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/background-whale.png" alt="くじらのイラスト" />
-			</figure>
 			<p class="pave-404__title">404</p>
 			<p class="page-404__text">申し訳ありません。<br>
 				お探しのページが見つかりません。</p>

@@ -2,13 +2,36 @@
 
 .starfish-icon {
     position: relative;
+    padding-left: 16px;/* Add space for the pseudo-element */
+    line-height: 2; /* Adjust as necessary */
+		display: flex; /* アイコンとテキストをフレックスボックスで揃える */
+    align-items: center;
+	}
+
+
+.starfish-icon::before {
+    content: '';
+    background-image: url('../images/ticket-blue.png');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+		margin-right: 8px;
+}
+
+.starfish-icon.starfish-icon--drawer::before {
+	background-image: url('../images/ticket-transparent.png');
+}
+
+.starfish-icon02 {
+    position: relative;
     padding-left: rem(22);/* Add space for the pseudo-element */
     line-height: 1.5em; /* Adjust as necessary */
 }
 
-.starfish-icon::before {
+.starfish-icon02::before {
     content: '';
-    background-image: url('../images/hitode.png');
+    background-image: url('../images/icon-hitode02.png');
     background-repeat: no-repeat;
     background-size: 18px 18px;
     position: absolute;
@@ -17,4 +40,3 @@
     width: 18px;
     height: 18px;
 }
-

@@ -18,22 +18,18 @@
 			</div>
 		</div>
 		<div class="footer__nav nav-menu">
-			<!-- ブロック1 -->
-			<div class="nav-menu__box nav-menu__box--01 nav-menu__box--footer">
+
+			<div class="nav-menu__box">
 				<div class="nav-menu__item">
 					<a href="<?php echo esc_url(home_url('/tour_plan')); ?>">
 						<p class="starfish-icon">ツアープラン</p>
 					</a>
 				</div>
-				<div class="nav-menu__item nav-menu__item--01">
+				<div class="nav-menu__item">
 					<a href="<?php echo esc_url(home_url('/aboutus')); ?>">
 						<p class="starfish-icon">プロフィール</p>
 					</a>
 				</div>
-			</div>
-
-			<!-- ブロック4 -->
-			<div class="nav-menu__box nav-menu__box--06">
 				<div class="nav-menu__item">
 					<a href="<?php echo esc_url(home_url('/faq')); ?>">
 						<p class="starfish-icon">よくある質問</p>
@@ -44,18 +40,17 @@
 						<p class="starfish-icon">お問い合わせ</p>
 					</a>
 				</div>
-
 			</div>
 		</div>
 		<div class="footer__copyright">
-			©&nbsp;2025&nbsp;GranLily&nbsp;LLC.
+			&copy;&nbsp;2025&nbsp;GranLily&nbsp;LLC.
 		</div>
 	</div>
 
 	<?php if ( ! is_404() ) : ?>
 	<div class="footer__button page-top-button js-page-top-button">
 		<div class="page-top-button__circle">
-			<span class="page-top-button__text">TOP</span>
+			<span class="page-top-button__text">TOPへ</span>
 		</div>
 
 	</div>

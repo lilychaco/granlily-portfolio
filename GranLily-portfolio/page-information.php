@@ -7,7 +7,7 @@
 			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20240612bigeyetrevally.jpg" alt="ファーストビュー画像" />
 		</picture>
 	</figure>
-	<h2 class="mv__title">サービス情報・フォトギャラリー</h2>
+	<h2 class="mv__title">サービス情報<br>&<br>フォトギャラリー</h2>
 </section>
 <?php get_template_part('common/breadcrumb') ?>
 

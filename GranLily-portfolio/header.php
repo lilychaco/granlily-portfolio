@@ -111,24 +111,24 @@
 		<ul class="drawer-menu drawer-menu__inner inner">
 			<li class="drawer-menu__item">
 				<a href="<?php echo esc_url(home_url('/tour_plan')); ?>">
-					<p class="starfish-icon">ツアープラン</p>
+					<p class="starfish-icon starfish-icon--drawer">ツアープラン</p>
 				</a>
 			</li>
 			<li class="drawer-menu__item">
-				<a href="<?php echo esc_url(home_url('/aboutus')); ?>">
-					<p class="starfish-icon">プロフィール</p>
+				<a href="<?php echo esc_url(home_url('/information')); ?>">
+					<p class="starfish-icon starfish-icon--drawer">サービス情報・ギャラリー</p>
 				</a>
 			</li>
 
 
 			<li class="drawer-menu__item">
 				<a href="<?php echo esc_url(home_url('/faq')); ?>">
-					<p class="starfish-icon">よくある質問</p>
+					<p class="starfish-icon starfish-icon--drawer">よくある質問</p>
 				</a>
 			</li>
 			<li class="drawer-menu__item">
 				<a href="<?php echo esc_url(home_url('/contact')); ?>">
-					<p class="starfish-icon">お問い合わせ</p>
+					<p class="starfish-icon starfish-icon--drawer">お問い合わせ</p>
 				</a>
 			</li>
 		</ul>

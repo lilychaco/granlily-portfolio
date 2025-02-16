@@ -81,3 +81,10 @@
 				}
 			?>
 		</div>
+
+
+
+
+					<div class="top-aboutus__button">
+						<a href="<?php echo esc_url(home_url('/aboutus')); ?>" class="button button--02"> View more </a>
+					</div>

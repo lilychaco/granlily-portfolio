@@ -119,9 +119,7 @@
     color: $white;
   }
 }
-.top-aboutus__title span {
-  text-transform: uppercase;
-}
+
 .top-aboutus__body {
   margin-top: rem(16);
   @include mq(md) {
@@ -132,12 +130,12 @@
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $regular;
-  line-height: 1.5;
   letter-spacing: 0;
   @include mq(md) {
     color: $white;
     max-height: rem(350);
     overflow: auto;
+		font-size: rem(20);
   }
 }
 
@@ -149,4 +147,19 @@
   @include mq(md) {
     margin-top: rem(40);
   }
+}
+
+/* 画像が右から左へふわっと出現するアニメーション */
+/* アニメーションの基本スタイル */
+/* 初期状態では見えない */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* アニメーションを適用するクラス（JavaScriptで追加） */
+.fade-in-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }

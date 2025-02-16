@@ -234,22 +234,21 @@
 				</div>
 			</div>
 			<div class="top-aboutus__pc-image-item top-aboutus__pc-image-item--secondary">
-				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/lily-profile-sp.jpg" alt="中村弓美" />
+				<img class="fade-in-right" src=" <?php echo get_theme_file_uri(); ?>/assets/images/lily-profile-sp.jpg"
+					alt="中村弓美" />
 			</div>
 		</div>
 		<div class="top-aboutus__main-wrapper">
 			<div class="top-aboutus__main">
 				<div class="top-aboutus__title">
-					<span>g</span>ran&nbsp;<span>l</span>ily
+					GranLily
 				</div>
 				<div class="top-aboutus__body">
 					<div class="top-aboutus__text">
 						わたしたち GranLilyは、シニア世代のお客様に、最高の思い出をお届けするツーリズムです。<br>
 						GranLilyでは、決められたツアーパックではなく、お客様のご要望をお聞きしながら一緒に旅行プランを練っていきます。
 					</div>
-					<div class="top-aboutus__button">
-						<a href="<?php echo esc_url(home_url('/aboutus')); ?>" class="button button--02"> View more </a>
-					</div>
+
 				</div>
 			</div>
 		</div>

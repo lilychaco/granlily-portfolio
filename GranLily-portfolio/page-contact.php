@@ -7,7 +7,7 @@
 			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20250130hirotatukujira.jpg" alt="ファーストビュー画像" />
 		</picture>
 	</figure>
-	<h2 class="mv__title">contact</h2>
+	<h2 class="mv__title">お問い合わせ</h2>
 </section>
 
 <?php get_template_part('common/breadcrumb') ?>

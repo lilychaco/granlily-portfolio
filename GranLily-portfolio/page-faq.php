@@ -7,7 +7,7 @@
 		</picture>
 	</figure>
 
-	<h2 class="mv__title">FAQ</h2>
+	<h2 class="mv__title">よくある質問</h2>
 </section>
 <?php get_template_part('common/breadcrumb') ?>
 

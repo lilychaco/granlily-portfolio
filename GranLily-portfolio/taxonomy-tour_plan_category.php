@@ -2,8 +2,9 @@
 <section class="mv">
 	<figure class="mv__img">
 		<picture>
-			<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/pctote.jpg" media="(min-width: 768px)" />
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/pctote.jpg" alt="ファーストビュー画像" />
+			<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/20231107malaga.jpg"
+				media="(min-width: 768px)" />
+			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20231107malaga.jpg" alt="ファーストビュー画像" />
 		</picture>
 	</figure>
 
@@ -18,13 +19,13 @@
 		<ul class="archive-tour_plan_category-list category-list">
 			<!-- ALL のリンク -->
 			<li class="category-list__item">
-				<a href="<?php echo esc_url(get_post_type_archive_link('tour_')); ?>"
-					class="category-list__link <?php echo (is_post_type_archive('tour_') || is_tax('tour_-category')) ? '' : 'is-current'; ?>">
+				<a href="<?php echo esc_url(get_post_type_archive_link('tour_plan')); ?>"
+					class="category-list__link <?php echo (is_post_type_archive('tour_plan') || is_tax('tour_plan_category')) ? '' : 'is-current'; ?>">
 					ALL
 				</a>
 			</li>
 			<?php
-				// 'tour_-category'タクソノミーの用語を取得
+				// 'tour_plan_category'タクソノミーの用語を取得
 				$taxonomy = 'tour_plan_category'; // タクソノミー名を変数に格納
 				$terms = get_terms(array(
 						'taxonomy' => $taxonomy,
@@ -43,100 +44,80 @@
 		</ul>
 
 		<!-- 投稿リスト部分 -->
-
-		<?php if (have_posts()) : ?>
-		<ul class="archive-tour_plan__content archive-tour_plan-cards">
-			<?php while (have_posts()) : the_post(); ?>
-			<?php
+		<div class="archive-tour_plan__content">
+			<?php if (have_posts()) : ?>
+			<ul class="archive-tour_plan__cards">
+				<?php while (have_posts()) : the_post(); ?>
+				<?php
             // 必要なカスタムフィールドとデータを事前に取得
             $link_url = get_post_meta(get_the_ID(), 'link-url', true); // カスタムフィールド 'link-url' の値
             $thumbnail = get_the_post_thumbnail(
                 get_the_ID(),
                 'full',
-                array('alt' => esc_attr(get_the_title() . 'の画像')) // アイキャッチ画像の alt 属性
+                array('alt' => esc_attr(get_the_title() )) // アイキャッチ画像の alt 属性
             );
-            $default_thumbnail = get_theme_file_uri('assets/images/tour_1.jpg'); // デフォルト画像のパス
+            $default_thumbnail = get_theme_file_uri('assets/images/wilson-heart.jpg'); // デフォルト画像のパス
+						$terms = get_the_terms(get_the_ID(), 'tour_plan_category');
             $content = strip_tags(get_the_content()); // 本文からHTMLタグを除去
             $trimmed_content = mb_strlen($content, 'UTF-8') > 164
                 ? mb_substr($content, 0, 164, 'UTF-8')
                 : $content; // 本文を164文字以内に切り詰める
             ?>
-			<li class="archive-tour_-cards__item archive-tour_-card">
-
-				<figure class="archive-tour_-card__img">
-					<?php if ($thumbnail) : ?>
-					<!-- アイキャッチ画像がある場合 -->
-					<?php echo $thumbnail; ?>
-					<?php else : ?>
-					<!-- デフォルト画像を表示 -->
-					<img src="<?php echo esc_url($default_thumbnail); ?>" alt="制作物トップページ" />
-					<?php endif; ?>
-				</figure>
-
-				<div class="archive-tour_-card__body">
-					<div class="archive-tour_-card__top">
-						<div class="archive-tour_-card__category">
-							<?php single_term_title(); // タクソノミー名を表示 ?>
-						</div>
-						<div class="archive-tour_-card__title">
-							<?php the_title(); // 投稿タイトル ?>
-						</div>
-					</div>
-
-
-					<div class="tour_-card__text">
-						<?php
-									// 現在表示中のページ（固定ページや投稿など）のIDを取得
-									$current_post_id = get_the_ID();
-
-									// 現在のページIDをもとにカスタムフィールドの値を取得
-									$link_url = get_post_meta($current_post_id, 'link-url', true);
-									$user_name = get_post_meta($current_post_id, 'user-name', true);
-									$password = get_post_meta($current_post_id, 'password', true);
-									?>
-
-						<?php if ($link_url) : ?>
-						<p class="tour_-card__price-info"></p>
+				<li class="archive-tour_plan__card">
+					<figure class="archive-tour_plan__img">
+						<?php if ($thumbnail) : ?>
+						<!-- サムネイル画像を表示 -->
+						<?php echo $thumbnail; ?>
+						<?php else : ?>
+						<!-- サムネイル画像がない場合はデフォルト画像を表示 -->
+						<img src="<?php echo esc_url($default_thumbnail); ?>" alt="" />
 						<?php endif; ?>
+					</figure>
 
-						<?php if (!empty($user_name) || !empty($password)) : ?>
-						<p class="tour_-card__price-info">
-							<?php if (!empty($user_name)) : ?>
-							ユーザー名: <?php echo esc_html($user_name); ?><br>
-							<?php endif; ?>
-							<?php if (!empty($password)) : ?>
-							パスワード: <?php echo esc_html($password); ?>
-							<?php endif; ?>
-						</p>
-						<?php endif; ?>
-					</div>
-
-
-					<div class="archive-tour_-card__subbody">
-						<div class="archive-tour_-card__subtext">
-							<?php echo esc_html($trimmed_content); // 本文をエスケープして表示 ?>
-						</div>
-						<div class="archive-tour_-card__meta">
-							<?php if ($link_url) : ?>
-							<div class="archive-tour_-card__microcopy">
-								詳しくはコチラ
-							</div>
-							<div class="archive-tour_-card__button">
-								<a href="<?php echo esc_url($link_url); ?>" class="button" rel="noopener noreferrer">View more</a>
+					<div class="archive-tour_plan__body">
+						<div class="archive-tour_plan__top">
+							<?php if (!empty($terms) && !is_wp_error($terms)) : ?>
+							<div class="archive-tour_plan__category">
+								<?php foreach ($terms as $term) : ?>
+								<span><?php echo esc_html($term->name); ?></span>
+								<?php endforeach; ?>
 							</div>
 							<?php endif; ?>
+							<div class="archive-tour_plan__title"><?php the_title(); ?></div>
+						</div>
+						<div class="archive-tour_plan__subbody">
+							<div class="archive-tour_plan__text">
+								<?php the_content(); ?>
+							</div>
+							<div class="archive-tour_plan__meta">
+								<p class="archive-tour_plan__price-info">
+									全部コミコミ(お一人様)
+								</p>
+								<?php
+							// カスタムフィールド「plan-price」の値を取得
+							$price_new = get_field('plan-price');
+							// 価格の値がある場合のみ表示
+							if(!empty($price_new)):
+							?>
+								<div class="archive-tour_plan__price-text">
+									<p class="archive-tour_plan__price-new">
+										&yen;<?php echo esc_html(number_format($price_new)); ?>
+									</p>
+								</div>
+								<?php endif; ?>
+							</div>
 						</div>
 					</div>
-				</div>
-			</li>
-			<?php endwhile; ?>
-		</ul>
-		<?php endif; ?>
+				</li>
+				<?php endwhile; ?>
+			</ul>
+			<?php endif; ?>
+		</div>
 
 
 
 		<!-- ページネーション -->
-		<div class="archive-tour___nav page-nav">
+		<div class="archive-tour_plan__nav page-nav">
 			<ul class="page-nav__pager">
 				<?php wp_pagenavi(); ?>
 			</ul>

@@ -17,8 +17,8 @@
 
 <div class="archive-tour_plan archive-tour_plan-layout">
 	<div class="archive-tour_plan__inner inner">
-		<!-- カテゴリリスト部分 -->
 		<ul class="archive-tour_plan__category-list category-list">
+
 			<li class="category-list__item">
 				<!-- ALLカテゴリへのリンク（archive-.phpに戻る） -->
 				<a href="<?php echo esc_url(get_post_type_archive_link('tour_plan')); ?>"
@@ -27,19 +27,18 @@
 				</a>
 			</li>
 			<?php
-						// 'works-category'タクソノミーの用語を取得
-						$terms = get_terms(array(
-								'taxonomy' => 'tour_plan_category',
-								'hide_empty' => false,
-						));
-						?>
+								// 'tour_plan_categoryっv'タクソノミーの用語を取得
+								$terms = get_terms(array(
+										'taxonomy' => 'tour_plan_category',
+										'hide_empty' => false,
+								));
+								?>
 			<?php if (!empty($terms)) : ?>
 			<?php foreach ($terms as $term) : ?>
 			<li class="category-list__item">
 				<?php
             // タクソノミーのリンクを取得
             $term_link = get_term_link($term);
-
             // リンクがエラーでないか確認
             if (!is_wp_error($term_link)) : ?>
 				<a href="<?php echo esc_url($term_link); ?>"
@@ -54,6 +53,10 @@
 			<?php endforeach; ?>
 			<?php endif; ?>
 		</ul>
+		<!-- カテゴリリスト部分 -->
+
+
+
 
 		<div class="archive-tour_plan__content">
 			<!-- 投稿リスト部分 -->
@@ -121,8 +124,8 @@
 				</li>
 
 				<?php endwhile; ?>
-				<?php endif; ?>
 			</ul>
+			<?php endif; ?>
 		</div>
 
 		<div class="archive-tour_plan__nav page-nav">

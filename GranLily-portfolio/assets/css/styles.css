@@ -484,14 +484,17 @@ time {
 }
 
 .archive-tour_plan__title {
+	border-bottom: 1px solid #000074;
 	font-size: 1.5rem;
 	margin-top: 0.5rem;
+	min-height: 5rem;
 }
 
 .archive-tour_plan__subbody {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
+	margin-top: 1.25rem;
 	width: 100%;
 }
 

@@ -11,9 +11,9 @@
 				</a>
 			</div>
 			<div class="footer__sns">
-				<a href="https://lin.ee/RNytVdZ" target=”_blank”><img
-						src="<?php echo get_theme_file_uri(); ?>/assets/images/LINE_Brand_icon.png" alt="フッター" /></a>
-				<a href="https://www.instagram.com/yumin52/" target=”_blank”><img
+				<a href="#" target=”_blank”><img src="<?php echo get_theme_file_uri(); ?>/assets/images/LINE_Brand_icon.png"
+						alt="フッター" /></a>
+				<a href="#" target=”_blank”><img
 						src="<?php echo get_theme_file_uri(); ?>/assets/images/Instagram_Glyph_Gradient.png" alt="フッターロゴ" /></a>
 			</div>
 		</div>
@@ -26,8 +26,8 @@
 					</a>
 				</div>
 				<div class="nav-menu__item">
-					<a href="<?php echo esc_url(home_url('/aboutus')); ?>">
-						<p class="starfish-icon">プロフィール</p>
+					<a href="<?php echo esc_url(home_url('/information')); ?>">
+						<p class="starfish-icon">サービス情報&amp;ギャラリー</p>
 					</a>
 				</div>
 				<div class="nav-menu__item">

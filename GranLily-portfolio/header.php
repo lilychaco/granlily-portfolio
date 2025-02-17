@@ -12,12 +12,12 @@
 	<meta name="keywords" content="GranLily, lilychaco" />
 	<meta name="copyright" content="© 2025 GranLily.">
 	<!-- ogp -->
-	<meta property="og:title" content="GranLilyの世界へようこそ！" />
+	<meta property="og:title" content="GranLily~シニア向けのツーリズム~" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="" />
 	<meta property="og:image"
 		content="https://ninikokoji.com/diving-lily/wp-content/uploads/2024/11/iriomote1200x630.jpeg" />
-	<meta property="og:site_name" content="GranLily ポートフォリオサイト" />
+	<meta property="og:site_name" content="GranLily~シニア向けのツーリズム~" />
 	<meta property="og:description" content="GranLilyのポートフォリオサイトです！" />
 	<meta property="og:locale" content="ja_JP" />
 	<!-- アイコン -->
@@ -96,7 +96,7 @@
 						</a>
 					</li>
 					<li class="header-menu__item header-menu__item--line">
-						<a href="https://lin.ee/RNytVdZ" target="_blank" rel="noopener noreferrer"><img
+						<a href="#" target="_blank" rel="noopener noreferrer"><img
 								src="<?php echo get_theme_file_uri(); ?>/assets/images/line.png" alt="友だち追加" height="42" border="0"></a>
 					</li>
 				</ul>

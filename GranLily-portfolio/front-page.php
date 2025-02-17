@@ -225,7 +225,7 @@
 	</h2>
 	<div class="top-aboutus__container">
 		<div class="top-aboutus__sp-image u-mobile">
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/lily-profile-sp.jpg" alt="中村弓美" />
+			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/23768561_s.jpg" alt="中村弓美" />
 		</div>
 		<div class="top-aboutus__pc-image u-desktop">
 			<div class="top-aboutus__pc-image-item top-aboutus__pc-image-item--primary">
@@ -234,8 +234,8 @@
 				</div>
 			</div>
 			<div class="top-aboutus__pc-image-item top-aboutus__pc-image-item--secondary">
-				<img class="fade-in-right" src=" <?php echo get_theme_file_uri(); ?>/assets/images/lily-profile-sp.jpg"
-					alt="中村弓美" />
+				<img class="fade-in-right" src=" <?php echo get_theme_file_uri(); ?>/assets/images/23768561_s.jpg"
+					alt="女性スタッフ" />
 			</div>
 		</div>
 		<div class="top-aboutus__main-wrapper">

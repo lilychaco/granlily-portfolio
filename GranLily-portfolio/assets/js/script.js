@@ -242,37 +242,31 @@ jQuery(function ($) {
   //================================
   var faqHeaders = document.querySelectorAll(".faqAccordion__header");
   var faqContents = document.querySelectorAll(".faqAccordion__content");
+
+  // 初期状態：すべて閉じた状態にする
   gsap.set(faqContents, {
     height: 0
   });
+  // 一番上のFAQを開いた状態にする
+  faqHeaders[0].classList.add("is-active");
   gsap.set(faqContents[0], {
     height: "auto"
-  }); // 初期状態
-  faqHeaders[0].classList.add("is-active");
+  });
   faqHeaders.forEach(function (faqHeader) {
     faqHeader.addEventListener("click", function () {
       var faqContent = faqHeader.nextElementSibling;
       if (faqHeader.classList.contains("is-active")) {
+        // 既に開いている場合は閉じる
         gsap.to(faqContent, {
           height: 0
         });
         faqHeader.classList.remove("is-active");
       } else {
-        var activeHeader = document.querySelector(".faqAccordion__header.is-active");
-        var delay = 0;
-        if (activeHeader) {
-          gsap.to(activeHeader.nextElementSibling, {
-            height: 0
-          });
-          activeHeader.classList.remove("is-active");
-          delay = 0.5;
-        }
-        gsap.timeline().to(faqContent, {
-          height: "auto",
-          delay: delay
-        }).add(function () {
-          faqHeader.classList.add("is-active");
-        }, "-=.5");
+        // 開いていない場合は開く
+        gsap.to(faqContent, {
+          height: "auto"
+        });
+        faqHeader.classList.add("is-active");
       }
     });
   });

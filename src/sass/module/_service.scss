@@ -28,8 +28,8 @@
 	gap:0;
 	@include mq(md) {
 		display: flex;
-flex-direction: row;
-align-items: center;
+		flex-direction: row;
+align-items: flex-start;
 gap:rem(40);
 	}
 }
@@ -54,37 +54,34 @@ gap:rem(40);
 	}
 
 }
-.colorbox {
 
-}
 
 .service__body {
 	flex: 1;
 	padding:rem(20);
-
+	text-align: center;
+	@include mq(md) {
+		padding-top: 0;
+	}
 }
 
 .service__title {
 	font-size: rem(24);
 	font-weight: bold;
 	border-bottom: 1px solid $greenaccent;
+	text-align: left;
 
 }
 
 .service__text {
 	margin-top: rem(8);
 	font-size: rem(20);
+	text-align: left;
 
 }
 
 .service__button {
+	display: inline-block;
 	margin-top: rem(32);
-	text-align: center;
 	z-index:100;
-	position: relative;
-
-}
-
-.button {
-
 }

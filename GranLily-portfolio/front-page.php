@@ -177,7 +177,7 @@
 								GranLilyでは、シニア世代の皆様に安心して楽しめる海外旅行をご案内。移動の負担を減らし、快適な宿泊や現地の魅力を満喫できるプランをご用意。歴史探訪やリゾート滞在、美食の旅など、お客様のご希望に合わせた旅行を実現します。お一人でも、ご家族やご友人との思い出づくりにも最適です。
 							</div>
 							<div class="service__button">
-								<a href="<?php echo esc_url(home_url('/information')); ?>" class="button"> View more </a>
+								<a href="<?php echo esc_url(home_url('/information')); ?>" class="button--03"> 写真を見る </a>
 							</div>
 						</div>
 					</div>
@@ -192,7 +192,8 @@
 								日本の魅力をゆったり楽しむ国内旅行を、GranLilyがサポート。移動の負担を抑えつつ、四季折々の景色や文化を満喫。温泉で癒される旅、歴史ある町歩き、美食を楽しむツアーなど多彩なプランをご用意。特別な記念旅行にも対応し、快適な旅をお届けします。
 							</div>
 							<div class="service__button">
-								<a href="<?php echo esc_url(home_url('/information')); ?>" class="button"> View more </a>
+								<a href="<?php echo esc_url(home_url('/information')); ?>" class="button--03"> 写真を見る
+								</a>
 							</div>
 						</div>
 					</div>
@@ -206,7 +207,7 @@
 								GranLilyでは、海の魅力を安心して楽しめるダイビング旅行をご案内。経験豊富なインストラクターがサポートし、初心者やブランクのある方も安心。透明度の高い海で、美しい珊瑚や熱帯魚と出会う感動のダイブを満喫。体力に合わせた無理のないプランで、水中世界を楽しみましょう。
 							</div>
 							<div class="service__button">
-								<a href="<?php echo esc_url(home_url('/information')); ?>" class="button"> View more </a>
+								<a href="<?php echo esc_url(home_url('/information')); ?>" class="button--03"> 写真を見る</a>
 							</div>
 						</div>
 					</div>

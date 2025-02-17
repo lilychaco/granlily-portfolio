@@ -884,6 +884,59 @@ time {
 	padding: 1.125rem 0 0.875rem 3.25rem;
 }
 
+.button--03 {
+	-webkit-text-decoration: none;
+	align-items: center;
+	background-color: #000074;
+	border: 1px solid transparent;
+	border-radius: 40px;
+	color: #fff;
+	display: flex;
+	font-size: 18px;
+	font-weight: 700;
+	justify-content: space-between;
+	padding: 12px 30px;
+	position: relative;
+	text-decoration: none;
+	width: 200px;
+}
+
+.button--03::before {
+	background-color: #D6E6F5;
+	border-radius: 20px;
+	content: "";
+	height: 30px;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+}
+
+.button--03::after {
+	border-right: 2px solid #000074;
+	border-top: 2px solid #000074;
+	content: "";
+	height: 10px;
+	transform: rotate(45deg);
+	width: 10px;
+}
+
+.button--03:hover {
+	background-color: #fff;
+	border: 1px solid #000074;
+	color: #000074;
+}
+
+.button--03:hover::before {
+	background-color: #000074;
+}
+
+.button--03:hover:after {
+	border-right: 2px solid #fff;
+	border-top: 2px solid #fff;
+}
+
 .category-list {
 	grid-column-gap: 1.3125rem;
 	-moz-column-gap: 1.3125rem;
@@ -1067,7 +1120,7 @@ time {
 /* チェックボックスマークのスタイル */
 
 .wpcf7-form-control.wpcf7-checkbox input[type=checkbox] + .wpcf7-list-item-label::before {
-	border: solid 2px #4CAF50; /* 線の色（元の $greenaccent に相当） */
+	border: solid 2px #greenaccent; /* 線の色（元の $greenaccent に相当） */
 	box-sizing: border-box;
 	content: "";
 	height: 14px;
@@ -1504,14 +1557,18 @@ span.wpcf7-spinner {
 }
 
 .form__row dt {
+	align-items: center;
+	display: flexbox;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 700;
+	justify-content: space-between;
 	letter-spacing: 0;
-	line-height: 1.4;
+	line-height: 2;
 }
 
 .form__row dt span {
+	align-items: center;
 	background-color: #c94800;
 	color: #fff;
 	display: inline-block;
@@ -3398,23 +3455,25 @@ span.wpcf7-spinner {
 .service__body {
 	flex: 1;
 	padding: 1.25rem;
+	text-align: center;
 }
 
 .service__title {
 	border-bottom: 1px solid #000074;
 	font-size: 1.5rem;
 	font-weight: bold;
+	text-align: left;
 }
 
 .service__text {
 	font-size: 1.25rem;
 	margin-top: 0.5rem;
+	text-align: left;
 }
 
 .service__button {
+	display: inline-block;
 	margin-top: 2rem;
-	position: relative;
-	text-align: center;
 	z-index: 100;
 }
 
@@ -3998,6 +4057,10 @@ span.wpcf7-spinner {
 
 .top-aboutus__pc-image-item--secondary {
 	display: none;
+}
+
+.top-aboutus__pc-image-item--secondary img {
+	border-radius: 60% 40% 70% 30%/40% 40% 60% 60%;
 }
 
 .top-aboutus__main {
@@ -5623,7 +5686,7 @@ html {
 }
 
 .service__item {
-	align-items: center;
+	align-items: flex-start;
 	display: flex;
 	flex-direction: row;
 	gap: 2.5rem;
@@ -5639,6 +5702,10 @@ html {
 
 .service__image img {
 	aspect-ratio: 492/313;
+}
+
+.service__body {
+	padding-top: 0;
 }
 
 .side-works__body {
@@ -5840,7 +5907,7 @@ html {
 	object-fit: cover;
 	position: absolute;
 	right: 0;
-	top: -5rem;
+	top: -2.5rem;
 }
 
 .top-aboutus__main-wrapper {

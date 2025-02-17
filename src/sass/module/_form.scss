@@ -35,8 +35,11 @@
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $bold;
-  line-height: 1.4;
+  line-height: 2;
   letter-spacing: 0;
+	display:flexbox;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .form__row dt span {
@@ -54,6 +57,7 @@
   margin-left: rem(8);
   position: relative;
   top: -2px;
+	align-items: center;;
 }
 
 .form__row dd input {

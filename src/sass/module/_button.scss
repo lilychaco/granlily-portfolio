@@ -125,3 +125,51 @@
   	border-right: 1px solid $white;
 	}
 }
+
+.button--03 {
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:200px;
+padding:12px 30px;
+color:#fff;
+font-size:18px;
+font-weight:700;
+text-decoration:none;
+background-color:#000074;
+border:1px solid transparent;
+border-radius:40px;
+position: relative;
+}
+.button--03::before {
+	content:"";
+	position: absolute;
+	top:50%;
+	right:20px;
+	transform: translateY(-50%);
+	width: 30px;
+	height:30px;
+	background-color: #D6E6F5;
+	border-radius: 20px;
+}
+.button--03::after {
+	content:"";
+	width:10px;
+	height:10px;
+	border-top: 2px solid #000074;
+	border-right:2px solid #000074;
+	transform: rotate(45deg);
+}
+.button--03:hover {
+	color:#000074;
+	background-color:#fff;
+	border:1px solid #000074;
+}
+.button--03:hover::before {
+	background-color: #000074;
+}
+
+.button--03:hover:after {
+		border-top: 2px solid #fff;
+	border-right:2px solid #fff;
+}

@@ -202,10 +202,9 @@ time {
 	background-color: #000074;
 	color: #fff;
 	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1rem;
+	font-size: 1.125rem;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1;
 }
 
 .accordion-card__icon { /* 最小横幅を20pxに設定 */
@@ -253,7 +252,6 @@ time {
 	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1.43;
 }
 
 .archive-tour_plan-layout {
@@ -1818,31 +1816,43 @@ span.wpcf7-spinner {
 
 .fv {
 	height: 100vh;
-	margin-left: auto;
-	margin-right: auto;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
 }
 
 .fv__slider-wrap {
-	overflow: hidden;
-}
-
-.fv__slider {
-	margin-left: auto;
-	margin-right: auto;
+	height: 100%;
 	width: 100%;
 }
 
-.fv__slider-img {
+.fv__slider {
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.fv__slide {
+	animation: slider-animation 24s linear infinite;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.fv__slide-img {
 	height: 100vh;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 }
 
-.fv__slider-img img {
+.fv__slide-img img {
 	-o-object-fit: cover;
 	display: block;
 	height: 100vh;
@@ -1854,62 +1864,72 @@ span.wpcf7-spinner {
 
 .fv__copy {
 	align-items: center; /* 子要素を中央揃え */
-	color: #fff;
 	display: flex; /* フレックスボックスを適用 */
 	flex-direction: column; /* 縦並びにする */
 	left: 50%;
 	position: absolute;
-	top: 45%;
-	transform: translate(-50%, -45%);
+	text-align: center;
+	top: 25%;
+	transform: translateX(-50%);
 	width: 100%;
 	z-index: 2;
 }
 
 .fv__main-title {
-	background: rgba(0, 0, 0, 0.15);
+	background: rgba(0, 0, 0, 0.2);
 	color: #fff;
 	display: inline-block;
-	font-family: "Noto Serif JP", serif;
-	font-size: 2.5rem;
-	font-weight: 400;
-	letter-spacing: 0.54em;
-	line-height: 2;
-	text-indent: 0.54em;
+	font-family: "Quicksand", serif;
+	font-size: 3.375rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
 }
 
 .fv__sub-title {
-	background: rgba(0, 0, 0, 0.15);
+	background: rgba(0, 0, 0, 0.2);
 	color: #fff;
 	display: inline-block;
 	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1.25rem;
+	font-size: 0.75rem;
 	font-weight: 400;
-	letter-spacing: 0;
-	line-height: 2;
-	margin-top: 1.25rem;
+	letter-spacing: 0.2em;
 	padding: 0.625rem 1.25rem;
 }
 
-/* GranLily の説明文 */
-
 .fv__description {
-	align-items: center; /* 子要素を中央揃え */
-	color: white; /* 文字色を白に */
-	display: flex; /* フレックスボックスを適用 */
-	flex-direction: column; /* 縦並びにする */
-	left: 50%; /* 左右中央に配置 */
-	position: absolute; /* スライダーの上に配置 */
-	text-align: center; /* 中央揃え */
-	top: 70%; /* 上下中央に配置 */
-	transform: translate(-50%, -70%); /* 位置調整 */
+	animation: fade-up 1s ease-out forwards;
+	bottom: 15%;
+	color: #fff;
+	font-size: 1rem;
+	opacity: 0; /* 初期状態では非表示 */
+	position: absolute;
+	text-align: center;
 	width: 100%;
-	z-index: 10; /* スライダーより上に配置 */
+}
+
+.fv__description p {
+	display: inline-block;
+}
+
+/* 各スライドごとにテキストのアニメーションを遅延 */
+
+.fv__slide:nth-child(1) .fv__description {
+	animation-delay: 6s; /* 画像のフェードイン後に遅れて表示 */
+}
+
+.fv__slide:nth-child(2) .fv__description {
+	animation-delay: 14s; /* 画像が表示されてから遅れて表示 */
+}
+
+.fv__slide:nth-child(3) .fv__description {
+	animation-delay: 22s; /* 画像が表示されてから遅れて表示 */
 }
 
 /* 説明文の各行 */
 
-.text-line {
-	background: rgba(0, 0, 0, 0.15); /* 半透明の黒背景 */
+.fv__text {
+	background: rgba(0, 0, 0, 0.2); /* 半透明の黒背景 */
 	border-radius: 0.3125rem;
 	color: #ffffff; /* 白色 */
 	display: inline-block;
@@ -1917,8 +1937,52 @@ span.wpcf7-spinner {
 	font-size: 1.25rem;
 	font-weight: 400;
 	line-height: 2; /* 行間を調整 */
-	opacity: 0; /* 初期状態は非表示 */
+	opacity: 1; /* 初期状態は非表示 */
 	padding: 0.625rem 1.25rem;
+}
+
+.fv__slide {
+	animation: slider-animation 24s linear infinite;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+/* === テキストのフェードアップ用アニメーション === */
+
+.fv__description {
+	animation: fade-up 1s ease-out forwards;
+	bottom: 15%;
+	color: #fff;
+	font-size: 1rem;
+	opacity: 0; /* 初期状態では非表示 */
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+.fv__description p {
+	display: inline-block;
+}
+
+/* 各スライドごとにテキストのアニメーションを遅延 */
+
+.fv__slide:nth-child(1) .fv__description {
+	animation-delay: 2s; /* 画像のフェードイン後に遅れて表示 */
+}
+
+.fv__slide:nth-child(2) .fv__description {
+	animation-delay: 10s; /* 画像が表示されてから遅れて表示 */
+}
+
+.fv__slide:nth-child(3) .fv__description {
+	animation-delay: 18s; /* 画像が表示されてから遅れて表示 */
 }
 
 .gallery {
@@ -3870,6 +3934,48 @@ span.wpcf7-spinner {
 	justify-content: center;
 }
 
+/* Loading背景画面設定　*/
+
+#splash {
+	align-items: center;
+	background: #D6E6F5; /* 直接カラーコードに修正 */
+	color: #fff;
+	display: flex; /* これを追加（中央配置のため） */
+	height: 100%;
+	justify-content: center;
+	opacity: 1;
+	position: fixed;
+	text-align: center;
+	transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+	visibility: visible;
+	width: 100%;
+	z-index: 999;
+}
+
+/* Loading画像中央配置　*/
+
+#splash_logo {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+
+#splash_logo img {
+	width: 260px;
+}
+
+/* fadeUpをするアイコンの動き */
+
+.fadeUp {
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	animation-name: fadeUpAnime;
+	opacity: 0;
+}
+
 .starfish-icon {
 	align-items: center;
 	display: flex; /* アイコンとテキストをフレックスボックスで揃える */
@@ -4759,12 +4865,16 @@ html {
 }
 
 .accordion-card__title {
-	font-size: 1.25rem;
+	font-size: 1.375rem;
 }
 
 .accordion-card__body {
 	margin-top: 1rem;
 	padding: 2.5rem;
+}
+
+.accordion-card__content {
+	font-size: 1.25rem;
 }
 
 .archive-tour_plan-card__img img {
@@ -5169,13 +5279,7 @@ html {
 	margin-top: 2.5rem;
 }
 
-.fv {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-}
-
-.fv__slider-img {
+.fv__slide-img {
 	height: auto;
 	overflow: hidden;
 }
@@ -5189,17 +5293,22 @@ html {
 
 .fv__main-title {
 	font-size: 5rem;
-	line-height: 1.7;
 }
 
 .fv__sub-title {
-	font-size: 1.5rem;
-	line-height: 2;
-	margin-top: 0;
+	font-size: 0.875rem;
 }
 
-.text-line {
+.fv__description {
+	font-size: 1.25rem;
+}
+
+.fv__text {
 	font-size: 1.5rem;
+}
+
+.fv__description {
+	font-size: 1.25rem;
 }
 
 .gallery__content {
@@ -6309,6 +6418,60 @@ html {
 
 html {
 	font-size: 4.2666666667vw;
+}
+
+}
+
+@keyframes slider-animation {
+
+0% {
+	opacity: 0;
+	transform: scale(1);
+}
+
+4.16% {
+	opacity: 1;
+}
+
+33.33% {
+	opacity: 1;
+}
+
+41.66% {
+	opacity: 0;
+	transform: scale(1.2);
+}
+
+100% {
+	opacity: 0;
+}
+
+}
+
+@keyframes fade-up {
+
+0% {
+	opacity: 0;
+	transform: translateY(20px); /* 下から20px移動した状態 */
+}
+
+100% {
+	opacity: 1;
+	transform: translateY(0); /* 元の位置に戻る */
+}
+
+}
+
+@keyframes fadeUpAnime {
+
+from {
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 }

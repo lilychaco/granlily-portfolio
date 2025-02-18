@@ -36,44 +36,50 @@
 
 			<div class="tab__contents tab__contents--faq">
 				<div class="tab__content js-content">
-					<div class="tab__content-item faqAccordion">
-						<div class="faqAccordion__container">
-							<?php
-									// Smart Custom Fields (SCF) を使って、'faq' グループを取得します。
-									$faq = SCF::get('faq');
+					<div class="tab__content-accordion accordion">
 
-									// 各アイテムを表示する関数を定義します。
-									function display_accordion_item($question, $answer) {
-										// 質問と回答のどちらかが欠けていたら何も出力しない
-									if (empty($question) || empty($answer)) {
-											return; // 処理をここで終了
-									}
+						<?php
+								// Smart Custom Fields (SCF) を使って、'faq' グループを取得します。
+								$faq = SCF::get('faq');
+
+								// 各アイテムを表示する関数を定義します。
+								function display_accordion_item($question, $answer) {
+									// 質問と回答のどちらかが欠けていたら何も出力しない
+								if (empty($question) || empty($answer)) {
+										return; // 処理をここで終了
+								}
 								?>
-							<div class="faqAccordion__item">
-								<div class="faqAccordion__header"><?php echo nl2br(esc_html($question)); ?></div>
-								<div class="faqAccordion__content">
-									<?php if (!empty($answer)) : ?>
-									<div class="faqAccordion__contentInner"><?php echo nl2br(esc_html($answer)); ?></div>
-									<?php endif; ?>
+						<div class="accordion__item accordion-card">
+							<div class="accordion-card__top js-accordion-top is-open">
+								<h3 class="accordion-card__title">
+									<?php echo nl2br(esc_html($question)); ?></h3>
+								<div class="accordion-card__icon">
+									<div class="accordion-card__bar1"></div>
+									<div class="accordion-card__bar2"></div>
 								</div>
 							</div>
-							<?php } ?>
-							<?php
-							if (!empty($faq)) {
-								foreach ($faq as $item) {
-								// 質問または回答が欠けているかは関数内で判定
-								display_accordion_item($item['question'] ?? '', $item['answer'] ?? '');
-									}
-								}
-							?>
+							<div class="accordion-card__body">
+								<?php if (!empty($answer)) : ?>
+								<p class="accordion-card__content"><?php echo nl2br(esc_html($answer)); ?></p>
+								<?php endif; ?>
+							</div>
 						</div>
+						<?php } ?>
+						<?php
+														if (!empty($faq)) {
+																foreach ($faq as $item) {
+														// 質問または回答が欠けているかは関数内で判定
+														display_accordion_item($item['question'] ?? '', $item['answer'] ?? '');
+												}
+										}
+									?>
 					</div>
 				</div>
 
 				<div class="tab__content js-content">
-					<div class="tab__content-item faqAccordion">
-						<div class="faqAccordion__container">
-							<?php
+					<div class="tab__content-accordion accordion">
+
+						<?php
 									// Smart Custom Fields (SCF) を使って、'faq' グループを取得します。
 									$faq_domestic = SCF::get('faq_domestic');
 
@@ -84,30 +90,36 @@
 											return; // 処理をここで終了
 									}
 								?>
-							<div class="faqAccordion__item">
-								<div class="faqAccordion__header"><?php echo nl2br(esc_html($domestic_question)); ?></div>
-								<div class="faqAccordion__content">
-									<?php if (!empty($domestic_answer)) : ?>
-									<div class="faqAccordion__contentInner"><?php echo nl2br(esc_html($domestic_answer)); ?></div>
-									<?php endif; ?>
+						<div class="accordion__item accordion-card">
+							<div class="accordion-card__top js-accordion-top is-open">
+								<h3 class="accordion-card__title">
+									<?php echo nl2br(esc_html($domestic_question)); ?></h3>
+								<div class="accordion-card__icon">
+									<div class="accordion-card__bar1"></div>
+									<div class="accordion-card__bar2"></div>
 								</div>
 							</div>
-							<?php } ?>
-							<?php
-							if (!empty($faq_domestic)) {
-								foreach ($faq_domestic as $item) {
-								// 質問または回答が欠けているかは関数内で判定
-								display_accordion_item($item['domestic_question'] ?? '', $item['domestic_answer'] ?? '');
-									}
-								}
-							?>
+							<div class="accordion-card__body">
+								<?php if (!empty($domestic_answer)) : ?>
+								<p class="accordion-card__content"><?php echo nl2br(esc_html($domestic_answer)); ?></p>
+								<?php endif; ?>
+							</div>
 						</div>
+						<?php } ?>
+						<?php
+														if (!empty($faq_domestic)) {
+																foreach ($faq_domestic as $item) {
+														// 質問または回答が欠けているかは関数内で判定
+														display_accordion_item($item['domestic_question'] ?? '', $item['domestic_answer'] ?? '');
+												}
+										}
+									?>
 					</div>
 				</div>
+
 				<div class="tab__content js-content">
-					<div class="tab__content-item faqAccordion">
-						<div class="faqAccordion__container">
-							<?php
+					<div class="tab__content-accordion accordion">
+						<?php
 									// Smart Custom Fields (SCF) を使って、'faq' グループを取得します。
 									$faq_diving = SCF::get('faq_diving');
 
@@ -118,26 +130,44 @@
 											return; // 処理をここで終了
 									}
 								?>
-							<div class="faqAccordion__item">
-								<div class="faqAccordion__header"><?php echo nl2br(esc_html($diving_question)); ?></div>
-								<div class="faqAccordion__content">
-									<?php if (!empty($diving_answer)) : ?>
-									<div class="faqAccordion__contentInner"><?php echo nl2br(esc_html($diving_answer)); ?></div>
-									<?php endif; ?>
+						<div class="accordion__item accordion-card">
+							<div class="accordion-card__top js-accordion-top is-open">
+								<h3 class="accordion-card__title">
+									<?php echo nl2br(esc_html($diving_question)); ?></h3>
+								<div class="accordion-card__icon">
+									<div class="accordion-card__bar1"></div>
+									<div class="accordion-card__bar2"></div>
 								</div>
 							</div>
-							<?php } ?>
-							<?php
-							if (!empty($faq_diving)) {
-								foreach ($faq_diving as $item) {
-								// 質問または回答が欠けているかは関数内で判定
-								display_accordion_item($item['diving_question'] ?? '', $item['diving_answer'] ?? '');
-									}
-								}
-							?>
+							<div class="accordion-card__body">
+								<?php if (!empty($diving_answer)) : ?>
+								<p class="accordion-card__content"><?php echo nl2br(esc_html($diving_answer)); ?></p>
+								<?php endif; ?>
+							</div>
 						</div>
+						<?php } ?>
+						<?php
+														if (!empty($faq_diving)) {
+																foreach ($faq_diving as $item) {
+														// 質問または回答が欠けているかは関数内で判定
+														display_accordion_item($item['diving_question'] ?? '', $item['diving_answer'] ?? '');
+												}
+										}
+									?>
 					</div>
 				</div>
+
+
+
+
+
+
+
+
+
+
+
+
 			</div>
 
 		</div>

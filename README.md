@@ -88,3 +88,81 @@
 					<div class="top-aboutus__button">
 						<a href="<?php echo esc_url(home_url('/aboutus')); ?>" class="button button--02"> View more </a>
 					</div>
+
+
+
+  //================================
+  // トップ動画の上に、GSAP アニメーション
+  //================================
+  // GSAP アニメーションの適用
+  // GSAPのタイムラインを作成（最初のアニメーション開始時刻を0.5秒遅らせる）
+  const tl = gsap.timeline({ delay: 1 });
+
+  // 1つ目の要素（.first）のアニメーション
+  tl.to(".first", {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
+    ease: "power2.out",
+  });
+
+  // 2つ目の要素（.second）のアニメーション
+  tl.to(
+    ".second",
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      ease: "power2.out",
+    },
+    "+1.5"
+  ); // 直前のアニメーションが終わってから1.5秒後に開始
+
+  // 3つ目の要素（.third）のアニメーション
+  tl.to(
+    ".third",
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      ease: "power2.out",
+    },
+    "+3"
+  ); // 直前のアニメーションが終わってから1.5秒後に開始
+
+
+
+  //================================
+  // アコーディオン
+  //================================
+ 
+ var faqHeaders = document.querySelectorAll(".faqAccordion__header");
+  var faqContents = document.querySelectorAll(".faqAccordion__content");
+
+  // 初期状態：すべて閉じた状態にする
+  gsap.set(faqContents, {
+    height: 0,
+  });
+  // 一番上のFAQを開いた状態にする
+  faqHeaders[0].classList.add("is-active");
+  gsap.set(faqContents[0], {
+    height: "auto",
+  });
+  faqHeaders.forEach(function (faqHeader) {
+    faqHeader.addEventListener("click", function () {
+      var faqContent = faqHeader.nextElementSibling;
+      if (faqHeader.classList.contains("is-active")) {
+        // 既に開いている場合は閉じる
+        gsap.to(faqContent, {
+          height: 0,
+        });
+        faqHeader.classList.remove("is-active");
+      } else {
+        // 開いていない場合は開く
+        gsap.to(faqContent, {
+          height: "auto",
+        });
+        faqHeader.classList.add("is-active");
+      }
+    });
+  });

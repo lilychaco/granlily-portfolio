@@ -30,7 +30,7 @@
 					</picture>
 				</figure>
 				<div class="fv__description">
-					<p class="fv__text"><?php echo $slide['text']; ?></p>
+					<p class="fv__text text-line first"><?php echo $slide['text']; ?></p>
 				</div>
 			</div>
 			<?php endforeach; ?>

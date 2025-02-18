@@ -23,14 +23,13 @@
 .accordion-card__title {
   color: $white;
   background-color: $greenaccent;
-  font-size: rem(16);
+  font-size: rem(18);
   font-family: $base-font-family;
   font-weight: $regular;
-  line-height: 1;
   letter-spacing: 0;
 
   @include mq(md) {
-    font-size: rem(20);
+    font-size: rem(22);
   }
 }
 
@@ -92,6 +91,9 @@
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $regular;
-  line-height: 1.43;
   letter-spacing: 0;
+	@include mq(md) {
+		font-size: rem(20);
+
+	}
 }

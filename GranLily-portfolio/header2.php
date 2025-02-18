@@ -26,13 +26,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php if (is_front_page()) : ?>
-	<div id="splash">
-		<div id="splash_logo">
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-transparent.png" alt="ヘッダーロゴ">
-		</div>
-	</div>
-	<?php endif; ?>
 
 	<header class="header <?php echo is_front_page() ? 'header--top' : 'header--sub'; ?> js-header">
 		<div class="header__inner">

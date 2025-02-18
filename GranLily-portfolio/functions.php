@@ -5,7 +5,7 @@
     $theme_version = wp_get_theme()->get('Version');
 
     // Google Fontsの読み込み
-    wp_enqueue_style('mytheme-google-fonts', 'https://fonts.googleapis.com/css2?family=Lato&family=Gotu&family=Noto+Sans+JP:wght@400;500;700&display=swap', [], null);
+    wp_enqueue_style('mytheme-google-fonts', 'https://fonts.googleapis.com/css2?family=Lato&family=Gotu&family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@700&display=swap', [], null);
 
     // Swiper JSとCSSの読み込み（バージョン指定）
     wp_enqueue_style('mytheme-swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', [], '9.0.0');
@@ -28,6 +28,14 @@
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/assets/css/styles.css', [], $theme_version);
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
+
+//パフォーマンス向上のために preconnect を wp_head に追加する
+function add_google_fonts_preconnect() {
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+}
+add_action('wp_head', 'add_google_fonts_preconnect');
 
 
 

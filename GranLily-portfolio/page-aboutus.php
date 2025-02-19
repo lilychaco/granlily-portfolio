@@ -15,13 +15,13 @@
 	<div class="page-profile__inner inner">
 		<div class="page-profile__container">
 			<div class="page-profile__sp-image u-mobile">
-				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/lily-profile.jpg" alt="春風が戦ぐ中、樹のそばに立っているGranLily" />
+				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/lily-profile.jpg" alt="春風が戦ぐ中、樹のそばに立っているgranlily" />
 				<div class=" page-profile__title page-profile__title--sp u-mobile">
 					Gran&nbsp;Lily
 				</div>
 			</div>
 			<div class="page-profile__pc-image u-desktop">
-				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/lily-profile-tree.jpg" alt="微笑んでいるGranLily" />
+				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/lily-profile-tree.jpg" alt="微笑んでいるgranlily" />
 				<img class="with-filter" src="<?php echo get_theme_file_uri(); ?>/assets/images/bali-morning.jpg"
 					alt="バリ島朝の海辺" />
 			</div>

@@ -7,18 +7,18 @@
 	<meta name="format-detection" content="telephone=no" />
 
 	<!-- meta情報 -->
-	<title>GranLily</title>
-	<meta name="description" content="GranLilyのポートフォリオサイトです" />
-	<meta name="keywords" content="GranLily, lilychaco" />
-	<meta name="copyright" content="© 2025 GranLily.">
+	<title>granlily</title>
+	<meta name="description" content="granlilyのポートフォリオサイトです" />
+	<meta name="keywords" content="granlily, lilychaco" />
+	<meta name="copyright" content="© 2025 granlily.">
 	<!-- ogp -->
-	<meta property="og:title" content="GranLily~シニア向けのツーリズム~" />
+	<meta property="og:title" content="granlily~シニア向けのツーリズム~" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="" />
 	<meta property="og:image"
 		content="https://ninikokoji.com/diving-lily/wp-content/uploads/2024/11/iriomote1200x630.jpeg" />
-	<meta property="og:site_name" content="GranLily~シニア向けのツーリズム~" />
-	<meta property="og:description" content="GranLilyのポートフォリオサイトです！" />
+	<meta property="og:site_name" content="granlily~シニア向けのツーリズム~" />
+	<meta property="og:description" content="granlilyのポートフォリオサイトです！" />
 	<meta property="og:locale" content="ja_JP" />
 	<!-- アイコン -->
 

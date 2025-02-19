@@ -1974,7 +1974,7 @@ span.wpcf7-spinner {
 /* 各スライドごとにテキストのアニメーションを遅延 */
 
 .fv__slide:nth-child(1) .fv__description {
-	animation-delay: 2s; /* 画像のフェードイン後に遅れて表示 */
+	animation-delay: 4s; /* 画像のフェードイン後に遅れて表示 */
 }
 
 .fv__slide:nth-child(2) .fv__description {

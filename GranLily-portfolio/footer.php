@@ -43,7 +43,7 @@
 			</div>
 		</div>
 		<div class="footer__copyright">
-			&copy;&nbsp;2025&nbsp;GranLily&nbsp;LLC.
+			&copy;&nbsp;2025&nbsp;granlily&nbsp;LLC.
 		</div>
 	</div>
 

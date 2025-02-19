@@ -41,9 +41,9 @@
 
 .top-plan__button {
   margin-top: rem(40);
-  margin-inline: auto;
-  text-align: center;
-  padding-bottom: rem(4);
+  display: flex;
+	justify-content: center;
+	align-items: center;
 
   @include mq(md) {
     margin-top: rem(72);

@@ -3824,6 +3824,43 @@ span.wpcf7-spinner {
 	text-align: center;
 }
 
+.sidebar__related {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.sidebar__related-list {
+	display: flex;
+	flex-direction: row;
+	gap: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.sidebar__related-item {
+	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: hidden;
+	width: 100%;
+}
+
+.sidebar__related-img {
+	height: auto;
+	width: 100%;
+}
+
+.sidebar__related-img img {
+	-o-object-fit: cover;
+	aspect-ratio: 294/188;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}
+
 .single-blog {
 	margin-left: auto;
 	margin-right: auto;
@@ -3932,6 +3969,151 @@ span.wpcf7-spinner {
 	display: flex;
 	gap: 5.125rem;
 	justify-content: center;
+}
+
+.single-tour_plan {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.single-tour_plan-layout {
+	margin-top: 2.5rem;
+}
+
+.single-tour_plan__container {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5rem;
+	width: 100%;
+}
+
+.single-tour_plan__main {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.375rem;
+	padding-right: 0.375rem;
+	width: 100%;
+}
+
+.single-tour_plan__title {
+	border-bottom: 1px solid #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1.5rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 2;
+	padding-bottom: 1rem;
+}
+
+.single-tour_plan__category {
+	border: 1px solid #000074;
+	color: #000074;
+	display: inline-block;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.75rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.83;
+	padding: 0.25rem 0.625rem;
+}
+
+.single-tour_plan__image {
+	margin-top: 1.5rem;
+	width: 100%;
+}
+
+.single-tour_plan__image img {
+	-o-object-fit: cover;
+	aspect-ratio: 345/231;
+	object-fit: cover;
+}
+
+.single-tour_plan__body {
+	border: 1px solid #000074;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding: 1rem;
+}
+
+.single-tour_plan__content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: flex-start;
+}
+
+.single-tour_plan__content img {
+	-o-object-fit: cover;
+	aspect-ratio: 345/231;
+	margin-top: 1.5rem;
+	object-fit: cover;
+	width: 100%;
+}
+
+.single-tour_plan__content p {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+.single-tour_plan__price {
+	margin-top: 2.5rem;
+}
+
+.single-tour_plan__price-label {
+	font-size: 0.875rem;
+	line-height: 1.2;
+}
+
+.single-tour_plan__price-value {
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
+.single-tour_plan__related {
+	margin-top: 4rem;
+}
+
+.single-tour_plan__related-title {
+	border-bottom: 1px solid #000074;
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 2;
+	margin-top: 3.75rem;
+	padding-bottom: 0.625rem;
+}
+
+.single-tour_plan__related-list {
+	grid-gap: 30px;
+	display: grid;
+	gap: 30px; /* 要素間の余白 */
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	margin-top: 1.875rem;
+}
+
+.single-tour_plan__related-img {
+	height: auto;
+	width: 100%;
+}
+
+.single-tour_plan__related-img img {
+	-o-object-fit: cover;
+	aspect-ratio: 294/188;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}
+
+.single-tour_plan__related-name {
+	font-size: 1.25rem;
+	margin-top: 0.625rem;
+}
+
+.single-tour_plan__back {
+	margin-top: 4rem;
 }
 
 /* Loading背景画面設定　*/
@@ -4282,11 +4464,10 @@ span.wpcf7-spinner {
 }
 
 .top-plan__button {
-	margin-left: auto;
-	margin-right: auto;
+	align-items: center;
+	display: flex;
+	justify-content: center;
 	margin-top: 2.5rem;
-	padding-bottom: 0.25rem;
-	text-align: center;
 }
 
 .top-price {
@@ -5880,6 +6061,52 @@ html {
 
 .single-blog__nav {
 	margin-top: 5rem;
+}
+
+.single-tour_plan__container {
+	grid-gap: 5%;
+	display: grid;
+	gap: 5%;
+	grid-template-columns: 70% 25%;
+}
+
+.single-tour_plan__main {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.single-tour_plan__title {
+	font-size: 2rem;
+}
+
+.single-tour_plan__category {
+	font-size: 0.875rem;
+	padding-left: 0.875rem;
+	padding-right: 0.875rem;
+}
+
+.single-tour_plan__image {
+	margin-top: 2.5rem;
+}
+
+.single-tour_plan__image img {
+	aspect-ratio: 700/468;
+}
+
+.single-tour_plan__content img {
+	aspect-ratio: 700/468;
+	margin-top: 2.5rem;
+}
+
+.single-tour_plan__content p {
+	font-size: 1.25rem;
+}
+
+.single-tour_plan__related-list {
+	grid-gap: 1.875rem;
+	display: grid;
+	gap: 1.875rem;
+	grid-template-columns: 1fr 1fr;
 }
 
 .custom-swiper-button-prev,

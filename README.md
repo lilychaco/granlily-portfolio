@@ -135,7 +135,7 @@
   //================================
   // アコーディオン
   //================================
- 
+
  var faqHeaders = document.querySelectorAll(".faqAccordion__header");
   var faqContents = document.querySelectorAll(".faqAccordion__content");
 
@@ -166,3 +166,9 @@
       }
     });
   });
+
+
+
+			<div class="single-tour_plan__side">
+				<?php get_sidebar('tour_plan'); ?>
+			</div>

@@ -2548,6 +2548,309 @@ span.wpcf7-spinner {
 	width: 100%;
 }
 
+.news-card {
+	background-color: #fff;
+	box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+	height: 100%;
+	width: 100%;
+}
+
+.news-card__link {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+	height: 100%;
+	padding-bottom: 1.625rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 1.125rem;
+}
+
+.news-card__img {
+	cursor: pointer;
+	min-height: 12.5625rem;
+	overflow: hidden;
+	width: 100%;
+}
+
+.news-card__img img {
+	aspect-ratio: 301/201;
+	height: auto;
+	transform: scale(1); /* 初期状態でのサイズを指定 */
+	transform-origin: center; /* 拡大の基点を中心に */
+	transition: transform 0.6s ease; /* アニメーションを滑らかに */
+	width: 100%;
+}
+
+.news-card__img:hover img {
+	transform: scale(1.1); /* 拡大 */
+}
+
+.news-card__body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin-top: 1.5rem;
+	width: 100%;
+}
+
+.news-card__top {
+	border-bottom: 1px solid #000074;
+	padding-bottom: 0.3125rem;
+}
+
+.news-card__date {
+	color: #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.75rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	vertical-align: top;
+}
+
+.news-card__title {
+	border-bottom: 1px solid #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1.5rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 2;
+	padding-bottom: 1rem;
+}
+
+.news-card__text {
+	color: #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.5;
+	margin-top: 1rem;
+}
+
+.news-item {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	gap: 0.625rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.news-item__container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+}
+
+.news-item__meta {
+	align-items: flex-start;
+	display: flex; /* フレックスアイテムとして、縮小はするが成長しない */
+	flex: 0 1 auto;
+	flex-direction: row;
+	gap: 0.875rem;
+	min-width: 15rem;
+	padding-left: 0.625rem;
+	padding-top: 0.625rem;
+}
+
+.news-item__date {
+	align-self: flex-start;
+	line-height: 1;
+}
+
+.news-item__category {
+	border: 1px solid #000074;
+	line-height: 1;
+	max-width: 11.25rem; /* カテゴリの最大幅を制限 */
+	overflow: hidden;
+	padding: 2px 8px 3px;
+	text-overflow: ellipsis; /* 文字が長い場合に「...」を表示 */
+}
+
+.news-item__content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 0.625rem;
+	padding: 0.625rem;
+}
+
+.news-item__title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	line-height: 1.5;
+	padding-bottom: 0.25rem;
+}
+
+.news-item__text {
+	color: #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.5;
+	margin-top: 1rem;
+}
+
+.news-media {
+	background-color: #fff;
+	box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+	height: 100%;
+	width: 100%;
+}
+
+.news-media__link {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+	height: 100%;
+	padding-bottom: 1.625rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 1.125rem;
+}
+
+.news-media__container {
+	display: flex;
+	flex-direction: column;
+}
+
+.news-media__img {
+	cursor: pointer;
+	min-height: 12.5625rem;
+	overflow: hidden;
+	width: 100%;
+}
+
+.news-media__img img {
+	aspect-ratio: 301/201;
+	height: auto;
+	transform: scale(1); /* 初期状態でのサイズを指定 */
+	transform-origin: center; /* 拡大の基点を中心に */
+	transition: transform 0.6s ease; /* アニメーションを滑らかに */
+	width: 100%;
+}
+
+.news-media__img:hover img {
+	transform: scale(1.1); /* 拡大 */
+}
+
+.news-media__content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.news-media__meta {
+	display: flex;
+	flex-direction: row;
+	gap: 1.875rem;
+	padding-left: 0.625rem;
+	padding-top: 0.625rem;
+}
+
+.news-media__date {
+	color: #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.75rem;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+.news-media__category {
+	border: 1px solid #000074;
+	line-height: 1;
+	padding: 2px 8px 3px;
+	white-space: nowrap;
+}
+
+.news-media__content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 0.625rem;
+}
+
+.news-media__title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	line-height: 1.5;
+	padding-bottom: 0.25rem;
+}
+
+.news-media__text {
+	color: #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.5;
+	margin-top: 1rem;
+}
+
+.home-news {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.home-news__container {
+	grid-gap: 1.875rem;
+	display: grid;
+	gap: 1.875rem;
+	grid-template-columns: 1fr;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5rem;
+	width: 100%;
+}
+
+.home-news__main {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.375rem;
+	padding-right: 0.375rem;
+	width: 100%;
+}
+
+.home-news__list {
+	grid-gap: 2.25rem;
+	display: grid;
+	gap: 2.25rem;
+	grid-template-columns: 1fr;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.home-news__item {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.news__nav {
+	margin-top: 4.875rem;
+}
+
+.news__side {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5rem;
+	padding-left: 1.5625rem;
+	padding-right: 1.5625rem;
+	width: 100%;
+}
+
+.news__contact {
+	margin-top: 5rem;
+}
+
 .page-404 {
 	background-color: #000074;
 	padding-top: 5rem;
@@ -3972,6 +4275,120 @@ span.wpcf7-spinner {
 	justify-content: center;
 }
 
+.single-news__container {
+	margin-top: 3.75rem;
+}
+
+.single-news {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.single-news__post {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.single-news__date {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 2;
+}
+
+.single-news__title {
+	border-bottom: 1px solid #000074;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1.5rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.5;
+	margin-top: 0.5rem;
+	padding-bottom: 0.625rem;
+}
+
+.single-news__eyecatch {
+	margin-top: 1.5rem;
+	width: 100%;
+}
+
+.single-news__eyecatch img {
+	-o-object-fit: cover;
+	aspect-ratio: 345/231;
+	object-fit: cover;
+}
+
+.single-news__content {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1.5rem;
+	text-align: left;
+	width: 100%;
+}
+
+.single-news__content img {
+	-o-object-fit: cover;
+	aspect-ratio: 345/231;
+	margin-top: 1.5rem;
+	object-fit: cover;
+	width: 100%;
+}
+
+.single-news__content p {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.5;
+	margin-top: 1.5rem;
+}
+
+.single-news__content ul {
+	margin-top: 1.5rem;
+}
+
+.single-news__content ul li {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.5;
+	padding-left: 1.625rem;
+	position: relative;
+}
+
+.single-news__content ul li:not(:first-child) {
+	margin-top: 0.25rem;
+}
+
+.single-news__content ul li::before {
+	background-image: url(../images/icon-hitode.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	height: 1.125rem;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	top: 0.25rem;
+	width: 1.125rem;
+}
+
+.single-news__nav {
+	margin-top: 2.5rem;
+	position: relative;
+	width: 100%;
+}
+
+.single-news__nav .news-nav__arrows {
+	display: flex;
+	gap: 5.125rem;
+	justify-content: center;
+}
+
 .single-tour_plan {
 	margin-left: auto;
 	margin-right: auto;
@@ -4031,7 +4448,6 @@ span.wpcf7-spinner {
 }
 
 .single-tour_plan__body {
-	border: 1px solid #000074;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
@@ -4436,6 +4852,31 @@ span.wpcf7-spinner {
 	margin-top: 2.25rem;
 	padding-bottom: 0.25rem;
 	text-align: center;
+}
+
+.top-news__container {
+	margin-top: 3.75rem;
+}
+
+.top-news__list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.875rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.top-news__item {
+	border-bottom: 1px solid #000074;
+	padding-bottom: 0.625rem;
+}
+
+.top-news__more {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 3.75rem;
 }
 
 .top-plan {
@@ -5001,6 +5442,10 @@ span.wpcf7-spinner {
 
 .top-aboutus-layout {
 	margin-top: 5rem;
+}
+
+.top-news-layout {
+	margin-top: 7.5rem;
 }
 
 .top-plan-layout {
@@ -5604,6 +6049,79 @@ html {
 	grid-template-columns: 1fr 1fr;
 }
 
+.news-card__link {
+	grid-template-columns: 1fr;
+	padding-top: 1rem;
+}
+
+.news-card__img {
+	max-width: 18.8125rem;
+}
+
+.news-card__title {
+	font-size: 2rem;
+}
+
+.news-card__text {
+	margin-top: 0;
+}
+
+.news-item__container {
+	align-items: flex-start;
+	flex-direction: row;
+}
+
+.news-item__title {
+	line-height: 1.5;
+}
+
+.news-item__text {
+	margin-top: 0;
+}
+
+.news-media__link {
+	grid-template-columns: 1fr;
+	padding-top: 1rem;
+}
+
+.news-media__container {
+	display: flex;
+	flex-direction: row;
+	gap: 0.625rem;
+}
+
+.news-media__img {
+	max-width: 18.8125rem;
+}
+
+.news-media__title {
+	line-height: 1.5;
+}
+
+.news-media__text {
+	margin-top: 0;
+}
+
+.home-news__main {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.news__nav {
+	margin-top: 4.625rem;
+}
+
+.news__side {
+	margin-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	width: 18.375rem;
+}
+
+.news__contact {
+	margin-top: 6.25rem;
+}
+
 .page-404 {
 	padding-top: 5.625rem;
 }
@@ -6064,6 +6582,44 @@ html {
 	margin-top: 5rem;
 }
 
+.single-news {
+	padding-right: 0.1875rem;
+}
+
+.single-news__title {
+	font-size: 2rem;
+}
+
+.single-news__eyecatch {
+	margin-top: 2.5rem;
+}
+
+.single-news__eyecatch img {
+	aspect-ratio: 700/468;
+}
+
+.single-news__content {
+	margin-top: 2.5rem;
+}
+
+.single-news__content img {
+	aspect-ratio: 700/468;
+	margin-top: 2.5rem;
+}
+
+.single-news__content p {
+	font-size: 1.25rem;
+	margin-top: 2.5rem;
+}
+
+.single-news__content ul {
+	margin-top: 2.5rem;
+}
+
+.single-news__nav {
+	margin-top: 5rem;
+}
+
 .single-tour_plan__container {
 	grid-gap: 5%;
 	display: grid;
@@ -6308,6 +6864,10 @@ html {
 
 .top-blog__button {
 	margin-top: 4.875rem;
+}
+
+.top-news__list {
+	max-width: 56.25rem;
 }
 
 .top-plan__cards-wrapper {

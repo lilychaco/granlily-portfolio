@@ -1,7 +1,7 @@
 <aside class="side-tour_plan sidebar">
 	<!-- 関連ツアー -->
 	<section class="sidebar__related">
-		<h3 class="sidebar__related-title">関連ツアー</h3>
+		<h3 class="sidebar__related-title"></h3>
 		<ul class="sidebar__related-list">
 			<?php
         $related_args = array(

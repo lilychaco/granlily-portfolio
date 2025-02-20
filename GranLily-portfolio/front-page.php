@@ -173,6 +173,65 @@
 </section>
 
 
+<!-- お知らせ News -->
+<section class="top-news top-news-layout">
+	<div class="top-news__inner inner">
+		<h2 class="top-news__heading section-heading">
+			<span class="section-heading__title">お知らせ</span>
+			<span class="section-heading__subtitle">News</span>
+		</h2>
+		<div class="top-news__container">
+			<?php
+			// カスタムクエリの設定
+			$args = array(
+    'post_type'      => 'post', // 投稿タイプを指定
+    'posts_per_page' => 3, // 表示する投稿数を指定
+    'post_status'    => 'publish', // 公開済みの投稿のみ取得
+			);
+
+			$query = new WP_Query($args);
+				if ($query->have_posts()) :
+		?>
+			<ul class="top-news__list">
+				<?php
+				while ($query->have_posts()) : $query->the_post();
+    		$terms = get_the_terms(get_the_ID(), 'category'); // ループ内で取得
+				?>
+
+				<li class="top-news__item">
+					<a href="<?php the_permalink(); ?>" class="top-news__link">
+						<div class="top-news__body news-item">
+							<div class="news-item__meta">
+								<time class="news-item__date"
+									datetime="<?php echo esc_attr(get_the_time('c')); ?>"><?php echo esc_html(get_the_date('Y.m/d')); ?></time>
+
+								<?php if (!empty($terms) && !is_wp_error($terms)) : ?>
+								<span class="news-item__category">
+									<?php foreach ($terms as $term) : ?>
+									<?php echo esc_html($term->name); ?>
+									<?php endforeach; ?>
+								</span>
+								<?php endif; ?>
+							</div>
+							<div class="news-item__content">
+								<h3 class="news-item__title"><?php the_title(); ?>
+								</h3>
+							</div>
+						</div>
+					</a>
+				</li>
+				<?php endwhile;?>
+			</ul>
+			<?php endif; ?>
+			<?php wp_reset_postdata(); // クエリのリセット  ?>
+			<div class="top-news__more">
+				<a href="<?php echo esc_url(home_url('/news')); ?>" class="top-news__more-link button--03">すべて見る</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
 
 <section class="top-aboutus inner top-aboutus-layout" id="aboutus">
 	<h2 class="top-aboutus__heading section-heading">

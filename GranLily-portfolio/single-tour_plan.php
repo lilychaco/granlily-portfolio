@@ -14,7 +14,6 @@
 <div class="single-tour_plan single-tour_plan-layout">
 	<div class="single-tour_plan__inner inner">
 		<div class="single-tour_plan__container">
-
 			<!-- メインコンテンツ -->
 			<div class="single-tour_plan__main">
 				<div class="single-tour_plan__article">
@@ -124,23 +123,10 @@
 						ツアー一覧へ
 					</a>
 				</div>
-
-
-
-
 			</div>
-
-
-
-
-
+			<!-- sidebar挿入するならここ-->
 		</div>
 	</div>
 </div>
-
-
-
-</div>
-
 
 <?php get_footer(); ?>

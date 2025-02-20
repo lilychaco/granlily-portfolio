@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.top-news__inner {
+
+}
+
+.inner {
+
+}
+
+.top-news__heading {
+
+}
+
+.section-heading {
+
+}
+
+.section-heading__title {
+
+}
+
+.section-heading__subtitle {
+
+}
+
+.top-news__container {
+	margin-top: rem(60);
+
+}
+
+.top-news__list {
+	margin-inline:auto;
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	gap:rem(30);
+	@include mq(md) {
+		max-width: rem(900);
+	}
+
+
+}
+.top-news__item {
+	padding-bottom: rem(10);
+	border-bottom: 1px solid $greenaccent;
+
+}
+.top-news__more {
+	margin-top: rem(60);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

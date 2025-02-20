@@ -64,13 +64,13 @@ add_action( 'after_setup_theme', 'my_setup' );
 
 function my_archive_title( $title ) {
     if ( is_home() ) { /* ホームの場合 */
-        $title = 'blog';
+        $title = 'お知らせ';
     } elseif ( is_category() ) { /* カテゴリーアーカイブの場合 */
         $title = '' . single_cat_title( '', false ) . '';
     } elseif ( is_tag() ) { /* タグアーカイブの場合 */
         $title = '' . single_tag_title( '', false ) . '';
-		} elseif ( is_post_type_archive('works') ) { /* 投稿タイプが works の場合 */
-        $title = 'works'; // タイトルを英語表記に変更
+		} elseif ( is_post_type_archive('tour_plan') ) { /* 投稿タイプが works の場合 */
+        $title = 'ツアープラン'; // タイトルを英語表記に変更
     }elseif ( is_post_type_archive('voice') ) { /* 投稿タイプが voice の場合 */
         $title = 'voice'; // タイトルを英語表記に変更
 		}elseif ( is_post_type_archive() ) { /* その他の投稿タイプアーカイブの場合 */
@@ -263,19 +263,19 @@ global $wp_post_types;
 $post_labels = $wp_post_types['post']->labels;
 
 // ラベルを変更します
-$post_labels->name = 'ブログ';
-$post_labels->singular_name = 'ブログ';
-$post_labels->add_new = '新しいブログを追加';
-$post_labels->add_new_item = '新しいブログを追加';
-$post_labels->edit_item = 'ブログを編集';
-$post_labels->new_item = '新しいブログ';
-$post_labels->view_item = 'ブログを表示';
-$post_labels->search_items = 'ブログを検索';
-$post_labels->not_found = 'ブログが見つかりません';
-$post_labels->not_found_in_trash = 'ゴミ箱にブログはありません';
-$post_labels->all_items = 'すべてのブログ';
-$post_labels->menu_name = 'ブログ';
-$post_labels->name_admin_bar = 'ブログ';
+$post_labels->name = 'ニュース';
+$post_labels->singular_name = 'ニュース';
+$post_labels->add_new = '新しいニュースを追加';
+$post_labels->add_new_item = '新しいニュースを追加';
+$post_labels->edit_item = 'ニュースを編集';
+$post_labels->new_item = '新しいニュース';
+$post_labels->view_item = 'ニュースを表示';
+$post_labels->search_items = 'ニュースを検索';
+$post_labels->not_found = 'ニュースが見つかりません';
+$post_labels->not_found_in_trash = 'ゴミ箱にニュースはありません';
+$post_labels->all_items = 'すべてのニュース';
+$post_labels->menu_name = 'ニュース';
+$post_labels->name_admin_bar = 'ニュース';
 }
 
 // アクションフックを追加して、WordPressの初期化時にラベルを変更します

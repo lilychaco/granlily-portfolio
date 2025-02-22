@@ -2629,10 +2629,8 @@ span.wpcf7-spinner {
 }
 
 .news-item {
-	align-items: flex-start;
 	display: flex;
-	flex-direction: row;
-	gap: 0.625rem;
+	flex-direction: column;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
@@ -6064,6 +6062,13 @@ html {
 
 .news-card__text {
 	margin-top: 0;
+}
+
+.news-item {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	gap: 0.625rem;
 }
 
 .news-item__container {

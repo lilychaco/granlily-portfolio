@@ -1891,7 +1891,7 @@ span.wpcf7-spinner {
 	color: #fff;
 	display: inline-block;
 	font-family: "Noto Sans JP", sans-serif;
-	font-size: 0.75rem;
+	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: 0.2em;
 	padding: 0.625rem 1.25rem;
@@ -1899,9 +1899,8 @@ span.wpcf7-spinner {
 
 .fv__description {
 	animation: fade-up 1s ease-out forwards;
-	bottom: 15%;
+	bottom: 20%;
 	color: #fff;
-	font-size: 1rem;
 	opacity: 0; /* 初期状態では非表示 */
 	position: absolute;
 	text-align: center;
@@ -1937,7 +1936,7 @@ span.wpcf7-spinner {
 	font-size: 1.25rem;
 	font-weight: 400;
 	line-height: 2; /* 行間を調整 */
-	opacity: 1; /* 初期状態は非表示 */
+	opacity: 1;
 	padding: 0.625rem 1.25rem;
 }
 
@@ -1952,6 +1951,12 @@ span.wpcf7-spinner {
 	position: absolute;
 	top: 0;
 	width: 100%;
+}
+
+/* スプラッシュ画面が消えた後にアニメーションを適用 */
+
+.fv__slide.is-active {
+	animation: slider-animation 24s linear infinite;
 }
 
 /* === テキストのフェードアップ用アニメーション === */
@@ -4533,43 +4538,29 @@ span.wpcf7-spinner {
 
 /* Loading背景画面設定　*/
 
-#splash {
+.splash {
 	align-items: center;
 	background: #D6E6F5; /* 直接カラーコードに修正 */
 	color: #fff;
 	display: flex; /* これを追加（中央配置のため） */
 	height: 100%;
 	justify-content: center;
-	opacity: 1;
 	position: fixed;
 	text-align: center;
-	transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
-	visibility: visible;
 	width: 100%;
 	z-index: 999;
 }
 
-/* Loading画像中央配置　*/
-
-#splash_logo {
-	left: 50%;
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}
-
 /* Loading アイコンの大きさ設定　*/
 
-#splash_logo img {
-	width: 260px;
+.splash__logo img {
+	width: 16.25rem;
 }
 
 /* fadeUpをするアイコンの動き */
 
-.fadeUp {
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
-	animation-name: fadeUpAnime;
+.fade-up {
+	animation: fade-up 0.5s ease-out forwards;
 	opacity: 0;
 }
 
@@ -5921,10 +5912,6 @@ html {
 }
 
 .fv__sub-title {
-	font-size: 0.875rem;
-}
-
-.fv__description {
 	font-size: 1.25rem;
 }
 
@@ -7232,7 +7219,7 @@ html {
 
 41.66% {
 	opacity: 0;
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 
 100% {
@@ -7255,14 +7242,14 @@ html {
 
 }
 
-@keyframes fadeUpAnime {
+@keyframes fade-up {
 
-from {
+0% {
 	opacity: 0;
 	transform: translateY(100px);
 }
 
-to {
+100% {
 	opacity: 1;
 	transform: translateY(0);
 }

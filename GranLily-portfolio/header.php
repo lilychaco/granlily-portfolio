@@ -27,9 +27,10 @@
 
 <body <?php body_class(); ?>>
 	<?php if (is_front_page()) : ?>
-	<div id="splash">
-		<div id="splash_logo">
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-transparent.png" alt="ヘッダーロゴ">
+	<div class="splash">
+		<div class="splash__logo">
+			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-transparent.png" alt="ロゴ"
+				class="fade-up">
 		</div>
 	</div>
 	<?php endif; ?>

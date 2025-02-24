@@ -203,14 +203,14 @@ jQuery(function ($) {
     $("#grayDisplay").fadeOut(200);
     $("body").removeClass("no-scroll");
   });
-
-  //ローディング
   $(window).on("load", function () {
-    $("#splash_logo").delay(1200).fadeOut(600, function () {
-      $("#splash").css("opacity", "0");
-      setTimeout(function () {
-        $("#splash").css("visibility", "hidden");
-      }, 800);
+    // まずロゴを1.2秒後にフェードアウト
+    $(".splash__logo").delay(1200).fadeOut(600, function () {
+      // ロゴのフェードアウトが終わったら、スプラッシュ画面をフェードアウト
+      $(".splash").fadeOut(600, function () {
+        // スプラッシュ画面が完全に消えたら、FVスライドアニメーションを開始
+        $(".fv__slide").addClass("is-active");
+      });
     });
   });
 }); // ← jQuery(function ($) { の閉じタグ

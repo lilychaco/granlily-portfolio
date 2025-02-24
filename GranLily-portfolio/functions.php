@@ -1,31 +1,70 @@
 <?php
 
-		function theme_enqueue_styles() {
-    // テーマのバージョンを取得（キャッシュ対策）
-    $theme_version = wp_get_theme()->get('Version');
+function theme_enqueue_styles() {
 
-    // Google Fontsの読み込み
-    wp_enqueue_style('mytheme-google-fonts', 'https://fonts.googleapis.com/css2?family=Lato&family=Gotu&family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@700&display=swap', [], null);
+    // Google Fontsの読み込み（バージョン引数に null）
+    wp_enqueue_style(
+        'mytheme-google-fonts',
+        'https://fonts.googleapis.com/css2?family=Lato&family=Gotu&family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@700&display=swap',
+        [],
+        null
+    );
 
     // Swiper JSとCSSの読み込み（バージョン指定）
-    wp_enqueue_style('mytheme-swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', [], '9.0.0');
-    wp_enqueue_script('mytheme-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', [], '9.0.0', true);
-
+    wp_enqueue_style(
+        'mytheme-swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css',
+        [],
+        '9.0.0'
+    );
+    wp_enqueue_script(
+        'mytheme-swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js',
+        [],
+        '9.0.0',
+        true
+    );
 
     // jQuery InViewの読み込み（依存関係: jQuery）
-    wp_enqueue_script('jquery-inview', get_template_directory_uri() . '/assets/js/jquery.inview.min.js', ['jquery'], $theme_version, true);
+    wp_enqueue_script(
+        'jquery-inview',
+        get_template_directory_uri() . '/assets/js/jquery.inview.min.js',
+        ['jquery'],
+        null,
+        true
+    );
 
-    // カスタムスクリプトの読み込み（依存関係: jQuery, GSAP）
-// カスタムスクリプトの読み込み（依存関係: jQuery のみ）
-wp_enqueue_script('custom-main-js', get_template_directory_uri() . '/assets/js/script.js', ['jquery'], $theme_version, true);
-wp_enqueue_script('custom-slider', get_template_directory_uri() . '/assets/js/custom-slider.js', ['jquery'], $theme_version, true);
-
+    // カスタムスクリプトの読み込み（依存関係: jQuery のみ）
+    wp_enqueue_script(
+        'custom-main-js',
+        get_template_directory_uri() . '/assets/js/script.js',
+        ['jquery'],
+        null,
+        true
+    );
+    wp_enqueue_script(
+        'custom-slider',
+        get_template_directory_uri() . '/assets/js/custom-slider.js',
+        ['jquery'],
+        null,
+        true
+    );
 
     // jQuery UI CSSの読み込み（バージョン指定）
-    wp_enqueue_style('jquery-ui-css', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', [], '1.12.1');
+    wp_enqueue_style(
+        'jquery-ui-css',
+        'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css',
+        [],
+        '1.12.1'
+    );
 
-    // ローカルCSSの読み込み（テーマバージョン適用）
-    wp_enqueue_style('custom-style', get_template_directory_uri() . '/assets/css/styles.css', [], $theme_version);
+    // ローカルCSSの読み込み（バージョン引数に null）
+    wp_enqueue_style(
+        'custom-style',
+        get_template_directory_uri() . '/assets/css/styles.css',
+        [],
+        null
+    );
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 

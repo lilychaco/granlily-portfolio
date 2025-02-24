@@ -1899,7 +1899,7 @@ span.wpcf7-spinner {
 
 .fv__description {
 	animation: fade-up 1s ease-out forwards;
-	bottom: 20%;
+	bottom: 25%;
 	color: #fff;
 	opacity: 0; /* 初期状態では非表示 */
 	position: absolute;
@@ -1914,15 +1914,15 @@ span.wpcf7-spinner {
 /* 各スライドごとにテキストのアニメーションを遅延 */
 
 .fv__slide:nth-child(1) .fv__description {
-	animation-delay: 6s; /* 画像のフェードイン後に遅れて表示 */
+	animation-delay: 4s; /* 画像のフェードイン後に遅れて表示 */
 }
 
 .fv__slide:nth-child(2) .fv__description {
-	animation-delay: 14s; /* 画像が表示されてから遅れて表示 */
+	animation-delay: 12s; /* 画像が表示されてから遅れて表示 */
 }
 
 .fv__slide:nth-child(3) .fv__description {
-	animation-delay: 22s; /* 画像が表示されてから遅れて表示 */
+	animation-delay: 20s; /* 画像が表示されてから遅れて表示 */
 }
 
 /* 説明文の各行 */
@@ -1960,35 +1960,6 @@ span.wpcf7-spinner {
 }
 
 /* === テキストのフェードアップ用アニメーション === */
-
-.fv__description {
-	animation: fade-up 1s ease-out forwards;
-	bottom: 15%;
-	color: #fff;
-	font-size: 1rem;
-	opacity: 0; /* 初期状態では非表示 */
-	position: absolute;
-	text-align: center;
-	width: 100%;
-}
-
-.fv__description p {
-	display: inline-block;
-}
-
-/* 各スライドごとにテキストのアニメーションを遅延 */
-
-.fv__slide:nth-child(1) .fv__description {
-	animation-delay: 4s; /* 画像のフェードイン後に遅れて表示 */
-}
-
-.fv__slide:nth-child(2) .fv__description {
-	animation-delay: 10s; /* 画像が表示されてから遅れて表示 */
-}
-
-.fv__slide:nth-child(3) .fv__description {
-	animation-delay: 18s; /* 画像が表示されてから遅れて表示 */
-}
 
 .gallery {
 	margin-left: auto;
@@ -5915,12 +5886,12 @@ html {
 	font-size: 1.25rem;
 }
 
-.fv__text {
-	font-size: 1.5rem;
+.fv__description {
+	bottom: 15%;
 }
 
-.fv__description {
-	font-size: 1.25rem;
+.fv__text {
+	font-size: 1.5rem;
 }
 
 .gallery__content {

@@ -212,18 +212,29 @@ jQuery(function ($) {
 
 
 
-$(window).on("load", function () {
-  // まずロゴを1.2秒後にフェードアウト
-  $(".splash__logo")
-    .delay(1200)
-    .fadeOut(600, function () {
-      // ロゴのフェードアウトが終わったら、スプラッシュ画面をフェードアウト
-      $(".splash").fadeOut(600, function () {
-        // スプラッシュ画面が完全に消えたら、FVスライドアニメーションを開始
-        $(".fv__slide").addClass("is-active");
-      });
-    });
-});
+
+
+	$(window).on("load", function () {
+    // セッションストレージをチェック（初回アクセス時のみローディングを表示）
+    if (!sessionStorage.getItem("visited")) {
+      sessionStorage.setItem("visited", "true"); // 訪問済みフラグをセット
+
+      // まずロゴを1.2秒後にフェードアウト
+      $(".splash__logo")
+        .delay(1200)
+        .fadeOut(600, function () {
+          // ロゴのフェードアウトが終わったら、スプラッシュ画面をフェードアウト
+          $(".splash").fadeOut(600, function () {
+            // スプラッシュ画面が完全に消えたら、FVスライドアニメーションを開始
+            $(".fv__slide").addClass("is-active");
+          });
+        });
+    } else {
+      // 2回目以降はローディングをスキップして即時表示
+      $(".splash").hide(); // ローディング画面を即非表示
+      $(".fv__slide").addClass("is-active"); // アニメーションを即開始
+    }
+  });
 
 
 

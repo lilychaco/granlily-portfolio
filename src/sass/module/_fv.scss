@@ -98,26 +98,30 @@
 
 .fv__description {
 	 position: absolute;
-	 bottom:20%;
+	 bottom: 25%;
 	 width: 100%;
   text-align: center;
   color: #fff;
 	opacity: 0; /* 初期状態では非表示 */
   animation: fade-up 1s ease-out forwards;
+	@include mq(md) {
+		bottom: 15%;
+	}
 }
+
 
 .fv__description p {
 	display: inline-block;
 }
 /* 各スライドごとにテキストのアニメーションを遅延 */
 .fv__slide:nth-child(1) .fv__description {
-  animation-delay: 6s; /* 画像のフェードイン後に遅れて表示 */
+  animation-delay: 4s; /* 画像のフェードイン後に遅れて表示 */
 }
 .fv__slide:nth-child(2) .fv__description {
-  animation-delay: 14s; /* 画像が表示されてから遅れて表示 */
+  animation-delay: 12s; /* 画像が表示されてから遅れて表示 */
 }
 .fv__slide:nth-child(3) .fv__description {
-  animation-delay: 22s; /* 画像が表示されてから遅れて表示 */
+  animation-delay: 20s; /* 画像が表示されてから遅れて表示 */
 }
 
 
@@ -137,8 +141,6 @@
 				font-size: rem(24);
 		}
 }
-
-
 
 
 
@@ -193,30 +195,3 @@
 }
 
 
-.fv__description {
-	 position: absolute;
-	 bottom:15%;
-	 width: 100%;
-  text-align: center;
-  color: #fff;
-	opacity: 0; /* 初期状態では非表示 */
-  animation: fade-up 1s ease-out forwards;
-	font-size: rem(16);
-	@include mq(md) {
-		font-size: rem(20);
-	}
-}
-
-.fv__description p {
-	display: inline-block;
-}
-/* 各スライドごとにテキストのアニメーションを遅延 */
-.fv__slide:nth-child(1) .fv__description {
-  animation-delay: 4s; /* 画像のフェードイン後に遅れて表示 */
-}
-.fv__slide:nth-child(2) .fv__description {
-  animation-delay: 10s; /* 画像が表示されてから遅れて表示 */
-}
-.fv__slide:nth-child(3) .fv__description {
-  animation-delay: 18s; /* 画像が表示されてから遅れて表示 */
-}

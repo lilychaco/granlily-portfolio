@@ -210,11 +210,7 @@ jQuery(function ($) {
     $("body").removeClass("no-scroll");
   });
 
-
-
-
-
-	$(window).on("load", function () {
+  $(window).on("load", function () {
     // セッションストレージをチェック（初回アクセス時のみローディングを表示）
     if (!sessionStorage.getItem("visited")) {
       sessionStorage.setItem("visited", "true"); // 訪問済みフラグをセット
@@ -235,10 +231,4 @@ jQuery(function ($) {
       $(".fv__slide").addClass("is-active"); // アニメーションを即開始
     }
   });
-
-
-
-
-
-
 }); // ← jQuery(function ($) { の閉じタグ

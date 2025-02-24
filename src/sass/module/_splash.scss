@@ -7,17 +7,21 @@
   height: 100%;
   z-index: 999;
   background: #D6E6F5; /* 直接カラーコードに修正 */
-  text-align: center;
-  color: #fff;
-  display: flex; /* これを追加（中央配置のため） */
-  justify-content: center;
-  align-items: center;
 }
 
-
+.splash__logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 /* Loading アイコンの大きさ設定　*/
 .splash__logo img {
-  width:rem(260);
+	width: rem(160);
+	@include mq(md) {
+		 width:rem(260);
+	}
+
 }
 
 /* fadeUpをするアイコンの動き */

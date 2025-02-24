@@ -4510,22 +4510,24 @@ span.wpcf7-spinner {
 /* Loading背景画面設定　*/
 
 .splash {
-	align-items: center;
 	background: #D6E6F5; /* 直接カラーコードに修正 */
-	color: #fff;
-	display: flex; /* これを追加（中央配置のため） */
 	height: 100%;
-	justify-content: center;
 	position: fixed;
-	text-align: center;
 	width: 100%;
 	z-index: 999;
+}
+
+.splash__logo {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 /* Loading アイコンの大きさ設定　*/
 
 .splash__logo img {
-	width: 16.25rem;
+	width: 10rem;
 }
 
 /* fadeUpをするアイコンの動き */
@@ -6627,6 +6629,10 @@ html {
 	display: grid;
 	gap: 1.875rem;
 	grid-template-columns: 1fr 1fr;
+}
+
+.splash__logo img {
+	width: 16.25rem;
 }
 
 .custom-swiper-button-prev,

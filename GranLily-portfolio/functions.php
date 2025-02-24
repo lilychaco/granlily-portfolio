@@ -11,15 +11,15 @@
     wp_enqueue_style('mytheme-swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', [], '9.0.0');
     wp_enqueue_script('mytheme-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', [], '9.0.0', true);
 
-    // GSAP（アニメーションライブラリ）の読み込み
-    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', [], '3.12.2', true);
 
     // jQuery InViewの読み込み（依存関係: jQuery）
     wp_enqueue_script('jquery-inview', get_template_directory_uri() . '/assets/js/jquery.inview.min.js', ['jquery'], $theme_version, true);
 
     // カスタムスクリプトの読み込み（依存関係: jQuery, GSAP）
-    wp_enqueue_script('custom-main-js', get_template_directory_uri() . '/assets/js/script.js', ['jquery', 'gsap'], $theme_version, true);
-    wp_enqueue_script('custom-slider', get_template_directory_uri() . '/assets/js/custom-slider.js', ['jquery'], $theme_version, true);
+// カスタムスクリプトの読み込み（依存関係: jQuery のみ）
+wp_enqueue_script('custom-main-js', get_template_directory_uri() . '/assets/js/script.js', ['jquery'], $theme_version, true);
+wp_enqueue_script('custom-slider', get_template_directory_uri() . '/assets/js/custom-slider.js', ['jquery'], $theme_version, true);
+
 
     // jQuery UI CSSの読み込み（バージョン指定）
     wp_enqueue_style('jquery-ui-css', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', [], '1.12.1');

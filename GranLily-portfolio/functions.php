@@ -468,18 +468,18 @@ function lily_theme_setup() {
 }
 add_action('after_setup_theme', 'lily_theme_setup');
 
-// スクリプトとスタイルの読み込み
-function lily_enqueue_scripts() {
-    // jQueryの読み込み
-    wp_enqueue_script('jquery');
+// // スクリプトとスタイルの読み込み
+// function lily_enqueue_scripts() {
+//     // jQueryの読み込み
+//     wp_enqueue_script('jquery');
 
-    // テーマのJavaScript
-    wp_enqueue_script(
-        'lily-script',
-        get_theme_file_uri('/src/js/script.js'),
-        array('jquery'),
-        '1.0.0',
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'lily_enqueue_scripts');
+//     // テーマのJavaScript
+//     wp_enqueue_script(
+//         'lily-script',
+//         get_theme_file_uri('/src/js/script.js'),
+//         array('jquery'),
+//         '1.0.0',
+//         true
+//     );
+// }
+// add_action('wp_enqueue_scripts', 'lily_enqueue_scripts');

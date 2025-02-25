@@ -61,49 +61,49 @@ jQuery(function ($) {
   // ==================================
   // インフォメーションページのタブの動きを制御
   // ==================================
-  $(document).ready(function () {
-    var urlParams = new URLSearchParams(window.location.search); // URLのクエリパラメータを取得
-    var tabParam = urlParams.get("tab"); // "tab"パラメータの値を取得
-    var $tabs = $(".js-tab"); // 全てのタブ
-    var $contents = $(".js-content"); // 全てのコンテンツ
+  // $(document).ready(function () {
+  var urlParams = new URLSearchParams(window.location.search); // URLのクエリパラメータを取得
+  var tabParam = urlParams.get("tab"); // "tab"パラメータの値を取得
+  var $tabs = $(".js-tab"); // 全てのタブ
+  var $contents = $(".js-content"); // 全てのコンテンツ
 
-    if (tabParam) {
-      // パラメータが指定されている場合
-      var targetIndex = $tabs.filter("[data-tab=\"".concat(tabParam, "\"]")).index();
-      if (targetIndex !== -1) {
-        $tabs.removeClass("current").eq(targetIndex).addClass("current"); // 該当タブを選択状態に
-        $contents.hide().eq(targetIndex).fadeIn(300); // 対応コンテンツを表示
-      } else {
-        // 該当するタブがない場合、デフォルトタブを表示
-        showDefaultTab();
-      }
+  if (tabParam) {
+    // パラメータが指定されている場合
+    var targetIndex = $tabs.filter("[data-tab=\"".concat(tabParam, "\"]")).index();
+    if (targetIndex !== -1) {
+      $tabs.removeClass("current").eq(targetIndex).addClass("current"); // 該当タブを選択状態に
+      $contents.hide().eq(targetIndex).fadeIn(300); // 対応コンテンツを表示
     } else {
-      // クエリパラメータがない場合、デフォルトタブを表示
+      // 該当するタブがない場合、デフォルトタブを表示
       showDefaultTab();
     }
+  } else {
+    // クエリパラメータがない場合、デフォルトタブを表示
+    showDefaultTab();
+  }
 
-    // タブクリック時のイベント
-    $tabs.on("click", function () {
-      var $clickedTab = $(this); // クリックされたタブを取得
-      var index = $clickedTab.index(); // タブのインデックス番号を取得
-      var tabId = $clickedTab.data("tab"); // タブに設定したデータ属性からIDを取得
+  // タブクリック時のイベント
+  $tabs.on("click", function () {
+    var $clickedTab = $(this); // クリックされたタブを取得
+    var index = $clickedTab.index(); // タブのインデックス番号を取得
+    var tabId = $clickedTab.data("tab"); // タブに設定したデータ属性からIDを取得
 
-      $tabs.removeClass("current"); // 全てのタブの選択状態を解除
-      $clickedTab.addClass("current"); // クリックされたタブを選択状態に
+    $tabs.removeClass("current"); // 全てのタブの選択状態を解除
+    $clickedTab.addClass("current"); // クリックされたタブを選択状態に
 
-      $contents.hide().eq(index).fadeIn(300); // 対応するコンテンツを表示
+    $contents.hide().eq(index).fadeIn(300); // 対応するコンテンツを表示
 
-      // URLにクエリパラメータを設定
-      var newUrl = "".concat(window.location.origin).concat(window.location.pathname, "?tab=").concat(tabId);
-      window.history.replaceState(null, null, newUrl);
-    });
-
-    // 初期タブ表示用の関数
-    function showDefaultTab() {
-      $tabs.first().addClass("current");
-      $contents.hide().first().show();
-    }
+    // URLにクエリパラメータを設定
+    var newUrl = "".concat(window.location.origin).concat(window.location.pathname, "?tab=").concat(tabId);
+    window.history.replaceState(null, null, newUrl);
   });
+
+  // 初期タブ表示用の関数
+  function showDefaultTab() {
+    $tabs.first().addClass("current");
+    $contents.hide().first().show();
+  }
+  // });
 
   //================================
   //  サイドのアーカイブメニューの動作
@@ -193,9 +193,9 @@ jQuery(function ($) {
   //================================
   $(document).on("click", ".js-modal-open img", function () {
     var imageHtml = $(this).prop("outerHTML");
-    $("#grayDisplay").html("<div class=\"modal-content\">".concat(imageHtml, "</div>")).css("display", "flex") // 先にdisplay: flexを設定
-    .hide().fadeIn(200); // フェードインのみ適用
-
+    $("#grayDisplay").hide() // 先に非表示
+    .html("<div class=\"modal-content\">".concat(imageHtml, "</div>")).css("display", "flex") // ここでdisplay: flexを適用
+    .fadeIn(200);
     $("body").addClass("no-scroll"); // スクロール無効化
   });
 
@@ -203,23 +203,24 @@ jQuery(function ($) {
     $("#grayDisplay").fadeOut(200);
     $("body").removeClass("no-scroll");
   });
-  $(window).on("load", function () {
-    // セッションストレージをチェック（初回アクセス時のみローディングを表示）
-    if (!sessionStorage.getItem("visited")) {
-      sessionStorage.setItem("visited", "true"); // 訪問済みフラグをセット
-
-      // まずロゴを1.2秒後にフェードアウト
-      $(".splash__logo").delay(1200).fadeOut(600, function () {
-        // ロゴのフェードアウトが終わったら、スプラッシュ画面をフェードアウト
-        $(".splash").fadeOut(600, function () {
-          // スプラッシュ画面が完全に消えたら、FVスライドアニメーションを開始
-          $(".fv__slide").addClass("is-active");
-        });
-      });
-    } else {
-      // 2回目以降はローディングをスキップして即時表示
-      $(".splash").hide(); // ローディング画面を即非表示
-      $(".fv__slide").addClass("is-active"); // アニメーションを即開始
-    }
-  });
 }); // ← jQuery(function ($) { の閉じタグ
+
+jQuery(window).on("load", function () {
+  function checkVisited() {
+    return sessionStorage.getItem("visited") !== null;
+  }
+  function setVisitedFlag() {
+    sessionStorage.setItem("visited", "true");
+  }
+  if (!checkVisited()) {
+    setVisitedFlag();
+    jQuery(".splash__logo").delay(1200).fadeOut(600, function () {
+      jQuery(".splash").fadeOut(600, function () {
+        jQuery(".fv__slide").addClass("is-active");
+      });
+    });
+  } else {
+    jQuery(".splash").hide();
+    jQuery(".fv__slide").addClass("is-active");
+  }
+});

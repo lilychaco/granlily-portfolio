@@ -56,6 +56,7 @@
 						class="header__logo-img header__logo-img--drawer" />
 				</a>
 			</h1>
+
 			<?php else : ?>
 			<div class="header__logo">
 				<a href="<?php echo esc_url(home_url('/')); ?>">

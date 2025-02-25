@@ -205,6 +205,9 @@ jQuery(function ($) {
   });
 }); // ← jQuery(function ($) { の閉じタグ
 
+//================================
+//loading
+//================================
 jQuery(window).on("load", function () {
   function checkVisited() {
     return sessionStorage.getItem("visited") !== null;
@@ -225,6 +228,9 @@ jQuery(window).on("load", function () {
   }
 });
 
+//================================
+//GSAP
+//================================
 // GSAPのプラグインを登録
 gsap.registerPlugin(MotionPathPlugin);
 

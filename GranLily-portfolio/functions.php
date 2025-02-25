@@ -1,7 +1,6 @@
 <?php
 
 function theme_enqueue_styles() {
-
     // Google Fontsの読み込み（バージョン引数に null）
     wp_enqueue_style(
         'mytheme-google-fonts',
@@ -34,14 +33,33 @@ function theme_enqueue_styles() {
         true
     );
 
-    // カスタムスクリプトの読み込み（依存関係: jQuery のみ）
+    // **✅ GSAPの読み込み（jQuery不要）**
+    wp_enqueue_script(
+        'gsap-core',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
+        [],
+        '3.12.2',
+        true // フッターで読み込む
+    );
+
+    // **✅ GSAP MotionPathPluginの読み込み**
+    wp_enqueue_script(
+        'gsap-motion-path',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js',
+        ['gsap-core'], // GSAP本体が先に読み込まれるように依存関係を設定
+        '3.12.2',
+        true
+    );
+
+    // カスタムスクリプトの読み込み（GSAPに依存させる）
     wp_enqueue_script(
         'custom-main-js',
         get_template_directory_uri() . '/assets/js/script.js',
-        ['jquery'],
+        ['jquery', 'gsap-core', 'gsap-motion-path'], // ✅ GSAPに依存させる
         null,
         true
     );
+
     wp_enqueue_script(
         'custom-slider',
         get_template_directory_uri() . '/assets/js/custom-slider.js',
@@ -68,13 +86,13 @@ function theme_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
-
-//パフォーマンス向上のために preconnect を wp_head に追加する
+// パフォーマンス向上のために preconnect を wp_head に追加する
 function add_google_fonts_preconnect() {
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
 }
 add_action('wp_head', 'add_google_fonts_preconnect');
+
 
 
 

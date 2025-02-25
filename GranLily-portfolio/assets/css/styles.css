@@ -254,6 +254,16 @@ time {
 	letter-spacing: 0;
 }
 
+.animation-airplane {
+	display: none;
+}
+
+#airplane {
+	height: auto;
+	position: absolute;
+	width: 50px;
+}
+
 .archive-tour_plan-layout {
 	margin-top: 2.5rem;
 }
@@ -749,7 +759,7 @@ time {
 	font-size: 0.875rem;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1;
+	line-height: 1.7;
 }
 
 .breadcrumb--404 {
@@ -5355,7 +5365,7 @@ span.wpcf7-spinner {
 }
 
 .information-layout {
-	margin-top: 7.5625rem;
+	margin-top: 1.25rem;
 }
 
 .layout__single-blog {
@@ -5464,6 +5474,15 @@ html {
 
 .accordion-card__content {
 	font-size: 1.25rem;
+}
+
+.animation-airplane {
+	display: block;
+	height: 100px;
+	margin: 25px auto;
+	overflow: visible;
+	position: relative;
+	width: 900px;
 }
 
 .archive-tour_plan-card__img img {
@@ -7094,7 +7113,7 @@ html {
 }
 
 .information-layout {
-	margin-top: 9.375rem;
+	margin-top: 0;
 }
 
 .layout__single-blog {

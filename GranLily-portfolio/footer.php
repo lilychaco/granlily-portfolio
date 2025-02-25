@@ -11,9 +11,9 @@
 				</a>
 			</div>
 			<div class="footer__sns">
-				<a href="#" target=”_blank”><img src="<?php echo get_theme_file_uri(); ?>/assets/images/LINE_Brand_icon.png"
-						alt="フッター" /></a>
-				<a href="#" target=”_blank”><img
+				<a href="https://lin.ee/7WWjHRk" target=”_blank”><img
+						src="<?php echo get_theme_file_uri(); ?>/assets/images/LINE_Brand_icon.png" alt="フッター" /></a>
+				<a href="https://www.instagram.com/granlily_2023" target=”_blank”><img
 						src="<?php echo get_theme_file_uri(); ?>/assets/images/Instagram_Glyph_Gradient.png" alt="フッターロゴ" /></a>
 			</div>
 		</div>

@@ -104,7 +104,7 @@
 						</a>
 					</li>
 					<li class="header-menu__item header-menu__item--line">
-						<a href="#" target="_blank" rel="noopener noreferrer"><img
+						<a href="https://lin.ee/7WWjHRk" target="_blank" rel="noopener noreferrer"><img
 								src="<?php echo get_theme_file_uri(); ?>/assets/images/line.png" alt="友だち追加" height="42" border="0"></a>
 					</li>
 				</ul>

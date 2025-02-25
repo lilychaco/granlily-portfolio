@@ -10,6 +10,14 @@
 	<h2 class="mv__title">サービス情報<br>&<br>フォトギャラリー</h2>
 </section>
 <?php get_template_part('common/breadcrumb') ?>
+<div class="animation-airplane">
+	<!-- SVGで楕円の上半分のパスを作成 -->
+	<svg id="flightSvg" width="900" height="100" viewBox="0 0 900 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path id="flightPath" stroke="none" fill="transparent" />
+	</svg>
+	<!-- 飛行機アイコン -->
+	<img id="airplane" src="<?php echo get_theme_file_uri(); ?>/assets/images/airplane-blue.png" alt="飛行機">
+</div>
 
 <div class="information information-layout">
 	<div class="information__inner inner">

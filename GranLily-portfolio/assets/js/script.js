@@ -224,3 +224,53 @@ jQuery(window).on("load", function () {
     jQuery(".fv__slide").addClass("is-active");
   }
 });
+
+// GSAPのプラグインを登録
+gsap.registerPlugin(MotionPathPlugin);
+
+// 楕円のサイズ（横幅900px、高さ100px）
+var ellipseWidth = 900;
+var ellipseHeight = 100;
+
+// 楕円の中心座標
+var centerX = ellipseWidth / 2;
+var centerY = ellipseHeight / 2;
+
+// 楕円の半径
+var radiusX = ellipseWidth / 2;
+var radiusY = ellipseHeight / 2;
+
+// 楕円の上半分のパスデータを作成
+var pathData = "M 0,".concat(centerY, " A ").concat(radiusX, ",").concat(radiusY, " 0 0,1 ").concat(ellipseWidth, ",").concat(centerY);
+
+// 楕円全体のパスデータを作成
+// const pathData = `M 0,${centerY}
+//                   A ${radiusX},${radiusY} 0 0,1 ${ellipseWidth},${centerY}
+//                   A ${radiusX},${radiusY} 0 0,1 0,${centerY}`;
+
+// ページが読み込まれた後に処理を実行
+document.addEventListener("DOMContentLoaded", function () {
+  // SVGの <path> にパスデータをセット（純粋なJS版）
+  document.querySelector("#flightPath").setAttribute("d", pathData);
+
+  // 飛行機を軌道に沿って移動
+  gsap.to("#airplane", {
+    duration: 4,
+    // 4秒でアニメーション
+    repeat: -1,
+    // 無限ループ
+    ease: "power1.inOut",
+    // イージング適用
+    motionPath: {
+      path: "#flightPath",
+      // 参照するSVGパス
+      align: "#flightPath",
+      // パスに沿って回転
+      autoRotate: true,
+      // 自動回転
+      start: 0,
+      // 開始位置
+      end: 1 // 終了位置
+    }
+  });
+});

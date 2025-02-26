@@ -909,24 +909,31 @@ time {
 	width: 200px;
 }
 
+/* 背景の円 */
+
 .button--03::before {
 	background-color: #D6E6F5;
-	border-radius: 20px;
+	border-radius: 50%;
 	content: "";
 	height: 30px;
 	position: absolute;
-	right: 20px;
+	right: 20px; /* ボタンの右端からの距離 */
 	top: 50%;
 	transform: translateY(-50%);
 	width: 30px;
 }
+
+/* 三角矢印 */
 
 .button--03::after {
 	border-right: 2px solid #000074;
 	border-top: 2px solid #000074;
 	content: "";
 	height: 10px;
-	transform: rotate(45deg);
+	position: absolute;
+	right: 31px;
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
 	width: 10px;
 }
 
@@ -1433,58 +1440,6 @@ span.wpcf7-spinner {
 
 .faqAccordion__contentInner {
 	padding: 1.25rem;
-}
-
-.fish {
-	position: relative;
-}
-
-.fish::after {
-	background-image: url("../images/container-fish.png");
-	background-size: cover;
-	content: "";
-	display: block;
-	height: 3.4375rem;
-	left: 0;
-	position: absolute;
-	top: -1.5rem;
-	width: 7.5rem; /* Width of the image */
-	z-index: -1;
-	z-index: -1;
-}
-
-.fish-02 {
-	position: relative;
-}
-
-.fish-02::after {
-	background-image: url("../images/container-fish.png");
-	background-size: cover;
-	content: "";
-	display: block;
-	height: 3.4375rem;
-	left: 0;
-	position: absolute;
-	top: -5.8125rem;
-	width: 7.5rem; /* Width of the image */
-	z-index: -1;
-}
-
-.fish-03 {
-	position: relative;
-}
-
-.fish-03 {
-	background-image: url("../images/container-fish.png");
-	background-size: cover;
-	content: "";
-	display: block;
-	height: 3.4375rem;
-	left: 0;
-	position: absolute;
-	top: -1.5rem;
-	width: 7.5rem; /* Width of the image */
-	z-index: -1;
 }
 
 .footer {
@@ -5795,20 +5750,6 @@ html {
 .drawer {
 	display: none;
 	visibility: hidden;
-}
-
-.fish::after {
-	height: 8.625rem;
-	left: calc(50% - min(48vw, 38.75rem));
-	top: -4.375rem;
-	width: 18.8125rem; /* Width of the image */
-}
-
-.fish-02::after {
-	height: 8.625rem;
-	left: calc(50% - min(48vw, 38.75rem));
-	top: -4.375rem;
-	width: 18.8125rem; /* Width of the image */
 }
 
 .footer__top {

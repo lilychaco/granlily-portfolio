@@ -141,24 +141,30 @@ border:1px solid transparent;
 border-radius:40px;
 position: relative;
 }
+/* 背景の円 */
 .button--03::before {
 	content:"";
 	position: absolute;
 	top:50%;
-	right:20px;
+	right:20px;/* ボタンの右端からの距離 */
 	transform: translateY(-50%);
 	width: 30px;
 	height:30px;
 	background-color: #D6E6F5;
-	border-radius: 20px;
+	border-radius: 50%;
 }
+/* 三角矢印 */
 .button--03::after {
 	content:"";
+	position: absolute;
+    top: 50%;
+    right: 31px;
+    transform: translateY(-50%) rotate(45deg);
 	width:10px;
 	height:10px;
 	border-top: 2px solid #000074;
 	border-right:2px solid #000074;
-	transform: rotate(45deg);
+
 }
 .button--03:hover {
 	color:#000074;

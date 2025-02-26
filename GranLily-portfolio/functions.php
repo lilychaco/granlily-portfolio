@@ -33,23 +33,35 @@ function theme_enqueue_styles() {
         true
     );
 
-    // **✅ GSAPの読み込み（jQuery不要）**
-    wp_enqueue_script(
-        'gsap-core',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
-        [],
-        '3.12.2',
-        true // フッターで読み込む
-    );
+		//gsap-core → gsap-scrolltrigger → gsap-motion-path の順で読み込む。
+		// GSAP（アニメーションライブラリ）の読み込み（jQuery不要）
+		wp_enqueue_script(
+    'gsap-core',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
+    [],
+    '3.12.2',
+    true // フッターで読み込む
+		);
 
-    // **✅ GSAP MotionPathPluginの読み込み**
-    wp_enqueue_script(
-        'gsap-motion-path',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js',
-        ['gsap-core'], // GSAP本体が先に読み込まれるように依存関係を設定
-        '3.12.2',
-        true
-    );
+// ScrollTrigger（GSAPプラグイン）の読み込み（GSAP本体が必須）
+		wp_enqueue_script(
+    'gsap-scrolltrigger',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
+    ['gsap-core'], // 依存関係：GSAP本体
+    '3.12.2',
+    true
+			);
+
+// MotionPathPlugin（GSAPプラグイン）の読み込み（GSAP本体が必須）
+		wp_enqueue_script(
+    'gsap-motion-path',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js',
+    ['gsap-core'], // 依存関係：GSAP本体
+    '3.12.2',
+    true
+		);
+
+
 
     // カスタムスクリプトの読み込み（GSAPに依存させる）
     wp_enqueue_script(

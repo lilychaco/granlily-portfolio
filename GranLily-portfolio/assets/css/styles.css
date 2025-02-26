@@ -1996,16 +1996,20 @@ span.wpcf7-spinner {
 }
 
 .gallery__item {
-	-o-object-fit: cover;
+	aspect-ratio: 345/219;
 	cursor: pointer;
-	object-fit: cover;
+	overflow: hidden;
+	position: relative;
 }
 
 .gallery__item img {
 	-o-object-fit: cover;
 	aspect-ratio: 345/219;
-	height: 100%;
+	height: 120%;
+	left: 0;
 	object-fit: cover;
+	position: absolute;
+	top: -10%;
 	width: 100%;
 }
 
@@ -5927,12 +5931,14 @@ html {
 }
 
 .gallery__item {
+	aspect-ratio: 580/369;
 	grid-column: span 2;
 	grid-row: span 1;
 }
 
 .gallery__item:nth-child(6n+1),
 .gallery__item:nth-child(6n+6) {
+	aspect-ratio: 492/746;
 	grid-column: span 1;
 	grid-row: span 2;
 }

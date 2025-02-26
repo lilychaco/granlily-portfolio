@@ -280,3 +280,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+//================================
+//GSAP galleryに パララックス効果
+//================================
+// ScrollTrigger を登録
+gsap.registerPlugin(ScrollTrigger);
+
+// パララックス効果の適用
+gsap.utils.toArray(".gallery__item img").forEach(function (img) {
+  gsap.fromTo(img, {
+    y: "-10%"
+  },
+  // 初期位置（少し上）
+  {
+    y: "10%",
+    // スクロール時に下へ動く
+    scrollTrigger: {
+      trigger: img,
+      //     要素の  画面の
+      start: "top bottom",
+      // 画像がビューポートに入るタイミング
+      end: "bottom top",
+      // 画像がビューポートから出るタイミング
+      scrub: true // スクロールに応じて動く
+    }
+  });
+});
+
+ScrollTriggerにウィンドウの変更を認識させる;
+document.addEventListener("visibilitychange", function () {
+  if (!document.hidden) {
+    window.dispatchEvent(new Event("resize")); // 手動でリサイズイベントを発火
+    ScrollTrigger.refresh();
+  }
+});

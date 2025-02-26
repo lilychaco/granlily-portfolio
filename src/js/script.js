@@ -56,10 +56,11 @@ jQuery(function ($) {
   //================================
   // ボタンをクリックしてページトップに戻る
   // ===============================
-  $(".js-page-top-button").click(function () {
-    $("body,html").animate({ scrollTop: 0 }, 1000, "swing");
-    return false;
-  });
+$(".js-page-top-button").click(function () {
+  $("html").animate({ scrollTop: 0 }, 1000, "linear");
+  return false;
+});
+
 
   // ==================================
   // インフォメーションページのタブの動きを制御
@@ -327,4 +328,3 @@ document.addEventListener("visibilitychange", () => {
     ScrollTrigger.refresh();
   }
 });
-

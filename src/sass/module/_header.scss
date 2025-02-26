@@ -65,10 +65,10 @@
 .header__logo-img--after,
 .header__logo-img--drawer {
 	visibility: hidden; /* Safari対応 */
-	
+
 	opacity: 0; /* Safari対応 */
 	position: absolute; /* レイアウトの崩れ防止 */
-	transition: opacity 0.6s ease-in-out 0.6s;
+	transition: opacity 0.3s ease-in-out;
 }
 
 /* PC版：FVを超えてスクロールした場合 */

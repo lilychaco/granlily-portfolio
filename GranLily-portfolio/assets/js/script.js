@@ -52,9 +52,9 @@ jQuery(function ($) {
   // ボタンをクリックしてページトップに戻る
   // ===============================
   $(".js-page-top-button").click(function () {
-    $("body,html").animate({
+    $("html").animate({
       scrollTop: 0
-    }, 1000, "swing");
+    }, 1000, "linear");
     return false;
   });
 

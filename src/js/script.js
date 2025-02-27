@@ -76,7 +76,9 @@ $(".js-page-top-button").click(function () {
     const targetIndex = $tabs.filter(`[data-tab="${tabParam}"]`).index();
     if (targetIndex !== -1) {
       $tabs.removeClass("current").eq(targetIndex).addClass("current"); // 該当タブを選択状態に
-      $contents.hide().eq(targetIndex).fadeIn(300); // 対応コンテンツを表示
+      $contents.hide().eq(targetIndex).fadeIn(300,function() {
+				ScrollTrigger.refresh();
+			}); // 対応コンテンツを表示
     } else {
       // 該当するタブがない場合、デフォルトタブを表示
       showDefaultTab();
@@ -95,7 +97,12 @@ $(".js-page-top-button").click(function () {
     $tabs.removeClass("current"); // 全てのタブの選択状態を解除
     $clickedTab.addClass("current"); // クリックされたタブを選択状態に
 
-    $contents.hide().eq(index).fadeIn(300); // 対応するコンテンツを表示
+    $contents
+      .hide()
+      .eq(index)
+      .fadeIn(300, function () {
+        ScrollTrigger.refresh(); // アニメーション完了後にリフレッシュ
+      }); // 対応するコンテンツを表示
 
     // URLにクエリパラメータを設定
     const newUrl = `${window.location.origin}${window.location.pathname}?tab=${tabId}`;
@@ -105,9 +112,14 @@ $(".js-page-top-button").click(function () {
   // 初期タブ表示用の関数
   function showDefaultTab() {
     $tabs.first().addClass("current");
-    $contents.hide().first().show();
+    $contents
+      .hide()
+      .first()
+      .fadeIn(300, function () {
+        ScrollTrigger.refresh(); // 初期表示時もリフレッシュ
+      });
   }
-  // });
+
 
   //================================
   //  サイドのアーカイブメニューの動作
@@ -321,10 +333,32 @@ gsap.utils.toArray(".gallery__item img").forEach((img) => {
   );
 });
 
-ScrollTriggerにウィンドウの変更を認識させる
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) {
-    window.dispatchEvent(new Event("resize")); // 手動でリサイズイベントを発火
-    ScrollTrigger.refresh();
-  }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // タブを取得
+  const tabs = document.querySelectorAll(".js-tab");
+
+  // MVの画像とタイトル要素を取得
+  const mvImg = document.querySelector(".mv__img img");
+  const mvTitle = document.querySelector(".mv__title");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      // タブが持つデータ属性を取得
+      const newMvImg = this.getAttribute("data-mv-img");
+      const newMvTitle = this.getAttribute("data-mv-title");
+
+      // MVの画像とタイトルを変更
+      if (mvImg) {
+        mvImg.src = newMvImg;
+      }
+      if (mvTitle) {
+        mvTitle.innerHTML = newMvTitle;
+      }
+
+      // タブのアクティブ状態を更新
+      tabs.forEach((t) => t.removeAttribute("current"));
+      this.setAttribute("current", true);
+    });
+  });
 });

@@ -72,7 +72,9 @@ jQuery(function ($) {
     var targetIndex = $tabs.filter("[data-tab=\"".concat(tabParam, "\"]")).index();
     if (targetIndex !== -1) {
       $tabs.removeClass("current").eq(targetIndex).addClass("current"); // 該当タブを選択状態に
-      $contents.hide().eq(targetIndex).fadeIn(300); // 対応コンテンツを表示
+      $contents.hide().eq(targetIndex).fadeIn(300, function () {
+        ScrollTrigger.refresh();
+      }); // 対応コンテンツを表示
     } else {
       // 該当するタブがない場合、デフォルトタブを表示
       showDefaultTab();
@@ -91,7 +93,9 @@ jQuery(function ($) {
     $tabs.removeClass("current"); // 全てのタブの選択状態を解除
     $clickedTab.addClass("current"); // クリックされたタブを選択状態に
 
-    $contents.hide().eq(index).fadeIn(300); // 対応するコンテンツを表示
+    $contents.hide().eq(index).fadeIn(300, function () {
+      ScrollTrigger.refresh(); // アニメーション完了後にリフレッシュ
+    }); // 対応するコンテンツを表示
 
     // URLにクエリパラメータを設定
     var newUrl = "".concat(window.location.origin).concat(window.location.pathname, "?tab=").concat(tabId);
@@ -101,9 +105,10 @@ jQuery(function ($) {
   // 初期タブ表示用の関数
   function showDefaultTab() {
     $tabs.first().addClass("current");
-    $contents.hide().first().show();
+    $contents.hide().first().fadeIn(300, function () {
+      ScrollTrigger.refresh(); // 初期表示時もリフレッシュ
+    });
   }
-  // });
 
   //================================
   //  サイドのアーカイブメニューの動作
@@ -308,10 +313,32 @@ gsap.utils.toArray(".gallery__item img").forEach(function (img) {
   });
 });
 
-ScrollTriggerにウィンドウの変更を認識させる;
-document.addEventListener("visibilitychange", function () {
-  if (!document.hidden) {
-    window.dispatchEvent(new Event("resize")); // 手動でリサイズイベントを発火
-    ScrollTrigger.refresh();
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  // タブを取得
+  var tabs = document.querySelectorAll(".js-tab");
+
+  // MVの画像とタイトル要素を取得
+  var mvImg = document.querySelector(".mv__img img");
+  var mvTitle = document.querySelector(".mv__title");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      // タブが持つデータ属性を取得
+      var newMvImg = this.getAttribute("data-mv-img");
+      var newMvTitle = this.getAttribute("data-mv-title");
+
+      // MVの画像とタイトルを変更
+      if (mvImg) {
+        mvImg.src = newMvImg;
+      }
+      if (mvTitle) {
+        mvTitle.innerHTML = newMvTitle;
+      }
+
+      // タブのアクティブ状態を更新
+      tabs.forEach(function (t) {
+        return t.removeAttribute("current");
+      });
+      this.setAttribute("current", true);
+    });
+  });
 });

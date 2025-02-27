@@ -1,11 +1,7 @@
 <?php get_header(); ?>
 <section class="mv">
 	<figure class="mv__img">
-		<picture>
-			<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/20240612bigeyetrevally.jpg"
-				media="(min-width: 768px)" />
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20240612bigeyetrevally.jpg" alt="ファーストビュー画像" />
-		</picture>
+		<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20240612bigeyetrevally.jpg" alt="" />
 	</figure>
 	<h2 class="mv__title">サービス情報<br>&<br>フォトギャラリー</h2>
 </section>
@@ -23,17 +19,23 @@
 	<div class="information__inner inner">
 		<div class="information__tab tab">
 			<ul class="tab__list">
-				<li class="tab__menu js-tab" data-tab="overseas" current>
+				<li class="tab__menu js-tab" data-tab="overseas"
+					data-mv-img="<?php echo get_theme_file_uri(); ?>/assets/images/granada2.jpg"
+					data-mv-title="フォトギャラリー<br>（海外旅行）" current>
 					<p class="tab__text tab__text--01" id="overseas">
 						海外旅行
 					</p>
 				</li>
-				<li class="tab__menu js-tab" data-tab="domestic">
+				<li class="tab__menu js-tab" data-tab="domestic"
+					data-mv-img="<?php echo get_theme_file_uri(); ?>/assets/images/mv-ryoanji-pc.jpg"
+					data-mv-title="フォトギャラリー<br>（国内旅行）">
 					<p class="tab__text tab__text--02" id="domestic">
 						国内旅行
 					</p>
 				</li>
-				<li class="tab__menu js-tab" data-tab="diving">
+				<li class="tab__menu js-tab" data-tab="diving"
+					data-mv-img="<?php echo get_theme_file_uri(); ?>/assets/images/20240612bigeyetrevally.jpg"
+					data-mv-title="フォトギャラリー<br>（ダイビング）">
 					<p class="tab__text tab__text--03" id="diving">
 						ダイビング
 					</p>

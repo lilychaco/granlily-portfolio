@@ -86,8 +86,8 @@
 					</li>
 					<li class="header-menu__item">
 						<a href="<?php echo esc_url(home_url('/information')); ?>">
-							<span class="header-menu__text-japanese">情報</span>
-							<span class="header-menu__text-english">Information</span> </span>
+							<span class="header-menu__text-japanese">写真</span>
+							<span class="header-menu__text-english">PhotoGallery</span> </span>
 						</a>
 					</li>
 
@@ -125,7 +125,7 @@
 			</li>
 			<li class="drawer-menu__item">
 				<a href="<?php echo esc_url(home_url('/information')); ?>">
-					<p class="starfish-icon starfish-icon--drawer">サービス情報・ギャラリー</p>
+					<p class="starfish-icon starfish-icon--drawer">写真</p>
 				</a>
 			</li>
 

@@ -27,7 +27,7 @@
 				</div>
 				<div class="nav-menu__item">
 					<a href="<?php echo esc_url(home_url('/information')); ?>">
-						<p class="starfish-icon">サービス情報&amp;ギャラリー</p>
+						<p class="starfish-icon">写真</p>
 					</a>
 				</div>
 				<div class="nav-menu__item">

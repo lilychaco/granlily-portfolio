@@ -51,21 +51,24 @@
 
 .fv__copy{
 	position: absolute;
-  top: 25%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-	display: flex; /* フレックスボックスを適用 */
-  flex-direction: column; /* 縦並びにする */
-  align-items: center; /* 子要素を中央揃え */
   z-index: 2;
-	width: 100%;
+	padding-left: rem(20);
+	padding-right: rem(16);
+	display: inline-block;
+	background: rgba(10, 10, 30, 0.5);
+	border-radius: rem(5);
 
 	@include mq(md) {
 	position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -45%);
+	padding-left: rem(50);
+	padding-right: rem(46);
 	}
 }
 
@@ -73,46 +76,41 @@
 	color: #fff;
 	font-size: rem(54);
 	font-family: "Quicksand", serif;
-			font-weight: 700;
-			letter-spacing: 0.2em;
-			text-indent: 0.2em;
-			background: rgba(0, 0, 0, 0.2);
-			display: inline-block;
-			@include mq(md) {
-					font-size: rem(80);
-			}
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+
+	@include mq(md) {
+		font-size: rem(80);
+	}
 }
+
 .fv__sub-title {
 	color: #fff;
 	font-size: rem(16);
-			font-family: $base-font-family;
-			font-weight: $regular;
-			letter-spacing: 0.2em;
-			background: rgba(0, 0, 0, 0.2);
-			display: inline-block;
-			padding: rem(10) rem(20);
-			@include mq(md) {
-				font-size: rem(20);
-			}
+	font-family: $base-font-family;
+	font-weight: $regular;
+	letter-spacing: 0.2em;
+	padding: rem(10) rem(20);
+	@include mq(md) {
+			font-size: rem(20);
+	}
 }
 
 .fv__description {
-	 position: absolute;
-	 bottom: 25%;
+	position: absolute;
+	 bottom: 22%;
 	 width: 100%;
   text-align: center;
   color: #fff;
 	opacity: 0; /* 初期状態では非表示 */
   animation: fade-up 1s ease-out forwards;
 	@include mq(md) {
-		bottom: 15%;
+		bottom: 30%;
 	}
 }
 
 
-.fv__description p {
-	display: inline-block;
-}
 /* 各スライドごとにテキストのアニメーションを遅延 */
 .fv__slide:nth-child(1) .fv__description {
   animation-delay: 4s; /* 画像のフェードイン後に遅れて表示 */
@@ -131,11 +129,11 @@
     font-family: $base-font-family;
     font-weight: $regular;
     color: #ffffff; /* 白色 */
-    background: rgba(0, 0, 0, 0.2); /* 半透明の黒背景 */
+    background: rgba(10, 10, 30, 0.5);/* 半透明の黒背景 */
     padding: rem(10) rem(20);
     border-radius: rem(5);
   	display: inline-block;
-		line-height: 2; /* 行間を調整 */
+		line-height: 1.5; /* 行間を調整 */
     opacity: 1;
 		@include mq(md) {
 				font-size: rem(24);
@@ -193,5 +191,3 @@
     transform: translateY(0); /* 元の位置に戻る */
   }
 }
-
-

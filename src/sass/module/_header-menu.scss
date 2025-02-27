@@ -54,10 +54,14 @@
     width: 100%;
     height: 1px;
     background:$white;
+		background:$greenaccent;
 		z-index: 1000;
 		transition: all .3s;
     transform: scale(0, 1);
 		transform-origin: center top;
+}
+.header-menu__item a.is-scroll::after{
+	background:$white;
 }
 .header-menu__item a:hover::after {
 	transform: scale(1, 1);
@@ -66,7 +70,7 @@
 .header-menu__item--line a::after {
     content: none;
 }
-.header-menu__item--line a::hover::after {
+.header-menu__item--line a:hover::after {
 	content:none;
 }
 .header-menu__text-english {
@@ -83,6 +87,4 @@
 			font-weight: $regular;
 			line-height: 1.5;
 			letter-spacing: 0;
-			@include mq(md) {
-			}
 }

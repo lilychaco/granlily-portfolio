@@ -1830,22 +1830,21 @@ span.wpcf7-spinner {
 }
 
 .fv__copy {
-	align-items: center; /* 子要素を中央揃え */
-	display: flex; /* フレックスボックスを適用 */
-	flex-direction: column; /* 縦並びにする */
+	background: rgba(10, 10, 30, 0.5);
+	border-radius: 0.3125rem;
+	display: inline-block;
 	left: 50%;
+	padding-left: 1.25rem;
+	padding-right: 1rem;
 	position: absolute;
 	text-align: center;
-	top: 25%;
+	top: 35%;
 	transform: translateX(-50%);
-	width: 100%;
 	z-index: 2;
 }
 
 .fv__main-title {
-	background: rgba(0, 0, 0, 0.2);
 	color: #fff;
-	display: inline-block;
 	font-family: "Quicksand", serif;
 	font-size: 3.375rem;
 	font-weight: 700;
@@ -1854,9 +1853,7 @@ span.wpcf7-spinner {
 }
 
 .fv__sub-title {
-	background: rgba(0, 0, 0, 0.2);
 	color: #fff;
-	display: inline-block;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
@@ -1866,16 +1863,12 @@ span.wpcf7-spinner {
 
 .fv__description {
 	animation: fade-up 1s ease-out forwards;
-	bottom: 25%;
+	bottom: 22%;
 	color: #fff;
 	opacity: 0; /* 初期状態では非表示 */
 	position: absolute;
 	text-align: center;
 	width: 100%;
-}
-
-.fv__description p {
-	display: inline-block;
 }
 
 /* 各スライドごとにテキストのアニメーションを遅延 */
@@ -1895,14 +1888,14 @@ span.wpcf7-spinner {
 /* 説明文の各行 */
 
 .fv__text {
-	background: rgba(0, 0, 0, 0.2); /* 半透明の黒背景 */
+	background: rgba(10, 10, 30, 0.5); /* 半透明の黒背景 */
 	border-radius: 0.3125rem;
 	color: #ffffff; /* 白色 */
 	display: inline-block;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 400;
-	line-height: 2; /* 行間を調整 */
+	line-height: 1.5; /* 行間を調整 */
 	opacity: 1;
 	padding: 0.625rem 1.25rem;
 }
@@ -2135,6 +2128,7 @@ span.wpcf7-spinner {
 
 .header-menu__item a::after {
 	background: #fff;
+	background: #000074;
 	bottom: 0;
 	content: "";
 	height: 1px;
@@ -2147,6 +2141,10 @@ span.wpcf7-spinner {
 	z-index: 1000;
 }
 
+.header-menu__item a.is-scroll::after {
+	background: #fff;
+}
+
 .header-menu__item a:hover::after {
 	opacity: 1;
 	transform: scale(1, 1);
@@ -2156,7 +2154,7 @@ span.wpcf7-spinner {
 	content: none;
 }
 
-.header-menu__item--line a::hover::after {
+.header-menu__item--line a:hover::after {
 	content: none;
 }
 
@@ -3427,7 +3425,6 @@ span.wpcf7-spinner {
 }
 
 .plan-card__title {
-	background-color: orange;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 500;
@@ -5843,6 +5840,8 @@ html {
 
 .fv__copy {
 	left: 50%;
+	padding-left: 3.125rem;
+	padding-right: 2.875rem;
 	position: absolute;
 	top: 45%;
 	transform: translate(-50%, -45%);
@@ -5857,7 +5856,7 @@ html {
 }
 
 .fv__description {
-	bottom: 15%;
+	bottom: 30%;
 }
 
 .fv__text {

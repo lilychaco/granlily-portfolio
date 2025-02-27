@@ -83,7 +83,6 @@
   font-weight: $medium;
   line-height: 1.7;
   letter-spacing: 0;
-	background-color: orange;
 	@include mq(md) {
 		font-size: rem(20);
 	}

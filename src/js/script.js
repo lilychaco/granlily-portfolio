@@ -334,6 +334,10 @@ gsap.utils.toArray(".gallery__item img").forEach((img) => {
 });
 
 
+
+//================================
+//タブ切替で、MVも変更
+//================================
 document.addEventListener("DOMContentLoaded", function () {
   // タブを取得
   const tabs = document.querySelectorAll(".js-tab");

@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 <section class="mv">
 	<figure class="mv__img">
-		<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20240612bigeyetrevally.jpg" alt="" />
+		<img src="<?php echo get_theme_file_uri(); ?>/assets/images/granada2.jpg" alt="" />
 	</figure>
-	<h2 class="mv__title">サービス情報<br>&<br>フォトギャラリー</h2>
+	<h2 class="mv__title">フォトギャラリー</h2>
 </section>
 <?php get_template_part('common/breadcrumb') ?>
 <div class="animation-airplane">

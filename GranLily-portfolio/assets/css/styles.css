@@ -492,17 +492,19 @@ time {
 }
 
 .archive-tour_plan__title {
-	border-bottom: 1px solid #000074;
 	font-size: 1.5rem;
+	line-height: 1.5;
 	margin-top: 0.5rem;
-	min-height: 5rem;
+	min-height: 4.5rem;
 }
 
 .archive-tour_plan__subbody {
+	border-top: 1px solid #000074;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	margin-top: 1.25rem;
+	margin-top: 1rem;
+	padding-top: 0.5rem;
 	width: 100%;
 }
 
@@ -2163,7 +2165,7 @@ span.wpcf7-spinner {
 	font-size: 0.875rem;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1.7;
+	line-height: 1.2;
 }
 
 .header-menu__text-japanese {
@@ -2171,7 +2173,7 @@ span.wpcf7-spinner {
 	font-size: 1.25rem;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1.7;
+	line-height: 1.5;
 }
 
 .header {
@@ -3425,6 +3427,7 @@ span.wpcf7-spinner {
 }
 
 .plan-card__title {
+	background-color: orange;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 500;

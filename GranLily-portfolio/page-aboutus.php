@@ -1,196 +1,117 @@
 <?php get_header(); ?>
 <section class="mv">
 	<figure class="mv__img">
-		<picture>
-			<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/rose-greengarden.jpg"
-				media="(min-width: 768px)" />
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/rose-greengarden.jpg" alt="バラ園のバラ" />
-		</picture>
+		<img src="<?php echo get_theme_file_uri(); ?>/assets/images/white-village.jpg" alt="" />
 	</figure>
-	<h2 class="mv__title">profile</h2>
+	<h2 class="mv__title mv__title--black">私たちについて</h2>
 </section>
 <?php get_template_part('common/breadcrumb') ?>
 
-<div class="page-profile page-profile-layout">
-	<div class="page-profile__inner inner">
-		<div class="page-profile__container">
-			<div class="page-profile__sp-image u-mobile">
-				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/lily-profile.jpg" alt="春風が戦ぐ中、樹のそばに立っているgranlily" />
-				<div class=" page-profile__title page-profile__title--sp u-mobile">
-					Gran&nbsp;Lily
-				</div>
+<section class="aboutus-philosophy aboutus-philosophy-layout">
+	<div class="inner">
+		<div class="aboutus-philosophy__philosophy">
+			<div class="aboutus-philosophy__concept">
+				<p class="aboutus-philosophy__subtitle">granlilyの理念</p>
+				<h2 class="aboutus-philosophy__title">旅が人生を豊かにする</h2>
 			</div>
-			<div class="page-profile__pc-image u-desktop">
-				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/lily-profile-tree.jpg" alt="微笑んでいるgranlily" />
-				<img class="with-filter" src="<?php echo get_theme_file_uri(); ?>/assets/images/bali-morning.jpg"
-					alt="バリ島朝の海辺" />
-			</div>
-			<div class="page-profile__main-wrapper">
-				<div class="page-profile__main">
-					<div class="page-profile__title u-desktop">
-						<span>g</span>ran&nbsp;<span>l</span>ily
-					</div>
-					<div class="page-profile__body">
-						<div class="page-profile__text">
-							心を込めて作るあたたかなWebサイトをお届けします。
-							お客様の「こうしたい」という気持ちを大切に、一つひとつ丁寧に形にしていきます。<br>
-							これまでの経験を生かし、使いやすく、美しい仕上がりを目指します。
-							一緒に、あなたの想いを叶えるお手伝いをさせてください。
-						</div>
-					</div>
-				</div>
-			</div>
+
+			<ul class="aboutus-philosophy__list">
+				<li class="aboutus-philosophy__item">
+					<p class="aboutus-philosophy__item-title">「心地よく、安心して楽しめる特別な旅を」</p>
+					<p class="aboutus-philosophy__item-description">
+						granlilyは、シニア世代の皆様に安心・快適で心から楽しめる旅を提供します。
+						ただの観光ではなく、新しい発見や感動を通じて、人生をより豊かにする旅をお届けします。
+						移動の負担を減らし、ゆったりとした時間の中で、その土地ならではの文化や自然、美食を存分に楽しんでいただくことを大切にしています。
+					</p>
+				</li>
+				<li class="aboutus-philosophy__item">
+					<p class="aboutus-philosophy__item-title">「心地よさと安全を両立した特別な旅」</p>
+					<p class="aboutus-philosophy__item-description">
+						年齢を重ねるごとに、旅に求めるものも変わります。
+						granlilyでは、シニア世代が抱える不安を解消し、安心して楽しめる旅を追求。
+						快適な移動手段、厳選した宿泊施設、体力に配慮したプランニングで、どなたでも無理なく楽しめる旅行を実現します。
+					</p>
+				</li>
+				<li class="aboutus-philosophy__item">
+					<p class="aboutus-philosophy__item-title">「新しい発見が、人生を豊かにする」</p>
+					<p class="aboutus-philosophy__item-description">
+						旅先での新たな出会いや経験は、人生に彩りを与えてくれます。
+						歴史探訪、美食の旅、温泉リゾート、世界遺産巡り、アクティブなダイビング旅行まで、多彩なプランをご用意。
+						旅を通じて新しい価値観や生きがいを見つけ、心を躍らせる体験を提供します。
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="aboutus-philosophy__mission">
+			<p class="aboutus-philosophy__mission-title">ミッション</p>
+			<p class="aboutus-philosophy__mission-description">
+				私たちのミッションは、旅を通じて人生をより豊かにすること。
+				シニア世代の皆様が年齢を気にせず、「今、この瞬間を楽しむ」ことができる旅を提供します。
+				金銭的な制約や健康面の不安を取り除き、誰もが自分らしく、心から楽しめる旅へ。
+			</p>
+			<p class="aboutus-philosophy__mission-description">
+				granlilyは、日本から世界へ、シニア世代に自由で充実した旅の機会を広げていきます。
+			</p>
+			</p>
 		</div>
 	</div>
-</div>
-<div class="page-profile__profile profile-history">
-	<div class="profile-history__inner inner">
+</section>
 
-		<div class="profile-history__heading section-heading">
-			<h3 class="section-heading__title">Profile</h3>
-			<h2 class="section-heading__subtitle">経歴</h2>
-		</div>
-		<div class="profile-history__main">
-			<figure class="profile-history__image">
-				<picture>
-					<source media="(min-width: 768px)"
-						srcset="<?php echo get_theme_file_uri(); ?>/assets/images/20211120shimodayuhi-pc.jpg" />
-					<img class="fade-in-right" src="<?php echo get_theme_file_uri(); ?>/assets/images/20211120shimodayuhi-sp.jpg"
-						alt="天草下田の美しい夕日が海に沈む様子" />
-				</picture>
-			</figure>
 
-			<div class="profile-history__lists profile-lists">
-				<div class="profile-lists__item profile-lists__item--first profile-list">
-					<div class="profile-list__title">基本情報</div>
-					<ul class="profile-list__items">
-						<li class="profile-list__item">
-							<p class="profile-list__number">氏名　</p>
-							<p class="profile-list__name">中村弓美（なかむらゆみ）</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">年齢　</p>
-							<p class="profile-list__name">66歳</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">住所地</p>
-							<p class="profile-list__name">熊本県天草市</p>
-						</li>
+<section class="aboutus-profile">
+	<div class="inner">
+		<h2 class="aboutus-profile__heading">会社概要</h2>
 
-					</ul>
+		<?php
+		// 投稿ID 214 から「aboutus-profile」グループのデータを取得
+			$aboutus_profile = get_field('company-profile', 214);?>
+
+		<div class="aboutus-profile__overview aboutus-overview">
+			<dl class="aboutus-overview__list">
+				<?php  if ($aboutus_profile && !empty($aboutus_profile['company-address'])):?>
+				<div class="aboutus-overview__item">
+					<dt class="aboutus-overview__title">所在地</dt>
+					<dd class="aboutus-overview__description">
+						<?php echo esc_html($aboutus_profile['company-address']); ?></dd>
 				</div>
-
-				<div class="profile-lists__item profile-lists__item--first profile-list">
-					<div class="profile-list__title">職歴</div>
-					<ul class="profile-list__items">
-
-						<li class="profile-list__item">
-							<p class="profile-list__number">1983年</p>
-							<p class="profile-list__name">山口大学医学部卒業<br>小児科医となる</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">1988年</p>
-							<p class="profile-list__name">相方のふるさと天草へ転居<br>
-								重症心身障害児者施設勤務</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">2004年</p>
-							<p class="profile-list__name">中村こども・内科クリニック勤務</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">2006年</p>
-							<p class="profile-list__name">十万山クリニック開院</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">2020年</p>
-							<p class="profile-list__name">Web制作活動開始</p>
-						</li>
-					</ul>
+				<?php endif; ?>
+				<?php  if ($aboutus_profile && !empty($aboutus_profile['establishment-date'])):?>
+				<div class="aboutus-overview__item">
+					<dt class="aboutus-overview__title">設立日</dt>
+					<dd class="aboutus-overview__description">
+						<time datetime="2023-07-06">
+							<?php echo esc_html($aboutus_profile['establishment-date']); ?>
+						</time>
+					</dd>
 				</div>
-				<div class="profile-lists__item profile-list">
-					<div class="profile-list__title">家族歴</div>
-					<ul class="profile-list__items">
-						<li class="profile-list__item">
-							<p class="profile-list__number">1958年</p>
-							<p class="profile-list__name">福岡県北九州市に生まれる</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">1985年</p>
-							<p class="profile-list__name">結婚</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">1986年</p>
-							<p class="profile-list__name">長女誕生</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">1987年</p>
-							<p class="profile-list__name">長男誕生</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">1989年</p>
-							<p class="profile-list__name">次女誕生</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">1990年</p>
-							<p class="profile-list__name">次男誕生</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">2020年</p>
-							<p class="profile-list__name">長男病死</p>
-						</li>
-					</ul>
+				<?php endif; ?>
+				<?php  if ($aboutus_profile && !empty($aboutus_profile['representative-director'])):?>
+				<div class="aboutus-overview__item">
+					<dt class="aboutus-overview__title">代表取締役</dt>
+					<dd class="aboutus-overview__description">
+						<?php echo esc_html($aboutus_profile['representative-director']); ?>
+					</dd>
 				</div>
-				<div class="profile-lists__item profile-list">
-					<div class="profile-list__title">連絡先</div>
-					<ul class="profile-list__items">
-						<li class="profile-list__item">
-							<p class="profile-list__number">メール </p>
-							<p class="profile-list__name">granlily2023@gmail.com</p>
-						</li>
-						<li class="profile-list__item">
-							<p class="profile-list__number">LINE　</p>
-							<p class="profile-list__name"><a href="https://lin.ee/Ad4QFH2" target="_blank">https://lin.ee/Ad4QFH2</a>
-							</p>
-						</li>
-
-					</ul>
+				<?php endif; ?>
+				<?php  if ($aboutus_profile && !empty($aboutus_profile['main-business'])):?>
+				<div class="aboutus-overview__item">
+					<dt class="aboutus-overview__title">主な事業</dt>
+					<dd class="aboutus-overview__description">
+						<?php echo esc_html($aboutus_profile['main-business']); ?>
+					</dd>
 				</div>
-			</div>
-
+				<?php endif; ?>
+				<?php  if ($aboutus_profile && !empty($aboutus_profile['corresponding-bank'])):?>
+				<div class="aboutus-overview__item">
+					<dt class="aboutus-overview__title">取引銀行</dt>
+					<dd class="aboutus-overview__description"><?php echo esc_html($aboutus_profile['corresponding-bank']); ?>
+					</dd>
+				</div>
+				<?php endif; ?>
+			</dl>
 		</div>
 	</div>
-</div>
-<div class="page-profile__local local-media">
-	<div class="local-media__inner inner">
-		<div class="local-media__heading section-heading">
-			<h3 class="section-heading__title section-heading__title--local-media">Local Introduction</h3>
-			<h2 class="section-heading__subtitle section-heading__subtitle--local-media">地元紹介</h2>
-		</div>
-		<div class="local-media__container">
-			<!-- YouTube動画の埋め込み -->
-			<div class="local-media__video">
-				<iframe src="https://www.youtube.com/embed/ufkVUZZLIKc?si=VCaZoCwcbh9A1tC5" title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				<p class="local-media__video-text">動画の編集を担当しました</p>
-			</div>
-
-			<!-- 関連リンク -->
-			<div class=" local-media__links">
-				<h3 class="local-media__links-title">天草のおすすめ</h3>
-				<ul class="local-media__links-list local-media__links-list--link">
-					<li class="local-media__links-item">
-						<a href="https://www.t-island.jp/" target="_blank" class="local-media__link">Amakusa~天草紹介サイト~</a>
-					</li>
-					<li class="local-media__links-item">
-						<a href="https://www.yokadive.com/" target="_blank" class="local-media__link">天草よかよかダイビング＆シュノーケル</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
+</section>
 
 
 

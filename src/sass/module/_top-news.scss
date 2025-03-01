@@ -4,29 +4,15 @@
 
 }
 
-.inner {
-
-}
-
 .top-news__heading {
 
 }
 
-.section-heading {
-
-}
-
-.section-heading__title {
-
-}
-
-.section-heading__subtitle {
-
-}
-
 .top-news__container {
-	margin-top: rem(60);
-
+	margin-top: rem(40);
+	@include mq(md) {
+		margin-top: rem(60);
+	}
 }
 
 .top-news__list {

@@ -1,0 +1,152 @@
+@use "global" as *;
+
+.aboutus-philosophy {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+.aboutus-philosophy-layout {
+	margin-top: rem(40);
+	@include mq(md) {
+			margin-top: rem(60);
+	}
+
+}
+.aboutus-philosophy__concept {}
+
+.aboutus-philosophy__subtitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0077b6;
+  margin-bottom: 5px;
+}
+
+.aboutus-philosophy__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #023e8a;
+  margin-bottom: 15px;
+}
+
+.aboutus-philosophy__description {
+  font-size: 16px;
+  color: #555;
+}
+
+.aboutus-philosophy__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: rem(30);
+}
+
+.aboutus-philosophy__item {
+  margin-bottom: 30px;
+}
+
+.aboutus-philosophy__item-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0077b6;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.aboutus-philosophy__item-title::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0077b6;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.aboutus-philosophy__item-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+.aboutus-philosophy__item-description {
+  font-size: 16px;
+  color: #555;
+}
+
+.aboutus-philosophy__mission {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+.aboutus-philosophy__mission-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #023e8a;
+  margin-bottom: 15px;
+}
+
+.aboutus-philosophy__mission-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+.aboutus-profile {
+  margin-top: rem(60);
+}
+
+
+.aboutus-profile__overview {
+  margin-top: rem(30);
+}
+
+.aboutus-overview__list {
+  display: flex;
+  flex-direction: column;
+  /* 項目を縦並びにする */
+  gap: 16px;
+  /* 各項目間の余白を設定 */
+}
+
+.aboutus-overview__item {
+  display: flex;
+  align-items: flex-start;
+  /* 上揃え */
+  border: 1px solid #ccc;
+  /* 各項目の枠線 */
+  padding: 8px;
+  /* 枠線内の余白 */
+}
+
+.aboutus-overview__title {
+  flex: 0 0 120px;
+  /* 幅を一定に設定 */
+  font-weight: bold;
+  /* タイトルを強調 */
+  border-right: 1px solid #ccc;
+  /* 右側の枠線を追加 */
+}
+
+.aboutus-overview__description {
+  flex: 1;
+  /* 残りのスペースを占有 */
+  margin: 0;
+  /* 初期余白をリセット */
+  padding-left: 20px;
+  /* 左側に余白を設定 */
+}
+
+.aboutus-overview__description time {
+  font-style: italic;
+  /* 日付をイタリック体に */
+}

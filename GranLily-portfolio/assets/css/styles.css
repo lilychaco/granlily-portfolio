@@ -166,6 +166,135 @@ time {
 	vertical-align: top;
 }
 
+.aboutus-philosophy {
+	color: #333;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	padding: 20px;
+}
+
+.aboutus-philosophy-layout {
+	margin-top: 2.5rem;
+}
+
+.aboutus-philosophy__subtitle {
+	color: #0077b6;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.aboutus-philosophy__title {
+	color: #023e8a;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.aboutus-philosophy__description {
+	color: #555;
+	font-size: 16px;
+}
+
+.aboutus-philosophy__list {
+	list-style: none;
+	margin: 0;
+	margin-top: 1.875rem;
+	padding: 0;
+}
+
+.aboutus-philosophy__item {
+	margin-bottom: 30px;
+}
+
+.aboutus-philosophy__item-title {
+	color: #0077b6;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	position: relative;
+}
+
+.aboutus-philosophy__item-title::before {
+	color: #0077b6;
+	content: "•";
+	font-size: 18px;
+	left: 0;
+	line-height: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.aboutus-philosophy__item-title {
+	color: #0077b6;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.aboutus-philosophy__item-description {
+	color: #555;
+	font-size: 16px;
+}
+
+.aboutus-philosophy__mission {
+	border-top: 1px solid #ddd;
+	margin-top: 40px;
+	padding: 20px 0;
+}
+
+.aboutus-philosophy__mission-title {
+	color: #023e8a;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.aboutus-philosophy__mission-description {
+	color: #555;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.aboutus-profile {
+	margin-top: 3.75rem;
+}
+
+.aboutus-profile__overview {
+	margin-top: 1.875rem;
+}
+
+.aboutus-overview__list {
+	display: flex;
+	flex-direction: column; /* 項目を縦並びにする */
+	gap: 16px; /* 各項目間の余白を設定 */
+}
+
+.aboutus-overview__item {
+	align-items: flex-start; /* 上揃え */
+	border: 1px solid #ccc;
+	display: flex; /* 各項目の枠線 */
+	padding: 8px; /* 枠線内の余白 */
+}
+
+.aboutus-overview__title { /* タイトルを強調 */
+	border-right: 1px solid #ccc;
+	flex: 0 0 120px; /* 幅を一定に設定 */
+	font-weight: bold; /* 右側の枠線を追加 */
+}
+
+.aboutus-overview__description {
+	flex: 1; /* 残りのスペースを占有 */
+	margin: 0; /* 初期余白をリセット */
+	padding-left: 20px; /* 左側に余白を設定 */
+}
+
+.aboutus-overview__description time {
+	font-style: italic; /* 日付をイタリック体に */
+}
+
 .accordion {
 	display: flex;
 	flex-direction: column;
@@ -2321,90 +2450,6 @@ span.wpcf7-spinner {
 	width: 100%;
 }
 
-/* セクションのスタイル */
-
-.local-media {
-	margin: 0 auto;
-	position: relative; /* 相対位置指定 */
-	width: 100%;
-	z-index: 2;
-}
-
-.local-media__container {
-	align-items: center;
-	display: flex;
-	flex-direction: column; /* スマホでは縦並び */
-	gap: 1.875rem;
-	margin-top: 3.75rem;
-}
-
-/* YouTube動画をレスポンシブ対応させる */
-
-.local-media__video {
-	aspect-ratio: 16/9; /* 比率を固定してレスポンシブ対応 */
-	background-color: #D6E6F5;
-	display: flex;
-	flex-direction: column;
-	padding: 2px;
-	width: 100%;
-}
-
-.local-media__video iframe {
-	height: 100%;
-	width: 100%;
-}
-
-.local-media__video-text {
-	font-size: 0.625rem;
-}
-
-/* 関連リンクのスタイル */
-
-.local-media__links {
-	background-color: #D6E6F5;
-	margin-top: 0.75rem;
-	padding: 0.625rem;
-	width: 100%;
-}
-
-.local-media__links-title {
-	border-bottom: 1px solid #000074;
-	color: #000074;
-	font-size: 1.2rem;
-	padding-bottom: 6px;
-	text-align: center;
-}
-
-.local-media__links-list {
-	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
-	list-style: none;
-	margin-top: 1rem;
-	padding-left: 0.375rem;
-}
-
-.local-media__links-list--link {
-	padding-bottom: 1rem;
-}
-
-.local-media__links-item {
-	display: inline-block;
-}
-
-.local-media__link {
-	-webkit-text-decoration: none;
-	text-decoration: none;
-	transition: color 0.3s;
-}
-
-.local-media__link:hover {
-	color: #99ff00;
-	cursor: pointer;
-}
-
-/* PC画面ではYouTube動画とリンクを横並びにする */
-
 .mv {
 	margin-left: auto;
 	margin-right: auto;
@@ -2435,10 +2480,20 @@ span.wpcf7-spinner {
 	line-height: 1.5;
 	position: absolute;
 	text-align: center;
-	top: 60%;
+	top: 56%;
 	transform: translate(-50%, -60%);
-	width: 100%;
+	white-space: nowrap;
+	width: -moz-max-content;
+	width: max-content;
 	z-index: 2;
+}
+
+.mv__title.mv__title--black {
+	background: rgba(10, 10, 30, 0.5);
+	border-radius: 4px;
+	display: inline-block;
+	padding: 0.2em 0.5em;
+	white-space: nowrap;
 }
 
 .mv__title::first-letter {
@@ -4636,14 +4691,19 @@ span.wpcf7-spinner {
 }
 
 .top-aboutus {
+	background-color: #D6E6F5;
 	margin-left: auto;
 	margin-right: auto;
+	padding-bottom: 3rem;
+	padding-top: 3rem;
 	width: 100%;
+	z-index: -100;
 }
 
 .top-aboutus__container {
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 2.5rem;
 	width: 100%;
 }
 
@@ -4700,6 +4760,13 @@ span.wpcf7-spinner {
 	border-radius: 60% 40% 70% 30%/40% 40% 60% 60%;
 }
 
+.top-aboutus__main-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 100%;
+}
+
 .top-aboutus__main {
 	margin-top: 2.5rem;
 }
@@ -4722,10 +4789,12 @@ span.wpcf7-spinner {
 	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: 0;
+	text-align: left;
 }
 
 .top-aboutus__button {
-	margin-top: 3.125rem;
+	display: inline-block;
+	margin-top: 2.5rem;
 	padding-bottom: 0.25rem;
 	text-align: center;
 }
@@ -4749,45 +4818,42 @@ span.wpcf7-spinner {
 	transform: translateX(0);
 }
 
-.top-blog {
-	background-color: white; /* 白色背景 */
-	padding-top: 5rem;
-	position: relative; /* 相対位置指定 */
+.top-contact {
+	position: relative;
 }
 
-.top-blog__inner {
-	padding-left: 1.3125rem;
-	padding-right: 1.3125rem;
-	position: relative; /* 相対位置指定 */
-	z-index: 2; /* 背景画像より上に表示 */
+.top-contact-layout {
+	margin-top: 2.5rem;
 }
 
-.top-blog__fish-image {
-	display: none;
-}
-
-.top-blog__fish-image img {
-	-o-object-fit: cover;
-	aspect-ratio: 437/201;
-	object-fit: cover;
-	width: 100%;
-}
-
-.top-blog__cards {
+.top-contact__container {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 1.625rem;
+	margin-top: 2.5rem;
+	text-align: center;
 	width: 100%;
 }
 
-.top-blog__button {
-	margin-top: 2.25rem;
+.top-contact__body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.top-contact__text {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1.25rem;
+	text-align: left;
+}
+
+.top-contact__button {
+	display: inline-block;
+	margin-top: 2.5rem;
 	padding-bottom: 0.25rem;
-	text-align: center;
 }
 
 .top-news__container {
-	margin-top: 3.75rem;
+	margin-top: 2.5rem;
 }
 
 .top-news__list {
@@ -4823,7 +4889,7 @@ span.wpcf7-spinner {
 
 .top-plan__cards-wrapper {
 	height: 100%;
-	margin-top: 1.75rem;
+	margin-top: 2.5rem;
 	padding-bottom: 0.25rem;
 	width: 100vw;
 }
@@ -5039,22 +5105,6 @@ span.wpcf7-spinner {
 	display: grid;
 	gap: 2.5rem;
 	grid-template-columns: 1fr;
-}
-
-#weather-app-container {
-	height: auto;
-	overflow: hidden;
-	width: 100%;
-}
-
-#weather-app-container img {
-	display: inline-block;
-	max-width: 3.125rem;
-	text-align: center;
-}
-
-.weather-wrapper {
-	background: url("../images/weather-background-image.jpg") center center no-repeat;
 }
 
 .works-card {
@@ -5296,18 +5346,6 @@ span.wpcf7-spinner {
 	margin-top: 6.25rem;
 }
 
-.footer-layout-01 {
-	margin-top: 6rem;
-}
-
-.footer-layout-02 {
-	margin-top: 9rem;
-}
-
-.footer-layout-03 {
-	margin-top: 0;
-}
-
 .footer-layout--thanks {
 	margin-top: 9.25rem;
 }
@@ -5377,23 +5415,15 @@ span.wpcf7-spinner {
 }
 
 .top-news-layout {
-	margin-top: 7.5rem;
+	margin-top: 3.75rem;
 }
 
 .top-plan-layout {
 	margin-top: 2.5rem;
 }
 
-.top-price-layout {
-	margin-top: 5rem;
-}
-
 .top-service-layout {
 	margin-top: 2.5rem;
-}
-
-.top-voice-layout {
-	margin-top: 5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -5413,6 +5443,10 @@ span.wpcf7-spinner {
 
 html {
 	font-size: 1.4814814815vw;
+}
+
+.aboutus-philosophy-layout {
+	margin-top: 3.75rem;
 }
 
 .accordion {
@@ -5945,20 +5979,6 @@ html {
 	padding-right: 25px;
 }
 
-.local-media__container {
-	align-items: stretch;
-	flex-direction: row;
-}
-
-.local-media__video {
-	flex: 2; /* 動画を広めに */
-}
-
-.local-media__links {
-	flex: 1; /* 関連リンクを小さめに */
-	margin-top: 0;
-}
-
 .mv__img img {
 	aspect-ratio: 1440/548;
 	height: 34.25rem;
@@ -5968,7 +5988,7 @@ html {
 	font-size: 2.5rem;
 	left: 50%;
 	position: absolute;
-	top: 60%;
+	top: 55%;
 	transform: translate(-50%, -60%);
 }
 
@@ -6704,8 +6724,13 @@ html {
 	margin-top: 4rem;
 }
 
+.top-aboutus {
+	padding-bottom: 7.5rem;
+	padding-top: 7.5rem;
+}
+
 .top-aboutus__container {
-	margin-top: 7.5rem;
+	margin-top: 3.75rem;
 	max-width: 67.5rem;
 	position: relative;
 }
@@ -6745,7 +6770,8 @@ html {
 	left: 3.75rem;
 	max-width: 35rem;
 	position: absolute;
-	top: 7.625rem;
+	text-align: left;
+	top: 5.625rem;
 	z-index: 10;
 }
 
@@ -6760,6 +6786,10 @@ html {
 	line-height: 1.25;
 }
 
+.top-aboutus__body {
+	margin-top: 2.5rem;
+}
+
 .top-aboutus__text {
 	color: #fff;
 	font-size: 1.25rem;
@@ -6768,14 +6798,10 @@ html {
 }
 
 .top-aboutus__button {
-	margin-top: 2.5rem;
+	margin-top: 3.75rem;
 }
 
-.top-blog {
-	padding-top: 6rem;
-}
-
-.top-blog::before {
+.top-contact::before {
 	background-image: url("../images/bonotu-pc.jpg"); /* 画像のパスを指定 */
 	background-position: center; /* 画像を中央に配置 */
 	background-size: cover; /* 背景画像を要素のサイズに合わせる */
@@ -6787,21 +6813,25 @@ html {
 	z-index: 1; /* z-indexで重ねる順序を指定 */
 }
 
-.top-blog__fish-image {
-	display: block;
-	left: calc(50% - min(48vw, 38.75rem));
-	max-width: 27.3125rem;
-	position: absolute;
-	top: -4.5rem;
-	z-index: 100;
+.top-contact-layout {
+	margin-top: 7.5rem;
 }
 
-.top-blog__cards {
-	margin-top: 5rem;
+.top-contact__container {
+	margin-top: 3.75rem;
 }
 
-.top-blog__button {
-	margin-top: 4.875rem;
+.top-contact__body {
+	width: -moz-max-content;
+	width: max-content;
+}
+
+.top-contact__button {
+	margin-top: 3.75rem;
+}
+
+.top-news__container {
+	margin-top: 3.75rem;
 }
 
 .top-news__list {
@@ -6811,7 +6841,7 @@ html {
 .top-plan__cards-wrapper {
 	left: calc(-50vw + 50%); /* 親要素の中央基準で全幅表示 */
 	margin-right: calc(50% - 50vw);
-	margin-top: 2.5rem;
+	margin-top: 3.75rem;
 	padding-bottom: 0.625rem;
 	width: 100vw; /* ビューポートの幅いっぱい */
 }
@@ -6852,7 +6882,8 @@ html {
 }
 
 .top-service {
-	padding-top: 6.25rem;
+	padding-bottom: 7.5rem;
+	padding-top: 7.5rem;
 }
 
 .top-service__main {
@@ -7041,15 +7072,7 @@ html {
 }
 
 .footer-layout {
-	margin-top: 10rem;
-}
-
-.footer-layout-01 {
-	margin-top: 10rem;
-}
-
-.footer-layout-02 {
-	margin-top: 10rem;
+	margin-top: 7.5rem;
 }
 
 .footer-layout--thanks {
@@ -7108,20 +7131,16 @@ html {
 	margin-top: 8.75rem;
 }
 
+.top-news-layout {
+	margin-top: 7.5rem;
+}
+
 .top-plan-layout {
 	margin-top: 7.5rem;
 }
 
-.top-price-layout {
-	margin-top: 8.625rem;
-}
-
 .top-service-layout {
 	margin-top: 7.5rem;
-}
-
-.top-voice-layout {
-	margin-top: 8.75rem;
 }
 
 }

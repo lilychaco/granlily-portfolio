@@ -57,8 +57,8 @@
 
 	<div class="top-plan__inner inner">
 		<div class="top-plan__heading section-heading">
-			<h2 class="section-heading__title">Plan</h2>
-			<h3 class="section-heading__subtitle">ツアープラン</h3>
+			<h2 class="section-heading__title">ツアープラン</h2>
+			<h3 class="section-heading__subtitle">Plan</h3>
 		</div>
 
 		<!-- 前後の矢印 -->
@@ -113,7 +113,7 @@
 	<?php wp_reset_postdata(); // クエリのリセット  ?>
 </section>
 
-<section class="top-service top-service-layout" id="">
+<section class="top-service top-service-layout" id="top-service">
 	<div class="top-service__inner inner">
 		<h2 class="top-service__heading section-heading">
 			<span class="section-heading__title">サービス</span>
@@ -233,12 +233,12 @@
 
 
 
-<section class="top-aboutus inner top-aboutus-layout" id="aboutus">
+<section class="top-aboutus top-aboutus-layout" id="aboutus">
 	<h2 class="top-aboutus__heading section-heading">
 		<span class="section-heading__title">わたしたちについて</span>
 		<span class="section-heading__subtitle">About us</span>
 	</h2>
-	<div class="top-aboutus__container">
+	<div class="top-aboutus__container inner">
 		<div class="top-aboutus__sp-image u-mobile">
 			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/23768561_s.jpg" alt="中村弓美" />
 		</div>
@@ -263,13 +263,33 @@
 						わたしたち granlilyは、シニア世代のお客様に、最高の思い出をお届けするツーリズムです。<br>
 						granlilyでは、決められたツアーパックではなく、お客様のご要望をお聞きしながら一緒に旅行プランを練っていきます。
 					</div>
-
 				</div>
+			</div>
+			<div class="top-aboutus__button">
+				<a href="<?php echo esc_url(home_url('/company')); ?>" class="button--03"> もっと見る</a>
 			</div>
 		</div>
 
 	</div>
 </section>
+
+<section class="top-contact inner top-contact-layout" id="top-contact">
+	<h2 class="top-contact__heading section-heading">
+		<span class="section-heading__title">お問い合わせ</span>
+		<span class="section-heading__subtitle">Contact</span>
+	</h2>
+	<div class="top-contact__container inner">
+		<div class="top-contact__body">
+			<div class="top-contact__text">
+				今すぐ旅のご予定がなくても、お気軽にお問い合わせ・ご相談ください。<br>
+				granlilyが、人生を豊かにする旅のご案内をいたします。</div>
+		</div>
+		<div class="top-contact__button">
+			<a href="<?php echo esc_url(home_url('/contact')); ?>" class="button--03">お問い合わせ</a>
+		</div>
+	</div>
+</section>
+
 
 
 

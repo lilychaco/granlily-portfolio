@@ -36,6 +36,16 @@
 					</a>
 				</div>
 				<div class="nav-menu__item">
+					<a href="<?php echo esc_url(home_url('/news')); ?>">
+						<p class="starfish-icon">お知らせ</p>
+					</a>
+				</div>
+				<div class="nav-menu__item">
+					<a href="<?php echo esc_url(home_url('/aboutus')); ?>">
+						<p class="starfish-icon">私たちについて</p>
+					</a>
+				</div>
+				<div class="nav-menu__item">
 					<a href="<?php echo esc_url(home_url('/contact')); ?>">
 						<p class="starfish-icon">お問い合わせ</p>
 					</a>

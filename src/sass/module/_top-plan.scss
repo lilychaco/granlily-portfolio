@@ -15,11 +15,11 @@
 .top-plan__cards-wrapper {
   width: 100vw;
   height: 100%;
-  margin-top: rem(28);
+  margin-top: rem(40);
   padding-bottom: rem(4);
 
   @include mq(md) {
-    margin-top: rem(40);
+    margin-top: rem(60);
     margin-right: calc(50% - 50vw);
     padding-bottom: rem(10);
 		width: 100vw; /* ビューポートの幅いっぱい */

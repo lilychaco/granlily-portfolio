@@ -1,0 +1,61 @@
+@use "global" as *;
+
+.top-contact {
+	position: relative;
+
+
+}
+.top-contact::before {
+	@include mq(md) {
+		content:"";
+		position: absolute; /* 絶対位置指定 */
+    top: 0; /* 上端から0pxの位置に配置 */
+		background-image: url('../images/bonotu-pc.jpg'); /* 画像のパスを指定 */
+    width: 100%;   /* 横幅をブラウザのビューポート幅に設定 */
+    height: rem(500);  /* 高さを500ピクセルに設定 */
+    background-size: cover; /* 背景画像を要素のサイズに合わせる */
+    background-position: center; /* 画像を中央に配置 */
+		z-index: 1; /* z-indexで重ねる順序を指定 */
+	}
+}
+.top-contact-layout {
+	margin-top: rem(40);
+	@include mq(md) {
+			margin-top: rem(120);
+	}
+}
+.top-contact__container {
+	margin-inline:auto;
+	width:100%;
+	margin-top: rem(40);
+	text-align: center;
+	@include mq(md) {
+		margin-top: rem(60);
+	}
+}
+.top-contact__body {
+	margin-inline:auto;
+	width: 100%;
+	@include mq(md) {
+			width: max-content;
+	}
+}
+
+.top-contact__text {
+	text-align: left;
+	font-size: rem(20);
+			font-family: $base-font-family;
+
+		}
+
+
+.top-contact__button {
+	display: inline-block;
+	margin-top: rem(40);
+  padding-bottom: rem(4);
+
+  @include mq(md) {
+    margin-top: rem(60);
+  }
+
+}

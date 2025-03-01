@@ -3,13 +3,22 @@
 .top-aboutus {
 	margin-inline:auto;
 	width:100%;
+	background-color: $greenpale;
+	padding-top: rem(48);
+	padding-bottom: rem(48);
+	z-index:-100;
+	@include mq(md) {
+			padding-top: rem(120);
+			padding-bottom: rem(120);
+	}
 }
 .top-aboutus__container {
   width: 100%;
   margin-inline: auto;
+	margin-top: rem(40);
   @include mq(md) {
     max-width: rem(1080);
-    margin-top: rem(120);
+    margin-top: rem(60);
     position: relative;
 }
 }
@@ -90,9 +99,13 @@
 	border-radius: 60% 40% 70% 30% / 40% 40% 60% 60%  ;
 }
 .top-aboutus__main-wrapper {
+	margin-inline:auto;
+	width:100%;
+	text-align: center;
   @include mq(md) {
+		text-align: left;
     position: absolute;
-    top: rem(122);
+    top: rem(90);
     left: rem(60);
     z-index: 10;
 		max-width:rem(560);
@@ -125,6 +138,7 @@
 .top-aboutus__body {
   margin-top: rem(16);
   @include mq(md) {
+		margin-top: rem(40);
   }
 }
 
@@ -133,6 +147,7 @@
   font-family: $base-font-family;
   font-weight: $regular;
   letter-spacing: 0;
+	text-align: left;
   @include mq(md) {
     color: $white;
     max-height: rem(350);
@@ -142,12 +157,13 @@
 }
 
 .top-aboutus__button {
-  margin-top: rem(50);
+	display: inline-block;
+  margin-top: rem(40);
   text-align: center;
   padding-bottom: rem(4);
 
   @include mq(md) {
-    margin-top: rem(40);
+    margin-top: rem(60);
   }
 }
 

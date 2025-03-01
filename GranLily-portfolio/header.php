@@ -128,6 +128,16 @@
 					<p class="starfish-icon starfish-icon--drawer">写真</p>
 				</a>
 			</li>
+			<li class="drawer-menu__item">
+				<a href="<?php echo esc_url(home_url('/news')); ?>">
+					<p class="starfish-icon starfish-icon--drawer">お知らせ</p>
+				</a>
+			</li>
+			<li class="drawer-menu__item">
+				<a href="<?php echo esc_url(home_url('/aboutus')); ?>">
+					<p class="starfish-icon starfish-icon--drawer">私たちについて</p>
+				</a>
+			</li>
 
 
 			<li class="drawer-menu__item">

@@ -5,7 +5,7 @@
 		<picture>
 			<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/20231107malaga.jpg"
 				media="(min-width: 768px)" />
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20231107malaga.jpg" alt="ファーストビュー画像" />
+			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20231107malaga.jpg" alt="スペインマラガ" />
 		</picture>
 	</figure>
 	<h2 class="mv__title">

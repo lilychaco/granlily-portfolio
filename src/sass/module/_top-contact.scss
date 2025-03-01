@@ -1,61 +1,60 @@
 @use "global" as *;
 
-.top-contact {
-	position: relative;
 
-
-}
-.top-contact::before {
-	@include mq(md) {
-		content:"";
-		position: absolute; /* 絶対位置指定 */
-    top: 0; /* 上端から0pxの位置に配置 */
+.top-contact{
 		background-image: url('../images/bonotu-pc.jpg'); /* 画像のパスを指定 */
     width: 100%;   /* 横幅をブラウザのビューポート幅に設定 */
-    height: rem(500);  /* 高さを500ピクセルに設定 */
+    height: auto;
     background-size: cover; /* 背景画像を要素のサイズに合わせる */
     background-position: center; /* 画像を中央に配置 */
-		z-index: 1; /* z-indexで重ねる順序を指定 */
+		z-index: -1; /* z-indexで重ねる順序を指定 */
+		padding-top: rem(120);
+		padding-bottom: rem(120);
 	}
-}
+
 .top-contact-layout {
-	margin-top: rem(40);
+	margin-top: 0;
 	@include mq(md) {
-			margin-top: rem(120);
+			margin-top: 0;
 	}
 }
 .top-contact__container {
+	margin-inline:auto;
+	width:100%;
+	text-align: center;
+	background-color: #fff;
+	padding: rem(40) rem(20);
+	border-radius: rem(4);
+@include mq(md) {
+	max-width: rem(800);
+	padding: rem(40) rem(40);
+
+}
+}
+.top-contact__body {
 	margin-inline:auto;
 	width:100%;
 	margin-top: rem(40);
 	text-align: center;
 	@include mq(md) {
 		margin-top: rem(60);
-	}
-}
-.top-contact__body {
-	margin-inline:auto;
-	width: 100%;
-	@include mq(md) {
-			width: max-content;
+		width: max-content;
 	}
 }
 
 .top-contact__text {
+	margin-inline:auto;
+	width:100%;
 	text-align: left;
 	font-size: rem(20);
-			font-family: $base-font-family;
-
-		}
-
+	font-family: $base-font-family;
+	}
 
 .top-contact__button {
 	display: inline-block;
 	margin-top: rem(40);
-  padding-bottom: rem(4);
 
   @include mq(md) {
     margin-top: rem(60);
   }
-
 }

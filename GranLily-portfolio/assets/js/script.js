@@ -261,6 +261,12 @@ var pathData = "M 0,".concat(centerY, " A ").concat(radiusX, ",").concat(radiusY
 
 // ページが読み込まれた後に処理を実行
 document.addEventListener("DOMContentLoaded", function () {
+  var flightPath = document.querySelector("#flightPath");
+  if (!flightPath) {
+    console.error("エラー: #flightPath が見つかりません！");
+  } else {
+    flightPath.setAttribute("d", pathData);
+  }
   // SVGの <path> にパスデータをセット（純粋なJS版）
   document.querySelector("#flightPath").setAttribute("d", pathData);
 

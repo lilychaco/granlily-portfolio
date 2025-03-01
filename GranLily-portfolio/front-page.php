@@ -266,26 +266,29 @@
 				</div>
 			</div>
 			<div class="top-aboutus__button">
-				<a href="<?php echo esc_url(home_url('/company')); ?>" class="button--03"> もっと見る</a>
+				<a href="<?php echo esc_url(home_url('/aboutus')); ?>" class="button--03"> もっと見る</a>
 			</div>
 		</div>
 
 	</div>
 </section>
 
-<section class="top-contact inner top-contact-layout" id="top-contact">
-	<h2 class="top-contact__heading section-heading">
-		<span class="section-heading__title">お問い合わせ</span>
-		<span class="section-heading__subtitle">Contact</span>
-	</h2>
-	<div class="top-contact__container inner">
-		<div class="top-contact__body">
-			<div class="top-contact__text">
-				今すぐ旅のご予定がなくても、お気軽にお問い合わせ・ご相談ください。<br>
-				granlilyが、人生を豊かにする旅のご案内をいたします。</div>
-		</div>
-		<div class="top-contact__button">
-			<a href="<?php echo esc_url(home_url('/contact')); ?>" class="button--03">お問い合わせ</a>
+<section class="top-contact top-contact-layout">
+	<div class="inner">
+		<div class="top-contact__container">
+			<h2 class="top-contact__heading section-heading">
+				<span class="section-heading__title">お問い合わせ</span>
+				<span class="section-heading__subtitle">Contact</span>
+			</h2>
+
+			<div class="top-contact__body">
+				<div class="top-contact__text">
+					今すぐ旅のご予定がなくても、お気軽にお問い合わせ・ご相談ください。<br>
+					granlilyが、人生を豊かにする旅のご案内をいたします。</div>
+			</div>
+			<div class="top-contact__button">
+				<a href="<?php echo esc_url(home_url('/contact')); ?>" class="button--03">お問い合わせ</a>
+			</div>
 		</div>
 	</div>
 </section>

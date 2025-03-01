@@ -287,6 +287,13 @@ const pathData = `M 0,${centerY} A ${radiusX},${radiusY} 0 0,1 ${ellipseWidth},$
 
 // ページが読み込まれた後に処理を実行
 document.addEventListener("DOMContentLoaded", function () {
+	const flightPath = document.querySelector("#flightPath");
+
+  if (!flightPath) {
+    console.error("エラー: #flightPath が見つかりません！");
+  } else {
+    flightPath.setAttribute("d", pathData);
+  }
     // SVGの <path> にパスデータをセット（純粋なJS版）
     document.querySelector("#flightPath").setAttribute("d", pathData);
 

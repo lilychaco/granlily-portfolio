@@ -3664,7 +3664,7 @@ span.wpcf7-spinner {
 
 .service__button {
 	display: inline-block;
-	margin-top: 2rem;
+	margin-top: 1.5rem;
 	z-index: 100;
 }
 
@@ -5055,6 +5055,10 @@ span.wpcf7-spinner {
 }
 
 .footer-layout {
+	margin-top: 3.75rem;
+}
+
+.home .footer-layout {
 	margin-top: 0;
 }
 
@@ -6570,6 +6574,10 @@ html {
 
 .drawer-layout {
 	margin-top: 5.625rem;
+}
+
+.footer-layout {
+	margin-top: 7.5rem;
 }
 
 .footer-layout--thanks {

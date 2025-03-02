@@ -3,7 +3,7 @@
 	<figure class="mv__img">
 		<picture>
 			<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/tulip-pc.jpg" media="(min-width: 768px)" />
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/tulip-sp.jpg" alt="ファーストビュー画像" />
+			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/tulip-sp.jpg" alt="" />
 		</picture>
 	</figure>
 	<h2 class="mv__title">ツアープラン詳細</h2>

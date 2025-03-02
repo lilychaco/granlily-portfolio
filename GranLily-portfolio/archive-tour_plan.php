@@ -17,53 +17,52 @@
 
 <div class="archive-tour_plan archive-tour_plan-layout">
 	<div class="archive-tour_plan__inner inner">
-		<ul class="archive-tour_plan__category-list category-list">
+		<div class="archive-tour_plan__container">
+			<div class="archive-tour_plan__main">
+				<ul class="archive-tour_plan__category-list category-list">
 
-			<li class="category-list__item">
-				<!-- ALLカテゴリへのリンク（archive-.phpに戻る） -->
-				<a href="<?php echo esc_url(get_post_type_archive_link('tour_plan')); ?>"
-					class="category-list__link <?php echo (!isset($_GET['term']) || $_GET['term'] == 'all') ? 'is-current' : ''; ?>">
-					ALL
-				</a>
-			</li>
-			<?php
+					<li class="category-list__item">
+						<!-- ALLカテゴリへのリンク（archive-.phpに戻る） -->
+						<a href="<?php echo esc_url(get_post_type_archive_link('tour_plan')); ?>"
+							class="category-list__link <?php echo (!isset($_GET['term']) || $_GET['term'] == 'all') ? 'is-current' : ''; ?>">
+							ALL
+						</a>
+					</li>
+					<?php
 								// 'tour_plan_categoryっv'タクソノミーの用語を取得
 								$terms = get_terms(array(
 										'taxonomy' => 'tour_plan_category',
 										'hide_empty' => false,
 								));
 								?>
-			<?php if (!empty($terms)) : ?>
-			<?php foreach ($terms as $term) : ?>
-			<li class="category-list__item">
-				<?php
+					<?php if (!empty($terms)) : ?>
+					<?php foreach ($terms as $term) : ?>
+					<li class="category-list__item">
+						<?php
             // タクソノミーのリンクを取得
             $term_link = get_term_link($term);
             // リンクがエラーでないか確認
             if (!is_wp_error($term_link)) : ?>
-				<a href="<?php echo esc_url($term_link); ?>"
-					class="category-list__link <?php echo (isset($_GET['term']) && $_GET['term'] == $term->slug) ? 'is-current' : ''; ?>">
-					<?php echo esc_html($term->name); ?>
-				</a>
-				<?php else : ?>
-				<!-- エラーが発生した場合のフォールバック -->
-				<span class="category-list__link-error">リンクの取得に失敗しました</span>
-				<?php endif; ?>
-			</li>
-			<?php endforeach; ?>
-			<?php endif; ?>
-		</ul>
-		<!-- カテゴリリスト部分 -->
+						<a href="<?php echo esc_url($term_link); ?>"
+							class="category-list__link <?php echo (isset($_GET['term']) && $_GET['term'] == $term->slug) ? 'is-current' : ''; ?>">
+							<?php echo esc_html($term->name); ?>
+						</a>
+						<?php else : ?>
+						<!-- エラーが発生した場合のフォールバック -->
+						<span class="category-list__link-error">リンクの取得に失敗しました</span>
+						<?php endif; ?>
+					</li>
+					<?php endforeach; ?>
+					<?php endif; ?>
+				</ul>
+				<!-- カテゴリリスト部分 -->
 
-
-
-
-		<div class="archive-tour_plan__content">
-			<!-- 投稿リスト部分 -->
-			<?php if (have_posts()) : ?>
-			<ul class="archive-tour_plan__cards">
-				<?php while (have_posts()) : the_post(); ?>
-				<?php
+				<div class="archive-tour_plan__content">
+					<!-- 投稿リスト部分 -->
+					<?php if (have_posts()) : ?>
+					<ul class="archive-tour_plan__cards">
+						<?php while (have_posts()) : the_post(); ?>
+						<?php
             // 必要なカスタムフィールドの値をまとめて取得
             $link_url = get_post_meta(get_the_ID(), 'link-url', true);
             $thumbnail = get_the_post_thumbnail(
@@ -76,64 +75,66 @@
             $content = strip_tags(get_the_content()); // HTMLタグを除去
             ?>
 
-				<li class="archive-tour_plan__card">
-					<a href="<?php echo esc_url(get_permalink()); ?>" class="archive-tour_plan__link">
-						<figure class="archive-tour_plan__img">
-							<?php if ($thumbnail) : ?>
-							<!-- サムネイル画像を表示 -->
-							<?php echo $thumbnail; ?>
-							<?php else : ?>
-							<!-- サムネイル画像がない場合はデフォルト画像を表示 -->
-							<img src="<?php echo esc_url($default_thumbnail); ?>" alt="" />
-							<?php endif; ?>
-						</figure>
+						<li class="archive-tour_plan__card">
+							<a href="<?php echo esc_url(get_permalink()); ?>" class="archive-tour_plan__link">
+								<figure class="archive-tour_plan__img">
+									<?php if ($thumbnail) : ?>
+									<!-- サムネイル画像を表示 -->
+									<?php echo $thumbnail; ?>
+									<?php else : ?>
+									<!-- サムネイル画像がない場合はデフォルト画像を表示 -->
+									<img src="<?php echo esc_url($default_thumbnail); ?>" alt="" />
+									<?php endif; ?>
+								</figure>
 
-						<div class="archive-tour_plan__body">
-							<div class="archive-tour_plan__top">
-								<?php if (!empty($terms) && !is_wp_error($terms)) : ?>
-								<div class="archive-tour_plan__category">
-									<?php foreach ($terms as $term) : ?>
-									<span><?php echo esc_html($term->name); ?></span>
-									<?php endforeach; ?>
-								</div>
-								<?php endif; ?>
-								<div class="archive-tour_plan__title"><?php the_title(); ?></div>
-							</div>
-							<div class="archive-tour_plan__subbody">
-								<div class="archive-tour_plan__text">
-									<?php the_content(); ?>
-								</div>
-								<div class="archive-tour_plan__meta">
-									<p class="archive-tour_plan__price-info">
-										全部コミコミ(お一人様)
-									</p>
-									<?php
+								<div class="archive-tour_plan__body">
+									<div class="archive-tour_plan__top">
+										<?php if (!empty($terms) && !is_wp_error($terms)) : ?>
+										<div class="archive-tour_plan__category">
+											<?php foreach ($terms as $term) : ?>
+											<span><?php echo esc_html($term->name); ?></span>
+											<?php endforeach; ?>
+										</div>
+										<?php endif; ?>
+										<div class="archive-tour_plan__title"><?php the_title(); ?></div>
+									</div>
+									<div class="archive-tour_plan__subbody">
+										<div class="archive-tour_plan__text">
+											<?php the_content(); ?>
+										</div>
+										<div class="archive-tour_plan__meta">
+											<p class="archive-tour_plan__price-info">
+												全部コミコミ(お一人様)
+											</p>
+											<?php
 							// カスタムフィールド「plan-price」の値を取得
 							$price_new = get_field('plan-price');
 							// 価格の値がある場合のみ表示
 							if(!empty($price_new)):
 							?>
-									<div class="archive-tour_plan__price-text">
-										<p class="archive-tour_plan__price-new">
-											&yen;<?php echo esc_html(number_format($price_new)); ?>
-										</p>
+											<div class="archive-tour_plan__price-text">
+												<p class="archive-tour_plan__price-new">
+													&yen;<?php echo esc_html(number_format($price_new)); ?>
+												</p>
+											</div>
+											<?php endif; ?>
+										</div>
 									</div>
-									<?php endif; ?>
 								</div>
-							</div>
-						</div>
-					</a>
-				</li>
+							</a>
+						</li>
 
-				<?php endwhile; ?>
-			</ul>
-			<?php endif; ?>
-		</div>
+						<?php endwhile; ?>
+					</ul>
+					<?php endif; ?>
+				</div>
 
-		<div class="archive-tour_plan__nav page-nav">
-			<ul class="page-nav__pager">
-				<?php wp_pagenavi(); ?>
-			</ul>
+				<div class="archive-tour_plan__nav page-nav">
+					<ul class="page-nav__pager">
+						<?php wp_pagenavi(); ?>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 

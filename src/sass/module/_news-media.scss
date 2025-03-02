@@ -27,7 +27,7 @@
 	@include mq(md) {
 		display: flex;
 		flex-direction: row;
-		gap:rem(10);
+		gap:rem(20);
 
 	}
 }
@@ -65,7 +65,7 @@
 	flex-direction: row;
 	gap: rem(30);
 	padding-top:rem(10);
-	padding-left:rem(10);
+
 }
 
 
@@ -75,6 +75,9 @@
   font-weight: $regular;
   letter-spacing: 0;
   color: $font-color;
+	@include mq(md) {
+		font-size: rem(14);
+	}
 }
 
 .news-media__category {
@@ -101,6 +104,7 @@
 	padding-bottom: rem(4);
 	@include mq(md) {
 		line-height: 1.5;
+		font-size: rem(24);
 	}
 }
 
@@ -114,5 +118,6 @@
   margin-top: rem(16);
 	@include mq(md) {
 			margin-top: 0;
+			font-size: rem(20);
 	}
 }

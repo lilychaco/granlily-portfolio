@@ -1,23 +1,5 @@
 @use "global" as *;
 
-.single-news__inner {
-
-}
-
-
-
-.single-news__container {
-	margin-top: rem(60);
-
-}
-
-.single-news__main {
-
-}
-
-
-
-
 .single-news {
 	margin-inline: auto;
   width: 100%;
@@ -25,6 +7,25 @@
 			padding-right: rem(3);
 	}
 }
+
+.single-news__inner {
+
+}
+
+.single-news__container {
+	margin-top: rem(60);
+	@include mq(md) {
+    display: grid;
+    grid-template-columns: 65.4% 27.2%;
+		grid-template-rows: auto; // 各行の高さを自動調整
+    gap: 7.4%;
+  }
+}
+.single-news__main {
+  min-height: 100%;
+}
+
+
 
 .single-news__post {
   margin-inline: auto;
@@ -103,37 +104,7 @@
   }
 }
 
-.single-news__content ul{
-  margin-top: rem(24);
-  @include mq(md) {
-    margin-top: rem(40);
-  }
-}
 
-.single-news__content ul li{
-  font-size: rem(16);
-  font-family: $base-font-family;
-  font-weight: $regular;
-  line-height: 1.5;
-  letter-spacing: 0;
-  position: relative;
-  padding-left: rem(26);
-}
-.single-news__content ul li:not(:first-child) {
-  margin-top: rem(4);
-}
-.single-news__content ul li::before {
-  content: "";
-  background-image: url(../images/icon-hitode.jpg);
-  width: rem(18);
-  height: rem(18);
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  top: rem(4);
-  left: 0;
-  margin: auto;
-}
 .single-news__nav {
 	position: relative;
 	width: 100%;
@@ -148,4 +119,26 @@
   display: flex;
   justify-content: center;
   gap: rem(82);
+}
+
+
+.single-news__side {
+  margin-inline: auto;
+  width: 100%;
+  padding-left: rem(25);
+  padding-right: rem(25);
+  margin-top: rem(80);
+
+  @include mq(md) {
+    width: rem(294);
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+  }
+}
+.single-news__more {
+		margin-top: rem(60);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

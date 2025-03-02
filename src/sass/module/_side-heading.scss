@@ -19,9 +19,9 @@
 .side-heading::before {
   content: "";
   display: block;
-  width: rem(50);
-  height: rem(50);
-  background-image: url(../images/side_whale_icon1.jpg);
+  width: rem(40);
+  height: rem(40);
+  background-image: url(../images/airplane-blue.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -29,4 +29,8 @@
   left: rem(16);
   bottom: 0;
   margin: auto;
+}
+
+.side-heading--02 {
+	margin-top:rem(60);
 }

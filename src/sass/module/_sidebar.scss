@@ -1,5 +1,8 @@
 @use "global" as *;
 
+.sidebar {
+
+}
 .sidebar__related {
 	margin-inline:auto;
 	width:100%;
@@ -7,17 +10,16 @@
 }
 
 .sidebar__related-title {
-
-
+	margin-top:rem(8);
 }
 
 .sidebar__related-list {
 	margin-inline:auto;
 	width:100%;
+	margin-top: rem(40);
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	gap:rem(40);
-
 }
 
 .sidebar__related-item {
@@ -27,11 +29,23 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+	position: relative;
 
 }
 
 .sidebar__related-link {
 
+}
+
+.sidebar__related-category {
+	position: absolute;
+	top:0;
+	left:0;
+	display: inline-block;
+	background-color: #fff;
+	color:$greenaccent;
+	padding:rem(2) rem(10);
+	border: 1px solid $greenaccent;
 }
 
 .sidebar__related-img {
@@ -47,6 +61,7 @@
 
 }
 .sidebar__related-name {
+	padding:rem(8);
 
 }
 

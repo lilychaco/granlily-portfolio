@@ -7,16 +7,15 @@
 		</picture>
 	</figure>
 
-	<h2 class="mv__title">news</h2>
+	<h2 class="mv__title">お知らせ</h2>
 </section>
 <?php get_template_part('common/breadcrumb') ?>
 
 <div class="single-news news-layout">
 	<div class="single-news__inner inner">
 		<div class="single-news__container">
-			<div class="single-news__main single-news">
+			<div class="single-news__main">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
 				<div class="single-news__post">
 					<div class="single-news__top">
 						<!-- 投稿日時の表示 -->
@@ -48,8 +47,6 @@
 						<?php the_content(); ?>
 					</div>
 				</div>
-
-
 				<?php
 							$prev = get_previous_post();
 							$next = get_next_post();
@@ -68,19 +65,12 @@
 						<?php endif; ?>
 					</div>
 				</div>
-
-
-
-
-
-
-
+				<div class="home-news__more">
+					<a href="<?php echo esc_url(home_url('/news')); ?>" class="top-news__more-link button--03">お知らせ一覧</a>
+				</div>
 				<?php endwhile; endif; ?>
 			</div>
-			<div class="top-news__more">
-				<a href="<?php echo esc_url(home_url('/news')); ?>" class="top-news__more-link button--03">ニュース一覧</a>
-			</div>
-
+			<?php get_sidebar(); ?>
 
 		</div>
 	</div>

@@ -135,9 +135,9 @@
 					</ul>
 				</div>
 			</div>
+			<?php get_sidebar('tour_plan'); ?>
 		</div>
 	</div>
-
 </div>
 
 

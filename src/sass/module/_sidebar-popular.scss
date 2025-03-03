@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.sidebar-popular {
+	margin-inline: auto;
+  width: 100%;
+  margin-top: rem(60);
+
+}
+.sidebar-popular__heading {
+
+}
+
+.sidebar-popular__cards {
+	margin-top: rem(24);
+	display: flex;
+	flex-direction: column;
+	gap:rem(24);
+}
+
+.sidebar-popular__card {
+
+}

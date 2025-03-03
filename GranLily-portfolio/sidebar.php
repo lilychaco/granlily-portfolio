@@ -1,8 +1,8 @@
 			<aside class="single-news__side sidebar">
 				<!-- 関連記事 -->
-				<section class="sidebar__related">
-					<h3 class="sidebar__related-title side-heading">関連記事</h3>
-					<ul class="sidebar__related-list">
+				<section class="sidebar-related">
+					<h3 class="sidebar-related__heading side-heading side-heading--02">関連記事</h3>
+					<ul class="sidebar-related__list">
 						<?php
 						// 現在の記事のカテゴリーを取得
             $terms = get_the_terms(get_the_ID(), 'category');
@@ -32,23 +32,24 @@
 					if ($related_post_query->have_posts()) :
 						while ($related_post_query->have_posts()) : $related_post_query->the_post();
 						?>
-						<li class="sidebar__related-item">
-							<a href="<?php the_permalink(); ?>" class="sidebar__related-link">
-								<?php if (!empty($terms) && !is_wp_error($terms)) : ?>
-								<span class="sidebar__related-category">
-									<?php foreach ($terms as $term) : ?>
-									<?php echo esc_html($term->name); ?>
-									<?php endforeach; ?>
-								</span>
-								<?php endif; ?>
-								<figure class="sidebar__related-img">
+						<li class="sidebar-related__item popular-card">
+							<a href="<?php the_permalink(); ?>" class="popular-card__link">
+								<!-- <?php if (!empty($terms) && !is_wp_error($terms)) : ?>
+								<?php endif; ?> -->
+								<figure class="popular-card__img">
 									<?php if (has_post_thumbnail()) : ?>
 									<?php the_post_thumbnail('thumbnail', ['alt' => esc_attr(get_the_title())]); ?>
 									<?php else : ?>
 									<img src="<?php echo esc_url(get_theme_file_uri('assets/images/23768561_s.jpg')); ?>" alt="デフォルト画像">
 									<?php endif; ?>
 								</figure>
-								<p class="sidebar__related-name"><?php the_title(); ?></p>
+								<div class="popular-card__body">
+									<!-- 投稿日時の表示 -->
+									<time datetime="<?php echo esc_attr(get_the_time('c')); ?>" class="popular-card__date">
+										<?php echo esc_html(get_the_date('Y.m/d')); ?>
+									</time>
+									<p class="popular-card__title"><?php the_title(); ?></p>
+								</div>
 							</a>
 						</li>
 						<?php
@@ -56,24 +57,22 @@
 									wp_reset_postdata();
 							else :
 							?>
-						<p class="sidebar__related-none">関連するお知らせはありません。</p>
+						<p class="sidebar-related__none">関連するお知らせはありません。</p>
 						<?php endif; ?>
 					</ul>
 				</section>
 
 
-				<section class="sidebar__popular">
-
-
+				<section class="sidebar-popular">
 					<!-- 人気記事 -->
 					<?php
 						$popular_posts = get_popular_posts(2); // 人気記事を3件取得
 
 						if ($popular_posts->have_posts()) : ?>
-					<h3 class="side-popular__heading side-heading side-heading--02">人気記事</h3>
-					<ul class="side-popular__cards">
+					<h3 class="sidebar-popular__heading side-heading side-heading--02">人気記事</h3>
+					<ul class="sidebar-popular__cards">
 						<?php while ($popular_posts->have_posts()) : $popular_posts->the_post(); ?>
-						<li class="side-popular__card popular-card">
+						<li class="sidebar-popular__card popular-card">
 							<!-- 投稿のURLを取得し、カード全体をリンクとして包む -->
 							<a href="<?php echo esc_url(get_permalink()); ?>" class="popular-card__link">
 								<div class="popular-card__img">
@@ -95,7 +94,7 @@
 								</div>
 								<div class="popular-card__body">
 									<!-- 投稿日時の表示 -->
-									<time datetime="<?php echo esc_attr(get_the_time('c')); ?>" class="blog-card__date">
+									<time datetime="<?php echo esc_attr(get_the_time('c')); ?>" class="popular-card__date">
 										<?php echo esc_html(get_the_date('Y.m/d')); ?>
 									</time>
 									<p class="popular-card__title"><?php the_title(); ?></p>
@@ -111,7 +110,7 @@
 
 
 
-				<section class="side-archive">
+				<section class="sidebar-archive">
 					<?php
 						global $wpdb;
 
@@ -147,19 +146,19 @@
 									if (!empty($archives)) :
 									?>
 
-					<h3 class="side-archive__heading side-heading side-heading--02">アーカイブ</h3>
-					<div class="side-archive__contents">
+					<h3 class="sidebar-archive__heading side-heading side-heading--02">アーカイブ</h3>
+					<div class="sidebar-archive__contents">
 						<?php foreach ($archives as $year => $months): ?>
-						<div class="side-archive__year" data-year="<?php echo esc_html($year); ?>">
+						<div class="sidebar-archive__year" data-year="<?php echo esc_html($year); ?>">
 							<!-- 年ごとのトグル -->
-							<div class="side-archive__year-toggle js-year-toggle">
+							<div class="sidebar-archive__year-toggle js-year-toggle">
 								<?php echo esc_html($year); ?>
 							</div>
 							<!-- 月ごとのリスト -->
-							<div class="side-archive__month-list">
+							<div class="sidebar-archive__month-list">
 								<?php foreach ($months as $month): ?>
-								<div class="side-archive__month">
-									<a href="<?php echo esc_url($month['url']); ?>" class="side-archive__link">
+								<div class="sidebar-archive__month">
+									<a href="<?php echo esc_url($month['url']); ?>" class="sidebar-archive__link">
 										<?php echo esc_html($month['month']); ?>月 (<?php echo esc_html($month['post_count']); ?>件)
 									</a>
 								</div>

@@ -1,53 +1,49 @@
-<aside class="side-tour_plan sidebar">
-	<!-- 関連ツアー -->
-	<section class="sidebar__related">
-		<h3 class="sidebar__related-title"></h3>
-		<ul class="sidebar__related-list">
-			<?php
-			// 現在の記事のカテゴリーを取得
-            $terms = get_the_terms(get_the_ID(), 'tour_plan_category');
+<aside class="archive-tour_plan__side sidebar">
+	<section class="sidebar-popular">
+		<!-- 人気ツアー -->
+		<?php
+		$popular_tour_posts = get_popular_posts(2, 'tour_plan'); // 人気記事を3件取得
 
-						$related_args = array(
-            'post_type'      => 'tour_plan',
-            'posts_per_page' => 2,
-            'post__not_in'   => array(get_the_ID()),
-            'orderby'        => 'rand',
-            'tax_query'      => array(
-                array(
-                    'taxonomy' => 'tour_plan_category',
-                    'field'    => 'term_id',
-                    'terms'    => (!empty($terms) ? wp_list_pluck($terms, 'term_id') : array()),
-                ),
-            ),
-        );
-        $related_query = new WP_Query($related_args);
-        if ($related_query->have_posts()) :
-            while ($related_query->have_posts()) : $related_query->the_post();
-        ?>
-			<li class="sidebar__related-item">
-				<a href="<?php the_permalink(); ?>" class="sidebar__related-link">
-					<figure class="sidebar__related-img">
-						<?php if (has_post_thumbnail()) : ?>
-						<?php the_post_thumbnail('thumbnail', ['alt' => esc_attr(get_the_title())]); ?>
+		if ($popular_tour_posts->have_posts()) : ?>
+		<h3 class="sidebar-popular__heading side-heading side-heading--02">人気プラン</h3>
+		<ul class="sidebar-popular__cards">
+			<?php while ($popular_tour_posts->have_posts()) : $popular_tour_posts->the_post(); ?>
+			<li class="sidebar-popular__card popular-card">
+				<!-- 投稿のURLを取得し、カード全体をリンクとして包む -->
+				<a href="<?php echo esc_url(get_permalink()); ?>" class="popular-card__link">
+					<div class="popular-card__img">
+						<?php
+											// アイキャッチ画像のHTMLを取得して変数に格納
+											$thumbnail = get_the_post_thumbnail(
+													get_the_ID(),
+													'thumbnail',
+													array('alt' => esc_attr(get_the_title() . 'のサムネイル画像'))
+											);
+											?>
+						<?php if ($thumbnail) : ?>
+						<!-- アイキャッチ画像がある場合 -->
+						<?php echo $thumbnail; ?>
 						<?php else : ?>
-						<img src="<?php echo esc_url(get_theme_file_uri('assets/images/default-image.jpg')); ?>" alt="デフォルト画像">
+						<!-- アイキャッチ画像がない場合、デフォルト画像を表示 -->
+						<img src="<?php echo esc_url(get_theme_file_uri('assets/images/Taj-Mahal.jpg')); ?>" alt="デフォルト画像" />
 						<?php endif; ?>
-					</figure>
-					<p class="sidebar__related-name"><?php the_title(); ?></p>
+					</div>
+					<div class="popular-card__body">
+						<!-- 投稿日時の表示 -->
+						<time datetime="<?php echo esc_attr(get_the_time('c')); ?>" class="popular-card__date">
+							<?php echo esc_html(get_the_date('Y.m/d')); ?>
+						</time>
+						<p class="popular-card__title"><?php the_title(); ?></p>
+					</div>
 				</a>
 			</li>
-			<?php
-            endwhile;
-            wp_reset_postdata();
-        else :
-        ?>
-			<p class="sidebar__related-none">関連するツアーはありません。</p>
-			<?php endif; ?>
+			<?php endwhile; ?>
 		</ul>
+		<?php endif; ?>
+		<?php wp_reset_postdata(); ?>
 	</section>
 
-
-	<section class="side-works">
+	<section class="sidebar__latest">
 		<?php
 							// 最新のツアープラン情報を取得
 							$latest_tour_plan_args = array(
@@ -57,9 +53,9 @@
 								'order' => 'DESC'       // 降順で取得
 							);
 
-							$latest_tour_plan_query = new WP_Query($latest_tour_plan_args);
+			$latest_tour_plan_query = new WP_Query($latest_tour_plan_args);
 
-							if ($latest_tour_plan_query->have_posts()) : ?>
+			if ($latest_tour_plan_query->have_posts()) : ?>
 		<h3 class="side-works__heading side-heading side-heading--02">最新プラン</h3>
 		<ul class="side-works__items">
 			<?php while ($latest_tour_plan_query->have_posts()) : $latest_tour_plan_query->the_post(); ?>

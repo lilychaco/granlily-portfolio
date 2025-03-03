@@ -266,55 +266,6 @@ function custom_pagenavi_html($html) {
 add_filter('wp_pagenavi', 'custom_pagenavi_html');
 
 
-/*-----------------------------------
-// メインループで works を取得するためのフィルター追加
------------------------------------*/
-function include_works_in_main_query($query) {
-    // 管理画面ではなく、メインクエリかつ特定のアーカイブページでのみ処理
-    if (!is_admin() && $query->is_main_query() && is_post_type_archive('works')) {
-        $query->set('post_type', 'works'); // カスタム投稿タイプを指定
-        $query->set('posts_per_page', 4);  // 1ページあたりの投稿数
-    }
-}
-add_action('pre_get_posts', 'include_works_in_main_query');
-
-
-
-/*-----------------------------------
-// メインループで voice を取得するためのフィルター追加
------------------------------------*/
-function include_voice_in_main_query($query) {
-// 管理画面ではなく、メインクエリかつ特定のアーカイブページでのみ処理
-if (!is_admin() && $query->is_main_query() && is_post_type_archive('voice')) {
-$query->set('post_type', 'voice'); // カスタム投稿タイプを指定
-$query->set('posts_per_page', 6); // 1ページあたりの投稿数
-}
-}
-add_action('pre_get_posts', 'include_voice_in_main_query');
-
-/*-----------------------------------
-//カスタムタクソノミーの投稿をメインループで表示する
------------------------------------*/
-
-function modify_main_query($query) {
-    if (is_admin() || !$query->is_main_query()) {
-        return;
-    }
-
-    if ($query->is_post_type_archive('works') || $query->is_tax('works-category')) {
-        $query->set('post_type', 'works');
-        $query->set('posts_per_page', 4);
-        $query->set('orderby', 'date');
-        $query->set('order', 'DESC');
-    }
-
-    if ($query->is_post_type_archive('voice') || $query->is_tax('voice_category')) {
-        $query->set('post_type', 'voice');
-        $query->set('posts_per_page', 6);
-    }
-}
-add_action('pre_get_posts', 'modify_main_query');
-
 
 
 /*-----------------------------------
@@ -373,8 +324,6 @@ return false;
 }
 
 
-
-
 /*-----------------------------------
 // CF7送信後にリダイレクト
 -----------------------------------*/
@@ -392,9 +341,6 @@ document.addEventListener('wpcf7mailsent', function() {
 </script>
 <?php
 }
-
-
-
 
 
 
@@ -448,17 +394,37 @@ add_filter('wpcf7_form_tag', 'filter_wpcf7_form_tag_works_titles', 11, 2);
 *人気記事表示のために 人気記事を取得する
 -----------------------------------*/
 // 人気記事を取得するカスタムクエリ
-function get_popular_posts($limit = 3) {
+// function get_popular_posts($limit = 3) {
+//     $args = array(
+//         'posts_per_page' => $limit,
+//         'meta_key' => 'post_views_count', // ページビュー数のメタキー
+//         'orderby' => 'meta_value_num', // 数値で並べ替え
+//         'order' => 'DESC', // 降順
+//         'post_type' => 'post', // 投稿タイプ
+//         'post_status' => 'publish' // 公開済み投稿のみ
+//     );
+//     return new WP_Query($args);
+
+// 人気記事を取得する汎用的な関数（カスタム投稿タイプ対応）
+function get_popular_posts($limit = 3, $post_type = 'post') {
     $args = array(
         'posts_per_page' => $limit,
-        'meta_key' => 'post_views_count', // ページビュー数のメタキー
-        'orderby' => 'meta_value_num', // 数値で並べ替え
-        'order' => 'DESC', // 降順
-        'post_type' => 'post', // 投稿タイプ
-        'post_status' => 'publish' // 公開済み投稿のみ
+        'meta_key'       => 'post_views_count', // ページビュー数のメタキー
+        'orderby'        => 'meta_value_num', // 数値で並べ替え
+        'order'          => 'DESC', // 降順
+        'post_type'      => $post_type, // カスタム投稿タイプに対応
+        'post_status'    => 'publish' // 公開済み投稿のみ
     );
     return new WP_Query($args);
 }
+
+// 通常投稿の人気記事を取得
+$popular_posts = get_popular_posts(2);
+
+// カスタム投稿タイプ 'tour_plan' の人気記事を取得
+$popular_tour_posts = get_popular_posts(2, 'tour_plan');
+
+
 
 
 

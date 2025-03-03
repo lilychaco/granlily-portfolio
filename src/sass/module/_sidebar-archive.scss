@@ -1,25 +1,25 @@
 @use "global" as *;
 
-.side-archive {
+.sidebar-archive {
   margin-inline: auto;
   width: 100%;
-  margin-top: rem(82);
+  margin-top: rem(60);
 }
 
-.side-archive__heading {
+.sidebar-archive__heading {
 
 }
 
-.side-archive__contents {
+.sidebar-archive__contents {
   margin-inline: auto;
   width: 100%;
   margin-top: rem(26);
 }
 
-.side-archive__year {
+.sidebar-archive__year {
 }
 
-.side-archive__year-toggle {
+.sidebar-archive__year-toggle {
   cursor: pointer;
   padding: 5px;
   color: $greenaccent;
@@ -31,7 +31,7 @@
   line-height: 1;
   letter-spacing: 0;
 }
-.side-archive__year-toggle::before {
+.sidebar-archive__year-toggle::before {
   content: "";
   position: absolute;
   left: rem(4);
@@ -43,7 +43,7 @@
   clip-path: polygon(0 0, 100% 50%, 0 100%);
   transition: transform 0.3s ease; /* アニメーション効果 */
 }
-.side-archive__year-toggle:not(:first-of-type) {
+.sidebar-archive__year-toggle:not(:first-of-type) {
   margin-top: rem(8);
 }
 /* アクティブな年度の三角を下向きにを表示 */
@@ -51,15 +51,15 @@
   transform: translateY(-40%) rotate(90deg);
 }
 
-.side-archive__month-list {
+.sidebar-archive__month-list {
   display: none; /* 初期状態では月を隠す */
   padding-left: rem(24); /* インデントを調整 */
 }
 /* アクティブな年度の月を表示 */
-.active .side-archive__month-list {
+.active .sidebar-archive__month-list {
   display: block;
 }
-.side-archive__month {
+.sidebar-archive__month {
   font-size: rem(24);
   font-family: $base-font-family;
   font-weight: $regular;
@@ -70,7 +70,7 @@
   position: relative;
   margin-top: rem(4);
 }
-.side-archive__month::before {
+.sidebar-archive__month::before {
   content: "";
   position: absolute;
   left: rem(4);
@@ -83,7 +83,7 @@
   transition: transform 0.3s ease; /* アニメーション効果 */
 }
 
-.side-archive__link {
+.sidebar-archive__link {
   font-size: rem(24);
   font-family: $base-font-family;
   font-weight: $regular;
@@ -92,6 +92,6 @@
 }
 
 /* アクティブな年度の三角を下向きにを表示 */
-.active .side-archive__year-toggle::before {
+.active .sidebar-archive__year-toggle::before {
   transform: translateY(-40%) rotate(90deg);
 }

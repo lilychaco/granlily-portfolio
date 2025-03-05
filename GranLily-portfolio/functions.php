@@ -459,18 +459,19 @@ function lily_theme_setup() {
 }
 add_action('after_setup_theme', 'lily_theme_setup');
 
-// // スクリプトとスタイルの読み込み
-// function lily_enqueue_scripts() {
-//     // jQueryの読み込み
-//     wp_enqueue_script('jquery');
 
-//     // テーマのJavaScript
-//     wp_enqueue_script(
-//         'lily-script',
-//         get_theme_file_uri('/src/js/script.js'),
-//         array('jquery'),
-//         '1.0.0',
-//         true
-//     );
+
+
+
+
+
+// ACFが「タクソノミーのメタデータを保存する」設定に
+// function save_acf_taxonomy_custom_fields($term_id) {
+//     if (isset($_POST['acf'])) {
+//         foreach ($_POST['acf'] as $field_key => $value) {
+//             update_field($field_key, $value, 'tour_plan_category_' . $term_id);
+//         }
+//     }
 // }
-// add_action('wp_enqueue_scripts', 'lily_enqueue_scripts');
+// add_action('edited_tour_plan_category', 'save_acf_taxonomy_custom_fields');
+// add_action('create_tour_plan_category', 'save_acf_taxonomy_custom_fields');

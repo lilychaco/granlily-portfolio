@@ -1,11 +1,17 @@
 <?php get_header(); ?>
 <section class="mv">
 	<figure class="mv__img">
-		<picture>
-			<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/20231107malaga.jpg"
-				media="(min-width: 768px)" />
-			<img src="<?php echo get_theme_file_uri(); ?>/assets/images/20231107malaga.jpg" alt="ファーストビュー画像" />
-		</picture>
+		<?php
+		// 現在のカテゴリ情報を取得
+				$category = get_queried_object();
+				$category_id = $category->term_id;
+				$image_url = get_term_meta($category_id, 'category-image', true);
+    if ($image_url) :
+					?>
+		<img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($category->name); ?>">
+		<?php endif; ?>
+		?>
+
 	</figure>
 
 	<h2 class="mv__title"><?php echo get_the_archive_title(); ?></h2>
@@ -13,7 +19,7 @@
 
 <?php get_template_part('common/breadcrumb'); ?>
 
-<div class="archive-tour_plan archive-tour_plan-layout">
+<div class=" archive-tour_plan archive-tour_plan-layout">
 	<div class="archive-tour_plan___inner inner">
 
 		<div class="archive-tour_plan__container">

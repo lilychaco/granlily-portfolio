@@ -373,3 +373,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+//================================
+//スタープランページ  タブ切替で、MVも変更
+//================================
+// document.addEventListener("DOMContentLoaded", function () {
+//   const mainVisual = document
+//     .getElementById("js-main-visual")
+// 		.querySelector("img");
+// 	const defaultImage = mainVisual.getAttribute("data-default-image");
+//   const categoryItems = document.querySelectorAll(".category-list__item");
+
+//   categoryItems.forEach((item) => {
+//     item.addEventListener("click", function (event) {
+
+
+//       const newImage = item.getAttribute("data-image");
+
+//       if (newImage && newImage !== "") {
+//         mainVisual.src = newImage; // カテゴリの画像に変更
+//       } else {
+//         mainVisual.src = defaultImage; // ALLを押したときは初期画像に戻す
+//       }
+//     });
+//   });
+// });

@@ -125,6 +125,7 @@
 				</div>
 			</div>
 			<!-- sidebar挿入するならここ-->
+			<?php get_sidebar('tour_plan'); ?>
 		</div>
 	</div>
 </div>

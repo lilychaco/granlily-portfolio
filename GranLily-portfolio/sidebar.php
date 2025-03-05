@@ -1,48 +1,33 @@
 			<aside class="single-news__side sidebar">
-				<!-- 関連記事 -->
-				<section class="sidebar-related">
-					<h3 class="sidebar-related__heading side-heading">関連記事</h3>
-					<ul class="sidebar-related__list">
-						<?php
-						// 現在の記事のカテゴリーを取得
-            $terms = get_the_terms(get_the_ID(), 'category');
+				<section class="sidebar-popular">
+					<!-- 人気ツアー -->
+					<?php
+					$popular_tour_posts = get_popular_posts(2, 'tour_plan'); // 人気記事を3件取得
 
-						// カテゴリーが取得できているか確認
-            if ($terms && !is_wp_error($terms)) {
-                // 取得したカテゴリーの ID を配列化
-                $category_ids = wp_list_pluck($terms, 'term_id');
-
-								$related_post_args = array(
-            'post_type'      => 'post',
-            'posts_per_page' => 2,
-            'post__not_in'   => array(get_the_ID()),
-            'orderby'        => 'rand',
-						// カテゴリー（タクソノミー）の条件を設定
-            'tax_query'      => array(
-                array(
-                    'taxonomy' => 'category',
-                    'field'    => 'term_id',
-                    'terms'    => $category_ids,
-                ),
-            ),
-						);
-					}
-					$related_post_query = new WP_Query($related_post_args);
-
-					if ($related_post_query->have_posts()) :
-						while ($related_post_query->have_posts()) : $related_post_query->the_post();
-						?>
-						<li class="sidebar-related__item popular-card">
-							<a href="<?php the_permalink(); ?>" class="popular-card__link">
-								<!-- <?php if (!empty($terms) && !is_wp_error($terms)) : ?>
-								<?php endif; ?> -->
-								<figure class="popular-card__img">
-									<?php if (has_post_thumbnail()) : ?>
-									<?php the_post_thumbnail('thumbnail', ['alt' => esc_attr(get_the_title())]); ?>
+					if ($popular_tour_posts->have_posts()) : ?>
+					<h3 class="sidebar-popular__heading side-heading">人気プラン</h3>
+					<ul class="sidebar-popular__cards">
+						<?php while ($popular_tour_posts->have_posts()) : $popular_tour_posts->the_post(); ?>
+						<li class="sidebar-popular__card popular-card">
+							<!-- 投稿のURLを取得し、カード全体をリンクとして包む -->
+							<a href="<?php echo esc_url(get_permalink()); ?>" class="popular-card__link">
+								<div class="popular-card__img">
+									<?php
+											// アイキャッチ画像のHTMLを取得して変数に格納
+											$thumbnail = get_the_post_thumbnail(
+													get_the_ID(),
+													'thumbnail',
+													array('alt' => esc_attr(get_the_title() . 'のサムネイル画像'))
+											);
+											?>
+									<?php if ($thumbnail) : ?>
+									<!-- アイキャッチ画像がある場合 -->
+									<?php echo $thumbnail; ?>
 									<?php else : ?>
-									<img src="<?php echo esc_url(get_theme_file_uri('assets/images/23768561_s.jpg')); ?>" alt="デフォルト画像">
+									<!-- アイキャッチ画像がない場合、デフォルト画像を表示 -->
+									<img src="<?php echo esc_url(get_theme_file_uri('assets/images/Taj-Mahal.jpg')); ?>" alt="デフォルト画像" />
 									<?php endif; ?>
-								</figure>
+								</div>
 								<div class="popular-card__body">
 									<!-- 投稿日時の表示 -->
 									<time datetime="<?php echo esc_attr(get_the_time('c')); ?>" class="popular-card__date">
@@ -52,15 +37,12 @@
 								</div>
 							</a>
 						</li>
-						<?php
-            endwhile;
-									wp_reset_postdata();
-							else :
-							?>
-						<p class="sidebar-related__none">関連するお知らせはありません。</p>
-						<?php endif; ?>
+						<?php endwhile; ?>
 					</ul>
+					<?php endif; ?>
+					<?php wp_reset_postdata(); ?>
 				</section>
+
 
 				<div class="sidebar-popular-wrapper">
 					<section class="sidebar-popular">

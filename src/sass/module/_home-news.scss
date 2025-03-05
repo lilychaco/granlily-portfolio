@@ -8,12 +8,14 @@
 }
 
 .home-news__container {
-	margin-inline: auto;
+		margin-inline: auto;
   width: 100%;
-	margin-top: rem(80);
-	display: grid;
-  grid-template-columns: 1fr;
-    gap: rem(30);
+	@include mq(md) {
+    display: grid;
+    grid-template-columns: 68% 27%;
+		grid-template-rows: auto; // 各行の高さを自動調整
+    gap: 5%;
+  }
 }
 
 .home-news__main {

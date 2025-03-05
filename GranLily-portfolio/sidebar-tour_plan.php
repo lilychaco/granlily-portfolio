@@ -61,7 +61,7 @@
 			<ul class="sidebar-latest__cards">
 				<?php while ($latest_tour_plan_query->have_posts()) : $latest_tour_plan_query->the_post(); ?>
 				<li class="sidebar-latest__card popular-card">
-					<a href="" class="popular-card__link">
+					<a href="<?php echo esc_url(get_permalink()); ?>" class="popular-card__link">
 						<figure class="popular-card__img">
 
 							<?php

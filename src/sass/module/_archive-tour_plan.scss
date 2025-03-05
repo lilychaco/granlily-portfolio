@@ -56,8 +56,8 @@
   @include mq(md) {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: 1fr 1fr;
-    column-gap: calc(calc(40/1080)*100%);
+    grid-template-columns: 48% 48%;
+    column-gap: 4%;
     row-gap: rem(60);
 		grid-template-rows: auto; /* カードの高さを自動調整 */
   }
@@ -67,21 +67,21 @@
 .archive-tour_plan__card {
 	width: 100%;
 	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
-  display: flex;
-	flex-direction: column;
-  align-items: stretch;
   height: 100%; /* 高さを均等にする */
   @include mq(md) {
     max-width: rem(520);
   }
 }
-
+.archive-tour_plan__link {
+	display: flex;
+	flex-direction: column;
+	height: 100%; /* 高さを均等にする */
+}
 .archive-tour_plan__img {
 width: 100%;
 }
 .archive-tour_plan__img img {
 	width: 100%;
-  height: auto;
   aspect-ratio: 280 /188;
   object-fit: cover;
 
@@ -91,6 +91,7 @@ width: 100%;
 }
 .archive-tour_plan__body {
 	width: 100%;
+	height: auto;
 	padding-top: rem(16);
   padding-bottom: rem(16);
   padding-left: rem(16);
@@ -98,11 +99,11 @@ width: 100%;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
+	background-color: yellow;
 	@include mq(md) {
     padding-bottom: rem(24);
 	}
 }
-
 
 .archive-tour_plan__category{
 	font-size: rem(14);
@@ -112,13 +113,11 @@ width: 100%;
   letter-spacing: 0;
   color: $greenaccent;
   border: 1px solid $greenaccent;
-
   display: inline-block;
   padding-left: rem(12);
   padding-right: rem(12);
   padding-top: rem(4);
   padding-bottom: rem(4);
-
 }
 
 .archive-tour_plan__title {
@@ -134,16 +133,19 @@ width: 100%;
 }
 .archive-tour_plan__subbody {
 	width: 100%;
+	height:100%;
 	margin-top: rem(16);
-	display: flex;
-	flex-direction: column;
 	flex-grow: 1;
+	align-items: stretch;
 	border-top:1px solid $greenaccent;
 	padding-top: rem(8);
+	background-color: pink;
 }
 
 .archive-tour_plan__text {
 	font-size: rem(16);
+	flex-grow: 1;
+	background-color: lightgreen;
 	@include mq(md) {
 		font-size: rem(18);
 	}
@@ -152,6 +154,7 @@ width: 100%;
   margin-top: auto; /* 一番下に配置 */
 	padding-top: rem(20);
 	text-align: center;
+	background-color: orange;
 }
 .archive-tour_plan__price-info {
 	font-size: rem(14);

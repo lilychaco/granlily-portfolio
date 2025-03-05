@@ -90,13 +90,13 @@
 								<div class="archive-tour_plan__body">
 									<div class="archive-tour_plan__top">
 										<?php if (!empty($terms) && !is_wp_error($terms)) : ?>
-										<div class="archive-tour_plan__category">
+										<div class="archive-tour_plan__category plan-card__category">
 											<?php foreach ($terms as $term) : ?>
 											<span><?php echo esc_html($term->name); ?></span>
 											<?php endforeach; ?>
 										</div>
 										<?php endif; ?>
-										<div class="archive-tour_plan__title"><?php the_title(); ?></div>
+										<div class="archive-tour_plan__title plan-card__title"><?php the_title(); ?></div>
 									</div>
 									<div class="archive-tour_plan__subbody">
 										<div class="archive-tour_plan__text">
@@ -107,11 +107,11 @@
 												全部コミコミ(お一人様)
 											</p>
 											<?php
-							// カスタムフィールド「plan-price」の値を取得
-							$price_new = get_field('plan-price');
-							// 価格の値がある場合のみ表示
-							if(!empty($price_new)):
-							?>
+											// カスタムフィールド「plan-price」の値を取得
+											$price_new = get_field('plan-price');
+											// 価格の値がある場合のみ表示
+											if(!empty($price_new)):
+											?>
 											<div class="archive-tour_plan__price-text">
 												<p class="archive-tour_plan__price-new">
 													&yen;<?php echo esc_html(number_format($price_new)); ?>

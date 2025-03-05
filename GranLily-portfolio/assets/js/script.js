@@ -222,7 +222,7 @@ jQuery(window).on("load", function () {
   }
   if (!checkVisited()) {
     setVisitedFlag();
-    jQuery(".splash__logo").delay(1200).fadeOut(600, function () {
+    jQuery(".splash__logo").delay(800).fadeOut(600, function () {
       jQuery(".splash").fadeOut(600, function () {
         jQuery(".fv__slide").addClass("is-active");
       });

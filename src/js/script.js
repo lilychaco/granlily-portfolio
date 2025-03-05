@@ -244,7 +244,7 @@ jQuery(window).on("load", function () {
     setVisitedFlag();
 
     jQuery(".splash__logo")
-      .delay(1200)
+      .delay(800)
       .fadeOut(600, function () {
         jQuery(".splash").fadeOut(600, function () {
           jQuery(".fv__slide").addClass("is-active");

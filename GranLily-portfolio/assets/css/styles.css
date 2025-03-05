@@ -1441,6 +1441,13 @@ span.wpcf7-spinner {
 	display: none;
 }
 
+.wpcf7-not-valid {
+	color: black !important;
+}
+
+.wpcf7-not-valid { /* テキストカラーを黒に設定 */
+}
+
 .container {
 	margin-left: auto;
 	margin-right: auto;
@@ -4444,7 +4451,7 @@ span.wpcf7-spinner {
 /* fadeUpをするアイコンの動き */
 
 .fade-up {
-	animation: fade-up 0.5s ease-out forwards;
+	animation: fade-up 0.6s ease-out forwards;
 	opacity: 0;
 }
 

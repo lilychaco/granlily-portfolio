@@ -50,7 +50,7 @@
 										</span>
 										<?php endif; ?>
 									</div>
-									<div class="news-media__content">
+									<div class="news-media__body">
 										<h3 class="news-media__title"><?php the_title(); ?>
 										</h3>
 										<!-- 投稿の本文 -->
@@ -59,7 +59,7 @@
 									// 本文を取得し、HTMLタグを除去、86文字に制限して表示
 									$content = strip_tags( get_the_content() ); // HTMLタグを除去
 									$trimmed_content = mb_strlen( $content, 'UTF-8' ) > 100
-									? mb_substr( $content, 0, 100, 'UTF-8' ) . ''
+									? mb_substr( $content, 0, 86, 'UTF-8' ) . '...'
 									: $content; // 86文字に切り詰め、省略記号を追加
 									echo esc_html( $trimmed_content ); // エスケープして表示
 									?>

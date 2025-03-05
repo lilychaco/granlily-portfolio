@@ -110,15 +110,6 @@ jQuery(function ($) {
     });
   }
 
-  //================================
-  //  サイドのアーカイブメニューの動作
-  // ===============================
-  $(".js-year-toggle").click(function () {
-    var $monthList = $(this).next(".side-archive__month-list");
-    $(".side-archive__month-list").not($monthList).slideUp();
-    $monthList.slideToggle();
-    $(this).parent(".side-archive__year").toggleClass("active");
-  });
 
   //================================
   // アコーディオンの動作
@@ -349,5 +340,18 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       this.setAttribute("current", true);
     });
+  });
+});
+
+  //================================
+  //  サイドのアーカイブメニューの動作
+  // ===============================
+jQuery(document).ready(function ($) {
+  $(".js-year-toggle").click(function () {
+    console.log("クリックされました:", this); // デバッグ用
+    var $monthList = $(this).next(".sidebar-archive__month-list");
+    $(".sidebar-archive__month-list").not($monthList).slideUp();
+    $monthList.stop(true, true).slideToggle();
+    $(this).parent(".sidebar-archive__year").toggleClass("active");
   });
 });

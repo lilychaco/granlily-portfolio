@@ -3853,10 +3853,6 @@ span.wpcf7-spinner {
 	width: 2.5rem;
 }
 
-.side-heading--02 {
-	margin-top: 3.75rem;
-}
-
 .side-voice {
 	margin-top: 5rem;
 }
@@ -4000,10 +3996,30 @@ span.wpcf7-spinner {
 	transform: translateY(-40%) rotate(90deg);
 }
 
+.sidebar-latest-wrapper {
+	margin-top: 3.75rem;
+}
+
+.sidebar-latest {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.sidebar-latest__cards {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.sidebar-popular-wrapper {
+	margin-top: 3.75rem;
+}
+
 .sidebar-popular {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 3.75rem;
 	width: 100%;
 }
 

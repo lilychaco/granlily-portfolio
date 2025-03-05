@@ -1,27 +1,27 @@
 @use "global" as *;
 
-.sidebar-popular-wrapper {
+.sidebar-latest-wrapper {
 	margin-top: rem(60);
 
 }
-.sidebar-popular {
+.sidebar-latest {
 	margin-inline: auto;
   width: 100%;
 
 }
 
 
-.sidebar-popular__heading {
+.sidebar-latest__heading {
 
 }
 
-.sidebar-popular__cards {
+.sidebar-latest__cards {
 	margin-top: rem(24);
 	display: flex;
 	flex-direction: column;
 	gap:rem(24);
 }
 
-.sidebar-popular__card {
+.sidebar-latest__card {
 
 }

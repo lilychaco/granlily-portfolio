@@ -1,7 +1,7 @@
 			<aside class="single-news__side sidebar">
 				<!-- 関連記事 -->
 				<section class="sidebar-related">
-					<h3 class="sidebar-related__heading side-heading side-heading--02">関連記事</h3>
+					<h3 class="sidebar-related__heading side-heading">関連記事</h3>
 					<ul class="sidebar-related__list">
 						<?php
 						// 現在の記事のカテゴリーを取得
@@ -62,21 +62,21 @@
 					</ul>
 				</section>
 
-
-				<section class="sidebar-popular">
-					<!-- 人気記事 -->
-					<?php
+				<div class="sidebar-popular-wrapper">
+					<section class="sidebar-popular">
+						<!-- 人気記事 -->
+						<?php
 						$popular_posts = get_popular_posts(2); // 人気記事を3件取得
 
 						if ($popular_posts->have_posts()) : ?>
-					<h3 class="sidebar-popular__heading side-heading side-heading--02">人気記事</h3>
-					<ul class="sidebar-popular__cards">
-						<?php while ($popular_posts->have_posts()) : $popular_posts->the_post(); ?>
-						<li class="sidebar-popular__card popular-card">
-							<!-- 投稿のURLを取得し、カード全体をリンクとして包む -->
-							<a href="<?php echo esc_url(get_permalink()); ?>" class="popular-card__link">
-								<div class="popular-card__img">
-									<?php
+						<h3 class="sidebar-popular__heading side-heading">人気記事</h3>
+						<ul class="sidebar-popular__cards">
+							<?php while ($popular_posts->have_posts()) : $popular_posts->the_post(); ?>
+							<li class="sidebar-popular__card popular-card">
+								<!-- 投稿のURLを取得し、カード全体をリンクとして包む -->
+								<a href="<?php echo esc_url(get_permalink()); ?>" class="popular-card__link">
+									<div class="popular-card__img">
+										<?php
 											// アイキャッチ画像のHTMLを取得して変数に格納
 											$thumbnail = get_the_post_thumbnail(
 													get_the_ID(),
@@ -84,28 +84,29 @@
 													array('alt' => esc_attr(get_the_title() . 'のサムネイル画像'))
 											);
 											?>
-									<?php if ($thumbnail) : ?>
-									<!-- アイキャッチ画像がある場合 -->
-									<?php echo $thumbnail; ?>
-									<?php else : ?>
-									<!-- アイキャッチ画像がない場合、デフォルト画像を表示 -->
-									<img src="<?php echo esc_url(get_theme_file_uri('assets/images/23768561_s.jpg')); ?>" alt="デフォルト画像" />
-									<?php endif; ?>
-								</div>
-								<div class="popular-card__body">
-									<!-- 投稿日時の表示 -->
-									<time datetime="<?php echo esc_attr(get_the_time('c')); ?>" class="popular-card__date">
-										<?php echo esc_html(get_the_date('Y.m/d')); ?>
-									</time>
-									<p class="popular-card__title"><?php the_title(); ?></p>
-								</div>
-							</a>
-						</li>
-						<?php endwhile; ?>
-					</ul>
-					<?php endif; ?>
-					<?php wp_reset_postdata(); ?>
-				</section>
+										<?php if ($thumbnail) : ?>
+										<!-- アイキャッチ画像がある場合 -->
+										<?php echo $thumbnail; ?>
+										<?php else : ?>
+										<!-- アイキャッチ画像がない場合、デフォルト画像を表示 -->
+										<img src="<?php echo esc_url(get_theme_file_uri('assets/images/23768561_s.jpg')); ?>" alt="デフォルト画像" />
+										<?php endif; ?>
+									</div>
+									<div class="popular-card__body">
+										<!-- 投稿日時の表示 -->
+										<time datetime="<?php echo esc_attr(get_the_time('c')); ?>" class="popular-card__date">
+											<?php echo esc_html(get_the_date('Y.m/d')); ?>
+										</time>
+										<p class="popular-card__title"><?php the_title(); ?></p>
+									</div>
+								</a>
+							</li>
+							<?php endwhile; ?>
+						</ul>
+						<?php endif; ?>
+						<?php wp_reset_postdata(); ?>
+					</section>
+				</div>
 
 
 
@@ -146,7 +147,7 @@
 									if (!empty($archives)) :
 									?>
 
-					<h3 class="sidebar-archive__heading side-heading side-heading--02">アーカイブ</h3>
+					<h3 class="sidebar-archive__heading side-heading">アーカイブ</h3>
 					<div class="sidebar-archive__contents">
 						<?php foreach ($archives as $year => $months): ?>
 						<div class="sidebar-archive__year" data-year="<?php echo esc_html($year); ?>">

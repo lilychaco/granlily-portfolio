@@ -611,7 +611,6 @@ time {
 }
 
 .archive-tour_plan__body {
-	background-color: yellow;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
@@ -651,8 +650,9 @@ time {
 
 .archive-tour_plan__subbody {
 	align-items: stretch;
-	background-color: pink;
 	border-top: 1px solid #000074;
+	display: flex;
+	flex-direction: column;
 	flex-grow: 1;
 	height: 100%;
 	margin-top: 1rem;
@@ -661,13 +661,11 @@ time {
 }
 
 .archive-tour_plan__text {
-	background-color: lightgreen;
 	flex-grow: 1;
 	font-size: 1rem;
 }
 
 .archive-tour_plan__meta {
-	background-color: orange;
 	margin-top: auto; /* 一番下に配置 */
 	padding-top: 1.25rem;
 	text-align: center;

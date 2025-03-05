@@ -99,7 +99,6 @@ width: 100%;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	background-color: yellow;
 	@include mq(md) {
     padding-bottom: rem(24);
 	}
@@ -135,17 +134,17 @@ width: 100%;
 	width: 100%;
 	height:100%;
 	margin-top: rem(16);
+	display: flex;
+	flex-direction: column;
 	flex-grow: 1;
 	align-items: stretch;
 	border-top:1px solid $greenaccent;
 	padding-top: rem(8);
-	background-color: pink;
 }
 
 .archive-tour_plan__text {
 	font-size: rem(16);
 	flex-grow: 1;
-	background-color: lightgreen;
 	@include mq(md) {
 		font-size: rem(18);
 	}
@@ -154,7 +153,6 @@ width: 100%;
   margin-top: auto; /* 一番下に配置 */
 	padding-top: rem(20);
 	text-align: center;
-	background-color: orange;
 }
 .archive-tour_plan__price-info {
 	font-size: rem(14);

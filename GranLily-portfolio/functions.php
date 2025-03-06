@@ -458,20 +458,3 @@ function lily_theme_setup() {
     add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'lily_theme_setup');
-
-
-
-
-
-
-
-// ACFが「タクソノミーのメタデータを保存する」設定に
-// function save_acf_taxonomy_custom_fields($term_id) {
-//     if (isset($_POST['acf'])) {
-//         foreach ($_POST['acf'] as $field_key => $value) {
-//             update_field($field_key, $value, 'tour_plan_category_' . $term_id);
-//         }
-//     }
-// }
-// add_action('edited_tour_plan_category', 'save_acf_taxonomy_custom_fields');
-// add_action('create_tour_plan_category', 'save_acf_taxonomy_custom_fields');

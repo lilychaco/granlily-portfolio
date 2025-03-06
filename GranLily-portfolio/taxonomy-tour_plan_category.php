@@ -2,16 +2,15 @@
 <section class="mv">
 	<figure class="mv__img">
 		<?php
-		// 現在のカテゴリ情報を取得
-				$category = get_queried_object();
-				$category_id = $category->term_id;
-				$image_url = get_term_meta($category_id, 'category-image', true);
-    if ($image_url) :
-					?>
-		<img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($category->name); ?>">
-		<?php endif; ?>
-		?>
+			$term = get_queried_object();
+			$mv_image_url = get_field('taxonomy-mv-image', $term);
 
+			if ($mv_image_url) :
+			?>
+		<div class="mv">
+			<img src="<?php echo esc_url($mv_image_url); ?>" alt="<?php echo esc_attr($term->name); ?>">
+		</div>
+		<?php endif; ?>
 	</figure>
 
 	<h2 class="mv__title"><?php echo get_the_archive_title(); ?></h2>

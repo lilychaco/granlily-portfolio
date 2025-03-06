@@ -2044,15 +2044,15 @@ span.wpcf7-spinner {
 /* 各スライドごとにテキストのアニメーションを遅延 */
 
 .fv__slide:nth-child(1) .fv__description {
-	animation-delay: 4s; /* 画像のフェードイン後に遅れて表示 */
+	animation-delay: 3s; /* 画像のフェードイン後に遅れて表示 */
 }
 
 .fv__slide:nth-child(2) .fv__description {
-	animation-delay: 12s; /* 画像が表示されてから遅れて表示 */
+	animation-delay: 11s; /* 画像が表示されてから遅れて表示 */
 }
 
 .fv__slide:nth-child(3) .fv__description {
-	animation-delay: 20s; /* 画像が表示されてから遅れて表示 */
+	animation-delay: 19s; /* 画像が表示されてから遅れて表示 */
 }
 
 /* 説明文の各行 */

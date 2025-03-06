@@ -121,15 +121,6 @@ $(".js-page-top-button").click(function () {
   }
 
 
-  //================================
-  //  サイドのアーカイブメニューの動作
-  // ===============================
-  $(".js-year-toggle").click(function () {
-    var $monthList = $(this).next(".side-archive__month-list");
-    $(".side-archive__month-list").not($monthList).slideUp();
-    $monthList.slideToggle();
-    $(this).parent(".side-archive__year").toggleClass("active");
-  });
 
   //================================
   // アコーディオンの動作
@@ -244,7 +235,7 @@ jQuery(window).on("load", function () {
     setVisitedFlag();
 
     jQuery(".splash__logo")
-      .delay(800)
+      .delay(1000)
       .fadeOut(600, function () {
         jQuery(".splash").fadeOut(600, function () {
           jQuery(".fv__slide").addClass("is-active");
@@ -374,27 +365,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//================================
-//スタープランページ  タブ切替で、MVも変更
-//================================
-// document.addEventListener("DOMContentLoaded", function () {
-//   const mainVisual = document
-//     .getElementById("js-main-visual")
-// 		.querySelector("img");
-// 	const defaultImage = mainVisual.getAttribute("data-default-image");
-//   const categoryItems = document.querySelectorAll(".category-list__item");
-
-//   categoryItems.forEach((item) => {
-//     item.addEventListener("click", function (event) {
 
 
-//       const newImage = item.getAttribute("data-image");
-
-//       if (newImage && newImage !== "") {
-//         mainVisual.src = newImage; // カテゴリの画像に変更
-//       } else {
-//         mainVisual.src = defaultImage; // ALLを押したときは初期画像に戻す
-//       }
-//     });
-//   });
-// });
+  //================================
+  //  サイドのアーカイブメニューの動作
+  // ===============================
+jQuery(document).ready(function ($) {
+  $(".js-year-toggle").click(function () {
+    console.log("クリックされました:", this); // デバッグ用
+    var $monthList = $(this).next(".sidebar-archive__month-list");
+    $(".sidebar-archive__month-list").not($monthList).slideUp();
+    $monthList.stop(true, true).slideToggle();
+    $(this).parent(".sidebar-archive__year").toggleClass("active");
+  });
+});

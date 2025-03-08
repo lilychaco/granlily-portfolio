@@ -1700,13 +1700,15 @@ span.wpcf7-spinner {
 
 .form__row dt {
 	align-items: center;
-	display: flexbox;
+	display: flex;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 700;
 	justify-content: space-between;
 	letter-spacing: 0;
-	line-height: 2;
+	line-height: 1;
+	max-width: 12.5rem;
+	padding-right: 1.25rem;
 }
 
 .form__row dt span {
@@ -1723,14 +1725,13 @@ span.wpcf7-spinner {
 	margin-left: 0.5rem;
 	position: relative;
 	text-align: center;
-	top: -2px;
 	width: 3.75rem;
 }
 
 .form__row dd input {
 	border: 1px solid #000074;
 	height: 2.5rem;
-	margin-top: 1.0625rem;
+	margin-top: 0.625rem;
 	width: 100%;
 }
 
@@ -1739,7 +1740,7 @@ span.wpcf7-spinner {
 .form__row dd input.wpcf7-not-valid {
 	background-color: #ffe5e5; /* 背景色を淡い赤色 */
 	border: 1px solid #ff0000; /* 赤い枠線 */
-	color: #fff;
+	color: black;
 }
 
 .form__checkbox-wrapper {

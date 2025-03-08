@@ -54,11 +54,11 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
+	transition: transform 0.3s ease;
 }
 
 //checkマーク縦棒
 .accordion-card__bar2 {
-  display: none;
   width: rem(1);
   height: rem(28);
   background-color: $white;
@@ -66,12 +66,20 @@
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  transition: all 0.3s ease 0s;
+	opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-////アコーディオンメニューを閉じるとcheckboxがプラスになる
-.accordion-card__top.is-close .accordion-card__bar2 {
-  display: block;
+// アコーディオンが開いているときは縦棒を非表示
+.accordion-card__top.is-open .accordion-card__bar2 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// アコーディオンが開いたときは横棒を回転させて「-」のままにする
+.accordion-card__top.is-open .accordion-card__bar1 {
+  transform: translateY(-50%) rotate(0deg);
 }
 
 

@@ -61,7 +61,7 @@ jQuery(function ($) {
   // ==================================
   // インフォメーションページのタブの動きを制御
   // ==================================
-  // $(document).ready(function () {
+
   var urlParams = new URLSearchParams(window.location.search); // URLのクエリパラメータを取得
   var tabParam = urlParams.get("tab"); // "tab"パラメータの値を取得
   var $tabs = $(".js-tab"); // 全てのタブ
@@ -114,16 +114,8 @@ jQuery(function ($) {
   // アコーディオンの動作
   //==================================
   $(".js-accordion-top").click(function () {
-    // アコーディオンの開閉動作
     $(this).next().slideToggle(300);
-
-    // 開いている場合はis-openを追加し、is-closeを削除
-    if ($(this).hasClass("is-open")) {
-      $(this).removeClass("is-open").addClass("is-close");
-    } else {
-      // 閉じている場合はis-closeを追加し、is-openを削除
-      $(this).removeClass("is-close").addClass("is-open");
-    }
+    $(this).toggleClass("is-open");
   });
 
   //================================
@@ -163,27 +155,6 @@ jQuery(function ($) {
   });
 
   //================================
-  // profile 画像が右からfade-in
-  //================================
-  $(function () {
-    var fadeElements = document.querySelectorAll(".fade-in-right");
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-      });
-    }, {
-      root: null,
-      threshold: 0.1,
-      rootMargin: "0px"
-    });
-    fadeElements.forEach(function (element) {
-      observer.observe(element);
-    });
-  });
-
-  //================================
   // gallery一覧の拡大画像モーダル処理
   //================================
   $(document).on("click", ".js-modal-open img", function () {
@@ -197,7 +168,22 @@ jQuery(function ($) {
   $(document).on("click", "#grayDisplay, #grayDisplay img", function (event) {
     $("#grayDisplay").fadeOut(200);
     $("body").removeClass("no-scroll");
-  });
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }); // ← jQuery(function ($) { の閉じタグ
 
 //================================
@@ -228,56 +214,35 @@ jQuery(window).on("load", function () {
 //================================
 // GSAPのプラグインを登録
 gsap.registerPlugin(MotionPathPlugin);
-
-// 楕円のサイズ（横幅900px、高さ100px）
-var ellipseWidth = 900;
-var ellipseHeight = 100;
-
-// 楕円の中心座標
-var centerX = ellipseWidth / 2;
-var centerY = ellipseHeight / 2;
-
-// 楕円の半径
-var radiusX = ellipseWidth / 2;
-var radiusY = ellipseHeight / 2;
-
-// 楕円の上半分のパスデータを作成
-var pathData = "M 0,".concat(centerY, " A ").concat(radiusX, ",").concat(radiusY, " 0 0,1 ").concat(ellipseWidth, ",").concat(centerY);
-
-// 楕円全体のパスデータを作成
-// const pathData = `M 0,${centerY}
-//                   A ${radiusX},${radiusY} 0 0,1 ${ellipseWidth},${centerY}
-//                   A ${radiusX},${radiusY} 0 0,1 0,${centerY}`;
-
-// ページが読み込まれた後に処理を実行
 document.addEventListener("DOMContentLoaded", function () {
   var flightPath = document.querySelector("#flightPath");
   if (!flightPath) {
     console.error("エラー: #flightPath が見つかりません！");
-  } else {
-    flightPath.setAttribute("d", pathData);
+    return;
   }
-  // SVGの <path> にパスデータをセット（純粋なJS版）
-  document.querySelector("#flightPath").setAttribute("d", pathData);
+
+  // 楕円のサイズ
+  var ellipseWidth = 900;
+  var ellipseHeight = 100;
+
+  // 楕円の中心と半径
+  var centerY = ellipseHeight / 2;
+  var radiusX = ellipseWidth / 2;
+  var radiusY = ellipseHeight / 2;
+
+  // 楕円の上半分のパスを設定
+  var pathData = "M 0,".concat(centerY, " A ").concat(radiusX, ",").concat(radiusY, " 0 0,1 ").concat(ellipseWidth, ",").concat(centerY);
+  flightPath.setAttribute("d", pathData);
 
   // 飛行機を軌道に沿って移動
   gsap.to("#airplane", {
     duration: 4,
-    // 4秒でアニメーション
     repeat: -1,
-    // 無限ループ
     ease: "power1.inOut",
-    // イージング適用
     motionPath: {
-      path: "#flightPath",
-      // 参照するSVGパス
-      align: "#flightPath",
-      // パスに沿って回転
-      autoRotate: true,
-      // 自動回転
-      start: 0,
-      // 開始位置
-      end: 1 // 終了位置
+      path: flightPath,
+      align: flightPath,
+      autoRotate: true
     }
   });
 });
@@ -352,5 +317,47 @@ jQuery(document).ready(function ($) {
     $(".sidebar-archive__month-list").not($monthList).slideUp();
     $monthList.stop(true, true).slideToggle();
     $(this).parent(".sidebar-archive__year").toggleClass("active");
+  });
+});
+
+//================================
+// profile 画像が右からfade-in
+//================================
+document.addEventListener("DOMContentLoaded", function () {
+  var fadeElements = document.querySelectorAll(".fade-in-right");
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  }, {
+    root: null,
+    // ビューポートを基準にする
+    threshold: 0.1,
+    // 10%表示されたら発火
+    rootMargin: "0px" // 追加のマージンなし
+  });
+
+  fadeElements.forEach(function (element) {
+    observer.observe(element);
+  });
+});
+
+
+
+
+jQuery(document).ready(function ($) {
+  $(".top-contact").on("inview", function (event, isInView) {
+    if (isInView) {
+      $(this).addClass("is-inview");
+    }
+  });
+});
+jQuery(document).ready(function ($) {
+  $(".top-aboutus__main-wrapper").on("inview", function (event, isInView) {
+    if (isInView) {
+      $(this).addClass("is-inview");
+    }
   });
 });

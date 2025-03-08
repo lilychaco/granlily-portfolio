@@ -20,7 +20,7 @@
                 $fvImagePC = $fvImage[$slide['field'] . '_pc'] ?? ''; // PC用画像
                 $fvImageSP = $fvImage[$slide['field'] . '_sp'] ?? ''; // SP用画像
             ?>
-			<div class="fv__slide" style="animation-delay: <?php echo ($index * 8); ?>s;">
+			<div class="fv__slide" style="animation-delay: <?php echo ($index * 4); ?>s;">
 				<figure class="fv__slide-img">
 					<picture>
 						<?php if ($fvImagePC): ?>

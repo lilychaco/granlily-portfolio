@@ -113,13 +113,13 @@
 
 /* 各スライドごとにテキストのアニメーションを遅延 */
 .fv__slide:nth-child(1) .fv__description {
-  animation-delay: 3s; /* 画像のフェードイン後に遅れて表示 */
+  animation-delay: 1.5s; /* 画像のフェードイン後に遅れて表示 */
 }
 .fv__slide:nth-child(2) .fv__description {
-  animation-delay: 11s; /* 画像が表示されてから遅れて表示 */
+  animation-delay: 5.5s; /* 画像が表示されてから遅れて表示 */
 }
 .fv__slide:nth-child(3) .fv__description {
-  animation-delay: 19s; /* 画像が表示されてから遅れて表示 */
+  animation-delay: 9.5s; /* 画像が表示されてから遅れて表示 */
 }
 
 
@@ -152,26 +152,26 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  animation: slider-animation 24s linear infinite;
+  animation: slider-animation 12s ease-in-out infinite;
 }
 
 /* スプラッシュ画面が消えた後にアニメーションを適用 */
-.fv__slide.is-active {
-  animation: slider-animation 24s linear infinite;
-}
 
+
+
+/*スライドが12秒で1周*/
 @keyframes slider-animation {
   0% {
     opacity: 0;
     transform: scale(1);
   }
-  4.16% {
+  8.33% { /* 約1秒目 */
     opacity: 1;
   }
-  33.33% {
+  50% { /* 6秒目 */
     opacity: 1;
   }
-  41.66% {
+  58.33% { /* 約7秒目 */
     opacity: 0;
     transform: scale(1.1);
   }
@@ -179,6 +179,27 @@
     opacity: 0;
   }
 }
+
+/*スライドが24秒で1周*/
+// @keyframes slider-animation {
+//   0% {
+//     opacity: 0;
+//     transform: scale(1);
+//   }
+//   4.16% {
+//     opacity: 1;
+//   }
+//   33.33% {
+//     opacity: 1;
+//   }
+//   41.66% {
+//     opacity: 0;
+//     transform: scale(1.1);
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
 /* === テキストのフェードアップ用アニメーション === */
 @keyframes fade-up {

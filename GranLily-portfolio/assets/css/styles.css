@@ -351,23 +351,30 @@ time {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+	transition: transform 0.3s ease;
 	width: 1.75rem;
 }
 
 .accordion-card__bar2 {
 	background-color: #fff;
-	display: none;
 	height: 1.75rem;
 	left: 50%;
+	opacity: 1;
 	position: absolute;
 	top: 0;
 	transform: translateX(-50%);
-	transition: all 0.3s ease 0s;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	visibility: visible;
 	width: 0.0625rem;
 }
 
-.accordion-card__top.is-close .accordion-card__bar2 {
-	display: block;
+.accordion-card__top.is-open .accordion-card__bar2 {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.accordion-card__top.is-open .accordion-card__bar1 {
+	transform: translateY(-50%) rotate(0deg);
 }
 
 .accordion-card__body {
@@ -2044,15 +2051,15 @@ span.wpcf7-spinner {
 /* 各スライドごとにテキストのアニメーションを遅延 */
 
 .fv__slide:nth-child(1) .fv__description {
-	animation-delay: 3s; /* 画像のフェードイン後に遅れて表示 */
+	animation-delay: 1.5s; /* 画像のフェードイン後に遅れて表示 */
 }
 
 .fv__slide:nth-child(2) .fv__description {
-	animation-delay: 11s; /* 画像が表示されてから遅れて表示 */
+	animation-delay: 5.5s; /* 画像が表示されてから遅れて表示 */
 }
 
 .fv__slide:nth-child(3) .fv__description {
-	animation-delay: 19s; /* 画像が表示されてから遅れて表示 */
+	animation-delay: 9.5s; /* 画像が表示されてから遅れて表示 */
 }
 
 /* 説明文の各行 */
@@ -2071,7 +2078,7 @@ span.wpcf7-spinner {
 }
 
 .fv__slide {
-	animation: slider-animation 24s linear infinite;
+	animation: slider-animation 12s ease-in-out infinite;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2085,9 +2092,9 @@ span.wpcf7-spinner {
 
 /* スプラッシュ画面が消えた後にアニメーションを適用 */
 
-.fv__slide.is-active {
-	animation: slider-animation 24s linear infinite;
-}
+/*スライドが12秒で1周*/
+
+/*スライドが24秒で1周*/
 
 /* === テキストのフェードアップ用アニメーション === */
 
@@ -2352,14 +2359,14 @@ span.wpcf7-spinner {
 	position: fixed;
 	right: 0;
 	top: 0;
-	transition: background-color 0.3s ease-in-out;
+	transition: background-color 0.5s ease-in-out;
 	width: 100%;
 	z-index: 200;
 }
 
 .header--top {
 	background-color: #D6E6F5;
-	transition: background-color 0.3s ease-in-out;
+	transition: background-color 0.5s ease-in-out;
 }
 
 .header--top.is-scroll {
@@ -2393,10 +2400,10 @@ span.wpcf7-spinner {
 .header__logo-img {
 	height: auto;
 	left: 50%;
-	position: absolute; /* 親要素内で重ねて配置 */
-	top: 50%; /* 縦方向中央揃え */
-	transform: translate(-50%, -50%); /* 中央揃えを実現 */
-	transition: opacity 0.3s ease-in-out; /* フェードアニメーション */
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(1); /* 初期状態は等倍 */
+	transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 	width: 100%;
 }
 
@@ -2406,23 +2413,24 @@ span.wpcf7-spinner {
 .header__logo-img--drawer {
 	opacity: 0; /* Safari対応 */
 	position: absolute; /* レイアウトの崩れ防止 */
-	transition: opacity 0.3s ease-in-out;
+	transform: translate(-50%, -50%) scale(0.9); /* 少し小さくする */
+	transition: opacity 0.5s ease-in-out;
 	visibility: hidden; /* Safari対応 */
 }
 
 /* PC版：FVを超えてスクロールした場合 */
 
 .is-scroll .header__logo-img--before {
-	display: none; /* 初期ロゴを非表示 */
 	opacity: 0;
 	position: absolute;
-	transition: opacity 0.3s ease-in-out;
+	transform: translate(-50%, -50%) scale(1.1); /* 少し大きくしてフェードアウト */
+	transition: opacity 0.5s ease-in-out;
 	visibility: hidden;
 }
 
 .is-scroll .header__logo-img--after {
-	display: block; /* スクロール後のロゴを表示 */
-	opacity: 1;
+	opacity: 1; /* フェードイン */
+	transform: translate(-50%, -50%) scale(1); /* 元のサイズに */
 	visibility: visible;
 }
 
@@ -2436,9 +2444,16 @@ span.wpcf7-spinner {
 }
 
 .is-drawerActive .header__logo-img--drawer {
-	display: block; /* ドロワーメニュー用のロゴを表示 */
 	opacity: 1;
+	transform: translate(-50%, -50%) scale(1); /* フェードイン */
 	visibility: visible;
+}
+
+/* SP版：ドロワーメニューが開いている場合 */
+
+.is-drawerActive .header__logo-img--before {
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(1.1); /* フェードアウト */
 }
 
 .home-news-layout {
@@ -2521,6 +2536,10 @@ span.wpcf7-spinner {
 	font-weight: 400;
 	letter-spacing: 0;
 	margin-top: 0.5rem;
+}
+
+.info-card__img {
+	width: 100%;
 }
 
 .info-card__img img {
@@ -4532,8 +4551,17 @@ span.wpcf7-spinner {
 .top-aboutus__main-wrapper {
 	margin-left: auto;
 	margin-right: auto;
+	opacity: 0; /* 初期状態では非表示 */
+	overflow: hidden;
 	text-align: center;
+	transform: translateX(-100px); /*下に120pxずらす */
+	transition: opacity 1s ease-out, transform 1s ease-out;
 	width: 100%;
+}
+
+.top-aboutus__main-wrapper.is-inview {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .top-aboutus__main {
@@ -4576,6 +4604,7 @@ span.wpcf7-spinner {
 
 .fade-in-right {
 	opacity: 0;
+	overflow: hidden;
 	transform: translateX(50px);
 	transition: opacity 1s ease, transform 1s ease;
 }
@@ -4588,14 +4617,41 @@ span.wpcf7-spinner {
 }
 
 .top-contact {
-	background-image: url("../images/bonotu-pc.jpg"); /* 画像のパスを指定 */
+	background-color: #D6E6F5;
 	background-position: center; /* 画像を中央に配置 */
 	background-size: cover; /* 背景画像を要素のサイズに合わせる */
 	height: auto;
+	overflow: hidden;
 	padding-bottom: 7.5rem;
 	padding-top: 7.5rem;
+	position: relative;
 	width: 100%; /* 横幅をブラウザのビューポート幅に設定 */
-	z-index: -1; /* z-indexで重ねる順序を指定 */
+	z-index: -2; /* z-indexで重ねる順序を指定 */
+}
+
+.top-contact::before {
+	background-image: url("../images/furamenco-cave.jpg"); /* 画像のパスを指定 */
+	background-position: center; /* 画像を中央に配置 */
+	background-size: cover; /* 背景画像を要素のサイズに合わせる */
+	content: "";
+	height: 100%;
+	left: 0;
+	opacity: 0; /* 初期状態では非表示 */
+	padding-bottom: 7.5rem;
+	padding-top: 7.5rem;
+	position: absolute;
+	top: 0;
+	transform: translateY(120px); /*下に120pxずらす */
+	transition: opacity 1s ease-out, transform 1s ease-out; /* フェードアップアニメーション */
+	width: 100%;
+	z-index: -1;
+}
+
+/* 画面に入ったらフェードイン */
+
+.top-contact.is-inview::before {
+	opacity: 1;
+	transform: translateY(0); /*元の位置に戻す */
 }
 
 .top-contact-layout {
@@ -6567,16 +6623,16 @@ html {
 	transform: scale(1);
 }
 
-4.16% {
-	opacity: 1;
+8.33% {
+	opacity: 1; /* 約1秒目 */
 }
 
-33.33% {
-	opacity: 1;
+50% {
+	opacity: 1; /* 6秒目 */
 }
 
-41.66% {
-	opacity: 0;
+58.33% {
+	opacity: 0; /* 約7秒目 */
 	transform: scale(1.1);
 }
 

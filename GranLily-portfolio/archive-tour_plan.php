@@ -37,17 +37,6 @@
 					<?php foreach ($terms as $term) : ?>
 					<?php
             $term_link = get_term_link($term);
-
-            // 各カテゴリに対応するMV画像の取得
-            $term_image = '';
-            if ($term->slug === 'overseas') {
-                $term_image = get_field('category-image-overseas', $term);
-            } elseif ($term->slug === 'domestic') {
-                $term_image = get_field('category-image-domestic', $term);
-            } elseif ($term->slug === 'diving') {
-                $term_image = get_field('category-image-diving', $term);
-            }
-
             if (!is_wp_error($term_link)) :
             ?>
 					<li class="category-list__item" data-image="<?php echo esc_url($term_image); ?>">

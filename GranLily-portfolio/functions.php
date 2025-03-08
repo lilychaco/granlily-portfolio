@@ -64,7 +64,7 @@ function theme_enqueue_styles() {
     wp_enqueue_script(
         'custom-main-js',
         get_template_directory_uri() . '/assets/js/script.js',
-        ['jquery', 'gsap-core', 'gsap-motion-path'], // ✅ GSAPに依存させる
+        ['jquery', 'jquery-inview', 'gsap-core', 'gsap-motion-path'], // ✅ GSAPに依存させる
         null,
         true
     );

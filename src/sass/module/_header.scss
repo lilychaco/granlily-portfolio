@@ -9,7 +9,7 @@
 	margin-inline:auto;
   height: rem(80);
   z-index: 200;
-	transition: background-color 0.3s ease-in-out;
+	transition: background-color 0.5s ease-in-out;
 
 	@include mq(md) {
 			height: rem(80);
@@ -17,7 +17,7 @@
 }
 .header--top {
 	background-color: $greenpale;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 .header--top.is-scroll {
     background-color: rgba(0, 0, 128, 1);
@@ -51,40 +51,41 @@
 }
 
 .header__logo-img {
-	width: 100%;
+  width: 100%;
   height: auto;
-  position: absolute; /* 親要素内で重ねて配置 */
+  position: absolute;
   left: 50%;
-  top: 50%; /* 縦方向中央揃え */
-  transform: translate(-50%, -50%); /* 中央揃えを実現 */
-  transition: opacity 0.3s ease-in-out; /* フェードアニメーション */
-
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1); /* 初期状態は等倍 */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
 
 /* 初期状態（PC/SP共通）：スクロール後のロゴとドロワーメニュー用ロゴを非表示 */
 .header__logo-img--after,
 .header__logo-img--drawer {
 	visibility: hidden; /* Safari対応 */
-
 	opacity: 0; /* Safari対応 */
 	position: absolute; /* レイアウトの崩れ防止 */
-	transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	transform: translate(-50%, -50%) scale(0.9); /* 少し小さくする */
 }
 
 /* PC版：FVを超えてスクロールした場合 */
 .is-scroll .header__logo-img--before {
-	display: none; /* 初期ロゴを非表示 */
 	visibility: hidden;
 	opacity: 0;
 	position: absolute;
-	transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	transform: translate(-50%, -50%) scale(1.1); /* 少し大きくしてフェードアウト */
 }
 
 .is-scroll .header__logo-img--after {
-	display: block; /* スクロール後のロゴを表示 */
 	visibility: visible;
-	opacity: 1;
+	opacity: 1; /* フェードイン */
+  transform: translate(-50%, -50%) scale(1); /* 元のサイズに */
 }
+
 
 /* SP版：ドロワーメニューが開いている場合 */
 .is-drawerActive .header__logo-img--before {
@@ -95,7 +96,27 @@
 }
 
 .is-drawerActive .header__logo-img--drawer {
-	display: block; /* ドロワーメニュー用のロゴを表示 */
+	// display: block; /* ドロワーメニュー用のロゴを表示 */
 	visibility: visible;
 	opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* フェードイン */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SP版：ドロワーメニューが開いている場合 */
+.is-drawerActive .header__logo-img--before {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.1); /* フェードアウト */
 }

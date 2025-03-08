@@ -2432,6 +2432,7 @@ span.wpcf7-spinner {
 .is-scroll .header__logo-img--after {
 	opacity: 1; /* フェードイン */
 	transform: translate(-50%, -50%) scale(1); /* 元のサイズに */
+	transition: opacity 0.5s ease-in-out;
 	visibility: visible;
 }
 

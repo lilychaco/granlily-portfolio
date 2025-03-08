@@ -49,10 +49,10 @@
 							class="header__logo-img header__logo-img--before" />
 					</picture>
 					<!-- 切り替え用のロゴ（スクロール後に表示） -->
-					<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long2.jpg" alt="スクロール後のロゴ"
+					<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long3.png" alt="スクロール後のロゴ"
 						class="header__logo-img header__logo-img--after" />
 					<!-- ドロワーオープン時のロゴ -->
-					<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long2.jpg" alt="ドロワーメニュー用のロゴ"
+					<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long3.png" alt="ドロワーメニュー用のロゴ"
 						class="header__logo-img header__logo-img--drawer" />
 				</a>
 			</h1>

@@ -168,22 +168,7 @@ jQuery(function ($) {
   $(document).on("click", "#grayDisplay, #grayDisplay img", function (event) {
     $("#grayDisplay").fadeOut(200);
     $("body").removeClass("no-scroll");
-	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  });
 }); // ← jQuery(function ($) { の閉じタグ
 
 //================================
@@ -341,23 +326,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fadeElements.forEach(function (element) {
     observer.observe(element);
-  });
-});
-
-
-
-
-jQuery(document).ready(function ($) {
-  $(".top-contact").on("inview", function (event, isInView) {
-    if (isInView) {
-      $(this).addClass("is-inview");
-    }
-  });
-});
-jQuery(document).ready(function ($) {
-  $(".top-aboutus__main-wrapper").on("inview", function (event, isInView) {
-    if (isInView) {
-      $(this).addClass("is-inview");
-    }
   });
 });

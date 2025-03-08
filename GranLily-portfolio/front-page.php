@@ -62,7 +62,8 @@
 		</div>
 
 		<!-- 前後の矢印 -->
-		<div class="swiper-button custom-swiper-button-prev"></div>
+		<div class="swiper-button custom-swiper-button-prev">
+		</div>
 		<div class="swiper-button custom-swiper-button-next"></div>
 
 		<div class="top-plan__cards-wrapper swiper js-plan-swiper">

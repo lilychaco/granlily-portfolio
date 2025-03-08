@@ -328,3 +328,25 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(element);
   });
 });
+
+//================================
+// お問い合わせ 背景画像がフェードアップ
+//================================
+jQuery(document).ready(function ($) {
+  $(".top-contact").on("inview", function (event, isInView) {
+    if (isInView) {
+      $(this).addClass("is-inview");
+    }
+  });
+});
+
+//================================
+// 私たちについて テキストが左からがフェードイン
+//================================
+jQuery(document).ready(function ($) {
+  $(".top-aboutus__main-wrapper").on("inview", function (event, isInView) {
+    if (isInView) {
+      $(this).addClass("is-inview");
+    }
+  });
+});

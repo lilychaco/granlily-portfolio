@@ -87,7 +87,7 @@
 					<li class="header-menu__item">
 						<a href="<?php echo esc_url(home_url('/information')); ?>">
 							<span class="header-menu__text-japanese">写真</span>
-							<span class="header-menu__text-english">PhotoGallery</span> </span>
+							<span class="header-menu__text-english">PhotoGallery</span>
 						</a>
 					</li>
 

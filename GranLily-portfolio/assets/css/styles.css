@@ -4730,6 +4730,7 @@ span.wpcf7-spinner {
 .top-plan__cards-wrapper {
 	height: 100%;
 	margin-top: 2.5rem;
+	overflow: hidden;
 	padding-bottom: 0.25rem;
 	width: 100vw;
 }
@@ -4740,7 +4741,7 @@ span.wpcf7-spinner {
 
 .top-plan__cards {
 	height: 100%;
-	width: 100vw;
+	width: 100%;
 }
 
 .top-plan__button {
@@ -4767,181 +4768,6 @@ span.wpcf7-spinner {
 	margin-right: auto;
 	margin-top: 2.5rem;
 	width: 100%;
-}
-
-.works-card {
-	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-}
-
-.works-card__img {
-	width: 100%;
-}
-
-.works-card__img img {
-	-o-object-fit: cover;
-	aspect-ratio: 280/188;
-	height: auto;
-	object-fit: cover;
-	width: 100%;
-}
-
-.works-card__img--side img {
-	aspect-ratio: 294/188;
-}
-
-.works-card__body {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	padding-bottom: 1.25rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0.625rem;
-	width: 100%;
-}
-
-.works-card__top {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	min-height: 5rem;
-	padding-bottom: 0.5rem;
-}
-
-.works-card__category {
-	border: 1px solid #000074;
-	color: #000074;
-	display: inline-block;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 0.75rem;
-	font-weight: 400;
-	letter-spacing: 0;
-	line-height: 1.83;
-	padding-bottom: 0.25rem;
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
-	padding-top: 0.25rem;
-}
-
-.works-card__title {
-	align-items: center;
-	display: flex;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1rem;
-	font-weight: 500;
-	letter-spacing: 0;
-	line-height: 1.5;
-	margin-top: 0.5rem;
-	min-height: 2.5rem;
-}
-
-.works-card__text {
-	border-top: 1px solid #000074;
-	margin-top: auto;
-	padding-top: 0.5rem;
-	text-align: center;
-}
-
-.works-card__price-info {
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 0.875rem;
-	font-weight: 400;
-	letter-spacing: 0;
-	line-height: 1.71;
-	text-align: center;
-}
-
-.works-card__price-text {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin-top: 0.25rem;
-	padding-left: 1.25rem;
-	padding-right: 1.125rem;
-}
-
-.works-card__price-old {
-	-webkit-text-decoration: line-through;
-	color: #000074;
-	display: inline-block;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1.25rem;
-	font-weight: 700;
-	letter-spacing: 0;
-	line-height: 1;
-	margin-top: 1rem;
-	text-decoration: line-through;
-	text-decoration-color: #c94800;
-}
-
-.works-card__price-new {
-	color: #000074;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 2rem;
-	font-weight: 700;
-	letter-spacing: 0;
-	line-height: 1;
-	margin-top: 0.25rem;
-}
-
-.works-card__subbody {
-	display: none;
-}
-
-.works-card__subtext {
-	color: #000074;
-	flex-grow: 1;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1rem;
-	font-weight: 400;
-	letter-spacing: 0;
-	line-height: 1.5;
-	text-align: left;
-}
-
-.works-card__meta {
-	margin-top: auto;
-}
-
-.works-card__date {
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1rem;
-	font-weight: 700;
-	letter-spacing: 0;
-	line-height: 1;
-	margin-top: 2rem;
-}
-
-.works-card__microcopy {
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 0.875rem;
-	font-weight: 400;
-	letter-spacing: 0;
-	line-height: 1;
-	margin-top: 0.4375rem;
-}
-
-.works-card__button {
-	margin-top: 1rem;
-	text-align: center;
-}
-
-.works-cards {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-}
-
-.works-cards__item {
-	align-items: stretch;
-	display: flex;
-	height: auto;
-	margin-right: 1.5rem;
-	width: 17.5rem;
 }
 
 .archive-works-layout {
@@ -6410,74 +6236,6 @@ html {
 
 .top-service__main {
 	margin-top: 3.75rem;
-}
-
-.works-card__img img {
-	aspect-ratio: 333/223;
-}
-
-.works-card__body {
-	padding-bottom: 1.875rem;
-	padding-top: 1.25rem;
-}
-
-.works-card__top {
-	padding-bottom: 0.375rem;
-}
-
-.works-card__category {
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0.375rem;
-}
-
-.works-card__text {
-	padding-top: 1rem;
-}
-
-.works-card__price-info {
-	font-size: 1rem;
-	line-height: 1.5;
-	padding-right: 0.75rem;
-}
-
-.works-card__price-info--side {
-	font-size: 0.875rem;
-	line-height: 1.71;
-}
-
-.works-card__price-text {
-	font-size: 2.5rem;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 0;
-	padding-right: 0;
-	width: 100%;
-}
-
-.works-card__price-old {
-	font-size: 1.5rem;
-	margin-top: 1rem;
-	padding-right: 1.625rem;
-}
-
-.works-card__price-new {
-	font-size: 2.5rem;
-}
-
-.works-card__subbody {
-	color: #000074;
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	justify-content: space-between;
-	margin-top: 1.5rem;
-	text-align: center;
-}
-
-.works-cards__item {
-	margin-right: 2.5rem;
-	width: 20.875rem;
 }
 
 .archive-works-layout {

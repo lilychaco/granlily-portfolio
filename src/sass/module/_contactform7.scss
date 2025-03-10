@@ -226,3 +226,8 @@ span.wpcf7-spinner {
 .wpcf7-not-valid {
     color: black !important; /* テキストカラーを黒に設定 */
 }
+
+.form__row--message dd textarea.wpcf7-not-valid {
+	background-color: #ffe5e5 !important;
+	border:1px solid #ff0000 !important;
+}

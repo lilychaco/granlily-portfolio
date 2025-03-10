@@ -1,7 +1,7 @@
 @use "global"as *;
 
 .top-plan {
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .top-plan__inner {
@@ -31,10 +31,6 @@
 .top-plan__cards-wrapper.swiper {
   padding-bottom: rem(10);
 }
-
-
-
-
 
 //swiper-wrapperの範囲を指定
 .top-plan__cards {

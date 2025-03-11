@@ -568,8 +568,6 @@ time {
 .archive-tour_plan__main {
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 0.375rem;
-	padding-right: 0.375rem;
 	width: 100%;
 }
 
@@ -698,8 +696,6 @@ time {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5rem;
-	padding-left: 1.5625rem;
-	padding-right: 1.5625rem;
 	width: 100%;
 }
 
@@ -1085,7 +1081,7 @@ time {
 /* 背景の円 */
 
 .button--03::before {
-	background-color: #D6E6F5;
+	background-color: #fff;
 	border-radius: 50%;
 	content: "";
 	height: 30px;
@@ -4638,7 +4634,7 @@ span.wpcf7-spinner {
 }
 
 .top-contact::before {
-	background-image: url("../images/furamenco-cave.jpg"); /* 画像のパスを指定 */
+	background-image: url("../images/alhambra-circle3.jpg"); /* 画像のパスを指定 */
 	background-position: center; /* 画像を中央に配置 */
 	background-size: cover; /* 背景画像を要素のサイズに合わせる */
 	content: "";
@@ -5048,11 +5044,6 @@ html {
 	grid-template-rows: auto;
 }
 
-.archive-tour_plan__main {
-	padding-left: 0;
-	padding-right: 0;
-}
-
 .archive-tour_plan__cards {
 	grid-column-gap: 4%;
 	-moz-column-gap: 4%;
@@ -5088,8 +5079,6 @@ html {
 .archive-tour_plan__side {
 	margin-top: 0;
 	max-width: 18.375rem;
-	padding-left: 0;
-	padding-right: 0;
 	width: 100%;
 }
 

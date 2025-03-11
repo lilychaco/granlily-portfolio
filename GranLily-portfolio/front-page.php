@@ -39,7 +39,7 @@
 
 	<div class="fv__copy">
 		<p class="fv__main-title">granlily</p>
-		<p class="fv__sub-title">大人のための、心躍る冒険へ</p>
+		<p class="fv__sub-title">シニアのためのツーリズム</p>
 	</div>
 </section>
 

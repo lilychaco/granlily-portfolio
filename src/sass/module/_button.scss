@@ -20,7 +20,6 @@
   /* ボックスサイジングを追加 */
   border: 1px solid transparent;
   /* ホバー前のボーダーを透明に設定 */
-
 }
 
 .button::before {
@@ -45,7 +44,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%) skew(45deg);
-  width: 40px;
+  width: 30px;
   height: 6px;
   border-bottom: 1px solid $white;
   border-right: 1px solid $white;
@@ -72,59 +71,63 @@
   padding: rem(18) 0 rem(14) rem(52);
 }
 
-.button.button--02 {
-	@include mq(md) {
-	background-color: $white;
-	color: $greenaccent;
-	}
+.button--02 {
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:rem(240);
+padding:12px 30px;
+color:#000074;
+font-size:18px;
+font-weight:700;
+text-decoration:none;
+background-color:#fff;
+border:1px solid transparent;
+border-radius:40px;
+position: relative;
+z-index: 10; /* ボタン自体の z-index を上げる */
 }
-.button.button--02::before {
-	@include mq(md) {
-	content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 4px;
-  left: 4px;
-  border: 1px solid $white;
-  background-color: $greenaccent;
-  z-index: -1;
-	}
-}
-.button.button--02::after {
-	@include mq(md){
-		content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) skew(45deg);
-  width: 40px;
-  height: 6px;
-  border-bottom: 1px solid $greenaccent;
-  border-right: 1px solid $greenaccent;
-  margin-left: rem(14);
-  z-index: 1000;
-	}
+.button--02::before {
+	content:"";
+	position: absolute;
+	top:50%;
+	right:20px;/* ボタンの右端からの距離 */
+	transform: translateY(-50%);
+	width: 30px;
+	height:30px;
+	background-color: #000074;
+	border-radius: 50%;
 }
 
-.button.button--02:hover {
-	@include mq(md) {
-	background-color: $greenaccent;
-  border: 1px solid $white;
-  color: $white;
-	cursor: pointer;
-	z-index: index 1000;;
-	}
+.button--02::after {
+	content:"";
+	position: absolute;
+    top: 50%;
+    right: 31px;
+    transform: translateY(-50%) rotate(45deg);
+	width:10px;
+	height:10px;
+	border-top: 2px solid #fff;
+	border-right:2px solid #fff;
 }
 
-.button.button--02:hover::before{
 
+.button--02:hover {
+	color:#fff;
+	background-color:#000074;
+	border:1px solid #fff;
+	position: relative; /* これがないとz-indexの変更が正しく適用されない */
+  z-index: 11; /* ホバー時にボタンをさらに前面に */
 }
-.button.button--02:hover::after {
-	@include mq(md) {
-		border-bottom: 1px solid $white;
-  	border-right: 1px solid $white;
-	}
+.button--02:hover::before {
+	background-color: #fff;
 }
+
+.button--02:hover:after {
+	border-top: 2px solid #000074;
+	border-right:2px solid #000074;
+}
+
 
 .button--03 {
 display:flex;
@@ -176,6 +179,6 @@ position: relative;
 }
 
 .button--03:hover:after {
-		border-top: 2px solid #fff;
+	border-top: 2px solid #fff;
 	border-right:2px solid #fff;
 }

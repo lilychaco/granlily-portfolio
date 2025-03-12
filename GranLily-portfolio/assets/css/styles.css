@@ -1042,7 +1042,7 @@ time {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%) skew(45deg);
-	width: 40px;
+	width: 30px;
 	z-index: 1;
 }
 
@@ -1059,6 +1059,65 @@ time {
 
 .button--send {
 	padding: 1.125rem 0 0.875rem 3.25rem;
+}
+
+.button--02 {
+	-webkit-text-decoration: none;
+	align-items: center;
+	background-color: #fff;
+	border: 1px solid transparent;
+	border-radius: 40px;
+	color: #000074;
+	display: flex;
+	font-size: 18px;
+	font-weight: 700;
+	justify-content: space-between;
+	padding: 12px 30px;
+	position: relative;
+	text-decoration: none;
+	width: 15rem;
+	z-index: 10; /* ボタン自体の z-index を上げる */
+}
+
+.button--02::before {
+	background-color: #000074;
+	border-radius: 50%;
+	content: "";
+	height: 30px;
+	position: absolute;
+	right: 20px; /* ボタンの右端からの距離 */
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+}
+
+.button--02::after {
+	border-right: 2px solid #fff;
+	border-top: 2px solid #fff;
+	content: "";
+	height: 10px;
+	position: absolute;
+	right: 31px;
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+	width: 10px;
+}
+
+.button--02:hover {
+	background-color: #000074;
+	border: 1px solid #fff;
+	color: #fff;
+	position: relative; /* これがないとz-indexの変更が正しく適用されない */
+	z-index: 11; /* ホバー時にボタンをさらに前面に */
+}
+
+.button--02:hover::before {
+	background-color: #fff;
+}
+
+.button--02:hover:after {
+	border-right: 2px solid #000074;
+	border-top: 2px solid #000074;
 }
 
 .button--03 {
@@ -2923,65 +2982,59 @@ span.wpcf7-spinner {
 
 .page-404 {
 	background-color: #000074;
+	padding-bottom: 5rem;
 	padding-top: 5rem;
 	position: relative;
-	z-index: -100;
+	text-align: center;
+	z-index: 0;
 }
 
-.page-404__breadcrumb {
-	color: #fff;
-}
-
-.page-404__inner {
-	position: relative;
-}
-
-.page-404__content {
+.page-404__container {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 3.875rem;
+	margin-top: 7.5rem;
 	min-width: 12.625rem;
 	padding-bottom: 2.5rem;
 	text-align: center;
 	width: 100%;
 }
 
-.page-404__whale-image {
-	left: 50%;
-	position: absolute;
-	top: -10px;
-	transform: translateX(-50%);
-	width: 21.5625rem;
-}
-
-.page-404__whale-image img {
-	-o-object-fit: cover;
-	aspect-ratio: 345/345;
-	object-fit: cover;
-}
-
-.pave-404__title {
+.page-404__title {
 	color: #fff;
 	font-family: "Noto Sans JP", sans-serif;
-	font-size: 5rem;
+	font-size: 3.75rem;
 	font-weight: 400;
-	letter-spacing: 0.5em;
+	letter-spacing: 0.2em;
 	line-height: 1;
-	padding-left: 2.375rem;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.2;
+	text-indent: 0.2em;
+	width: 100%;
+}
+
+.page-404__img {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1.875rem;
+	max-width: 12.5rem;
+	width: 100%;
 }
 
 .page-404__text {
 	color: #fff;
-	font-family: "Noto Sans JP", sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: 0;
 	line-height: 1.5;
-	margin-top: 0.25rem;
+	margin-top: 1.875rem;
 }
 
 .page-404__button {
-	margin-top: 2.375rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2.5rem;
 }
 
 .page-contact {
@@ -5168,49 +5221,6 @@ html {
 	margin-top: 5.625rem;
 }
 
-.button.button--02 {
-	background-color: #fff;
-	color: #000074;
-}
-
-.button.button--02::before {
-	background-color: #000074;
-	border: 1px solid #fff;
-	content: "";
-	height: 100%;
-	left: 4px;
-	position: absolute;
-	top: 4px;
-	width: 100%;
-	z-index: -1;
-}
-
-.button.button--02::after {
-	border-bottom: 1px solid #000074;
-	border-right: 1px solid #000074;
-	content: "";
-	height: 6px;
-	margin-left: 0.875rem;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%) skew(45deg);
-	width: 40px;
-	z-index: 1000;
-}
-
-.button.button--02:hover {
-	background-color: #000074;
-	border: 1px solid #fff;
-	color: #fff;
-	cursor: pointer;
-	z-index: index 1000;
-}
-
-.button.button--02:hover::after {
-	border-bottom: 1px solid #fff;
-	border-right: 1px solid #fff;
-}
-
 .category-list {
 	-moz-column-gap: 2rem;
 	column-gap: 2rem;
@@ -5610,28 +5620,22 @@ html {
 }
 
 .page-404 {
+	padding-bottom: 5rem;
 	padding-top: 5.625rem;
 }
 
-.page-404__content {
+.page-404__container {
 	margin-top: 8.5rem;
-	max-width: 27.4375rem;
+	max-width: 37.5rem;
 	padding-bottom: 9.25rem;
 }
 
-.page-404__whale-image {
-	left: 50%;
-	transform: translateX(calc(-50% - 186px));
-	width: 43.625rem;
+.page-404__title {
+	font-size: 5rem;
 }
 
-.pave-404__title {
-	font-size: 10rem;
-	padding-left: 0;
-}
-
-.page-404__text {
-	margin-top: 2.625rem;
+.page-404__img {
+	max-width: 18.75rem;
 }
 
 .page-404__button {

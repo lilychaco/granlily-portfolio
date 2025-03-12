@@ -1,23 +1,5 @@
 <?php get_header(); ?>
 
-<!-- <div class="page-404">
-	<div class="page-404__inner inner">
-		<div class="page-404__content">
-			<p class="pave-404__title">404</p>
-			<p class="page-404__text">申し訳ありません。<br>
-				お探しのページが見つかりません。</p>
-			<div class="page-404__button">
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="button button--02">page TOP</a>
-			</div>
-		</div>
-	</div>
-</div> -->
-<style>
-.container {
-	max-width: 600px;
-	margin: 100px auto;
-}
-</style>
 <div class="page-404">
 	<div class="page-404__inner inner">
 		<div class="page-404__container">

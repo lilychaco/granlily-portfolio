@@ -1,38 +1,70 @@
-@use "global" as *;
+@use "global"as *;
 
 .nav-menu {
-	margin-inline:auto;
-	width:100%;
-	color:$greenaccent;
-	@include mq(md) {
+  margin-inline: auto;
+  width: 100%;
+  color: $greenaccent;
 
-	}
+  @include mq(md) {}
 }
 
 .nav-menu__box {
-    display: grid;
-   grid-template-columns: 1fr;
-		color:$greenaccent;
-		width: 100%;
-		height:inherit;
-		@include mq(md) {
-				grid-template-columns: 1fr 1fr;
-		}
+  display: grid;
+  grid-template-columns: 1fr;
+  color: $greenaccent;
+  width: 100%;
+  height: inherit;
+
+  @include mq(md) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 
 .nav-menu__item {
-	width: 100%;
-	height:inherit;
+  width: 100%;
+  height: inherit;
 }
 
 .nav-menu__item p {
-		width: 100%;
-		height:inherit;
-		font-size: rem(20);
-			font-family: $base-font-family;
-			font-weight: $bold;
-			line-height: 2;
-			letter-spacing: 0;
-			white-space: nowrap;
+  width: fit-content;
+  height: inherit;
+  font-size: rem(20);
+  font-family: $base-font-family;
+  font-weight: $bold;
+  line-height: 2;
+  letter-spacing: 0;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  padding-left: rem(24);
+}
+
+.starfish-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(16);
+  height: rem(16);
+  background-image: url("../images/starfish.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.nav-menu__item p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: $greenaccent;
+  transition: width 0.3s ease;
+}
+
+.nav-menu__item p:hover::after {
+  width: 100%;
 }

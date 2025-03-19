@@ -56,11 +56,10 @@ jQuery(function ($) {
   //================================
   // ボタンをクリックしてページトップに戻る
   // ===============================
-$(".js-page-top-button").click(function () {
-  $("html").animate({ scrollTop: 0 }, 1000, "linear");
-  return false;
-});
-
+  $(".js-page-top-button").click(function () {
+    $("html").animate({ scrollTop: 0 }, 1000, "linear");
+    return false;
+  });
 
   // ==================================
   // インフォメーションページのタブの動きを制御
@@ -76,9 +75,12 @@ $(".js-page-top-button").click(function () {
     const targetIndex = $tabs.filter(`[data-tab="${tabParam}"]`).index();
     if (targetIndex !== -1) {
       $tabs.removeClass("current").eq(targetIndex).addClass("current"); // 該当タブを選択状態に
-      $contents.hide().eq(targetIndex).fadeIn(300,function() {
-				ScrollTrigger.refresh();
-			}); // 対応コンテンツを表示
+      $contents
+        .hide()
+        .eq(targetIndex)
+        .fadeIn(300, function () {
+          ScrollTrigger.refresh();
+        }); // 対応コンテンツを表示
     } else {
       // 該当するタブがない場合、デフォルトタブを表示
       showDefaultTab();
@@ -120,15 +122,13 @@ $(".js-page-top-button").click(function () {
       });
   }
 
-
-
   //================================
   // アコーディオンの動作
   //==================================
- $(".js-accordion-top").click(function () {
-   $(this).next().slideToggle(300);
-   $(this).toggleClass("is-open");
- });
+  $(".js-accordion-top").click(function () {
+    $(this).next().slideToggle(300);
+    $(this).toggleClass("is-open");
+  });
 
   //================================
   // 画像に色背景がついてから、写真が出てくる
@@ -161,8 +161,6 @@ $(".js-page-top-button").click(function () {
     });
   });
 
-
-
   //================================
   // gallery一覧の拡大画像モーダル処理
   //================================
@@ -181,11 +179,7 @@ $(".js-page-top-button").click(function () {
     $("#grayDisplay").fadeOut(200);
     $("body").removeClass("no-scroll");
   });
-
-
-
 }); // ← jQuery(function ($) { の閉じタグ
-
 
 //================================
 //loading
@@ -199,26 +193,52 @@ jQuery(window).on("load", function () {
     sessionStorage.setItem("visited", "true");
   }
 
+  function startFvAnimation() {
+    // FVスライドのアニメーション開始（即座に開始）
+    jQuery(".fv__slide").addClass("is-active");
+
+    // テキストのアニメーション開始
+    setTimeout(function () {
+      jQuery(".fv__description").addClass("is-active");
+    }, 1000);
+  }
+
   if (!checkVisited()) {
     setVisitedFlag();
 
+    // FVスライドを事前に準備（透明状態）
+    jQuery(".fv__slide").css({
+      opacity: "0",
+      transition: "opacity 0.8s ease-in-out",
+    });
+
+    // ロゴのフェードアウトをスムーズに
     jQuery(".splash__logo")
-      .delay(1000)
-      .fadeOut(600, function () {
-        jQuery(".splash").fadeOut(600, function () {
-          jQuery(".fv__slide").addClass("is-active");
-        });
+      .delay(300)
+      .fadeOut(400, function () {
+        // スプラッシュ画面のフェードアウトと同時にFVを表示開始
+        jQuery(".splash").fadeOut(400);
+
+        // FVスライドをフェードイン
+        jQuery(".fv__slide").css("opacity", "");
+
+        // アニメーション開始
+        startFvAnimation();
+
+        // スプラッシュ要素を完全に削除
+        setTimeout(function () {
+          jQuery(".splash").remove();
+        }, 600);
       });
   } else {
-    jQuery(".splash").hide();
-    jQuery(".fv__slide").addClass("is-active");
+    // 2回目以降の訪問
+    jQuery(".splash").remove(); // DOM から即座に削除
+    startFvAnimation();
   }
 });
 
-
-
 //================================
-//GSAP
+//GSAP 飛行機を動かす
 //================================
 // GSAPのプラグインを登録
 gsap.registerPlugin(MotionPathPlugin);
@@ -257,14 +277,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
 //================================
 //GSAP galleryに パララックス効果
 //================================
 // ScrollTrigger を登録
 gsap.registerPlugin(ScrollTrigger);
-
 
 // パララックス効果の適用
 gsap.utils.toArray(".gallery__item img").forEach((img) => {
@@ -274,8 +291,8 @@ gsap.utils.toArray(".gallery__item img").forEach((img) => {
     {
       y: "10%", // スクロール時に下へ動く
       scrollTrigger: {
-				trigger: img,
-				//     要素の  画面の
+        trigger: img,
+        //     要素の  画面の
         start: "top bottom", // 画像がビューポートに入るタイミング
         end: "bottom top", // 画像がビューポートから出るタイミング
         scrub: true, // スクロールに応じて動く
@@ -283,9 +300,6 @@ gsap.utils.toArray(".gallery__item img").forEach((img) => {
     }
   );
 });
-
-
-
 
 //================================
 //タブ切替で、MVも変更
@@ -319,11 +333,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-  //================================
-  //  サイドのアーカイブメニューの動作
-  // ===============================
+//================================
+//  サイドのアーカイブメニューの動作
+// ===============================
 jQuery(document).ready(function ($) {
   $(".js-year-toggle").click(function () {
     console.log("クリックされました:", this); // デバッグ用
@@ -334,9 +346,9 @@ jQuery(document).ready(function ($) {
   });
 });
 
-  //================================
-  // profile 画像が右からfade-in
-  //================================
+//================================
+// profile 画像が右からfade-in
+//================================
 document.addEventListener("DOMContentLoaded", function () {
   const fadeElements = document.querySelectorAll(".fade-in-right");
 
@@ -360,10 +372,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-  //================================
-  // お問い合わせ 背景画像がフェードアップ
-  //================================
+//================================
+// お問い合わせ 背景画像がフェードアップ
+//================================
 jQuery(document).ready(function ($) {
   $(".top-contact").on("inview", function (event, isInView) {
     if (isInView) {
@@ -372,9 +383,9 @@ jQuery(document).ready(function ($) {
   });
 });
 
-  //================================
-  // 私たちについて テキストが左からがフェードイン
-  //================================
+//================================
+// 私たちについて テキストが左からがフェードイン
+//================================
 jQuery(document).ready(function ($) {
   $(".top-aboutus__main-wrapper").on("inview", function (event, isInView) {
     if (isInView) {
@@ -382,3 +393,26 @@ jQuery(document).ready(function ($) {
     }
   });
 });
+
+
+//================================
+// トップお知らせ テキストが右から順番にフェードイン
+//================================
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    ".top-news__item",
+    { opacity: 0, x: 10 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.7,
+      stagger: 0.15,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".top-news__list",
+        start: "top 70%",
+        toggleActions: "play none none none",
+      },
+    }
+  );

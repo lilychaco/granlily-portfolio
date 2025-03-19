@@ -31,8 +31,8 @@
   top: 4px;
   left: 4px;
   border: 1px solid $greenaccent;
-  z-index:-1;
-	transition: ease 0.2s;
+  z-index: -1;
+  transition: ease 0.2s;
 }
 
 
@@ -59,9 +59,7 @@
   color: $greenaccent;
 }
 
-.button:hover::before {
-
-}
+.button:hover::before {}
 
 .button:hover::after {
   border-bottom: 1px solid $greenaccent;
@@ -73,109 +71,118 @@
 }
 
 .button.button--02 {
-	@include mq(md) {
-	background-color: $white;
-	color: $greenaccent;
-	}
+  @include mq(md) {
+    background-color: $white;
+    color: $greenaccent;
+  }
 }
+
 .button.button--02::before {
-	@include mq(md) {
-	content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 4px;
-  left: 4px;
-  border: 1px solid $white;
-  background-color: $greenaccent;
-  z-index: -1;
-	}
+  @include mq(md) {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 4px;
+    left: 4px;
+    border: 1px solid $white;
+    background-color: $greenaccent;
+    z-index: -1;
+  }
 }
+
 .button.button--02::after {
-	@include mq(md){
-		content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) skew(45deg);
-  width: 40px;
-  height: 6px;
-  border-bottom: 1px solid $greenaccent;
-  border-right: 1px solid $greenaccent;
-  margin-left: rem(14);
-  z-index: 1000;
-	}
+  @include mq(md) {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) skew(45deg);
+    width: 40px;
+    height: 6px;
+    border-bottom: 1px solid $greenaccent;
+    border-right: 1px solid $greenaccent;
+    margin-left: rem(14);
+    z-index: 1000;
+  }
 }
 
 .button.button--02:hover {
-	@include mq(md) {
-	background-color: $greenaccent;
-  border: 1px solid $white;
-  color: $white;
-	cursor: pointer;
-	z-index: index 1000;;
-	}
+  @include mq(md) {
+    background-color: $greenaccent;
+    border: 1px solid $white;
+    color: $white;
+    cursor: pointer;
+    z-index: index 1000;
+    ;
+  }
 }
 
-.button.button--02:hover::before{
+.button.button--02:hover::before {}
 
-}
 .button.button--02:hover::after {
-	@include mq(md) {
-		border-bottom: 1px solid $white;
-  	border-right: 1px solid $white;
-	}
+  @include mq(md) {
+    border-bottom: 1px solid $white;
+    border-right: 1px solid $white;
+  }
 }
 
 .button--03 {
-display:flex;
-justify-content:space-between;
-align-items:center;
-width:200px;
-padding:12px 30px;
-color:#fff;
-font-size:18px;
-font-weight:700;
-text-decoration:none;
-background-color:#000074;
-border:1px solid transparent;
-border-radius:40px;
-position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  padding: 12px 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: #000074;
+  border: 1px solid transparent;
+  border-radius: 40px;
+  position: relative;
+  transition: all 0.3s ease;
 }
+
 /* 背景の円 */
 .button--03::before {
-	content:"";
-	position: absolute;
-	top:50%;
-	right:20px;/* ボタンの右端からの距離 */
-	transform: translateY(-50%);
-	width: 30px;
-	height:30px;
-	background-color: #fff;
-	border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  /* ボタンの右端からの距離 */
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
+
 /* 三角矢印 */
 .button--03::after {
-	content:"";
-	position: absolute;
-    top: 50%;
-    right: 31px;
-    transform: translateY(-50%) rotate(45deg);
-	width:10px;
-	height:10px;
-	border-top: 2px solid #000074;
-	border-right:2px solid #000074;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 31px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #000074;
+  border-right: 2px solid #000074;
+  transition: all 0.3s ease;
+}
 
-}
 .button--03:hover {
-	color:#000074;
-	background-color:#fff;
-	border:1px solid #000074;
+  color: #000074;
+  background-color: #fff;
+  border: 1px solid #000074;
 }
+
 .button--03:hover::before {
-	background-color: #000074;
+  background-color: #000074;
 }
 
 .button--03:hover:after {
-		border-top: 2px solid #fff;
-	border-right:2px solid #fff;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
 }

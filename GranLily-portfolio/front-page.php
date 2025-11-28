@@ -49,37 +49,37 @@ if ($tour_plan_query->have_posts()) : ?><div class="top-plan__inner inner">
 			<h2 class="section-heading__title">ツアープラン</h2>
 			<h3 class="section-heading__subtitle">Plan</h3>
 		</div>
-		< !-- 前後の矢印 -->
-			<div class="swiper-button custom-swiper-button-prev"></div>
-			<div class="swiper-button custom-swiper-button-next"></div>
-			<div class="top-plan__cards-wrapper swiper js-plan-swiper">
-				<ul class="top-plan__cards plan-cards swiper-wrapper"><?php while ($tour_plan_query->have_posts()) : $tour_plan_query->the_post();
+		<!-- 前後の矢印 -->
+		<div class="swiper-button custom-swiper-button-prev"></div>
+		<div class="swiper-button custom-swiper-button-next"></div>
+		<div class="top-plan__cards-wrapper swiper js-plan-swiper">
+			<ul class="top-plan__cards plan-cards swiper-wrapper"><?php while ($tour_plan_query->have_posts()) : $tour_plan_query->the_post();
 ?><li class="plan-cards__item plan-card swiper-slide"><a href="<?php echo esc_url(get_permalink()); ?>"
-							class="plan-card__link">
-							<figure class=" plan-card__img"><?php if (has_post_thumbnail()) : ?>< !-- サムネイル画像が設定されている場合 --><img
-										src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
-										alt="<?php echo esc_attr(get_the_title()); ?>" /><?php else : ?>< !-- サムネイルがない場合はデフォルト画像を表示 --><img
-											src="<?php echo esc_url(get_theme_file_uri('assets/images/wilson-heart.jpg')); ?>"
-											alt="デフォルト画像" /><?php endif;
-?></figure>
-							<div class="plan-card__body">
-								<div class="plan-card__top"><?php $terms=get_the_terms(get_the_ID(), 'tour_plan_category');
+						class="plan-card__link">
+						<figure class=" plan-card__img"><?php if (has_post_thumbnail()) : ?>
+							<!-- サムネイル画像が設定されている場合 --><img
+								src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
+								alt="<?php echo esc_attr(get_the_title()); ?>" /><?php else : ?>< !-- サムネイルがない場合はデフォルト画像を表示 --><img
+									src="<?php echo esc_url(get_theme_file_uri('assets/images/wilson-heart.jpg')); ?>" alt="デフォルト画像" /><?php endif;
+?>
+						</figure>
+						<div class="plan-card__body">
+							<div class="plan-card__top"><?php $terms=get_the_terms(get_the_ID(), 'tour_plan_category');
 if ( !empty($terms) && !is_wp_error($terms)) : ?><div class="plan-card__category">
-										<?php foreach ($terms as $term) : ?><span><?php echo esc_html($term->name);
+									<?php foreach ($terms as $term) : ?><span><?php echo esc_html($term->name);
 ?></span><?php endforeach;
 ?></div><?php endif;
 ?><div class="plan-card__title"><?php the_title();
 ?></div>
-								</div>
-								<div class="plan-card__text"><?php echo wp_trim_words(get_the_excerpt(), 40, '...');
-?></div>
 							</div>
-						</a></li><?php endwhile;
+							<div class="plan-card__text"><?php echo wp_trim_words(get_the_excerpt(), 40, '...');
+?></div>
+						</div>
+					</a></li><?php endwhile;
 ?></ul>
-			</div>
-			<div class="top-plan__button"><a href="<?php echo esc_url(home_url('/tour_plan')); ?>"
-					class="button--03">View&nbsp;
-					more</a></div>
+		</div>
+		<div class="top-plan__button"><a href="<?php echo esc_url(home_url('/tour_plan')); ?>" class="button--03">View&nbsp;
+				more</a></div>
 	</div><?php endif ?><?php wp_reset_postdata(); // クエリのリセット  ?>
 </section>
 <section class="top-service top-service-layout" id="top-service">

@@ -1,53 +1,55 @@
-@use "global" as *;
+@use "global"as *;
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
-	right:0;
+  right: 0;
   width: 100%;
-	margin-inline:auto;
+  margin-inline: auto;
   height: rem(80);
   z-index: 200;
-	transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 
-	@include mq(md) {
-			height: rem(80);
-	}
+  @include mq(md) {
+    height: rem(80);
+  }
 }
+
 .header--top {
-	background-color: $greenpale;
+  background-color: $greenpale;
   transition: background-color 0.5s ease-in-out;
 }
+
 .header--top.is-scroll {
-    background-color: rgba(0, 0, 128, 1);
+  background-color: rgba(0, 0, 128, 1);
 }
 
 .header--sub {
-    background-color: rgba(0, 0, 128, 1);
+  background-color: rgba(0, 0, 128, 1);
 }
-
-
 
 .header__inner {
-	margin-inline:auto;
+  margin-inline: auto;
   width: 100%;
   height: inherit;
-	display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-	padding:0 rem(25);
+  padding: 0 rem(25);
 }
+
 .header__logo {
-	position: relative;
+  position: relative;
   width: rem(180);
-	height: auto;
-	display: flex; // 子要素をフレックスボックスでレイアウト
+  height: auto;
+  display: flex; // 子要素をフレックスボックスでレイアウト
   justify-content: center; // 横方向の中央揃え
   align-items: center; // 縦方向の中央揃え
-	@include mq(md) {
-			width: rem(200);
-	}
+
+  @include mq(md) {
+    width: rem(200);
+  }
 }
 
 .header__logo-img {
@@ -56,7 +58,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(1); /* 初期状態は等倍 */
+  transform: translate(-50%, -50%) scale(1);
+  /* 初期状態は等倍 */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
@@ -64,43 +67,52 @@
 /* 初期状態（PC/SP共通）：スクロール後のロゴとドロワーメニュー用ロゴを非表示 */
 .header__logo-img--after,
 .header__logo-img--drawer {
-	visibility: hidden; /* Safari対応 */
-	opacity: 0; /* Safari対応 */
-	position: absolute; /* レイアウトの崩れ防止 */
-	transition: opacity 0.5s ease-in-out;
-	transform: translate(-50%, -50%) scale(0.9); /* 少し小さくする */
+  visibility: hidden;
+  /* Safari対応 */
+  opacity: 0;
+  /* Safari対応 */
+  position: absolute;
+  /* レイアウトの崩れ防止 */
+  transition: opacity 0.5s ease-in-out;
+  transform: translate(-50%, -50%) scale(0.9);
+  /* 少し小さくする */
 }
 
 /* PC版：FVを超えてスクロールした場合 */
 .is-scroll .header__logo-img--before {
-	visibility: hidden;
-	opacity: 0;
-	position: absolute;
-	transition: opacity 0.5s ease-in-out;
-	transform: translate(-50%, -50%) scale(1.1); /* 少し大きくしてフェードアウト */
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.5s ease-in-out;
+  transform: translate(-50%, -50%) scale(1.1);
+  /* 少し大きくしてフェードアウト */
 }
 
 .is-scroll .header__logo-img--after {
-	visibility: visible;
-	opacity: 1; /* フェードイン */
-	transition: opacity 0.5s ease-in-out;
-  transform: translate(-50%, -50%) scale(1); /* 元のサイズに */
+  visibility: visible;
+  opacity: 1;
+  /* フェードイン */
+  transition: opacity 0.5s ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+  /* 元のサイズに */
 }
 
 
 /* SP版：ドロワーメニューが開いている場合 */
 .is-drawerActive .header__logo-img--before {
-	display: none; /* 初期ロゴを非表示 */
-	visibility: hidden;
-	opacity: 0;
-	position: absolute;
+  display: none;
+  /* 初期ロゴを非表示 */
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
 }
 
 .is-drawerActive .header__logo-img--drawer {
-	// display: block; /* ドロワーメニュー用のロゴを表示 */
-	visibility: visible;
-	opacity: 1;
-  transform: translate(-50%, -50%) scale(1); /* フェードイン */
+  // display: block; /* ドロワーメニュー用のロゴを表示 */
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  /* フェードイン */
 }
 
 
@@ -119,5 +131,6 @@
 /* SP版：ドロワーメニューが開いている場合 */
 .is-drawerActive .header__logo-img--before {
   opacity: 0;
-  transform: translate(-50%, -50%) scale(1.1); /* フェードアウト */
+  transform: translate(-50%, -50%) scale(1.1);
+  /* フェードアウト */
 }

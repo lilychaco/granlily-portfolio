@@ -181,21 +181,49 @@ jQuery(window).on("load", function () {
   function setVisitedFlag() {
     sessionStorage.setItem("visited", "true");
   }
+  function startFvAnimation() {
+    // FVスライドのアニメーション開始（即座に開始）
+    jQuery(".fv__slide").addClass("is-active");
+
+    // テキストのアニメーション開始
+    setTimeout(function () {
+      jQuery(".fv__description").addClass("is-active");
+    }, 1000);
+  }
   if (!checkVisited()) {
     setVisitedFlag();
-    jQuery(".splash__logo").delay(1000).fadeOut(600, function () {
-      jQuery(".splash").fadeOut(600, function () {
-        jQuery(".fv__slide").addClass("is-active");
-      });
+
+    // FVスライドを事前に準備（透明状態）
+    jQuery(".fv__slide").css({
+      opacity: "0",
+      transition: "opacity 0.8s ease-in-out"
+    });
+
+    // ロゴのフェードアウトをスムーズに
+    jQuery(".splash__logo").delay(300).fadeOut(400, function () {
+      // スプラッシュ画面のフェードアウトと同時にFVを表示開始
+      jQuery(".splash").fadeOut(400);
+
+      // FVスライドをフェードイン
+      jQuery(".fv__slide").css("opacity", "");
+
+      // アニメーション開始
+      startFvAnimation();
+
+      // スプラッシュ要素を完全に削除
+      setTimeout(function () {
+        jQuery(".splash").remove();
+      }, 600);
     });
   } else {
-    jQuery(".splash").hide();
-    jQuery(".fv__slide").addClass("is-active");
+    // 2回目以降の訪問
+    jQuery(".splash").remove(); // DOM から即座に削除
+    startFvAnimation();
   }
 });
 
 //================================
-//GSAP
+//GSAP 飛行機を動かす
 //================================
 // GSAPのプラグインを登録
 gsap.registerPlugin(MotionPathPlugin);
@@ -349,4 +377,24 @@ jQuery(document).ready(function ($) {
       $(this).addClass("is-inview");
     }
   });
+});
+
+//================================
+// トップお知らせ テキストが右から順番にフェードイン
+//================================
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(".top-news__item", {
+  opacity: 0,
+  x: 10
+}, {
+  opacity: 1,
+  x: 0,
+  duration: 0.7,
+  stagger: 0.15,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".top-news__list",
+    start: "top 70%",
+    toggleActions: "play none none none"
+  }
 });

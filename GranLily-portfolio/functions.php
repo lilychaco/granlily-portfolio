@@ -1,13 +1,20 @@
 <?php
 
+function add_google_fonts() {
+    // Google Fonts の preconnect を追加
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+
+    // Google Fonts の preload を追加（遅延適用）
+    echo '<link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato&family=Gotu&family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@700&display=swap" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
+
+    // Fallback 用の noscript（JavaScript が無効な場合の対策）
+    echo '<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Gotu&family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@700&display=swap"></noscript>' . "\n";
+}
+add_action('wp_head', 'add_google_fonts');
+
+
 function theme_enqueue_styles() {
-    // Google Fontsの読み込み（バージョン引数に null）
-    wp_enqueue_style(
-        'mytheme-google-fonts',
-        'https://fonts.googleapis.com/css2?family=Lato&family=Gotu&family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@700&display=swap',
-        [],
-        null
-    );
 
     // Swiper JSとCSSの読み込み（バージョン指定）
     wp_enqueue_style(

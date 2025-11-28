@@ -1134,6 +1134,7 @@ time {
 	padding: 12px 30px;
 	position: relative;
 	text-decoration: none;
+	transition: all 0.3s ease;
 	width: 200px;
 }
 
@@ -1145,9 +1146,10 @@ time {
 	content: "";
 	height: 30px;
 	position: absolute;
-	right: 20px; /* ボタンの右端からの距離 */
-	top: 50%;
+	right: 20px;
+	top: 50%; /* ボタンの右端からの距離 */
 	transform: translateY(-50%);
+	transition: all 0.3s ease;
 	width: 30px;
 }
 
@@ -1162,6 +1164,7 @@ time {
 	right: 31px;
 	top: 50%;
 	transform: translateY(-50%) rotate(45deg);
+	transition: all 0.3s ease;
 	width: 10px;
 }
 
@@ -2039,7 +2042,6 @@ span.wpcf7-spinner {
 }
 
 .fv__slide {
-	animation: slider-animation 24s linear infinite;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2048,7 +2050,57 @@ span.wpcf7-spinner {
 	opacity: 0;
 	position: absolute;
 	top: 0;
+	transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 	width: 100%;
+}
+
+/* アニメーション開始用のクラス */
+
+.fv__slide.is-active {
+	animation: slider-animation 12s ease-in-out infinite;
+}
+
+/* 各スライドの開始時間をずらす */
+
+.fv__slide.is-active:nth-child(1) {
+	animation-delay: 0s; /* opening完了後すぐに開始 */
+}
+
+.fv__slide.is-active:nth-child(2) {
+	animation-delay: 4s;
+}
+
+.fv__slide.is-active:nth-child(3) {
+	animation-delay: 8s;
+}
+
+/* テキストアニメーション用クラス */
+
+.fv__description {
+	bottom: 22%;
+	color: #fff;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%; /* 初期状態では非表示 */
+}
+
+.fv__description.is-active {
+	animation: fade-up 1s ease-out forwards;
+}
+
+/* 各スライドごとにテキストのアニメーションを遅延 */
+
+.fv__slide.is-active:nth-child(1) .fv__description.is-active {
+	animation-delay: 1s;
+}
+
+.fv__slide.is-active:nth-child(2) .fv__description.is-active {
+	animation-delay: 5s;
+}
+
+.fv__slide.is-active:nth-child(3) .fv__description.is-active {
+	animation-delay: 9s;
 }
 
 .fv__slide-img {
@@ -2101,62 +2153,30 @@ span.wpcf7-spinner {
 }
 
 .fv__description {
-	animation: fade-up 1s ease-out forwards;
 	bottom: 22%;
 	color: #fff;
-	opacity: 0; /* 初期状態では非表示 */
+	opacity: 0;
 	position: absolute;
 	text-align: center;
-	width: 100%;
-}
-
-/* 各スライドごとにテキストのアニメーションを遅延 */
-
-.fv__slide:nth-child(1) .fv__description {
-	animation-delay: 1.5s; /* 画像のフェードイン後に遅れて表示 */
-}
-
-.fv__slide:nth-child(2) .fv__description {
-	animation-delay: 5.5s; /* 画像が表示されてから遅れて表示 */
-}
-
-.fv__slide:nth-child(3) .fv__description {
-	animation-delay: 9.5s; /* 画像が表示されてから遅れて表示 */
+	width: 100%; /* 初期状態では非表示 */
 }
 
 /* 説明文の各行 */
 
-.fv__text {
-	background: rgba(10, 10, 30, 0.5); /* 半透明の黒背景 */
+.fv__text { /* 白色 */
+	background: rgba(10, 10, 30, 0.5);
 	border-radius: 0.3125rem;
-	color: #ffffff; /* 白色 */
+	color: #ffffff;
 	display: inline-block;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 400;
 	line-height: 1.5; /* 行間を調整 */
-	opacity: 1;
+	opacity: 1; /* 半透明の黒背景 */
 	padding: 0.625rem 1.25rem;
 }
 
-.fv__slide {
-	animation: slider-animation 12s ease-in-out infinite;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100%;
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-}
-
 /* スプラッシュ画面が消えた後にアニメーションを適用 */
-
-/*スライドが12秒で1周*/
-
-/*スライドが24秒で1周*/
 
 /* === テキストのフェードアップ用アニメーション === */
 
@@ -2366,7 +2386,6 @@ span.wpcf7-spinner {
 }
 
 .header-menu__item a::after {
-	background: #fff;
 	background: #000074;
 	bottom: 0;
 	content: "";
@@ -2395,6 +2414,10 @@ span.wpcf7-spinner {
 
 .header-menu__item--line a:hover::after {
 	content: none;
+}
+
+.header--sub .header-menu__item a::after {
+	background: #fff;
 }
 
 .header-menu__text-english {
@@ -2472,12 +2495,12 @@ span.wpcf7-spinner {
 /* 初期状態（PC/SP共通）：スクロール後のロゴとドロワーメニュー用ロゴを非表示 */
 
 .header__logo-img--after,
-.header__logo-img--drawer {
+.header__logo-img--drawer { /* Safari対応 */
 	opacity: 0; /* Safari対応 */
-	position: absolute; /* レイアウトの崩れ防止 */
-	transform: translate(-50%, -50%) scale(0.9); /* 少し小さくする */
+	position: absolute;
+	transform: translate(-50%, -50%) scale(0.9); /* レイアウトの崩れ防止 */
 	transition: opacity 0.5s ease-in-out;
-	visibility: hidden; /* Safari対応 */
+	visibility: hidden; /* 少し小さくする */
 }
 
 /* PC版：FVを超えてスクロールした場合 */
@@ -2485,31 +2508,31 @@ span.wpcf7-spinner {
 .is-scroll .header__logo-img--before {
 	opacity: 0;
 	position: absolute;
-	transform: translate(-50%, -50%) scale(1.1); /* 少し大きくしてフェードアウト */
+	transform: translate(-50%, -50%) scale(1.1);
 	transition: opacity 0.5s ease-in-out;
-	visibility: hidden;
+	visibility: hidden; /* 少し大きくしてフェードアウト */
 }
 
 .is-scroll .header__logo-img--after {
-	opacity: 1; /* フェードイン */
-	transform: translate(-50%, -50%) scale(1); /* 元のサイズに */
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1); /* フェードイン */
 	transition: opacity 0.5s ease-in-out;
-	visibility: visible;
+	visibility: visible; /* 元のサイズに */
 }
 
 /* SP版：ドロワーメニューが開いている場合 */
 
 .is-drawerActive .header__logo-img--before {
-	display: none; /* 初期ロゴを非表示 */
+	display: none;
 	opacity: 0;
-	position: absolute;
+	position: absolute; /* 初期ロゴを非表示 */
 	visibility: hidden;
 }
 
 .is-drawerActive .header__logo-img--drawer {
 	opacity: 1;
-	transform: translate(-50%, -50%) scale(1); /* フェードイン */
-	visibility: visible;
+	transform: translate(-50%, -50%) scale(1);
+	visibility: visible; /* フェードイン */
 }
 
 /* SP版：ドロワーメニューが開いている場合 */
@@ -2709,13 +2732,46 @@ span.wpcf7-spinner {
 }
 
 .nav-menu__item p {
+	display: inline-block;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 700;
 	height: inherit;
 	letter-spacing: 0;
 	line-height: 2;
+	padding-left: 1.5rem;
+	position: relative;
 	white-space: nowrap;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.starfish-icon::before {
+	background-image: url("../images/starfish.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	height: 1rem;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1rem;
+}
+
+.nav-menu__item p::after {
+	background-color: #000074;
+	bottom: 0;
+	content: "";
+	height: 1px;
+	left: 0;
+	position: absolute;
+	transition: width 0.3s ease;
+	width: 0;
+}
+
+.nav-menu__item p:hover::after {
 	width: 100%;
 }
 
@@ -4765,6 +4821,7 @@ span.wpcf7-spinner {
 
 .top-news__item {
 	border-bottom: 1px solid #000074;
+	opacity: 1;
 	padding-bottom: 0.625rem;
 }
 
@@ -6385,21 +6442,23 @@ html {
 	transform: scale(1);
 }
 
-8.33% {
-	opacity: 1; /* 約1秒目 */
+8% {
+	opacity: 1;
 }
 
-50% {
-	opacity: 1; /* 6秒目 */
+33% {
+	opacity: 1;
+	transform: scale(1.02);
 }
 
-58.33% {
-	opacity: 0; /* 約7秒目 */
-	transform: scale(1.1);
+41% {
+	opacity: 0;
+	transform: scale(1.05);
 }
 
 100% {
 	opacity: 0;
+	transform: scale(1);
 }
 
 }

@@ -34,48 +34,40 @@
 		</div>
 	</div>
 	<?php endif; ?>
-
 	<header class="header <?php echo is_front_page() ? 'header--top' : 'header--sub'; ?> js-header">
 		<div class="header__inner">
-			<?php if (is_front_page()) : ?>
-			<h1 class="header__logo">
-				<a href="<?php echo esc_url(home_url('/')); ?>">
+			<?php
+				$home_url = esc_url(home_url('/'));
+				$theme_uri = get_theme_file_uri();
+				$is_front_page = is_front_page();
+
+				// ロゴ画像のパス設定
+				$logos = [
+						'before'  => $is_front_page ? "/assets/images/logo-granlily-transparent.png" : "/assets/images/logo-granlily-long2.jpg",
+						'after'   => $is_front_page ? "/assets/images/logo-granlily-long3.png" : null,
+						'drawer'  => $is_front_page ? "/assets/images/logo-granlily-long3.png" : "/assets/images/logo-granlily-long2.jpg",
+						'source'  => $is_front_page ? "/assets/images/logo-granlily-transparent.png" : "/assets/images/logo-granlily-long2.jpg",
+				];
+
+				// クラス名の設定
+					$logo_class = $is_front_page ? "h1" : "div";
+			?>
+
+			<<?php echo $logo_class; ?> class="header__logo">
+				<a href="<?php echo $home_url; ?>">
 					<picture>
-						<!-- PC版（768px以上）のロゴ -->
-						<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-transparent.png"
-							media="(min-width: 768px)" />
-						<!-- SP版（デフォルト）のロゴ -->
-						<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-transparent.png" alt="ヘッダーロゴ"
+						<source srcset="<?php echo $theme_uri . $logos['source']; ?>" media="(min-width: 768px)" />
+						<img src="<?php echo $theme_uri . $logos['before']; ?>" alt="ヘッダーロゴ"
 							class="header__logo-img header__logo-img--before" />
 					</picture>
-					<!-- 切り替え用のロゴ（スクロール後に表示） -->
-					<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long3.png" alt="スクロール後のロゴ"
+					<?php if ($logos['after']) : ?>
+					<img src="<?php echo $theme_uri . $logos['after']; ?>" alt="スクロール後のロゴ"
 						class="header__logo-img header__logo-img--after" />
-					<!-- ドロワーオープン時のロゴ -->
-					<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long3.png" alt="ドロワーメニュー用のロゴ"
+					<?php endif; ?>
+					<img src="<?php echo $theme_uri . $logos['drawer']; ?>" alt="ドロワーメニュー用のロゴ"
 						class="header__logo-img header__logo-img--drawer" />
 				</a>
-			</h1>
-
-			<?php else : ?>
-			<div class="header__logo">
-				<a href="<?php echo esc_url(home_url('/')); ?>">
-					<picture>
-						<!-- PC版（768px以上）のロゴ -->
-						<source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long2.jpg"
-							media="(min-width: 768px)" />
-						<!-- SP版（デフォルト）のロゴ -->
-						<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long2.jpg" alt="ヘッダーロゴ"
-							class="header__logo-img header__logo-img--before" />
-					</picture>
-					<!-- ドロワーオープン時のロゴ -->
-					<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo-granlily-long2.jpg" alt="ドロワーメニュー用のロゴ"
-						class="header__logo-img header__logo-img--drawer" />
-				</a>
-			</div>
-			<?php endif; ?>
-
-
+			</<?php echo $logo_class; ?>>
 			<nav class="header__nav header-menu">
 				<ul class="header-menu__items">
 					<li class="header-menu__item">
@@ -90,8 +82,6 @@
 							<span class="header-menu__text-english">PhotoGallery</span>
 						</a>
 					</li>
-
-
 					<li class="header-menu__item">
 						<a href="<?php echo esc_url(home_url('/faq')); ?>">
 							<span class="header-menu__text-japanese">よくある質問</span>
@@ -138,8 +128,6 @@
 					<p class="starfish-icon starfish-icon--drawer">私たちについて</p>
 				</a>
 			</li>
-
-
 			<li class="drawer-menu__item">
 				<a href="<?php echo esc_url(home_url('/faq')); ?>">
 					<p class="starfish-icon starfish-icon--drawer">よくある質問</p>
